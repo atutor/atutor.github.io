@@ -1,0 +1,2 @@
+# atutor.github.io
+ATutor is an Open Source Web-based Learning Management System (LMS) used to develop and deliver online courses. Administrators can install or update ATutor in minutes, develop custom themes to give ATutor a new look, and easily extend its functionality with feature modules. Educators can quickly assemble, package, and redistribute standardized Web-based instructional content, easily import prepackaged content, and conduct their courses online. Students learn in an accessible, adaptive, social learning environment.
