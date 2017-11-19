@@ -215,7 +215,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll-theme-architect
+  minima
 
 BUNDLED WITH
    1.16.0
