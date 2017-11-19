@@ -215,7 +215,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll-theme-dinky
+  jekyll-theme-architect
 
 BUNDLED WITH
    1.16.0
