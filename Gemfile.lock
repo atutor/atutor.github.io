@@ -215,6 +215,8 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll-theme-architect
+  jekyll-theme-cayman
   jekyll-theme-slate
   minima
 
