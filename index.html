@@ -19,7 +19,7 @@ def show
   end
 end
 {% endhighlight %}
-{{ site.github }}
+{{ site.github.url }}
 {{ site.github.public_repositories }}
 {% for repository in site.github.public_repositories %}
   * [{{ repository.name }}]({{ repository.html_url }})
