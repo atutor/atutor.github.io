@@ -10,6 +10,18 @@ layout: home
 	    <br />
 	    </div>
 	</div> 
+	    {% highlight ruby %}
+def show
+  @widget = Widget(params[:id])
+  respond_to do |format|
+    format.html # show.html.erb
+    format.json { render json: @widget }
+  end
+end
+{% endhighlight %}
+{% for repository in site.github.public_repositories %}
+  * [{{ repository.name }}]({{ repository.html_url }})
+{% endfor %}
 	<div class="cd-scrolling-bg cd-color-2">
 	<div class="clbg">
 		<div class="cd-container">
