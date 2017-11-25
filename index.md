@@ -1,5 +1,6 @@
 ---
 title: Hello World!
+layout: home
 ---
 # this is a comment
 {{ atutor.github.public_repositories }}
