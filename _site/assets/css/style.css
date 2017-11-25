@@ -325,6 +325,8 @@ a:hover { text-decoration: underline; }
 
 .main-content { max-width: 100%; padding: 0; }
 
+.main-content h2 { margin: 0; }
+
 /*
 atutor.ca main styles
 */
@@ -703,7 +705,7 @@ table.support { width: 90%; margin-left: auto; margin-right: auto; }
 
 .cd-container { width: 95%; margin-left: auto; margin-right: auto; /*border:thin solid red;*/ height: auto; padding: .2em; }
 
-.home-splash { height: auto; width: 27vw; margin-left: .5vw; margin-right: .5vw; float: left; font-size: 1.3vw; /* border:thin solid black; */ }
+.home-splash { height: 100%; width: 42vw; margin-left: .5vw; margin-right: .5vw; float: left; font-size: 1.3vw; display: block; overflow: auto; /* border:thin solid black; */ }
 
 .home-splash ul > li > ul > li > a:link { text-decoration: underline; color: #090A59; font-size: 1.1em; }
 
@@ -805,11 +807,11 @@ main { margin-top: 1.8em; overflow: visible; }
 
 #splash-links a:hover, #splash-links a:focus { background-color: rgba(0, 0, 0, 0.5); }
 
-.tpbg { background-color: rgba(0, 0, 0, 0.5); background-position: center; height: 35.5vw; width: 92.2%; margin-left: auto; margin-right: auto; border: thick sold black; }
+.tpbg { background-color: rgba(0, 0, 0, 0.5); background-position: center; height: 18.5vw; width: 92.2%; margin-left: auto; margin-right: auto; border: thick sold black; }
 
-.tpbg h1 { font-size: 5em; text-align: center; font-weight: 700; }
+.tpbg h1 { font-size: 3.5em; text-align: center; font-weight: 700; }
 
-.tpbg h2 { font-size: 3em; text-align: center; font-weight: 700; color: white; }
+.tpbg h2 { font-size: 2.5em; text-align: center; font-weight: 700; color: white; }
 
 .clbg { background-color: rgba(255, 255, 255, 0.8); background-position: center; /* height:44.5vh; */ min-height: 12vw; width: 92.2%; margin-left: auto; margin-right: auto; padding-top: .5em; padding-bottom: .5em; overflow: auto; }
 
@@ -817,13 +819,13 @@ main { margin-top: 1.8em; overflow: visible; }
 
 .clbg h2 { font-size: 2.5em; text-align: center; font-weight: 500; }
 
-.cd-fixed-bg { font-size: 1.3vw; background-size: cover; background-attachment: fixed; background-repeat: no-repeat; background-position: center center; background-color: #eeeeee; min-height: 27vw; }
+.cd-fixed-bg { font-size: 1.3vw; background-size: cover; background-attachment: fixed; background-repeat: no-repeat; background-position: center center; background-color: #eeeeee; /* min-height: 27vw;     	*/ }
 
 .cd-fixed-bg2 { width: 100%; font-size: 1.3vw; background-size: cover; background-attachment: fixed; background-repeat: no-repeat; background-position: center center; height: 100%; }
 
 .cd-fixed-bg h2 { font-size: 3em; font-weight: 500; }
 
-.cd-fixed-bg h1 { margin: 0; font-size: 6em; text-align: center; font-weight: 700; }
+.cd-fixed-bg h1 { margin: 0; font-size: 4em; text-align: center; font-weight: 700; }
 
 .cd-fixed-bg.cd-bg-1 { /* background-image: url("images/backgrounds/cd-background-15.jpg");*/ background-image: url("/images/background1.jpg"); min-height: 100%; }
 

@@ -1,3 +1,4 @@
 theme: jekyll-theme-cayman
 plugins_dir: jekyll-github-metadata
 github: [metadata]
+repository: atutor/atutor.github.io

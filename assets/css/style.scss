@@ -16,6 +16,9 @@ background-color: rgba(0,0,0, 0.5);
     max-width: 100%;
     padding:0;
 }
+.main-content h2{
+    margin:0;
+}
 
 
 /*
@@ -1101,12 +1104,14 @@ table.support{
     padding:.2em;
 }
 .home-splash{ 
-    height:auto;
-    width:27vw;
+    height:100%;
+    width:42vw;
     margin-left:.5vw;
     margin-right:.5vw;
     float:left;
     font-size: 1.3vw;
+    display:block;
+    overflow:auto;
     /* border:thin solid black; */
 }
 
@@ -1411,19 +1416,19 @@ main{
 .tpbg{
     background-color:rgba(0, 0, 0, 0.5);
     background-position:center;
-    height:35.5vw;
+    height:18.5vw;
     width:92.2%;
     margin-left:auto;
     margin-right:auto;
     border:thick sold black;
  }
 .tpbg h1{
-    font-size:5em; 
+    font-size:3.5em; 
     text-align:center; 
     font-weight:700;
 }
 .tpbg h2{
-    font-size:3em; 
+    font-size:2.5em; 
     text-align:center; 
     font-weight:700;
     color:white;
@@ -1457,8 +1462,7 @@ main{
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-color:#eeeeee;
-    min-height: 27vw;
-     	
+   /* min-height: 27vw;     	*/
 }
 
 .cd-fixed-bg2 {
@@ -1480,7 +1484,7 @@ main{
 
 .cd-fixed-bg h1{
     margin:0;
-    font-size:6em; 
+    font-size:4em; 
     text-align:center; 
     font-weight:700;
 }
