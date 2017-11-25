@@ -1,4 +1,4 @@
 # this is a comment
-{% for repository in site.github.public_repositories %}
+{% for repository in atutor.github.public_repositories %}
   * {{ repository.name }}
 {% endfor %}
