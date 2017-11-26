@@ -1,5 +1,5 @@
 theme: jekyll-theme-cayman
-github: GET /repositories
+github: GET /pubic_repositories
 gems:
     - jekyll-sitemap
     - jekyll-github-metadata
