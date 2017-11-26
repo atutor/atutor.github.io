@@ -1,5 +1,4 @@
 theme: jekyll-theme-cayman
-plugins_dir: jekyll-github-metadata
 github: [metadata]
 gems:
     - jekyll-sitemap
