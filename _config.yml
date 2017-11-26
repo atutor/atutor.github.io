@@ -2,5 +2,5 @@ theme: jekyll-theme-cayman
 plugins_dir: jekyll-github-metadata
 github: [metadata]
 gems:
-  - jekyll-sitemap
-  - github-metadata
+    - jekyll-sitemap
+    - "jekyll-github-metadata"
