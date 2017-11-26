@@ -265,7 +265,7 @@ a:hover { text-decoration: underline; }
 @media screen and (max-width: 42em) { .btn { display: block; width: 100%; padding: 0.75rem; font-size: 0.9rem; }
   .btn + .btn { margin-top: 1rem; margin-left: 0; } }
 
-.page-header { color: #fff; text-align: center; background-color: #159957; background-image: linear-gradient(120deg, #155799, #159957); }
+.page-header { color: white; text-align: center; background-color: #159957; background-image: linear-gradient(120deg, #155799, #159957); }
 @media screen and (min-width: 64em) { .page-header { padding: 5rem 6rem; } }
 @media screen and (min-width: 42em) and (max-width: 64em) { .page-header { padding: 3rem 4rem; } }
 @media screen and (max-width: 42em) { .page-header { padding: 2rem 1rem; } }
@@ -347,7 +347,7 @@ body { /* font-family: 'Varela Round', Arial, Helvetica, sans-serif;*/ font-fami
 
 .slideshow { height: 106px; max-height: 106px; margin: auto; overflow: hidden; }
 
-#sub-container { text-align: left; height: 100%; clear: right; width: 100%; margin: 0; padding-top: 5px; line-height: 150%; background: linear-gradient(to right, #ffffff, #ededed) repeat scroll 0 0 rgba(0, 0, 0, 0); }
+#sub-container { text-align: left; height: 100%; clear: right; width: 100%; margin: 0; padding-top: 5px; line-height: 150%; background: linear-gradient(to right, white, #ededed) repeat scroll 0 0 rgba(0, 0, 0, 0); }
 
 /* center menu */
 #left-col { display: none; width: 15em; float: left; margin-left: 0.5em; margin-top: -1.1em; }
@@ -365,7 +365,7 @@ body { /* font-family: 'Varela Round', Arial, Helvetica, sans-serif;*/ font-fami
 div.menuhead { background-color: #FAF6D7; margin-top: .5em; height: 1.1em; -moz-border-radius: .3em .3em 0em 0em; border-radius: .3em .3em 0em 0em; }
 
 /* header */
-.header { text-align: left; width: 100%; height: 4.5em; margin: 0px; background-color: transparent; border-bottom: 1px solid #D1C82E; background: linear-gradient(to right, #ffffff, #EDEDED); /* Standard syntax */ }
+.header { text-align: left; width: 100%; height: 4.5em; margin: 0px; background-color: transparent; border-bottom: 1px solid #D1C82E; background: linear-gradient(to right, white, #ededed); /* Standard syntax */ }
 
 .header h1 { display: inline; color: #000000; font-size: x-large; }
 
@@ -493,37 +493,37 @@ h5 { font-size: .9em; width: 90%; padding-left: .2em; }
 
 h2.sidemenu { padding: .1em; font-size: .9em; color: #000000; display: inline; }
 
-.BulletBackgroundColor { color: #FFFFFF; }
+.BulletBackgroundColor { color: white; }
 
-.DataColor { color: #DEDECA; }
+.DataColor { color: #dedeca; }
 
-.FormBackgroundColor { color: #CCCCCC; }
+.FormBackgroundColor { color: #cccccc; }
 
-.ImageTitleColor { color: #CCCCCC; }
+.ImageTitleColor { color: #cccccc; }
 
-.LabelColor { color: #CCCCCC; }
+.LabelColor { color: #cccccc; }
 
-.ListColorEven { color: #CCCCCC; }
+.ListColorEven { color: #cccccc; }
 
 .ListFooterColor { color: #333333; }
 
 .ListHeaderColor { color: #333333; }
 
-.ListColorOdd { color: #DEDECA; }
+.ListColorOdd { color: #dedeca; }
 
-.ListTitleColor { color: #CCCCCC; }
+.ListTitleColor { color: #cccccc; }
 
 .NavigationBackgroundColor { color: #666666; }
 
-.NavigationColor { color: #CCCCCC; }
+.NavigationColor { color: #cccccc; }
 
-.NewsDataColor { color: #DEDECA; }
+.NewsDataColor { color: #dedeca; }
 
 .StoryTitle { color: #000000; font-weight: bold; }
 
-.StoryContentColor { color: #000000; }
+.StoryContentColor { color: black; }
 
-.TitleColor { color: #000000; }
+.TitleColor { color: black; }
 
 tr.ListHeaderColor th { text-align: left; }
 
@@ -924,7 +924,7 @@ ol.accessible-megamenu { z-index: 12; }
 
 .accessible-megamenu .accessible-megamenu-top-nav-item h2 { font-size: 1em; }
 
-.accessible-megamenu .accessible-megamenu-top-nav-item a[aria-haspopup] { box-shadow: 1px 1px 0 #fff inset; color: #454545 !important; background-color: #BAE8F7; background: linear-gradient(#ccc, white); display: block; height: 2.9em; position: relative; text-decoration: none; }
+.accessible-megamenu .accessible-megamenu-top-nav-item a[aria-haspopup] { box-shadow: 1px 1px 0 #fff inset; color: #454545 !important; background-color: #BAE8F7; background: linear-gradient(#cccccc, white); display: block; height: 2.9em; position: relative; text-decoration: none; }
 
 .accessible-megamenu { float: left; clear: left; background-color: #dfe2e2; border: 0; padding: 0; height: 3em; margin-right: 1em; }
 

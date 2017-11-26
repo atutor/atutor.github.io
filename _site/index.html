@@ -36,7 +36,18 @@
 	    <h2>Learning Management Tools</h2>
 	    <br />
 	    </div>
-	</div> 
+	</div>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">show</span>
+  <span class="vi">@widget</span> <span class="o">=</span> <span class="no">Widget</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">])</span>
+  <span class="n">respond_to</span> <span class="k">do</span> <span class="o">|</span><span class="nb">format</span><span class="o">|</span>
+    <span class="nb">format</span><span class="p">.</span><span class="nf">html</span> <span class="c1"># show.html.erb</span>
+    <span class="nb">format</span><span class="p">.</span><span class="nf">json</span> <span class="p">{</span> <span class="n">render</span> <span class="ss">json: </span><span class="vi">@widget</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+
+
+
 	<div class="cd-scrolling-bg cd-color-2">
 	<div class="clbg">
 		<div class="cd-container">
@@ -113,6 +124,60 @@
             </div>
 		</div> 
 	</div>
+<script id="repoTemplate" type="text/template">
+
+  {{#items}}
+  <div class="repo {{languageClass}}{{#unless description}} no-desc{{/unless}}">
+    <header class="repo-header">
+      <div class="grid">
+        <div class="grid-item large--one-half">
+          <h2>
+          {{#if homepage}}
+            {{#if avatar}}
+              <a href="{{homepage}}" class="homepage-link">
+                <img src="{{avatar}}" alt="{{name}}">
+              </a>
+            {{else}}
+              <a href="{{homepage}}" class="homepage-link">
+                <i class="icon-world"></i>
+              </a>
+            {{/if}}
+            <a href="{{homepage}}" title="View {{name}} on Github">{{name}}</a>
+          {{else}}
+            {{#if avatar}}
+              <img src="{{avatar}}" class="homepage-link" alt="{{name}}">
+            {{/if}}
+            <a href="{{url}}" title="View {{name}} on Github">{{name}}</a>
+          {{/if}}
+          </h2>
+        </div>
+        <div class="grid-item large--one-half">
+          <div class="repo-meta">
+            <div class="repo-git">
+              <a href="{{url}}" title="View {{name}} on GitHub">
+                <i class="icon-github" title="View on GitHub"></i> Repo
+              </a>
+            </div>
+            <div class="repo-stats">
+              <i class="icon-star" title="Stars"></i> {{stars}}
+              <i class="icon-forks" title="Forks"></i> {{forks}}
+              <span class="repo-lang">{{language}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    {{#if description}}
+    <p>{{description}}</p>
+    {{/if}}
+  </div>
+  {{/items}}
+
+</script>
+
+<script>
+  var repos = null;
+</script>
 </main>
 
     
