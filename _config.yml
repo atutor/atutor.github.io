@@ -3,4 +3,4 @@ plugins_dir: jekyll-github-metadata
 github: [metadata]
 gems:
     - jekyll-sitemap
-    - "jekyll-github-metadata"
+    - jekyll-github-metadata
