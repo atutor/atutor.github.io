@@ -12,7 +12,7 @@ layout: home
 	</div>
 {% comment %}
 {{ site.github.public_repositories }}
-{% endcomment %}
+
 
 {% highlight ruby %}
 def show
@@ -23,11 +23,14 @@ def show
   end
 end
 {% endhighlight %}
+{% endcomment %}
+<div style="border:thin solid #999;border-radius:.2em;padding:1em;">
 <ul>
 {% for repository in site.github.public_repositories %}
-	<li> <a href="{{ repository.html_url }}"> {{ repository.name }} </a><br /> {{ repository.description }} </li>
+	<li style="border:thin solid #333;border-radius:.2em;padding:1em;"> <a href="{{ repository.html_url }}"> {{ repository.name }} </a><br /> {{ repository.description }} </li>
 {% endfor %}
 </ul>
+</div>
 
 	<div class="cd-scrolling-bg cd-color-2">
 	<div class="clbg">
