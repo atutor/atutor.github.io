@@ -28,7 +28,7 @@ end
 <ul style="width:80%; margin-left:auto;margin-right:auto;">
 {% for repository in site.github.public_repositories %}
 
-	<li style="border:thin solid #333;border-radius:.2em;padding:1em; margin-top:1em;list-style-type:none;font-size:2em;"> <a href="{{ repository.html_url }}"> {{ repository.name }} </a><br /> {{ repository.description }} <br /> <span style="font-weight:bold;">Repository Owner: {{ repository.owner }}</span></li>
+	<li style="border:thin solid #333;border-radius:.2em;padding:1em; margin-top:1em;list-style-type:none;"> <a href="{{ repository.html_url }}" style="font-size:2em;"> {{ repository.name }} </a><br /> {{ repository.description }} <br /> <span style="font-weight:bold;">Repository Owner: {{ repository.owner.login }}</span></li>
 
 {% endfor %}
 </ul>
