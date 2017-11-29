@@ -20,11 +20,11 @@ def show
   end
 end
 {% endhighlight %}
-
+<ul>
 {% for repository in site.github.public_repositories %}
-  * [{{ repository.name }}]({{ repository.html_url }})
+	'<li>' [{{ repository.name }}]({{ repository.html_url }}) '</li>'
 {% endfor %}
-
+</ul>
 
 	<div class="cd-scrolling-bg cd-color-2">
 	<div class="clbg">
