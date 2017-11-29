@@ -21,6 +21,9 @@ def show
 end
 {% endhighlight %}
 
+{% for repository in site.github.public_repositories %}
+  * [{{ repository.name }}]({{ repository.html_url }})
+{% endfor %}
 
 
 	<div class="cd-scrolling-bg cd-color-2">
