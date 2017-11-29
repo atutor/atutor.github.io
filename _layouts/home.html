@@ -29,10 +29,6 @@
       
     </section>
     <section class="main-content">
-    {{ site.github }}
-    {% for repository in site.github.public_repositories %}
-    * [{{ repository.name }}]({{ repository.html_url }})
-    {% endfor %}
     {{ content }}
     
           <footer class="site-footer">
