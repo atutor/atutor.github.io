@@ -27,7 +27,7 @@ end
 <div style="border:thin solid #999;border-radius:.2em;padding:1em;">
 <ul style="width:80%; magin-left:auto;margin-right:auto;">
 {% for repository in site.github.public_repositories %}
-	{% if repository.owner = 'atutor'  %}
+	{% if repository.owner == 'atutor'  %}
 	<li style="border:thin solid #333;border-radius:.2em;padding:1em; margin-top:1em;list-style-type:none;font-size:2em;"> <a href="{{ repository.html_url }}"> {{ repository.name }} </a><br /> {{ repository.description }} </li>
 	{% endif %}
 {% endfor %}
