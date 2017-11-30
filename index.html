@@ -43,7 +43,17 @@ layout: home
 	  
 	 	    		    
               </div>
-         	  </div>        
+         	  </div>    
+<div style="border:thin solid #999;border-radius:.2em;padding:1em;">
+<ul style="width:80%; margin-left:auto;margin-right:auto;">
+{% assign public_repositories = site.github.public_repositories | sort: 'updated_at'| reverse %}
+{% for repository in public_repositories %}
+	{% if repository.fork == false %}
+	<li style="border:thin solid #333;border-radius:.2em;padding:1em; margin-top:1em;list-style-type:none;"> <a href="{{ repository.html_url }}" style="font-size:2em;"> {{ repository.name }} </a><br /> {{ repository.description }}<br />Last updated: {{ repository.updated_at}}</li>
+	{% endif %}
+{% endfor %}
+</ul>
+</div>
 		</div> 	
 
 		<a id="atsp"></a>
@@ -56,16 +66,7 @@ layout: home
 
 
 {% endcomment %}
-<div style="border:thin solid #999;border-radius:.2em;padding:1em;">
-<ul style="width:80%; margin-left:auto;margin-right:auto;">
-{% assign public_repositories = site.github.public_repositories | sort: 'updated_at'| reverse %}
-{% for repository in public_repositories %}
-	{% if repository.fork == false %}
-	<li style="border:thin solid #333;border-radius:.2em;padding:1em; margin-top:1em;list-style-type:none;"> <a href="{{ repository.html_url }}" style="font-size:2em;"> {{ repository.name }} </a><br /> {{ repository.description }}<br />Last updated: {{ repository.updated_at}}</li>
-	{% endif %}
-{% endfor %}
-</ul>
-</div>
+
 
 </div>	
 	</div> 
