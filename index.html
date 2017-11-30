@@ -10,22 +10,6 @@ layout: home
 	    <br />
 	    </div>
 	</div>
-{% comment %}
-
-
-
-{% endcomment %}
-<div style="border:thin solid #999;border-radius:.2em;padding:1em;">
-<ul style="width:80%; margin-left:auto;margin-right:auto;">
-
-{% for repository in site.github.public_repositories %}
-	{% if repository.fork == false %}
-	<li style="border:thin solid #333;border-radius:.2em;padding:1em; margin-top:1em;list-style-type:none;"> <a href="{{ repository.html_url }}" style="font-size:2em;"> {{ repository.name }} </a><br /> {{ repository.description }}<br />Last updated: {{ repository.updated_at}}</li>
-	{% endif %}
-{% endfor %}
-</ul>
-</div>
-
 	<div class="cd-scrolling-bg cd-color-2">
 	<div class="clbg">
 		<div class="cd-container">
@@ -81,7 +65,24 @@ layout: home
 
 
     </div> 
-</div>	
+</div>
+{% comment %}
+
+
+
+{% endcomment %}
+<div style="border:thin solid #999;border-radius:.2em;padding:1em;">
+<ul style="width:80%; margin-left:auto;margin-right:auto;">
+
+{% for repository in site.github.public_repositories %}
+	{% if repository.fork == false %}
+	<li style="border:thin solid #333;border-radius:.2em;padding:1em; margin-top:1em;list-style-type:none;"> <a href="{{ repository.html_url }}" style="font-size:2em;"> {{ repository.name }} </a><br /> {{ repository.description }}<br />Last updated: {{ repository.updated_at}}</li>
+	{% endif %}
+{% endfor %}
+</ul>
+</div>
+
+	
 
 
 
