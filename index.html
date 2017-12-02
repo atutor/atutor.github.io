@@ -2,16 +2,6 @@
 title: ATutor Home
 layout: home
 ---
-	<a id="content" title="content area"></a>
-	<div class="cd-fixed-bg cd-bg-1">
-	<div class="tpbg">
-		    <h1><em>AT</em>utor</h1>
-	    <h2>Learning Management Tools</h2>
-	    <br />
-	    </div>
-	</div>
-	<div class="cd-scrolling-bg cd-color-2">
-	<div class="clbg">
 		<div class="cd-container">
 		    <div class="home-splash">
 		    <ul>
@@ -39,16 +29,13 @@ layout: home
 		      </li>
 		      </ul>
 		    </div>	    		    
-
-	  
-	 	    		    
-              </div>
-<div style="padding:1em;clear:both;">
-<ul style="width:80%; margin-left:auto;margin-right:auto;">
+</div>
+<div class="repos">
+<ul>
 {% assign public_repositories = site.github.public_repositories | sort: 'updated_at'| reverse %}
 {% for repository in public_repositories %}
 	{% if repository.fork == false %}
-	<li style="border:thin solid #333;border-radius:.2em;padding:1em; margin-top:1em;list-style-type:none;background-color:#ffffff;"> <a href="{{ repository.html_url }}" style="font-size:2em;"> {{ repository.name }} </a><br /> {{ repository.description }}<br />Last updated: {{ repository.updated_at}}</li>
+	<li> <a href="{{ repository.html_url }}"> {{ repository.name }} </a><br /> {{ repository.description }}<br />Last updated: {{ repository.updated_at}}</li>
 	{% endif %}
 {% endfor %}
 </ul>
@@ -70,14 +57,12 @@ layout: home
 
 
 </div>	
-	</div> 
-</div>
 
 
  <!-- // end of #centerbar-->
     <div class="cd-color-4">
 		<div class="cd-container">
-            <div style="margin-left:auto;margin-right:auto; max-width:66em;margin-bottom:1em;">
+            <div id="google_ads">
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <!-- Banner Footer -->
                 <ins class="adsbygoogle"

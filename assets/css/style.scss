@@ -1,6 +1,8 @@
 ---
 ---
-
+/*******
+new styles for github.io
+*******/
 @import "{{ site.theme }}";
 
 .project-name {
@@ -16,14 +18,58 @@ background-color: rgba(0,0,0, 0.5);
     max-width: 100%;
     padding:0;
 }
+.main-navigation {
+    max-width: 20%;
+    padding:0;
+}
 .main-content h2{
     margin:0;
 }
+.sidemenu1{
+    width:19% !important;
+     float:left;
+     clear:left;
+     height:100%;
+}
+.contentstart{
+ width:80% !important;
+ float:right;
+}
+.home-splash{
+ width:33vw !important;
+}
+div.repos {
+    padding:1em;
+    clear:both;
+}
+div.repos ul {
+    width:80%; 
+    margin-left:auto;
+    margin-right:auto;
+}
 
+div.repos ul li{ 
+    border-radius:.2em;
+    padding:1em; 
+    margin-top:1em;
+    list-style-type:none;
+    background-color:#ffffff;
+}
 
-/*
+div.repos ul li >a{ 
+    font-size:2em;
+}
+
+div.google_ads{
+    margin-left:auto;
+    margin-right:auto; 
+    max-width:66em;
+    margin-bottom:1em;
+}
+
+/*******
 atutor.ca main styles
-*/
+******/
 @charset "utf-8";       
  /*
 @font-face {

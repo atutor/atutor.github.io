@@ -1,3 +1,6 @@
+/*******
+new styles for github.io
+*******/
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /** 1. Set default font family to sans-serif. 2. Prevent iOS text size adjust after orientation change, without disabling user zoom. */
 html { font-family: sans-serif; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ }
@@ -325,11 +328,29 @@ a:hover { text-decoration: underline; }
 
 .main-content { max-width: 100%; padding: 0; }
 
+.main-navigation { max-width: 20%; padding: 0; }
+
 .main-content h2 { margin: 0; }
 
-/*
+.sidemenu1 { width: 19% !important; float: left; clear: left; height: 100%; }
+
+.contentstart { width: 80% !important; float: right; }
+
+.home-splash { width: 33vw !important; }
+
+div.repos { padding: 1em; clear: both; }
+
+div.repos ul { width: 80%; margin-left: auto; margin-right: auto; }
+
+div.repos ul li { border-radius: .2em; padding: 1em; margin-top: 1em; list-style-type: none; background-color: #ffffff; }
+
+div.repos ul li > a { font-size: 2em; }
+
+div.google_ads { margin-left: auto; margin-right: auto; max-width: 66em; margin-bottom: 1em; }
+
+/*******
 atutor.ca main styles
-*/
+******/
  /*
 @font-face {
 font-family: "Varela Round";

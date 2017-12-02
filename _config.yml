@@ -1,4 +1,4 @@
-site.github.theme: jekyll-theme-cayman
+theme: jekyll-theme-cayman
 site.github.github: [metadata]
 site.github.gems:
     - jekyll-sitemap
