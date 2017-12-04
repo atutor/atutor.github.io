@@ -35,7 +35,6 @@ layout: home
         <div class="repos">
             <h2>Repositories</h2>
             <ul>
-            {{site.github.public_repositories}}
             {% assign public_repositories = site.github.public_repositories | sort: 'updated_at'| reverse %}
             {% for repository in public_repositories %}
                 {% if repository.fork == false %}
