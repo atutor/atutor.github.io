@@ -2,6 +2,7 @@
 title: ATutor Home
 layout: home
 ---
+
 		<div class="cd-container">
 		    <div class="home-splash">
 		    <ul>
@@ -14,8 +15,8 @@ layout: home
 		        </ul>
 		      </li>
 		      </ul>
-		    </div>
-		    <div class="home-splash">
+		</div>
+		<div class="home-splash">
 		    <ul>
 		      <li><h2><a href="acontent/" class="splash-link">AContent</a> </h2> 
 		      <hr class="home-line" /> 
@@ -28,57 +29,27 @@ layout: home
 		      </ul>
 		      </li>
 		      </ul>
-		    </div>	    		    
-</div>
-<div class="repos">
-<ul>
-{% assign public_repositories = site.github.public_repositories | sort: 'updated_at'| reverse %}
-{% for repository in public_repositories %}
-	{% if repository.fork == false %}
-	<li> <a href="{{ repository.html_url }}"> {{ repository.name }} </a><br /> {{ repository.description }}<br />Last updated: {{ repository.updated_at}}</li>
-	{% endif %}
-{% endfor %}
-</ul>
-</div>
-         	  </div>    
-
-		</div> 	
-
-		<a id="atsp"></a>
-
-
-    </div> 
-
-{% comment %}
-
-
-
-{% endcomment %}
-
-
-</div>	
+		</div>	    		    
+    </div>
+        <div class="repos">
+            <h2>Repositories</h2>
+            <ul>
+            {% assign public_repositories = site.github.public_repositories | sort: 'updated_at'| reverse %}
+            {% for repository in public_repositories %}
+                {% if repository.fork == false %}
+                <li> <a href="{{ repository.html_url }}"> {{ repository.name }} </a><br /> {{ repository.description }}<br />Last updated: {{ repository.updated_at}}</li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+            </div>
+          </div>    
+    </div> 	
 
 
  <!-- // end of #centerbar-->
-    <div class="cd-color-4">
-		<div class="cd-container">
-            <div id="google_ads">
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- Banner Footer -->
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-2250446123648311"
-                     data-ad-slot="1271814276"
-                     data-ad-format="auto"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-		</div> 
-	</div>
+
 
 
 <script>
   var repos = {{ site.github.public_repositories | jsonify }};
 </script>
-</main>

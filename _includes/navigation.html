@@ -1,39 +1,17 @@
 <!-- Belongs at: /_includes/navigation.html -->
 
-<!-- This finds the current page so it can be highlighted. -->
-{% for entry in site.data.navigation %}
-{% capture fullurl %}{{ site.baseurl }}{{ entry.url }}{% endcapture %}
-    {% if fullurl == page.url %}
-        {% assign current_page = fullurl %}
-        {% break %}
-    {% elsif page.url contains fullurl %}
-        {% assign current_page = fullurl %}
-    {% endif %}
-{% endfor %}
 
 <!-- Then we build the nav bar. -->
 <nav>
+<h3><a href="/">Home</a></h3>
+    {% for item in  site.data.navigation.toc %}
     <ul>
-    {% for entry in site.data.navigation %}
-        {% if entry.url == current_page %}
-            {% assign current = ' class="current"' %}
-        {% else %}
-            <!-- We have to declare it 'null' to ensure it doesn't propagate. -->
-            {% assign current = null %}
-        {% endif %}
-        {% assign sublinks = entry.sublinks %}
-        {% if sublinks %}
-        <li{{ current }}>
-            <a href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a>
-            <ul>
-                {% for sublink in sublinks %}
-                <li><a href="{{ site.baseurl }}{{ sublink.url }}">{{ sublink.title }}</a></li>
-                {% endfor %}
-            </ul>
-        </li>
-        {% else %}
-        <li{{ current }}><a href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a></li>
-        {% endif %}
-    {% endfor %}
-    </ul>
+    <li><h3>{{ item.title }}</h3>
+  
+        {% for entry in item.sublinks %}
+        {% assign fullurl = page.path | prepend : '/' %}
+          <li class="{% if entry.url == fullurl %}active{% endif %}"><a href="{{ entry.url }}">{% if entry.url == fullurl %}<div class="arrow-right"></div>{% endif %}{{ entry.title }}</a></li>
+        {% endfor %}
+      </ul>
+  {% endfor %}
 </nav>

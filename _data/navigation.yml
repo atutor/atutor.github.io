@@ -1,14 +1,37 @@
 # Belongs at: /_data/navigation.yml
-
-- title: Home
-  url: /
-
-- title: Group of Things
-  url: /group/
+toc:
+- title: ATutor
+  url: /atutor/index.html
   sublinks:
-    - title: Sub-item 1
-      url: /group/si
-    - title: Sub-item 2
-      url: /group/si2
-    - title: Sub-item 3
-      url: /group/si31
+    - title: ATutor Details
+      url: /atutor/index.html
+    - title: Downloads
+      url: /atutor/downloads.html
+    - title: Features
+      url: /atutor/features.html
+    - title: Documentation
+      url: /atutor/docs/index.html
+    - title: Modules
+      url: /atutor/modules.html
+    - title: Translation
+      url: /atutor/languages.html
+- title: AContent
+  url: /acontent/
+  sublinks:
+    - title: AContent Details
+      url: /acontent/index.html
+    - title: Downloads
+      url: /acontent/downloads.html
+    - title: Documentation
+      url: /acontent/docs/index.html
+    - title: Languages
+      url: /acontent/languages.html
+- title: Developers
+  url: /devel/
+  sublinks:
+    - title: Developer Docs
+      url: /developer/guidelines.html
+    - title: Module Developer
+      url:  /developer/modules.html
+    - title: Translation
+      url: /developer/languages.html

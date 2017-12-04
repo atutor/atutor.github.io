@@ -26,10 +26,22 @@ background-color: rgba(0,0,0, 0.5);
     margin:0;
 }
 .sidemenu1{
-    width:19% !important;
+    width:20% !important;
      float:left;
      clear:left;
      height:100%;
+}
+.sidemenu1 .current{
+    background-color: #eeeeee;
+    font-weight:bold;
+}
+
+.sidemenu1 ul>li{
+    font-weight:bold;
+    list-style-type: none
+}
+.sidemenu1 ul>li>ul{
+   margin-left:2em;
 }
 .contentstart{
  width:80% !important;
@@ -43,7 +55,7 @@ div.repos {
     clear:both;
 }
 div.repos ul {
-    width:80%; 
+    width:95%; 
     margin-left:auto;
     margin-right:auto;
 }
@@ -66,7 +78,75 @@ div.google_ads{
     max-width:66em;
     margin-bottom:1em;
 }
+.repos h2{
+color:black;
+text-align:left !important;
+}
 
+.site-footer { padding-top:0 ; margin-top: 0; }
+
+.stds_table td{
+    vertical-align:top;
+   
+}
+.stds_table{
+ border:0;
+}
+.main-content table th, .main-content table td{
+    padding: 0.5rem 1rem;
+    border: 0 !important;
+}
+.main-content a {
+    color: #1e6bb8;
+    text-decoration: underline !important;
+}
+.sidemenu1 ul {
+    margin-top:-.5em;
+    margin-bottom:1.5em;
+}
+.sidemenu1 ul ul> li{
+margin-left:1em;
+}
+.sidemenu1 ul > li > ul{
+    padding-left:1em;
+}
+
+.sidemenu1 ul > li >a{
+    color: #333333;
+}
+.sidemenu1 ul > li.active a {
+    color: #159957;
+    cursor: default;
+    text-decoration:none !important;
+  }
+.arrow-right {
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid green;
+  float:left;
+  margin-right:.5em;
+}
+nav ul h3{
+    background-color:rgba(20, 89,45, 0.2);
+    padding-left:-1.2em;
+}
+nav  h3{
+    background-color:rgba(20, 89,45, 0.2);
+}
+.main-content nav > h3 >a{
+color: #159957 !important;
+text-decoration:none !important;
+}
+.main-content nav a{
+text-decoration:none !important;
+}
+cd-container h2, h3,h4,h5,h6{
+    text-align:left !important;
+    padding:none !important;
+    float:left;
+}
 /*******
 atutor.ca main styles
 ******/
