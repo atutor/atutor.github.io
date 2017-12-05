@@ -1,6 +1,3 @@
-/*******
-new styles for github.io
-*******/
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /** 1. Set default font family to sans-serif. 2. Prevent iOS text size adjust after orientation change, without disabling user zoom. */
 html { font-family: sans-serif; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ }
@@ -372,25 +369,32 @@ div.google_ads { margin-left: auto; margin-right: auto; max-width: 66em; margin-
 
 .sidemenu1 ul > li > ul { padding-left: 1em; }
 
-.sidemenu1 ul > li > a { color: #333333; }
+.sidemenu1 ul > li > a { color: #333333; padding: .2em 0 .2em 0; width: 100%; margin-left: 1em; }
+
+.sidemenu1 ul > li > a:hover, .sidemenu1 ul > li > a:focus { background-color: rgba(20, 89, 45, 0.2); padding: .2em 0 .2em 0; margin-left: 1em; }
 
 .sidemenu1 ul > li.active a { color: #159957; cursor: default; text-decoration: none !important; }
 
-.arrow-right { width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 10px solid green; float: left; margin-right: .5em; }
+.arrow-right { width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 10px solid green; float: left; margin-right: .5em; padding-left: .5em !important; }
 
-nav ul h3 { background-color: rgba(20, 89, 45, 0.2); padding-left: -1.2em; }
+nav ul h3 { background-color: rgba(20, 89, 45, 0.2); padding-left: .5em !important; }
 
-nav h3 { background-color: rgba(20, 89, 45, 0.2); }
+nav h3 { background-color: rgba(20, 89, 45, 0.2); padding-left: .5em; }
+
+nav h3 > a { padding: 0 0 0 .5em; width: 100% !important; margin-top: 0 !important; }
 
 .main-content nav > h3 > a { color: #159957 !important; text-decoration: none !important; }
 
 .main-content nav a { text-decoration: none !important; }
 
-cd-container h2, h3, h4, h5, h6 { text-align: left !important; padding: none !important; float: left; }
+cd-container h2, h3, h4, h5, h6 { text-align: left !important; padding: 0 !important; float: left; }
+
+h2, h3, h4, h5 { width: 100% !important; margin-top: 0 !important; }
 
 /*******
 atutor.ca main styles
 ******/
+/* @charset "utf-8";        */
  /*
 @font-face {
 font-family: "Varela Round";
@@ -858,7 +862,7 @@ main { margin-top: 1.8em; overflow: visible; }
 
 .parentelement::after { content: ""; display: table; clear: both; }
 
-#splash-links { white-space: nowrap; font-size: 1.2em; font-weight: 700; color: #ffffff; width: 26em; height: 2.5 em; margin-left: auto; margin-right: auto; }
+#splash-links { white-space: nowrap; font-size: 1.2em; font-weight: 700; color: #ffffff; width: 26em; height: 2.5em; margin-left: auto; margin-right: auto; }
 
 #splash-links ul > li { display: inline; }
 
@@ -868,7 +872,7 @@ main { margin-top: 1.8em; overflow: visible; }
 
 #splash-links a:hover, #splash-links a:focus { background-color: rgba(0, 0, 0, 0.5); }
 
-.tpbg { background-color: rgba(0, 0, 0, 0.5); background-position: center; height: 18.5vw; width: 92.2%; margin-left: auto; margin-right: auto; border: thick sold black; }
+.tpbg { background-color: rgba(0, 0, 0, 0.5); background-position: center; height: 18.5vw; width: 92.2%; margin-left: auto; margin-right: auto; border: thick solid black; }
 
 .tpbg h1 { font-size: 3.5em; text-align: center; font-weight: 700; }
 
@@ -878,7 +882,7 @@ main { margin-top: 1.8em; overflow: visible; }
 
 .clbg h1 { font-size: 5em; text-align: center; font-weight: 700; }
 
-.clbg h2 { font-size: 2.5em; text-align: center; font-weight: 500; }
+.clbg h2 { font-size: 2.5em; text-align: left; font-weight: 500; }
 
 .cd-fixed-bg { font-size: 1.3vw; background-size: cover; background-attachment: fixed; background-repeat: no-repeat; background-position: center center; background-color: #eeeeee; /* min-height: 27vw;     	*/ }
 

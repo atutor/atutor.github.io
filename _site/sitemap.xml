@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://localhost:4000/acontent/downloads.html</loc>
+</url>
+<url>
 <loc>http://localhost:4000/atutor/downloads.html</loc>
 </url>
 <url>
@@ -8,6 +11,12 @@
 </url>
 <url>
 <loc>http://localhost:4000/developer/guidelines.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/acontent/docs/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/acontent/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/atutor/docs/</loc>
@@ -19,7 +28,13 @@
 <loc>http://localhost:4000/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/acontent/languages.html</loc>
+</url>
+<url>
 <loc>http://localhost:4000/atutor/languages.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/developer/languages.html</loc>
 </url>
 <url>
 <loc>http://localhost:4000/developer/modules.html</loc>

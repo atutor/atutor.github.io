@@ -3,11 +3,6 @@
 
 @import "{{ site.theme }}";
 
----
----
-
-@import "{{ site.theme }}";
-
 .project-name {
     font-size: 3.25rem;
 }
@@ -21,12 +16,142 @@ background-color: rgba(0,0,0, 0.5);
     max-width: 100%;
     padding:0;
 }
+.main-navigation {
+    max-width: 20%;
+    padding:0;
+}
+.main-content h2{
+    margin:0;
+}
+.sidemenu1{
+    width:20% !important;
+     float:left;
+     clear:left;
+     height:100%;
+}
+.sidemenu1 .current{
+    background-color: #eeeeee;
+    font-weight:bold;
+}
 
+.sidemenu1 ul>li{
+    font-weight:bold;
+    list-style-type: none
+}
+.sidemenu1 ul>li>ul{
+   margin-left:2em;
+}
+.contentstart{
+    width:80% !important;
+    float:right;
+}
+.home-splash{
+    width:33vw !important;
+}
+div.repos {
+    padding:1em;
+    clear:both;
+}
+div.repos ul {
+    width:95%; 
+    margin-left:auto;
+    margin-right:auto;
+}
 
-/*
+div.repos ul li{ 
+    border-radius:.2em;
+    padding:1em; 
+    margin-top:1em;
+    list-style-type:none;
+    background-color:#ffffff;
+}
+
+div.repos ul li >a{ 
+    font-size:2em;
+}
+
+div.google_ads{
+    margin-left:auto;
+    margin-right:auto; 
+    max-width:66em;
+    margin-bottom:1em;
+}
+.repos h2{
+color:black;
+text-align:left !important;
+}
+
+.site-footer { 
+    padding-top:0 ; 
+    margin-top: 0; 
+}
+
+.stds_table td{
+    vertical-align:top;
+   
+}
+.stds_table{
+    border:0;
+}
+.main-content table th, .main-content table td{
+    padding: 0.5rem 1rem;
+    border: 0 !important;
+}
+.main-content a {
+    color: #1e6bb8;
+    text-decoration: underline !important;
+}
+.sidemenu1 ul {
+    margin-top:-.5em;
+    margin-bottom:1.5em;
+}
+.sidemenu1 ul ul> li{
+    margin-left:1em;
+}
+.sidemenu1 ul > li > ul{
+    padding-left:1em;
+}
+
+.sidemenu1 ul > li >a{
+    color: #333333;
+}
+.sidemenu1 ul > li.active a {
+    color: #159957;
+    cursor: default;
+    text-decoration:none !important;
+  }
+.arrow-right {
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid green;
+  float:left;
+  margin-right:.5em;
+}
+nav ul h3{
+    background-color:rgba(20, 89,45, 0.2);
+    padding-left:1.2em;
+}
+nav  h3{
+    background-color:rgba(20, 89,45, 0.2);
+}
+.main-content nav > h3 >a{
+    color: #159957 !important;
+    text-decoration:none !important;
+}
+.main-content nav a{
+    text-decoration:none !important;
+}
+cd-container h2, h3,h4,h5,h6{
+    text-align:left !important;
+    padding:0 !important;
+    float:left;
+}
+/*******
 atutor.ca main styles
-*/
-@charset "utf-8";       
+******/
+/* @charset "utf-8";       */
  /*
 @font-face {
 font-family: "Varela Round";
@@ -1106,12 +1231,14 @@ table.support{
     padding:.2em;
 }
 .home-splash{ 
-    height:auto;
-    width:27vw;
+    height:100%;
+    width:42vw;
     margin-left:.5vw;
     margin-right:.5vw;
     float:left;
     font-size: 1.3vw;
+    display:block;
+    overflow:auto;
     /* border:thin solid black; */
 }
 
@@ -1388,7 +1515,7 @@ main{
     font-weight:700;
     color:#ffffff;
     width:26em;
-    height:2.5 em;
+    height:2.5em;
     margin-left:auto;
     margin-right:auto;
 }
@@ -1416,19 +1543,19 @@ main{
 .tpbg{
     background-color:rgba(0, 0, 0, 0.5);
     background-position:center;
-    height:35.5vw;
+    height:18.5vw;
     width:92.2%;
     margin-left:auto;
     margin-right:auto;
-    border:thick sold black;
+    border:thick solid black;
  }
 .tpbg h1{
-    font-size:5em; 
+    font-size:3.5em; 
     text-align:center; 
     font-weight:700;
 }
 .tpbg h2{
-    font-size:3em; 
+    font-size:2.5em; 
     text-align:center; 
     font-weight:700;
     color:white;
@@ -1462,8 +1589,7 @@ main{
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-color:#eeeeee;
-    min-height: 27vw;
-     	
+   /* min-height: 27vw;     	*/
 }
 
 .cd-fixed-bg2 {
@@ -1485,7 +1611,7 @@ main{
 
 .cd-fixed-bg h1{
     margin:0;
-    font-size:6em; 
+    font-size:4em; 
     text-align:center; 
     font-weight:700;
 }
@@ -1837,4 +1963,3 @@ div.login2{
     max-width:66em;
     background-color:white;
 }
-
