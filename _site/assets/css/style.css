@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /** 1. Set default font family to sans-serif. 2. Prevent iOS text size adjust after orientation change, without disabling user zoom. */
 html { font-family: sans-serif; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ }
@@ -369,7 +370,7 @@ div.google_ads { margin-left: auto; margin-right: auto; max-width: 66em; margin-
 
 .sidemenu1 ul > li > ul { padding-left: 1em; }
 
-.sidemenu1 ul > li > a { color: #333333; padding: .2em 0 .2em 0; width: 100%; margin-left: 1em; }
+.sidemenu1 ul > li > a { color: #333333; font-size: 1.4vw; padding: .1em 0 .1em 0; width: 100%; margin-left: 1em; }
 
 .sidemenu1 ul > li > a:hover, .sidemenu1 ul > li > a:focus { background-color: rgba(20, 89, 45, 0.2); padding: .2em 0 .2em 0; margin-left: 1em; }
 
@@ -379,9 +380,9 @@ div.google_ads { margin-left: auto; margin-right: auto; max-width: 66em; margin-
 
 nav ul h3 { background-color: rgba(20, 89, 45, 0.2); padding-left: .5em !important; }
 
-nav h3 { background-color: rgba(20, 89, 45, 0.2); padding-left: .5em; }
+nav h3 { background-color: rgba(20, 89, 45, 0.2); padding-left: .5em; font-size: 1.6vw; font-weight: 700; }
 
-nav h3 > a { padding: 0 0 0 .5em; width: 100% !important; margin-top: 0 !important; }
+nav h3 > a { padding: 0 0 0   .5em; width: 100% !important; }
 
 .main-content nav > h3 > a { color: #159957 !important; text-decoration: none !important; }
 
@@ -390,6 +391,24 @@ nav h3 > a { padding: 0 0 0 .5em; width: 100% !important; margin-top: 0 !importa
 cd-container h2, h3, h4, h5, h6 { text-align: left !important; padding: 0 !important; float: left; }
 
 h2, h3, h4, h5 { width: 100% !important; margin-top: 0 !important; }
+
+.home-splash > ul > li { background: rgba(255, 255, 255, 0.2) !important; padding: 1em !important; }
+
+.home-splash ul { list-style-position: inside; list-style-type: circle; font-size: 1em !important; margin-left: 0 !important; }
+
+.breadcrumbs { position: none; list-style-type: none; }
+
+.breadcrumbs li { display: inline; padding: .2em; }
+
+.breadcrumbs a:hover, .breadcrumbs a:focus { background-color: rgba(20, 89, 45, 0.2); }
+
+.breadcrumbs a, .breadcrumbs a:hover, .breadcrumbs a:focus { padding: .2em; color: black; }
+
+li.active a { text-decoration: none !important; }
+
+.breadcrumbs li a:after { content: " »"; }
+
+.breadcrumbs li.active a:after { content: " "; }
 
 /*******
 atutor.ca main styles
@@ -658,7 +677,7 @@ dl.login { margin: 0; }
 
 .login_bottom { width: 18em; margin-left: auto; margin-right: auto; }
 
-ul { list-style-position: inside; list-style-type: circle; font-size: 1em; margin-left: .5em; }
+ul { list-style-position: inside; list-style-type: circle; margin-left: .5em; }
 
 /* myAtutor styles: */
 div.manage { position: relative; width: 250px; border: #cccccc 1px solid; border-radius: .2em; box-shadow: .1em .1em .1em #000; background-color: #FFFFFF; float: left; margin: 5px; padding: 5px; }
@@ -776,7 +795,7 @@ table.support { width: 90%; margin-left: auto; margin-right: auto; }
 
 .home-splash > ul > li { vertical-align: top; display: inline-block; border: 1px solid #eeeeee; border-radius: .2em; height: auto; min-height: 20vw; box-shadow: 1px 1px 1px #888888; padding: .6em; background: rgba(255, 255, 255, 0.95); }
 
-.home-splash h2 { line-height: .5em; margin-bottom: .2em; border-bottom: .08em solid #1a4a72; height: .68em; }
+.home-splash h2 { line-height: .5em; margin-top: 1em; margin-bottom: .2em; border-bottom: .08em solid #1a4a72; height: .68em; }
 
 .home-line { display: none; /*  border:1px solid #cccccc; */ }
 
@@ -872,7 +891,7 @@ main { margin-top: 1.8em; overflow: visible; }
 
 #splash-links a:hover, #splash-links a:focus { background-color: rgba(0, 0, 0, 0.5); }
 
-.tpbg { background-color: rgba(0, 0, 0, 0.5); background-position: center; height: 18.5vw; width: 92.2%; margin-left: auto; margin-right: auto; border: thick solid black; }
+.tpbg { background-color: rgba(0, 0, 0, 0.5); background-position: center; height: 18.5vw; width: 92.2%; margin-left: auto; margin-right: auto; }
 
 .tpbg h1 { font-size: 3.5em; text-align: center; font-weight: 700; }
 
@@ -1034,3 +1053,13 @@ div.login2 { float: left; width: 25em; margin-left: 5%; }
 .gmatched_out { height: auto; width: 100%; background-color: transparent; margin-top: 0; }
 
 .gmatched_in { height: auto; width: 100%; margin-left: auto; margin-right: auto; max-width: 66em; background-color: white; }
+
+@media screen and (max-width: 768px) { .home-splash { display: list-item; width: 98% !important; margin: 1em; font-size: 2.2vw; }
+  .home-splash ul { font-size: 2.8vw; }
+  body { font-size: 1.2em !important; }
+  .sidemenu1 ul > li > a { font-size: 2vw; }
+  nav h3 { font-size: 2.5vw; } }
+@media only screen and (max-width: 480px) { .sidemenu1 { width: 100% !important; font-size: 3.8vw !important; }
+  nav h3 { font-size: 4.5vw; }
+  .sidemenu1 ul > li > a { font-size: 4vw; }
+  .contentstart { width: 100% !important; } }
