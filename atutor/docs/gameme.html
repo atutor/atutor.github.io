@@ -1,0 +1,722 @@
+---
+title: ATutor GameMe
+layout: home
+breadcrumb: gameme
+---
+<div class="cd-container">
+ <h3 id="ATutorGamification-GameMeStatus">GameMe Status</h3>
+
+  <p>Status: Stable 1.0</p>
+
+  <h4 id="ATutorGamification-Download">Download</h4>
+
+  <p>Download module at:</p>
+
+  <p><a href="/atutor/modules.php" class="external-link" rel=
+  "nofollow">ATutor Modules</a></p>
+
+  <h4 id="ATutorGamification-Developers">Developers</h4>
+
+  <p>To clone GameMe, find your way to the mods/ directory in ATutor, and at the command
+  prompt, assuming your system has Git installed, issue the following command:</p>
+
+  <p><strong>git clone <span class="nolink"><a href=
+  "https://github.com/atutor/gameme.git" class="external-link" rel=
+  "nofollow">https://github.com/atutor/gameme.git</a></span></strong></p>
+
+  <h4 id="ATutorGamification-Installation"><strong><span class=
+  "nolink">Installation<br /></span></strong></h4>
+
+  <p>See the Installing and Using ATutor GameMe video, below.</p>
+
+  <p><strong>ATutorSpaces user</strong> see the Administrator's Install Modules utility
+  to install GameMe on your site.</p>
+
+  <h3 id="ATutorGamification-GameMeDocumentation">GameMe Documentation</h3>
+
+  <p><a href="/display/atutorwiki/GameMe+1.0+Administrator+Documentation">GameMe 1.0
+  Administrator Documentation</a></p>
+
+  <p><a href="/display/atutorwiki/GameMe+1.0+Instructor+Documentation">GameMe 1.0
+  Instructor Documentation</a></p>
+
+  <p><a href="/display/atutorwiki/Gamifying+ATutor+Courses">Gamifying ATutor
+  Courses</a></p>
+
+  <h3 id="ATutorGamification-InstallingandUsingATutorGameMe">Installing and Using ATutor
+  GameMe</h3>
+
+  <p><iframe class="youtube-player" type="text/html" style="width: 640px; height: 360px"
+  src="//www.youtube.com/embed/1PRhyL7cZHM" frameborder="0"></iframe></p>
+
+  <h3 id="ATutorGamification-ATutorGameMeDemo">ATutor GameMe Demo</h3>
+
+  <p>GameMe is installed on the ATutor demo site. Login as the "admin" user and look
+  under the GameMe Tab. Or, login as the "demo" user and look under the Manage Tab in the
+  ATutorSpaces Demo Course, and see the GameMe tool. Note that the demo gets reset every
+  six hours. So feel free to experiment, but keep in mind everything you do in the Demo
+  will be deleted.</p>
+
+  <p><a href="http://www.atutor.ca/atutor/demo.php" class="external-link" rel=
+  "nofollow">ATutor Demo</a></p>
+
+  <h3 id="ATutorGamification-GamificationBase">Gamification Base</h3>
+
+  <h4 id="ATutorGamification-PHPGamification">PHPGamification</h4>
+
+  <p>Originally cloned from: <a href="https://github.com/TiagoGouvea/PHPGamification.git"
+  class="external-link" rel=
+  "nofollow">https://github.com/TiagoGouvea/PHPGamification.git</a></p>
+
+  <h4 id="ATutorGamification-ModuleCode">Module Code</h4>
+
+  <p>ATutor module repository: gameme</p>
+
+  <p><a href="https://github.com/atutor/gameme" class="external-link" rel=
+  "nofollow">https://github.com/atutor/gameme</a></p>
+
+  <h3 id="ATutorGamification-Features">Features</h3>
+
+  <h4 id="ATutorGamification-Administrator">Administrator</h4>
+
+  <ul>
+    <li>Create and maintain default game elements: events, levels, and badges</li>
+
+    <li>Enable/Disable instructor customizing of default game elements</li>
+  </ul>
+
+  <h4 id="ATutorGamification-Instructor">Instructor</h4>
+
+  <ul>
+    <li>Customize course specific game elements: events, levels, and badges (if
+    enabled)</li>
+
+    <li>Enable/Disable game elements within courses</li>
+
+    <li>Review user partcipation and accomplishments</li>
+  </ul>
+
+  <h4 id="ATutorGamification-Student">Student</h4>
+
+  <ul>
+    <li>Earn points with course participation and progress through levels</li>
+
+    <li>Collect badges for course accomplishments</li>
+
+    <li>Receive alerts by email when badges and levels are issued</li>
+
+    <li>Review activity log, strategize for points and badges, and compete with
+    classmates</li>
+
+    <li>View points, badges, and levels in the GameMe Student Panel or in a side-menu
+    block</li>
+  </ul>
+
+  <h4 id="ATutorGamification-DefaultBadges(v1.0)">Default Badges (v 1.0)</h4>
+
+  <p>There are 26 Default Badges that come with GameMe 1.0, any of which can be edited at
+  the system level by the administrator, and at the course level by instructors.</p>
+
+  <div class="table-wrap">
+    <table class="confluenceTable tablesorter">
+      <thead>
+        <tr class="sortableHeader">
+          <th style="text-align: center;" class="confluenceTh sortableHeader"
+          data-column="0">
+            <div class="tablesorter-header-inner">
+              Badge id
+            </div>
+          </th>
+
+          <th style="text-align: center;" class="confluenceTh sortableHeader"
+          data-column="1">
+            <div class="tablesorter-header-inner">
+              Alias
+            </div>
+          </th>
+
+          <th style="text-align: center;" class="confluenceTh sortableHeader"
+          data-column="2">
+            <div class="tablesorter-header-inner">
+              Reach Repetitions
+            </div>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td style="text-align: center;" class="confluenceTd">
+            <p>1</p>
+          </td>
+
+          <td style="text-align: center;" class="confluenceTd">profile_view_badge</td>
+
+          <td style="text-align: center;" class="confluenceTd">10</td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center;" class="confluenceTd">2</td>
+
+          <td style="text-align: center;" class="confluenceTd">profile_viewed_badge</td>
+
+          <td style="text-align: center;" class="confluenceTd">25</td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center;" class="confluenceTd">3</td>
+
+          <td style="text-align: center;" class="confluenceTd">
+          profile_pic_upload_badge</td>
+
+          <td style="text-align: center;" class="confluenceTd">1</td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center;" class="confluenceTd">4</td>
+
+          <td style="text-align: center;" class="confluenceTd">prefs_update_badge</td>
+
+          <td style="text-align: center;" class="confluenceTd">1</td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center;" class="confluenceTd">5</td>
+
+          <td style="text-align: center;" class="confluenceTd">read_page_badge</td>
+
+          <td style="text-align: center;" class="confluenceTd">25</td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center;" class="confluenceTd">6</td>
+
+          <td style="text-align: center;" class="confluenceTd">new_folder_badge</td>
+
+          <td style="text-align: center;" class="confluenceTd">5</td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center;" class="confluenceTd">7</td>
+
+          <td style="text-align: center;" class="confluenceTd">upload_file_badge</td>
+
+          <td style="text-align: center;" class="confluenceTd">5</td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center;" class="confluenceTd">8</td>
+
+          <td style="text-align: center;" class="confluenceTd">create_file_badge</td>
+
+          <td style="text-align: center;" class="confluenceTd">2</td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center;" class="confluenceTd">9</td>
+
+          <td style="text-align: center;" class="confluenceTd">forum_view_badge</td>
+
+          <td style="text-align: center;" class="confluenceTd">50</td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center;" class="confluenceTd">10</td>
+
+          <td style="text-align: center;" class="confluenceTd">forum_post_badge</td>
+
+          <td style="text-align: center;" class="confluenceTd">10</td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center;" class="confluenceTd">11</td>
+
+          <td style="text-align: center;" class="confluenceTd">forum_reply_badge</td>
+
+          <td style="text-align: center;" class="confluenceTd">10</td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center;" class="confluenceTd">12</td>
+
+          <td style="text-align: center;" class="confluenceTd">blog_add_badge</td>
+
+          <td style="text-align: center;" class="confluenceTd">10</td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center;" class="confluenceTd">13</td>
+
+          <td style="text-align: center;" class="confluenceTd">blog_comment_badge</td>
+
+          <td style="text-align: center;" class="confluenceTd">5</td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center;" class="confluenceTd">14</td>
+
+          <td style="text-align: center;" class="confluenceTd">chat_login_badge</td>
+
+          <td style="text-align: center;" class="confluenceTd">10</td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center;" class="confluenceTd">15</td>
+
+          <td style="text-align: center;" class="confluenceTd">chat_post_badge</td>
+
+          <td style="text-align: center;" class="confluenceTd">10</td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center;" class="confluenceTd">16</td>
+
+          <td style="text-align: center;" class="confluenceTd">link_add_badge</td>
+
+          <td style="text-align: center;" class="confluenceTd">5</td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center;" class="confluenceTd">17</td>
+
+          <td style="text-align: center;" class="confluenceTd">
+          photo_create_album_badge</td>
+
+          <td style="text-align: center;" class="confluenceTd">1</td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center;" class="confluenceTd">18</td>
+
+          <td style="text-align: center;" class="confluenceTd">
+          photo_create_album_badge</td>
+
+          <td style="text-align: center;" class="confluenceTd">3</td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center;" class="confluenceTd">19</td>
+
+          <td style="text-align: center;" class="confluenceTd">photo_upload_badge</td>
+
+          <td style="text-align: center;" class="confluenceTd">15</td>
+        </tr>
+
+        <tr>
+          <td colspan="1" style="text-align: center;" class="confluenceTd">20</td>
+
+          <td colspan="1" style="text-align: center;" class="confluenceTd">
+          photo_comment_badge</td>
+
+          <td colspan="1" style="text-align: center;" class="confluenceTd">5</td>
+        </tr>
+
+        <tr>
+          <td colspan="1" style="text-align: center;" class="confluenceTd">21</td>
+
+          <td colspan="1" style="text-align: center;" class="confluenceTd">
+          photo_album_comment_badge</td>
+
+          <td colspan="1" style="text-align: center;" class="confluenceTd">5</td>
+        </tr>
+
+        <tr>
+          <td colspan="1" style="text-align: center;" class="confluenceTd">22</td>
+
+          <td colspan="1" style="text-align: center;" class="confluenceTd">
+          photo_description_badge</td>
+
+          <td colspan="1" style="text-align: center;" class="confluenceTd">5</td>
+        </tr>
+
+        <tr>
+          <td colspan="1" style="text-align: center;" class="confluenceTd">23</td>
+
+          <td colspan="1" style="text-align: center;" class="confluenceTd">
+          photo_alt_text</td>
+
+          <td colspan="1" style="text-align: center;" class="confluenceTd">5</td>
+        </tr>
+
+        <tr>
+          <td colspan="1" style="text-align: center;" class="confluenceTd">24</td>
+
+          <td colspan="1" style="text-align: center;" class="confluenceTd">
+          login_badge</td>
+
+          <td colspan="1" style="text-align: center;" class="confluenceTd">25</td>
+        </tr>
+
+        <tr>
+          <td colspan="1" style="text-align: center;" class="confluenceTd">25</td>
+
+          <td colspan="1" style="text-align: center;" class="confluenceTd">
+          logout_badge</td>
+
+          <td colspan="1" style="text-align: center;" class="confluenceTd">5</td>
+        </tr>
+
+        <tr>
+          <td colspan="1" style="text-align: center;" class="confluenceTd">26</td>
+
+          <td colspan="1" style="text-align: center;" class="confluenceTd">
+          welcome_badge</td>
+
+          <td colspan="1" style="text-align: center;" class="confluenceTd">1</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4 id="ATutorGamification-DefaultEvents(v1.0)">Default Events (v 1.0)</h4>
+
+  <p>There are 38 Default Events that come with GameMe, each of which can be edited at
+  the system level by the administrator, and at the course level by instructors.</p>
+
+  <div class="table-wrap">
+    <table class="confluenceTable tablesorter">
+      <thead>
+        <tr class="sortableHeader">
+          <th colspan="1" class="confluenceTh sortableHeader" data-column="0">
+            <div class="tablesorter-header-inner">
+              ID
+            </div>
+          </th>
+
+          <th colspan="1" class="confluenceTh sortableHeader" data-column="1">
+            <div class="tablesorter-header-inner">
+              Alias
+            </div>
+          </th>
+
+          <th colspan="1" class="confluenceTh sortableHeader" data-column="2">
+            <div class="tablesorter-header-inner">
+              Description
+            </div>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td class="confluenceTd">1</td>
+
+          <td class="confluenceTd">login</td>
+
+          <td class="confluenceTd">Login</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">2</td>
+
+          <td class="confluenceTd">profile_view</td>
+
+          <td class="confluenceTd">Profile view other's</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">3</td>
+
+          <td class="confluenceTd">profile_viewed</td>
+
+          <td class="confluenceTd">Profile viewed by others</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">4</td>
+
+          <td class="confluenceTd">sent_message</td>
+
+          <td class="confluenceTd">Send a private message</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">5</td>
+
+          <td class="confluenceTd">profile_pic_upload</td>
+
+          <td class="confluenceTd">Upload a profile picture</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">6</td>
+
+          <td class="confluenceTd">read_list_view</td>
+
+          <td class="confluenceTd">View reading list details</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">7</td>
+
+          <td class="confluenceTd">prefs_update</td>
+
+          <td class="confluenceTd">Update personal preferences</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">8</td>
+
+          <td class="confluenceTd">read_page</td>
+
+          <td class="confluenceTd">Pages viewed</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">9</td>
+
+          <td class="confluenceTd">new_folder</td>
+
+          <td class="confluenceTd">Create file storage folder</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">10</td>
+
+          <td class="confluenceTd">upload_file</td>
+
+          <td class="confluenceTd">Upload to file storage</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">11</td>
+
+          <td class="confluenceTd">create_file</td>
+
+          <td class="confluenceTd">Create file in file storage</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">12</td>
+
+          <td class="confluenceTd">file_comment</td>
+
+          <td class="confluenceTd">Comment on a file storage file</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">13</td>
+
+          <td class="confluenceTd">file_description</td>
+
+          <td class="confluenceTd">Provide description for file storage file</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">14</td>
+
+          <td class="confluenceTd">forum_view</td>
+
+          <td class="confluenceTd">Forum discussions viewed</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">15</td>
+
+          <td class="confluenceTd">forum_post</td>
+
+          <td class="confluenceTd">Forum posts</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">16</td>
+
+          <td class="confluenceTd">forum_reply</td>
+
+          <td class="confluenceTd">Forum replies</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">17</td>
+
+          <td class="confluenceTd">read_time</td>
+
+          <td class="confluenceTd">Page view time</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">18</td>
+
+          <td class="confluenceTd">blog_add</td>
+
+          <td class="confluenceTd">Blob posts</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">19</td>
+
+          <td class="confluenceTd">blog_comment</td>
+
+          <td class="confluenceTd">Blog comments</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">20</td>
+
+          <td class="confluenceTd">blog_view</td>
+
+          <td class="confluenceTd">Blog views</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">21</td>
+
+          <td class="confluenceTd">blog_post_view</td>
+
+          <td class="confluenceTd">Blog posts viewed</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">22</td>
+
+          <td class="confluenceTd">chat_login</td>
+
+          <td class="confluenceTd">Chat login</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">23</td>
+
+          <td class="confluenceTd">chat_post</td>
+
+          <td class="confluenceTd">Chat posts</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">24</td>
+
+          <td class="confluenceTd">link_add</td>
+
+          <td class="confluenceTd">Links added</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">25</td>
+
+          <td class="confluenceTd">link_view</td>
+
+          <td class="confluenceTd">Links followed</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">26</td>
+
+          <td class="confluenceTd">poll_post</td>
+
+          <td class="confluenceTd">Polls posted</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">27</td>
+
+          <td class="confluenceTd">photo_create_album</td>
+
+          <td class="confluenceTd">Photo album created</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">28</td>
+
+          <td class="confluenceTd">photo_upload</td>
+
+          <td class="confluenceTd">Photo uploads</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">29</td>
+
+          <td class="confluenceTd">photo_view_album</td>
+
+          <td class="confluenceTd">View photo album</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">30</td>
+
+          <td class="confluenceTd">photo_view_photo</td>
+
+          <td class="confluenceTd">View photo</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">31</td>
+
+          <td class="confluenceTd">photo_comment</td>
+
+          <td class="confluenceTd">Comment on a photo</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">32</td>
+
+          <td class="confluenceTd">photo_album_comment</td>
+
+          <td class="confluenceTd">Comment on an album</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">33</td>
+
+          <td class="confluenceTd">photo_description</td>
+
+          <td class="confluenceTd">Photo descriptions provided</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">34</td>
+
+          <td class="confluenceTd">photo_alt_text</td>
+
+          <td class="confluenceTd">Photo Alt texts provided</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">35</td>
+
+          <td class="confluenceTd">photo_create_albums</td>
+
+          <td class="confluenceTd">Photo albums created</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">36</td>
+
+          <td class="confluenceTd">NA</td>
+
+          <td class="confluenceTd">NA</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">37</td>
+
+          <td class="confluenceTd">submit_test</td>
+
+          <td class="confluenceTd">Submit a test or quiz</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">38</td>
+
+          <td class="confluenceTd">logout</td>
+
+          <td class="confluenceTd">Logout (not timeout)</td>
+        </tr>
+
+        <tr>
+          <td class="confluenceTd">39</td>
+
+          <td class="confluenceTd">welcome</td>
+
+          <td class="confluenceTd">First course login</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+                
+        
+    
+        </div>  
+</div>
+
+

@@ -8,10 +8,11 @@ layout: home
 		    <ul>
 		      <li><h2><a href="atutor/" class="splash-link">ATutor</a> </h2> 
 		      <hr class="home-line" /> 
-		      <p>ATutor is a FREE Open Source LMS, used to develop online courses and create elearning content. Some more text here to see if thats causing the wrap. </p>
-		      <ul><li><a href="http://www.atutor.ca/atutor/download.php"><span style="color: #6cc644;font-weight:700;">NEW: ATutor 2.2.3-b1 Released</span></a></li>
-		        <li><a href="/atutor/features.php">ATutor Features</a></li>
-		        <li><a href="/atutor/demo.php">Try the ATutor Demo</a></li>
+		      <p>ATutor is an Open Source LMS, used to develop and manage online courses, and create and distribute interoperable elearning content.  </p>
+		      <ul><li><a href="/atutor/downloads.html"><span style="color: #6cc644;font-weight:700;">Download ATutor 2.2.3-b1 for PHP7</span></a></li>
+		        <li><a href="https://github.com/atutor/ATutor/releases/tag/atutor_2_2_2"><span style="color: #6cc644;font-weight:700;">Download ATutor 2.2.2 </span></a></li>
+		        <li><a href="/atutor/features.html">ATutor Features</a></li>
+		        <li><a href="https://demo.atutorspaces.com/atutor/demo.php">Try the ATutor Demo</a></li>
 		        </ul>
 		      </li>
 		      </ul>
@@ -20,7 +21,7 @@ layout: home
 		    <ul>
 		      <li><h2><a href="acontent/" class="splash-link">AContent</a> </h2> 
                   <hr class="home-line" /> 
-                  <p>AContent is a FREE Open Source LCMS, used to develop and share elearning content. Integrates with ATutor and other LMSs</p>
+                  <p>AContent is an Open Source LCMS, used to develop and share elearning content. Integrates with ATutor and other LMSs as a central content repository.</p>
                   <ul><li><a href="/acontent/demo.php"><span style="color: #6cc644;font-weight:700;">TEST: AContent 1.4 Preview</span></a></li>
                     <li><a href="/acontent">About AContent</a></li>
                     <li><a href="/acontent/demo.php">Try the AContent Demo</a></li>
@@ -35,14 +36,14 @@ layout: home
         <div class="repos">
             <h2>Repositories</h2>
             <ul>
-            
+            {% comment %}
             {% assign public_repositories = site.github.public_repositories | sort: 'updated_at'| reverse %}
             {% for repository in public_repositories %}
                 {% if repository.fork == false %}
                 <li> <a href="{{ repository.html_url }}"> {{ repository.name }} </a><br /> {{ repository.description }}<br />Last updated: {{ repository.updated_at}}</li>
                 {% endif %}
             {% endfor %}
-            
+            {% endcomment %}
             </ul>
             </div>
                 </div>  

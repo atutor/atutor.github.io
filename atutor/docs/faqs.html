@@ -1,0 +1,110 @@
+---
+title: ATutor FAQs
+layout: home
+breadcrumb: faqs
+---
+<div class="cd-container">
+<h2>Frequently Asked Questions</h2>
+<!-- p>Please help us save on unnecessary forum support requests, and focus that money back into ATutor development. Unresearched support requests are costly to all ATutor users, not to mention annoying when the value of the free help found the forums is disregarded. Please try to help yourself before asking others to help you.<br /><br /></p -->
+<p>The following are a few questions that get asked often. Many other questions can be answered by reading the <a href="/atutor/docs/">documentation</a>. See the <a href="http://help.atutor.ca">ATutor Handbook</a> and use its search tool to find keywords associated with your question. Answers can also be found by searching the atutor.ca Web site using the  <a href="/gad_search.php">Google Search</a> above. The search returns results from all public pages under atutor.ca, as well as answers found in forum posts.</p>
+
+<h4><em>Q:</em></h4>
+<ol>
+    <li><a href="#7">Why can I not upload larger files into ATutor?</a></li>
+
+	<li><a href="#1">Why can I not get mail to send from ATutor?</a></li>
+	<li><a href="#2">I've upload ATutor file-by-file using my FTP client, but now  that its installed, I get lots of different error messages or blank pages?</a></li>
+	<li><a href="#3">How come I am unable to, or can no longer upload files to my course.</a></li>
+	<li><a href="#4">The language I need is not available for the current version of ATutor. Do I have to use an older version of ATutor?</a></li>
+	<li><a href="#5">Why am I being asked to pay for support when ATutor is free open source software?</a></li>
+	<li><a href="#6">Why won't ATutor staff login to my ATutor system to help resolve a bug I think I found?</a></li>
+
+</ol>
+
+<h4><em>A:</em></h4>
+<ol>	<li><a id="7" name="7"></a><strong>Why can I not upload larger files into ATutor?</strong><br>
+<p>There are a number of reasons why larger files may not upload into ATutor. In general you should try to keep the size of your courses as small as you can if you intend to reuse the content either by exporting it into content packages or common cartridges, for reuse in ATutor or other systems, or by creating course backups for reuse in ATutor.</p>
+<ol>
+<li><p><strong>PHP.INI settings</strong> provide primary control over the size of files that can be uploaded or import from a URL into ATutor. </p>
+
+	  <ul style="list-style:disc;">
+	  <li><a href="http://www.php.net/manual/en/ini.core.php#ini.upload-max-filesize">upload_max_filesize</a> set to 2M by default, limits the size of individual files that can be uploaded. You will likely want to increase this value if you are using multimedia in course content. (see note below)</li><br>
+	  <li><a href="http://www.php.net/manual/en/ini.core.php#ini.post-max-size">post_max_size</a> set to 8M by default, limits the size of files that can be imported via a URL. This value should also be set to something larger if you importing multi media content from external sources on the Web.</li><br>
+	  <li><a href="http://www.php.net/manual/en/ini.core.php#ini.memory-limit">memory_limit</a> set to 128MB by default, limits the amount of memory a script can use each time it runs, for each user runing it. This setting is the main reason why importing and exporting larger files may fail. You can set this value to something larger, but it is not recommended. If you happend to have 10 people importing files at the same time, that's 1.28 Gig of memory being used. When you are importing zipped content in a common cartridge, content package, or course backup, a significant amount of processing power is needed to unzip the file, process the XML that describes where files go, and actually move the content into the correct locations. The default setting of 128M would allow you to import a cartridge of about half that size (64M). If you happen to have an endless supply of processing power, there are technically no limits on the size of content you import, but in reality you will want to keep you content units down to a manageable size. </li><br>
+	  </ul>
+	  <div class="to_top"><a href="#top" class="up-arrow">Top</a></div>
+</li>
+<li>
+
+	<p><strong>ATutor settings</strong> provide additional control over the size of files that can be uploaded into courses, and the overall size of each course. The ATutor administrator can control these limits on a course by course basis. The ATutor settings however, can not exceed those set in PHP.INI. To grant instructors the ability to upload larger files, or use more space than the default 10M, these value can be set in the course properties.</p>
+	<div class="to_top"><a href="#top" class="up-arrow">Top</a></div>
+</li>
+</ol><br>
+
+	  <p><strong>Note:</strong> Given the size limits on importing and exporting of content, it is advisable to keep your larger files separate from your course content, perhaps locating it in one location, then linking to it from within your content. For multimedia, use one of the video hosting services available (like YouTube) and link to your videos there from within your content. This will save you a lot of trouble when it comes to exporting content from ATutor, or importing it into ATutor or into other systems, and it will keep your system administrator from complaining when you are using up too much disk space. Backups of a course that happen to have hundreds of MBs of video in it, quickly uses up GBs of disk space when backups are created. Work is underway to try to improve the <a href="http://www.phpconcept.net/pclzip/faq#faq03">processing requirements for the third party PclZip class</a> used in ATutor to zip and unzip files. </p>
+<div class="to_top"><a href="#top" class="up-arrow">Top</a></div>
+	  </li><br>
+	<li><a id="1" name="1"></a><strong>Why can I not get mail to send from ATutor?</strong><br>
+	<p>ATutor expects a sendmail executable to be available that submits a message sent from ATutor into the system's mail cue. From there it can be sent via a number of mail transfer agents including Sendmail itself, or another mail agent such as PostFix or QMail. ATutor sends, but does not receive email. </p><br>
+
+	<p>On Linux (or Mac) systems the best option is to use the locally installed Sendmail application. If configured to handle mail and functioning correctly before ATutor is installed, mail should work in ATutor without any additional configuration. For  more about configuring Sendmail visit one of the many configuration howto sites such as the How To Wiki.</p>
+	
+	<p><a href="http://www.wikihow.com/Configure-Sendmail">Configure Sendmail HowTo</a></p>
+	
+	<p>If the path to your Sendmail installation is not listed in the default PATH for your system after running "which sendmail" at the command prompt, the path to Sendmail needs to be defined as the value for "sendmail_path" in the system's php.ini file.<br><br></p>
+	
+	<p>If you are running ATutor on a Windows system, you will likely need to define a location of a remote SMTP server in the system's php.ini file.  The SMTP server that is defined must accept incoming mail transfers. To define an external SMPT server set the following values in php.ini, replacing the value of SMTP with an appropriate location.<br></p>
+	
+	<p><strong><kbd>SMTP = someplace.aserver.com</kbd><br>
+	<kbd>smtp_port = 25</kbd></strong><br></p><br>
+	<div class="to_top"><a href="#top" class="up-arrow">Top</a></div>
+	</li>
+
+	<li><a id="2" name="2"></a><strong>I've upload ATutor file-by-file using my FTP client, but now  that it's installed, I get different error messages or blank pages. What's the problem?</strong><br><br>
+	<p>While it is possible in some cases to unzip the ATutor.tar.gz file on your computer, then upload all the extracted files one-by-one, the chance of something going wrong is very high.  You should always upload the tar.gz file to your server, then unpack the file there.<br></p><br>
+
+	<p>If unpacking on the server is not an option,  you can use something like SyncBack to ensure the files uploaded have not degraded during the transfer.</p>
+
+	<p><a href="http://www.2brightsparks.com/downloads.html#freeware">SyncBack Download</a></p>
+
+	<p>For help with SyncBack, contact its developer.</p><br></li>
+
+	<li><a id="3" name="3"></a><strong>How come I am unable to, or can no longer upload files to my course?</strong><br>
+	<p>By default the maximum size of a file that can be uploaded into ATutor is 1 MB, and the maximum space for a course is 10MB. This can be changed by the ATutor administrator in the Course's Properties, found under the Courses tab, then selecting a course and pressing the Edit button.</p><br>
+
+	<p>The system administrator can grant as much space to a course as he or she chooses, but can only allow upload file sizes up to the size defined as the maximum by PHP. That value can be changed by modifying the system's php.ini file, setting the values of <strong><kbd>upload_max_filesize</kbd></strong> and <strong><kbd>post_max_filesize</kbd></strong> to a larger value, then restarting the Web server to activate the new settings.<br></p><br>
+	
+	<p>It is also necessary for the ATutor content directory, where files are uploaded to, to be writeable by the Web server's user. This user is often called “nobody” or “apache.” The content directory is usually set to be writeable during the installation or upgrade process.  Check for write permission on the content directory, and that any files or directories inside the content directory are owned by the web server user.<br></p><br>
+	<div class="to_top"><a href="#top" class="up-arrow">Top</a></div>
+	</li>
+
+	<li><a id="4" name="4"></a><strong>The language I need is not available for the current version of ATutor. Do I have to use an older version of ATutor?</strong>
+	<p>No, you can use the current version with an older language pack, then update the language. In many cases if a language pack is not available for the current version, a partially completed one is available from an older version of ATutor. You can translate any items that may be missing from the new version. In most cases bringing a language pack up-to-date can be completed in a relatively short period of time. For details on translating ATutor, and importing older language packs, see the translator documentation.<br></p>
+
+	<p><a href="/atutor/docs/translate.php">Translator Documentation</a><br></p><br>
+
+	<p>Also, if you update a language or translate a new language for ATutor, be sure to export the language pack from your ATutor installation, and attach it to a forum post in the atutor.ca Translation forum so it gets archived and made available for future versions of ATutor.<br></p>
+
+	<p><a href="/forum/4/1.html">Translation Forum</a><br></p><br>
+	<div class="to_top"><a href="#top" class="up-arrow">Top</a></div>
+	</li>
+
+	<li><a id="5" name="5"></a><strong>Why am I being asked to pay for support when ATutor is free open source software?</strong>
+	<p>ATutor maybe free to use, but it is not free to develop or support. Much of ATutor is supported through grants and various contract projects, which pay our engineers and computer scientists to program the software. These are highly skilled, well paid individuals. None of the grants or contracts provide funds to offer ongoing support. Free support you find in the public forums is often provided by individuals on their own time. You should not expect free support, but rather treat the support you get in the forums as a privilege. <br><br></p>
+	<p>If you do need more support than you can find in the forums, various ATutor support services are available to provide one-on-one help.<br></p>
+	
+	<p><a href="/services/">ATutor Support Services</a><br></p><br>
+	<div class="to_top"><a href="#top" class="up-arrow">Top</a></div>
+	</li>
+
+	<li><a id="6" name="6"></a><strong>Why won't ATutor staff login to my ATutor system to help resolve a bug I think I found?</strong>
+	<p>While  bug reports are appreciated, and they are often dealt with quickly by issuing a patch that corrects a problem, in the vast majority of cases what may seem to be a bug to the average user, is actually a server configuration problem, or some other issue with the server ATutor is hosted on.<br></p><br>
+	
+	<p>If an ATutor developer is unable to reproduce a bug on a local ATutor installation, it will not be treated as a bug until enough evidence is provided by the person reporting, that the problem is proven to originate in ATutor, and is not the results of misconfiguration or problems with the server.<br></p><br>
+	
+	<p>In many cases, approaching your Internet service provider is the right place to find help. They will have appropriate access privileges to your account, and knowledge of the server's configuration, so often they can resolve problems quickly. And after all, you are paying them for your hosting service, so they should be available to provide support. If you have purchased ATutor services, ATutor staff are happy to login to your ATutor system to help investigate problems, but this level of support can not be provided for free. <br></p><br>
+	
+	<p>If you do think you have found a bug in ATutor, the proper way to report it is through the atutor.ca Bug Reports forum, or if you are a developer, through the atutor.ca bug and feature  tracker. Depending on the severity of a bug, it may be dealt with immediately and a patch issued, or it may be put off until a specified bug fix period which normally occurs a few weeks before a new release.<br><br></p>
+</div>
+
+

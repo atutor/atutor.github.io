@@ -1,0 +1,288 @@
+---
+title: ATutor GameMe Instructor Documentation
+layout: home
+breadcrumb: gameme_instructor
+---
+<div class="cd-container">
+<h2>GameMe Instructor Documentation</h2>
+<h3 id="GameMe1.0InstructorDocumentation-UsingGameMe">Using GameMe</h3>
+
+  <p>GameMe is used to add game elements to ATutor courses. When turned on in a course
+  students can earn points, progress through levels, and earn badges for their
+  accomplishments. Clues for earning bonus points and badges can accompany alerts sent to
+  students when they earn a badge, or complete a particular task. Instructors, can enable
+  points, badges, levels, and a leaders board to add a game feel to their courses. When
+  enabled, students can review their GameMe Log to see where points are earned, point
+  values for particular activities, where badges are issued, giving them a ways to
+  maximize their rewards. Instructors can encourage particular behaviour by assigning
+  higher point values to more valued activities, or assigning higher values to activities
+  that students might need "encouragement" to participate in. Messaging with game
+  elements can be customized to guide students through your course, or to encourage
+  particular behavoiurs.</p>
+
+  <h3 id="GameMe1.0InstructorDocumentation-CustomizingCourseEvents,Badges,andLevels">
+  Customizing Course Events, Badges, and Levels</h3>
+
+  <p>The ATutor administrator needs to enable customizing to allow instructors to edit
+  the default settings. When enabled instructors can customized the default events,
+  badges, and levels ('game elements' collectively). Only administrators have the ability
+  to create new game elements, if they are needed.</p>
+
+  <p>There may be no need to modify the default settings for game elements, but that will
+  depend on the length of a course, the number of Course Tools enabled, and how those
+  tools are used (e.g. optional, required, for exploration, or as part of a course
+  activity). GameMe events are associated with various actions that occur in ATutor, like
+  logging in, uploading a profile picture, making a blog entry, answering a forum post,
+  and so on. If you choose not to modify the default settings for game elements, those
+  setting will be used in the course.</p>
+
+  <p>When GameMe is enabled in a course, the instructor also collects points and badges,
+  and progresses through levels. This can be helpful in judging the points to assign for
+  events,&nbsp; judging how fast they accumulate to reach various levels (more on levels
+  below), and to see what students might see when they are participating. You'll also
+  receive email alerts when you earn badges, seeing what students might see when they
+  receive alerts. With this knowledge in hand, you can adjust the GameMe settings to
+  optimize game elements for a particular course. When adjusting game element settings,
+  they should be set up so students can realistically reach the upper levels, and it is
+  realistically possible to earn each of the badges by performing well in the course.</p>
+
+  <h3 id="GameMe1.0InstructorDocumentation-Events">Events</h3>
+
+  <p>There are 38 default events with GameMe that can be edited using the Instructor
+  <strong>GameMe Events</strong> <strong>Editor</strong>. The fields in the editor are
+  described in this section:</p>
+
+  <ul>
+    <li><strong>Alias</strong> - (string) A short identifier used as a reference to
+    access an events properties. Alphabetic, underscores, no spaces. (only editable by
+    admin user)</li>
+
+    <li><strong>Description&nbsp;</strong>- (string) A few words to describe the event to
+    users</li>
+
+    <li><strong>Repetition</strong> - (integer)&nbsp; Set to 1 to disable repetitions,
+    allowing an event to occur only once. Set to 0 to allow an event to reoccur</li>
+
+    <li><strong>Reach Reps</strong> -&nbsp; (integer) The number of times an event needs
+    to repeat before triggering a reach event</li>
+
+    <li><strong>Max Points</strong> &nbsp; - (integer) The maximum number of points a
+    repeatable event can accumulate</li>
+
+    <li><strong>Each Badge</strong>&nbsp; - (integer) The id number of the badge issued
+    each time an event occurs, typically for single occurence events&nbsp;</li>
+
+    <li><strong>Reach Badge</strong>&nbsp; -&nbsp;(integer) The id of the badge issued
+    when a reach event occurs &nbsp;</li>
+
+    <li><strong>Each Point</strong>&nbsp; - (integer) The number of points issued each
+    time an event occurs</li>
+
+    <li><strong>Reach Points</strong>&nbsp; -&nbsp;(integer) The number of bonus points
+    issued when a reach event occurs &nbsp;</li>
+
+    <li><strong>Reach Message</strong>&nbsp; - (string) The content of the message to
+    send to a user when a reach event occurs</li>
+  </ul>
+
+  <h3 id="GameMe1.0InstructorDocumentation-CustomizingEvents">Customizing Events</h3>
+
+  <p>When opened for the first time, the GameMe Events Editor will show an empty list of
+  <strong>Course Events</strong> above, and all the available <strong>Default
+  Events</strong> below. You can leave the Default Events as they are, or you can copy
+  them into your Course Events to customize them. At the far right of each Default Event
+  is a copy link, that when clicked adds the event to the Course Events (you may need to
+  scroll right to see it). Once copied the Course Events become editable by clicking, or
+  tabbing,&nbsp; into a cell, and editing the contents. Click or Tab away from the cell
+  to save the edited value. Clicking on the <strong>Remove</strong> link to the far right
+  of a Course Event, deletes the customized Course Event and reverts back to the Default
+  Event corresponding with the removed event.</p>
+
+  <p>Scan through the events to see how <strong>Each Events</strong> and <strong>Reach
+  Events</strong> are used. Typically Each Events are used to issue points, and Reach
+  Events are used to issue badges and bonus points. Reach Events occur when an event
+  reaches a particular number of repetitions. Instructors can enable and disable
+  <strong>Repetition</strong> by assigning a value of 1 (no repetition) or 0 (allow
+  repetition), and adjust the number of repetitions to reach the Reach Event by modifying
+  the&nbsp;<strong>Reach Reps</strong> value.</p>
+
+  <p>If necessary a <strong>Max</strong> <strong>Points</strong> value can be set to
+  limit the number of points a student can earn for repeating a particular event, after
+  which for example, there is no additional learning value. For instance, after uploading
+  20 photos to a Photo Gallery, stop giving points to encourage keeping albums small. If
+  a photo upload <strong>Each Points</strong> is worth 25 points, limit the Max Points
+  that can be scored to 500 in this case. Each Points are the number of points awarded
+  each time an event occurs, and <strong>Reach Points</strong> are optional bonus points
+  that can be granted when a Reach Event occurs.</p>
+
+  <p>Instructors may also alter the badges given for each and reach events. The
+  <strong>Each Badge</strong> and <strong>Reach Badge</strong> values are the ID values
+  of the associated badges. More about badges, and badge IDs in the Customizing Badges
+  section below.</p>
+
+  <p>Typically when a badge is earned, an email is sent to the student containing the new
+  badge, and a list of previously earned badges, along with a message often with
+  congratulations, or perhaps clues for earning additional&nbsp; points or badges.
+  Instructors can edit the <strong>Reach Message</strong> to customize the email,
+  providing whatever added encouragement is needed, mentioning added rewards (i.e. points
+  and badge) to elicit particular behaviours within the course, steering students to the
+  next task, or perhaps provide clues or hints to help with a quiz that follows. Modify
+  the Reach Message as needed to control where, and how students interact with elements
+  of the course.</p>
+
+  <h3 id="GameMe1.0InstructorDocumentation-Badges">Badges</h3>
+
+  <p>There are 26 default badges with GameMe, each associated with a particular each or
+  reach event. Instructors can edit the default badges using the <strong>Badge
+  Editor</strong>. The fields in the editor are described in this section:</p>
+
+  <ul>
+    <li><strong>Badge</strong> -&nbsp;(string) The badge image preview and dropzone,
+    stores the relative path to the badge image in the database</li>
+
+    <li><strong>Id</strong> - (integer) The id number assigned to the badge, referred to
+    in the each badge and reach badge fields in the <strong>Events Editor</strong></li>
+
+    <li><strong>Alias</strong> - (string) A short identifier used as a reference to
+    access a badge's properties. Alphabetic, underscores, no spaces. (only editable by
+    admin user)</li>
+
+    <li><strong>Title</strong> - (string)&nbsp; A short name for the badge (1-3 words
+    typically)</li>
+
+    <li><strong>Description&nbsp;</strong>- (string) A sentence or two that describes to
+    the recipient why they received the badge.</li>
+  </ul>
+
+  <h3 id="GameMe1.0InstructorDocumentation-CustomizingBadges">Customizing Badges</h3>
+
+  <p>Much like customizing events described above, instructors can copy <strong>Default
+  Badges</strong> and customize them as <strong>Course Badges</strong> using the
+  <strong>GameMe Badge Editor</strong>. Like events, if a Course Badge is removed, the
+  badge will revert to the corresponding default badge.</p>
+
+  <p>Once a Default Badge is copied the first cell of the now Course Badge displays a
+  preview of the badge, and acts as a <strong>Badge Dropzone</strong> for modifying the
+  badge image. You may replace the default badges with your own custom badges, by
+  dragging a maximum <strong>95px x 95px badge image, less than 15k</strong> in size into
+  the dropzone. Or, you may click on a dropzone to open your local file manager and chose
+  a badge image that way.</p>
+
+  <p>The <strong>Id</strong> field contains the reference number you will use when
+  referring to a badge in the Each Badge and Reach Badge fields in the GameMe Event
+  Editor. The ID field cannot be edited. The <strong>Alias</strong> is a short identifier
+  for a badge, which can only be modified by the ATutor administrator.</p>
+
+  <p>Instructors may modify the <strong>Title</strong> and the
+  <strong>Description</strong> of a badge as needed, to customize the wording associated
+  with a badge to match the goals and needs of the course. The title is essentially the
+  name of the badge. It provides a short description of the badge's purpose. The
+  Description provides a longer explanation of the badge and why is was issued.</p>
+
+  <h3 id="GameMe1.0InstructorDocumentation-Levels">Levels</h3>
+
+  <p>There are 11 default levels with GameMe, each associated with reaching a particular
+  point value. Instructors can edit the default levels using the <strong>GameMe Level
+  Editor</strong>. The fields in the editor are described in the section:</p>
+
+  <ul>
+    <li><strong>Icon</strong> -&nbsp;(string) The badge image preview and dropzone,
+    storing the path to the icon image in the database</li>
+
+    <li><strong>Level Name</strong> - (integer) A short name for the level (1-3 word,
+    e.g. Level 1, Newbee, Novice Member, Superstar)</li>
+
+    <li><strong>Description</strong> - (string) A few words describing the level that was
+    reached</li>
+
+    <li><strong>Points Threshold</strong> - (integer)&nbsp; The level Icon is issued to
+    users when they reach this number of points</li>
+  </ul>
+
+  <h3 id="GameMe1.0InstructorDocumentation-CustomizingLevels">Customizing Levels</h3>
+
+  <p>Much like customizing events and badges, instructors can copy the <strong>Default
+  Levels</strong> and customize them as <strong>Course Levels</strong> using the
+  <strong>GameMe Levels Editor</strong>. Of the three primary game elements (events,
+  badges, levels), levels are the most likely to need adjusting, particularly the
+  <strong>Points Threshold</strong> for each level. Students should be able to advance
+  through most or all the levels in a course with good participation, given the duration
+  of the course, and the number of Course Tools being used. If there are only a couple
+  tools being used, you will likely need to adjust the point thresholds down so it is
+  possible to earn enough point to advance through the levels in a course. While if there
+  are many tools being used, you may need to adjust the points threshold up, so students
+  don't advance through levels too quickly and reach the top levels well before the
+  course is complete. If you prefer, you can edit the Each Point values in the
+  <strong>Event Editor</strong>, higher so points accumulate faster, or lower so points
+  accumulate more slowly.</p>
+
+  <p>Instructors may also choose to modify the icon that gets displayed when each level
+  is reached, by dragging a new, maximum dimensions of <strong>95px x 95px level image,
+  less than 15k</strong> in size, into the <strong>Icon</strong> dropzone. Instructors
+  may also modify the <strong>Title</strong> and the <strong>Description</strong> for a
+  level as needed to match the goals or needs of the course.</p>
+
+  <h3 id="GameMe1.0InstructorDocumentation-GameMeOptions">GameMe Options</h3>
+
+  <p>Instructors can control which GameMe elements are enabled in a course using the
+  <strong>GameMe Options Editor</strong>. When an option is checked, it is displayed to
+  students either in a <strong>Side Menu Block</strong>, or in the <strong>GameMe
+  Panel</strong> that gets added as a main navigation tab. Instructors can enable the
+  sidemenu and main navigation Tab in the <strong>Course Tools</strong>
+  <strong>Manager</strong>, much like adding any other course tool to an ATutor course.
+  Each the available options are described in this section.</p>
+
+  <ul>
+    <li><label for="showpoints"><strong>Points</strong></label> - Allow student to
+    accumulate points, and display them in the side menu and GameMe panel if they are
+    enabled in a course</li>
+
+    <li><label for="showlog"><strong>Log</strong></label> - Allow students to view a log
+    of the events they have triggered. This can allow students to strategize to earn more
+    point and badges by seeing how they are being earned</li>
+
+    <li><label for="showlevels"><strong>Levels</strong></label> - When enabled, students
+    see the levels they have progressed through, either in the side menu or GameMe
+    panel</li>
+
+    <li><strong>Progress to next level</strong> - If Levels are enabled, you may choose
+    to display to students the progress they have made to reaching the next level as a
+    percentage value</li>
+
+    <li><label for="showposition"><strong>Position relative to others</strong></label> -
+    If the leader board is enabled, you may choose to display to students their points
+    position relative to others in the course.</li>
+
+    <li><label for="showbadges"><strong>Badges</strong></label> - When enable, students
+    see a list of badges they have earned, either in the side menu or GameMe panel.</li>
+
+    <li><label for="showinstructor"><strong>Show instructor in leader
+    board</strong></label> - An instructor may choose to have his or her points listed in
+    the leader board. You will generally want to disable this option so your points do
+    not show up in the leader board</li>
+
+    <li><label for="showleaders"><strong>Leader Board</strong></label> - Attach a leader
+    board to the side menu or GameMe panel so students can see the points the top
+    students have earned.</li>
+
+    <li><label for="showalerts"><strong>Alerts</strong></label> - Allow students to see a
+    record of the reach events and levels earned</li>
+
+    <li><label for="show_leaders"><strong>Leader board length</strong></label> - Choose
+    how many students to display in the leader board</li>
+
+    <li><label for="level_count"><strong>Number of levels (max 11)</strong></label> -
+    Choose from the default levels, how many levels to have in a course.</li>
+  </ul>
+
+  <p>Note that when GameMe elements are disabled, they are still running in the
+  background, though not visible to students.</p>
+
+  <h3 id="GameMe1.0InstructorDocumentation-Progress">Progress</h3>
+
+  <p>Under the Progress tab in the instructor's GameMe editor, the points, badges, and
+  levels for each student in the course can be viewed. Select a student from the drop
+  down menu, and press the View button to see that person GameMe progress.</p>
+</div>
+
+
