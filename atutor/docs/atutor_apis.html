@@ -1,0 +1,68 @@
+---
+title: ATutor APIs
+layout: home
+breadcrumb: atutor apis
+---
+<div class="cd-container">
+<h2>ATutor APIs</h2>
+<h3 id="ATutorAPIs-CoreAPI">Core API</h3>
+<p>Install the <a href="/atutor/modules/index.php" class="external-link" rel="nofollow">phpDocumentor module</a>  to generate api documentation.</p>
+
+<h3 id="ATutorAPIs-ModuleAPI">Module API</h3>
+
+<ul>
+	<li>$this-&gt;_pages[{page url}][title_var] the language variable representing the page title in the language_text table</li>
+	<li>$this-&gt;_pages[{page url}][title] the actual language text (only used for local development)</li>
+	<li>$this-&gt;_pages[{page url}][parent]</li>
+	<li>$this-&gt;_pages[{page url}]['img'] relative path to module icon</li>
+	<li>$this-&gt;_pages[{page url}][children] array of relative paths to</li>
+	<li>$this-&gt;_stacks[{module name}] array <a class="unresolved" href="#">title_var,file</a>, the display name and url of a side menu block</li>
+	<li>$_group_tool                                  relative url to module's group tool</li>
+	<li>$_student_tool                                relative url to modules' student</li>
+	<li>$this-&gt;getPrivilege()                         instructor privileges, assigned to a constant (e.g. AT_PRIV_HELLO_WORLD)</li>
+	<li>$this-&gt;getAdminPrivilege() administrator privileges, assigned to a constant (e.g. AT_ADMIN_PRIV_HELLO_WORLD)</li>
+</ul>
+
+
+<h3 id="ATutorAPIs-ThemesAPI">Themes API</h3>
+
+<ul>
+	<li>$this-&gt;lang_code			the ISO language code</li>
+	<li>SITE_NAME				the site name from the config file</li>
+	<li>$this-&gt;page_title		        the name of this page to use in the &lt;title&gt;</li>
+	<li>$this-&gt;lang_charset		        the language character set</li>
+	<li>$this-&gt;content_base_href	        the &lt;base href&gt; to use for this page</li>
+	<li>$this-&gt;base_path			the absolute path to this atutor installation</li>
+	<li>$this-&gt;rtl_css			if set, the path to the RTL style sheet</li>
+	<li>$this-&gt;banner_style<span style="text-decoration: line-through;">deprecated</span></li>
+	<li>$this-&gt;theme				the directory name of the current theme</li>
+	<li>$this-&gt;base_href			the full url to this atutor installation</li>
+	<li>$this-&gt;onload			javascript onload() calls</li>
+	<li>$this-&gt;img				the absolute path to this theme's images/ directory</li>
+	<li>$this-&gt;sequence_links	associative array of 'previous', 'next', and/or 'resume' links</li>
+	<li>$this-&gt;path				associative array of path to this page: aka bread crumbs</li>
+	<li>$this-&gt;rel_url			the relative url from the installation root to this page</li>
+	<li>$this-&gt;nav_courses		associative array of this user's enrolled courses</li>
+	<li>$this-&gt;section_title		the title of this section (course, public, admin, my start page)</li>
+	<li>$this-&gt;top_level_pages	associative array of the top level navigation</li>
+	<li>$this-&gt;current_top_level_page	the full path to the current top level page with file name</li>
+	<li>$this-&gt;sub_level_pages			associate array of sub level navigation</li>
+	<li>$this-&gt;back_to_page				if set, the path and file name to the part of this page (if parent is not a top level nav)</li>
+	<li>$this-&gt;current_sub_level_page	the full path to the current sub level page with file name</li>
+	<li>$this-&gt;guide				the full path and file name to the guide page</li>
+	<li>$this-&gt;icon the path to a course icon <strong>(new from 1.6)</strong></li>
+	<li>======================================</li>
+	<li>top_level_pages           array(array('url', 'title'))     the top level pages. ATutor default creates tabs.</li>
+	<li>section_title string the name of the current section. either name of the course, administration, my start page, etc.</li>
+	<li>page_title                string                           the title of the current page.</li>
+	<li>path                      array(array('url', 'title'))     the path to the current page.</li>
+	<li>back_to_page              array('url', 'title')            the link back to the part of the current page, if needed.</li>
+	<li>current_top_level_page    string                           full url to the current top level page in "top_leve_pages"</li>
+	<li>current_sub_level_page    string                           full url to the current sub level page in the "sub_level_pages"</li>
+	<li>sub_level_pages           array(array('url', 'title'))     the sub level pages.</li>
+</ul>
+</div>	
+
+ <!-- // end of #centerbar-->
+
+

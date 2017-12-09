@@ -1,0 +1,695 @@
+---
+title: ATutor GitHub Tips and Best Practices
+layout: home
+breadcrumb: Github
+---
+<div class="cd-container">
+<h2 id="GitTipsandTricks-Bestpractices">Github Best Practices</h2>
+
+  <h3 id="GitTipsandTricks-Workinabranch">Work in a branch</h3>
+
+  <p>It is best to keep your master branch clean and up-to-date with the project repo.
+  This will provide you with a clean space to compare your "working" code with, as well
+  as a stable location to push changes back up to the project repo.</p>
+
+  <div class="code panel pdl" style="border-width: 1px;">
+    <div class="codeContent panelContent pdl">
+      <div>
+        <div id="highlighter_605704" class="syntaxhighlighter nogutter java">
+          <div class="toolbar">
+            
+          </div>
+
+          <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td class="code">
+                  <div class="container" title="Hint: double-click to select code">
+                    <div class="line number1 index0 alt2">
+                      <code class="java plain"># list all branches, including
+                      remotes</code>
+                    </div>
+
+                    <div class="line number2 index1 alt1">
+                      <code class="java plain">git branch -a</code>
+                    </div>
+
+                    <div class="line number3 index2 alt2">
+                      &nbsp;
+                    </div>
+
+                    <div class="line number4 index3 alt1">
+                      <code class="java plain"># change branches, in</code> <code class=
+                      "java keyword">this</code> <code class="java keyword">case</code>
+                      <code class="java keyword">switch</code> <code class=
+                      "java plain">to master</code>
+                    </div>
+
+                    <div class="line number5 index4 alt2">
+                      <code class="java plain">git checkout master</code>
+                    </div>
+
+                    <div class="line number6 index5 alt1">
+                      &nbsp;
+                    </div>
+
+                    <div class="line number7 index6 alt2">
+                      <code class="java plain"># make a branch of master, and
+                      immediately</code> <code class="java keyword">switch</code>
+                      <code class="java plain">to the branch</code>
+                    </div>
+
+                    <div class="line number8 index7 alt1">
+                      <code class="java plain"># Note: it's best to name your branches
+                      after the jira you are working on (e.g. FLUID-xxxx)</code>
+                    </div>
+
+                    <div class="line number9 index8 alt2">
+                      <code class="java plain">git checkout -b FLUID-XXXX</code>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>It is best to name your branches after the jira that you are working on (e.g.
+  FLUID-xxxx). This will make it easier for you to keep track of what the branch is for.
+  When you issue a pull request, push it to a public repo space (e.g. github), and/or
+  merge the branch into master the branch name will be visible and act as a means of
+  indicating to others what changes are part of the branch.</p>
+
+  <p>There will be some occasions where you'll want to work directly in master, make sure
+  you really mean to do it and that you are careful. Working directly in master is likely
+  not a common workflow and should probably only occur for cases where you have only a
+  single commit that will be pushed to the project repo right away.</p>
+
+  <h3 id="GitTipsandTricks-MergingBranchesintomaster,andpushingtotheprojectrepo">Merging
+  Branches into master, and pushing to the project repo</h3>
+
+  <p>When you have a branch that is ready to go into the project repo you'll need to
+  merge it into your clean, up-to-date master.</p>
+
+  <div class="code panel pdl" style="border-width: 1px;">
+    <div class="codeContent panelContent pdl">
+      <div>
+        <div id="highlighter_417365" class="syntaxhighlighter nogutter java">
+          <div class="toolbar">
+           
+          </div>
+
+          <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td class="code">
+                  <div class="container" title="Hint: double-click to select code">
+                    <div class="line number1 index0 alt2">
+                      <code class="java plain"># get the latest changes, where upstream
+                      is the project repo</code>
+                    </div>
+
+                    <div class="line number2 index1 alt1">
+                      <code class="java plain">git fetch upstream</code>
+                    </div>
+
+                    <div class="line number3 index2 alt2">
+                      &nbsp;
+                    </div>
+
+                    <div class="line number4 index3 alt1">
+                      <code class="java plain"># view the changes that are in the project
+                      repo that aren't currently in your master</code>
+                    </div>
+
+                    <div class="line number5 index4 alt2">
+                      <code class="java plain">git log upstream/master ^master</code>
+                    </div>
+
+                    <div class="line number6 index5 alt1">
+                      &nbsp;
+                    </div>
+
+                    <div class="line number7 index6 alt2">
+                      <code class="java plain"># view the changes that are in your
+                      master, that aren't in the project repo (should be none)</code>
+                    </div>
+
+                    <div class="line number8 index7 alt1">
+                      <code class="java plain">git log ^upstream/master master</code>
+                    </div>
+
+                    <div class="line number9 index8 alt2">
+                      &nbsp;
+                    </div>
+
+                    <div class="line number10 index9 alt1">
+                      <code class="java plain"># update your master by merging in the
+                      changes from the project repo</code>
+                    </div>
+
+                    <div class="line number11 index10 alt2">
+                      <code class="java plain"># assuming you are already in the master
+                      branch</code>
+                    </div>
+
+                    <div class="line number12 index11 alt1">
+                      <code class="java plain">git merge upstream/master</code>
+                    </div>
+
+                    <div class="line number13 index12 alt2">
+                      &nbsp;
+                    </div>
+
+                    <div class="line number14 index13 alt1">
+                      <code class="java plain"># view the changes that are in master that
+                      aren't currently in your branch</code>
+                    </div>
+
+                    <div class="line number15 index14 alt2">
+                      <code class="java plain">git log master ^FLUID-xxxx</code>
+                    </div>
+
+                    <div class="line number16 index15 alt1">
+                      &nbsp;
+                    </div>
+
+                    <div class="line number17 index16 alt2">
+                      <code class="java plain"># view the changes that are in your
+                      branch, that aren't in the master</code>
+                    </div>
+
+                    <div class="line number18 index17 alt1">
+                      <code class="java plain">git log ^master FLUID-xxxx</code>
+                    </div>
+
+                    <div class="line number19 index18 alt2">
+                      &nbsp;
+                    </div>
+
+                    <div class="line number20 index19 alt1">
+                      <code class="java plain"># merge the branch into master.</code>
+                    </div>
+
+                    <div class="line number21 index20 alt2">
+                      <code class="java plain"># Note: --no-ff forces a merge
+                      commit</code>
+                    </div>
+
+                    <div class="line number22 index21 alt1">
+                      <code class="java plain"># Note: --log lists all the commits that
+                      are part of the merge</code>
+                    </div>
+
+                    <div class="line number23 index22 alt2">
+                      <code class="java plain">git merge FLUID-xxxx --no-ff --log</code>
+                    </div>
+
+                    <div class="line number24 index23 alt1">
+                      &nbsp;
+                    </div>
+
+                    <div class="line number25 index24 alt2">
+                      <code class="java plain"># push to your</code> <code class=
+                      "java keyword">public</code> <code class="java plain">repo, origin,
+                      first to make sure things worked</code>
+                    </div>
+
+                    <div class="line number26 index25 alt1">
+                      <code class="java plain">git push origin master</code>
+                    </div>
+
+                    <div class="line number27 index26 alt2">
+                      &nbsp;
+                    </div>
+
+                    <div class="line number28 index27 alt1">
+                      <code class="java plain"># push to the project repo</code>
+                    </div>
+
+                    <div class="line number29 index28 alt2">
+                      <code class="java plain">git push upstream master</code>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>When merging your branch back into master, always make sure to set the --no-ff and
+  --log flags. The --no-ff flag forces a merge commit. If this isn't set, and a
+  fast-forward merge occurs, the master branch can take on the characteristics of the
+  branch as though master was a clone of the branch. This may be undesirable, for example
+  the git's graphing feature will make the branch commits appear to be the mainline of
+  code. The --log flag will place the summary line of the commits included in the merge,
+  into the merge commit. This makes tracking which commits were part of the merge much
+  easier.</p>
+
+  <p>It's also a good idea to push to your public repository before pushing to the
+  project repo. This will give you another chance to make sure everything is as it should
+  be. For example, in github you can review the commit logs and the network graph to make
+  sure the merge was performed properly.</p>
+
+  <h3 id="GitTipsandTricks-CommitLogs">Commit Logs</h3>
+
+  <p>In git, commit logs are structured a lot like e-mails. The first line is a summary,
+  50 characters or less. The remainder of the commit log should contain the detailed
+  description of what is being committed.</p>
+
+  <div class="code panel pdl" style="border-width: 1px;">
+    <div class="codeContent panelContent pdl">
+      <div>
+        <div id="highlighter_396379" class="syntaxhighlighter nogutter java">
+          <div class="toolbar">
+           
+          </div>
+
+          <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td class="code">
+                  <div class="container" title="Hint: double-click to select code">
+                    <div class="line number1 index0 alt2">
+                      <code class="java plain">#summary, it should start with a jira
+                      number.</code>
+                    </div>
+
+                    <div class="line number2 index1 alt1">
+                      <code class="java plain">FLUID-xxxx: Adding in feature x to
+                      component y</code>
+                    </div>
+
+                    <div class="line number3 index2 alt2">
+                      &nbsp;
+                    </div>
+
+                    <div class="line number4 index3 alt1">
+                      <code class="java plain">#This is just a mock example, a real
+                      commit log would have proper details about the changes in a
+                      commit</code>
+                    </div>
+
+                    <div class="line number5 index4 alt2">
+                      <code class="java plain">Feature x adds does such and such a
+                      function, which is necessary</code> <code class=
+                      "java keyword">for</code> <code class="java plain">component
+                      y.</code>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>The summary of each commit should start with the jira number for the issue being
+  worked on. In the rare case where it is not necessary to file a jira for a change,
+  "NOJIRA:" can be used instead.</p>
+
+  <p>Notice the empty line between the summary and the body of the commit log. Some
+  clients have trouble distinguishing the two parts if they are not separated like
+  this.</p>
+
+  <h2 id="GitTipsandTricks-Tips">Tips</h2>
+
+  <h3 id="GitTipsandTricks-Log">Log</h3>
+
+  <p>(see: <a href="http://www.kernel.org/pub/software/scm/git/docs/git-log.html" class=
+  "external-link" rel="nofollow">git-log</a>)</p>
+
+  <p>Lists commits in branch x that aren't in branch y</p>
+
+  <div class="code panel pdl" style="border-width: 1px;">
+    <div class="codeContent panelContent pdl">
+      <div>
+        <div id="highlighter_328595" class="syntaxhighlighter nogutter java">
+          <div class="toolbar">
+           
+          </div>
+
+          <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td class="code">
+                  <div class="container" title="Hint: double-click to select code">
+                    <div class="line number1 index0 alt2">
+                      <code class="java plain">git log x ^y</code>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>Lists commits and also shows the diff of the changes</p>
+
+  <div class="code panel pdl" style="border-width: 1px;">
+    <div class="codeContent panelContent pdl">
+      <div>
+        <div id="highlighter_963261" class="syntaxhighlighter nogutter java">
+          <div class="toolbar">
+           
+          </div>
+
+          <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td class="code">
+                  <div class="container" title="Hint: double-click to select code">
+                    <div class="line number1 index0 alt2">
+                      <code class="java plain">git log -p</code>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 id="GitTipsandTricks-Diff">Diff</h3>
+
+  <p>(see: <a href="http://www.kernel.org/pub/software/scm/git/docs/git-diff.html" class=
+  "external-link" rel="nofollow">git-diff</a>)</p>
+
+  <p>Diff of unstaged changes</p>
+
+  <div class="code panel pdl" style="border-width: 1px;">
+    <div class="codeContent panelContent pdl">
+      <div>
+        <div id="highlighter_290356" class="syntaxhighlighter nogutter java">
+          <div class="toolbar">
+           
+          </div>
+
+          <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td class="code">
+                  <div class="container" title="Hint: double-click to select code">
+                    <div class="line number1 index0 alt2">
+                      <code class="java plain">git diff</code>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>Diff of staged changes</p>
+
+  <div class="code panel pdl" style="border-width: 1px;">
+    <div class="codeContent panelContent pdl">
+      <div>
+        <div id="highlighter_510323" class="syntaxhighlighter nogutter java">
+          <div class="toolbar">
+           
+          </div>
+
+          <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td class="code">
+                  <div class="container" title="Hint: double-click to select code">
+                    <div class="line number1 index0 alt2">
+                      <code class="java plain">git diff --cached</code>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>Diff between two commits</p>
+
+  <div class="code panel pdl" style="border-width: 1px;">
+    <div class="codeContent panelContent pdl">
+      <div>
+        <div id="highlighter_222885" class="syntaxhighlighter nogutter java">
+          <div class="toolbar">
+           
+          </div>
+
+          <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td class="code">
+                  <div class="container" title="Hint: double-click to select code">
+                    <div class="line number1 index0 alt2">
+                      <code class="java plain">git diff commitHash1 commitHash2</code>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>Diff between branch x and y</p>
+
+  <div class="code panel pdl" style="border-width: 1px;">
+    <div class="codeContent panelContent pdl">
+      <div>
+        <div id="highlighter_738223" class="syntaxhighlighter nogutter java">
+          <div class="toolbar">
+           
+          </div>
+
+          <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td class="code">
+                  <div class="container" title="Hint: double-click to select code">
+                    <div class="line number1 index0 alt2">
+                      <code class="java plain">git diff x y</code>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 id="GitTipsandTricks-Resettingworkingcopy">Resetting working copy</h3>
+
+  <p>(see: <a href="http://www.kernel.org/pub/software/scm/git/docs/git-reset.html"
+  class="external-link" rel="nofollow">git-reset</a>)</p>
+
+  <p>Unstage changes</p>
+
+  <div class="code panel pdl" style="border-width: 1px;">
+    <div class="codeContent panelContent pdl">
+      <div>
+        <div id="highlighter_706362" class="syntaxhighlighter nogutter java">
+          <div class="toolbar">
+           
+          </div>
+
+          <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td class="code">
+                  <div class="container" title="Hint: double-click to select code">
+                    <div class="line number1 index0 alt2">
+                      <code class="java plain">git reset HEAD</code>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>Undoes all changes, staged or not, so that the working copy is back to the state of
+  the last commit</p>
+
+  <div class="code panel pdl" style="border-width: 1px;">
+    <div class="codeContent panelContent pdl">
+      <div>
+        <div id="highlighter_517294" class="syntaxhighlighter nogutter java">
+          <div class="toolbar">
+           
+          </div>
+
+          <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td class="code">
+                  <div class="container" title="Hint: double-click to select code">
+                    <div class="line number1 index0 alt2">
+                      <code class="java plain">git reset HEAD --hard</code>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>Sets the working copy back to the state of the specified commit</p>
+
+  <div class="code panel pdl" style="border-width: 1px;">
+    <div class="codeContent panelContent pdl">
+      <div>
+        <div id="highlighter_508637" class="syntaxhighlighter nogutter java">
+          <div class="toolbar">
+           
+          </div>
+
+          <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td class="code">
+                  <div class="container" title="Hint: double-click to select code">
+                    <div class="line number1 index0 alt2">
+                      <code class="java plain">git reset commitHash --hard</code>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 id="GitTipsandTricks-DeletingBranches">Deleting Branches</h3>
+
+  <p>Deletes local branch x</p>
+
+  <div class="code panel pdl" style="border-width: 1px;">
+    <div class="codeContent panelContent pdl">
+      <div>
+        <div id="highlighter_848365" class="syntaxhighlighter nogutter java">
+          <div class="toolbar">
+           
+          </div>
+
+          <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td class="code">
+                  <div class="container" title="Hint: double-click to select code">
+                    <div class="line number1 index0 alt2">
+                      <code class="java plain">git branch -d x</code>
+                    </div>
+
+                    <div class="line number2 index1 alt1">
+                      &nbsp;
+                    </div>
+
+                    <div class="line number3 index2 alt2">
+                      <code class="java plain">#to force a branch to delete even when it
+                      has unmerged changes</code>
+                    </div>
+
+                    <div class="line number4 index3 alt1">
+                      <code class="java plain">git branch -D x</code>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>Deletes branch x from remote repo</p>
+
+  <div class="code panel pdl" style="border-width: 1px;">
+    <div class="codeContent panelContent pdl">
+      <div>
+        <div id="highlighter_935795" class="syntaxhighlighter nogutter java">
+          <div class="toolbar">
+           
+          </div>
+
+          <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td class="code">
+                  <div class="container" title="Hint: double-click to select code">
+                    <div class="line number1 index0 alt2">
+                      <code class="java plain">#note the</code> <code class=
+                      "java string">":"</code>
+                    </div>
+
+                    <div class="line number2 index1 alt1">
+                      <code class="java plain">git push remoteRepo :x</code>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div><!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="http://wiki.atutor.ca/display/atutorwiki/Git+Tips+and+Tricks"
+    dc:identifier="http://wiki.atutor.ca/display/atutorwiki/Git+Tips+and+Tricks"
+    dc:title="Git Tips and Tricks"
+    trackback:ping="http://wiki.atutor.ca/rpc/trackback/10944553"/>
+</rdf:RDF>
+-->
+
+  <div id="likes-and-labels-container">
+    <div id="likes-section" style="display: none;"></div>
+
+    <div id="labels-section" class="pageSection group">
+      <div class="labels-section-content content-column" entityid="10944553" entitytype=
+      "page">
+        <div class="labels-content">
+          <ul class="label-list label-list-right"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>	
+
+ <!-- // end of #centerbar-->
+
+

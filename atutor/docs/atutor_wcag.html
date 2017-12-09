@@ -1,0 +1,393 @@
+---
+title: ATutor WCAG Implementation
+layout: home
+breadcrumb: atutor wcag
+---
+<div class="cd-container">
+<h2 id="WCAG2.0ATutorImplementation-ATutorWCAG2.0Implementation">ATutor WCAG 2.0 Implementation</h2>
+
+<p>This document outlines ATutor's compliance with the W3C WCAG 2.0  recommendations.</p>
+
+<p>ATutor is a Learning Content Management System used to design and deliver online courses. It is still possible for content authors to create inaccessible content should they choose to ignore recommendations made by the built-in accessibility checker, though  ATutor  will conform with the AA level, as well as most of the AAA level recommendations.</p>
+
+<p>Legend:<br>
+NA = Not applicable<br>
+NI = Not Implemented<br>
+**(NI) = Needs Implementing<br>
+? = Unsure if conformance is met (e.g. Colour contrast)<br>
+C = Conforms</p>
+
+<p><a href="http://www.w3.org/TR/2008/CR-WCAG20-20080430/" class="external-link" rel="nofollow">WCAG 2.0  Candidate Recommendation</a></p>
+
+<p><a href="http://www.atutor.ca/atutor/wcag2" class="external-link" rel="nofollow">Live ATutor WCAG 2.0 Test Implementation</a></p>
+
+<p>User Login: wcag / Password:&nbsp; wcag</p>
+
+<p>Admin login: wcagadmin / Password: wcagadmin&nbsp;<br class="atl-forced-newline"></p>
+
+<h3 id="WCAG2.0ATutorImplementation-1.Perceivable">1. Perceivable</h3>
+
+<p><strong>1.1  Text Alternatives</strong></p>
+
+<p><em>Level A</em></p>
+
+<p>1.1.1 Controls:</p>
+
+<p>(C)  All form fields and controls include a name</p>
+
+<p>(NA) Time-based media: non used</p>
+
+<p>(C) Test: User created tests with visual content added, prompts user to add text alternatives</p>
+
+<p>(NA) Sensory: none used</p>
+
+<p>(NA) CAPTCHA: not used</p>
+
+<p>(C)  Decoration, Formatting, Invisible: All decorative or meaningless images have an empty Alt attribute</p>
+
+<p><strong>1.2 Time Based Media</strong><br>
+<em>Level A</em></p>
+
+<p>1.2.1 Pre-recorded audio or Video:</p>
+
+<p>(NA)  none used</p>
+
+<p>1.2.2 Captions:</p>
+
+<p>(NA)  no video used</p>
+
+<p>1.2.3  Audio descriptions and Full Text Alternative</p>
+
+<p>(NA) no video used</p>
+
+<p><em>Level AA</em></p>
+
+<p>1.2.4 Captions for Live Content:</p>
+
+<p>(NA)  no video used</p>
+
+<p>1.2.5 Audio Descriptions:</p>
+
+<p>(NA)   no video used</p>
+
+<p><em>Level AAA</em></p>
+
+<p>1.2.6 Sign Language</p>
+
+<p>(NA)  no audio used</p>
+
+<p>1.2.7Audio Descriptions Extended</p>
+
+<p>(NA) no video used</p>
+
+<p>1.2.8 Full Text Alternative</p>
+
+<p>(NA) no audio or video used</p>
+
+<p>1.2.9 Live Audio-only</p>
+
+<p>(NA)</p>
+
+<p><strong>1.3  Adaptable Content</strong></p>
+
+<p><em>Level  A</em></p>
+
+<p>1.3.1 Info and Relationships</p>
+
+<p>(C)</p>
+
+<p>- Breadcrumb string indicates location within a hierarchy</p>
+
+<p>- Highlighted page location, and section location in side content menu</p>
+
+<p>- Highlighted page location in sitemap</p>
+
+<p>- Continue from location in previous session when starting a new session</p>
+
+<p>1.3.2 Meaningful Sequence</p>
+
+<p>(C) Tab order matches logical sequence of elements on the page throughout the application</p>
+
+<p>1.3.3 <strong>Sensory Characteristics:</strong></p>
+
+<p><strong>(C)  All functional components include text</strong></p>
+
+<p><strong>1.4 Distinguishable Content</strong></p>
+
+<p><em>Level A</em></p>
+
+<p>1.4.1Use of Colour:</p>
+
+<p>(C)  When colour is used to convey meaning, other means are also provided in addition to colour.</p>
+
+<p>1.4.2 Audio Control:</p>
+
+<p>(NA) No audio used</p>
+
+<p><em>Level AA</em></p>
+
+<p>1.4.3 Contract Minimum</p>
+
+<p>(C) Contrast all foreground and background colours have a contracts ratio greater than 5:1</p>
+
+<p>(how to measure this). Subjectively, contrast is high through the system's default theme</p>
+
+<p>1.4.4 Resize Text</p>
+
+<p>(C) All text is resizable to 200%</p>
+
+<p>1.4.5 Image of Text</p>
+
+<p>(NA) No images of text are used (except the logo)</p>
+
+<p><em>Level AAA</em></p>
+
+<p>1.4.6 Contrast Enhanced:</p>
+
+<p>(C)?  Contrast is high throughout (how to measure this). I'm guessing it conforms</p>
+
+<p>1.4.7 <strong>Low or No Background Audio</strong></p>
+
+<p>(NA)</p>
+
+<p>1.4.8 <strong>Visual Presentation (Questionable requirement when all styles are controlled by CSS)</strong></p>
+
+<p>- (C) all foreground and background can be modified in a user style sheet</p>
+
+<p>- (C) all text dynamically fits to the window size</p>
+
+<p>- **(NI) justified text is present  (why is this a accessibility issue?)</p>
+
+<p>- (C) line spacing default to 1.5 (paragraph line height = 150%) in CSS</p>
+
+<p>- (C?) all content area text is browser resizeable and non scrollable, though if too many tools are installed, it may necessary to scroll across main navigation tabs. Instructors can control this by moving tools from the main navigation to the course home page.</p>
+
+<p>1.4.9 Image of Text (no exceptions)</p>
+
+<p>(C) Only the logo contains text.</p>
+
+<h3 id="WCAG2.0ATutorImplementation-2.Operable">2. Operable</h3>
+
+<p><strong>2.1 Keyboard Accessible</strong></p>
+
+<p><em>Level A</em></p>
+
+<p>2.1.1 Keyboard</p>
+
+<p>(C) All functionality is keyboard operable</p>
+
+<p>2.1.2 No Keyboard Trap</p>
+
+<p>(C)  No keyboard traps present</p>
+
+<p><em>Level AAA</em></p>
+
+<p>2.1.3 Keyboard (no exceptions)</p>
+
+<p>(C) All functionality is keyboard operable</p>
+
+<p><strong>2.2 Enough Time</strong></p>
+
+<p><em>Level A</em></p>
+
+<p>2.2.1 Timing Adjustable</p>
+
+<p>(C) Test creators can assign different amounts of time on a test for individual users, or turn timing off.</p>
+
+<p>(NA) Time out warning is not implemented, though time out is set to 10 hours by default</p>
+
+<p>2.3 Pause, Stop, Hide</p>
+
+<p>(NA) No moving or updating content except chat, which can be controlled manually</p>
+
+<p><em>Level AAA</em></p>
+
+<p>2.2.3 No Timing</p>
+
+<p>(C) Test creators can assign different amounts of time on a test for individual users, or turn timing off. No other timed events are found in the software. Timing can be turned off for individual users.</p>
+
+<p>2.2.4 Interruptions</p>
+
+<p>(NA) no interruptions</p>
+
+<p>2.2.5 Re-authenticating</p>
+
+<p>(NA) The only time out is the session after 10 hours of no activity</p>
+
+<p><strong>2.3 Seizures</strong></p>
+
+<p><em>Level A</em></p>
+
+<p>2.3.1 Three flash or below threshold<br>
+(NA) No flashing content</p>
+
+<p><em>Level AAA</em></p>
+
+<p>2.3.2 Three Flash</p>
+
+<p>(NA) No flashing content</p>
+
+<p><strong>2.4 Navigable</strong></p>
+
+<p><em>Level A</em></p>
+
+<p>2.4.1 ByPass Blocks</p>
+
+<p>(C) Bypass links are present to jump directly to content and to the menu from anywhere in a page</p>
+
+<p>2.4.2 Page Titled</p>
+
+<p>(C) All pages are titled with meaningful text</p>
+
+<p>2.4.3 Focus Order</p>
+
+<p>(C) All content is sequentially navigable</p>
+
+<p>2.4.4 Link Purpose (in context)</p>
+
+<p>(C) The purpose of links can be determined from link text alone</p>
+
+<p><em>Level AA</em></p>
+
+<p>2.4.5  Multiple Ways</p>
+
+<p>(C) Content can be navigated in many ways (I.e. sequential, hierarchical, global)</p>
+
+<p>2.4.6 Headings and Labels</p>
+
+<p>(C) Heading s and labels are used consistently throughout</p>
+
+<p>2.4.7 Focus Visible</p>
+
+<p>**(NI) Focus is visible with browser default (could be improved with "a.active" style)</p>
+
+<p><em>Level AAA</em></p>
+
+<p>2.4.8 Location</p>
+
+<p>(C) Users can determine their location from the breadcrumb string, highlighted topics and subtopic in the hierarchical menu, sequence links list next and previous pages.</p>
+
+<p>2.4.9 Link Purpose (Link Only)</p>
+
+<p>(C) The purpose of links can be determined from link text alone</p>
+
+<p>2.4.10 Section Headings</p>
+
+<p>(C) Section Headings are used for content titles. Authors can add sub section headings in the content editor. Accessibility checker will identify headingless pages as potential problem if authors do not use headings</p>
+
+<h3 id="WCAG2.0ATutorImplementation-3.Understandable">3. Understandable</h3>
+
+<p><strong>3.1 Readable</strong><br>
+<em>Level A</em></p>
+
+<p>3.1.1 Language of page</p>
+
+<p>(C) Human language is identified in the open HTML element</p>
+
+<p><em>Level AA</em></p>
+
+<p>3.1.2 Language Parts</p>
+
+<p>(NA) Software only appears in one language at a time,</p>
+
+<p><em>Level AAA</em></p>
+
+<p>3.1.3 Unusual Words</p>
+
+<p>(C)  Software provide a glossary which can be links to individual words via a predefined tag</p>
+
+<p>3.1.4 Abbreviations</p>
+
+<p>(NA)  No abbreviations used</p>
+
+<p>3.1.5 Reading Level</p>
+
+<p>(C)  In help documentation the simplest language possible has been used</p>
+
+<p>3.1.6  Pronunciation</p>
+
+<p>**(NI) No means is provided in the current version to pronounce word, though the ATalker module is available for older versions of ATutor, which does read text within the system out loud</p>
+
+<p><strong>3.2 Predictable</strong></p>
+
+<p><em>Level A</em></p>
+
+<p>3.2.1 On Focus</p>
+
+<p>(C)  no on-focus events are present that initiate a change of context</p>
+
+<p>3.2.2 On Input</p>
+
+<p>(C)  no on-input events are present that initiate a change of context</p>
+
+<p><em>Level AA</em></p>
+
+<p>3.2.3 Consistent Navigation</p>
+
+<p>(C) Navigation is highly predictable throughout the application, and appears in the same relative order, except for the Chat module, in which navigation is removed to make interaction in the chat easier. In this case a Return link is provided.</p>
+
+<p>3.2.4 Consistent Identification</p>
+
+<p>(C)  All identical functions are identified with identical language</p>
+
+<p>3.2.5 Change on Request</p>
+
+<p>(C) Only the chat provides auto updating content, and users can choose to turn on manual update.</p>
+
+<p><strong>3.3 Input Assistance</strong></p>
+
+<p><em>Level A</em></p>
+
+<p>3.3.1 Error Identification</p>
+
+<p>(C) Error messages are displayed wherever an input error occurs.</p>
+
+<p>3.3.2 Labels or Instructions</p>
+
+<p>(C) Labels are provided for all input fields</p>
+
+<p><em>Level AA</em></p>
+
+<p>3.3.3 Error Suggestion</p>
+
+<p>(C) Where appropriate, error messages  suggest input or correction</p>
+
+<p>3.3.4 Error Prevention (legal, financial, data)</p>
+
+<p>(C) When ever data is about to be deleted, users are presented with a confirmation message and an opportunity to back out of the action.</p>
+
+<p>(C) All data entered by users are checked for input errors</p>
+
+<p><em>Level AAA</em></p>
+
+<p>3.3.5 Help</p>
+
+<p>(C) Context sensitive help is available for all significant functionality</p>
+
+<p>3.3.6 Error Prevention (All)</p>
+
+<p>(C) Whenever data is about to be deleted, users are presented with a confirmation message and an opportunity to back out of the action.</p>
+
+<p>(C) All data entered by users are checked for input errors
+<br class="atl-forced-newline"></p>
+
+<h3 id="WCAG2.0ATutorImplementation-4.Robust">4. Robust</h3>
+
+<p><strong>4.1 Compatible</strong></p>
+
+<p><em>Level A</em></p>
+
+<p>4.1.1 Parsing</p>
+
+<p>(C) All markup validates to xhtml 1.0 transitional</p>
+
+<p>4.1.2 Name, Role, Value</p>
+
+<p>(C) Standard HTML is used throughout. All user interface components include a name attribute</p>
+
+                
+        
+    
+        </div>
+</div>
+

@@ -1,0 +1,1530 @@
+---
+title: AContent Template System
+layout: home
+breadcrumb: acontent templates
+---
+<div class="cd-container">
+<h2 id="AContentTemplateSystem-AContentTemplateSystem">AContent Template System</h2>
+
+  <p>AContent Administrators can enable or disable theme, layout, and structure templates
+  through of the Admin's System panel.</p>
+
+  <p>The AContent Administrator can add or modify templates in the AContent
+  &ldquo;templates&rdquo; directory.</p>
+
+  <p>In the templates directory, there are 3 sub-directories called: layout (containing
+  the theme templates), page_template (containing the layout templates) and structures
+  (containing the lesson structure templates). Templates in these 3 directories are
+  available to AContent authors while they edit or create lesson content (theme and
+  layout templates) and/or they create a lesson or an entire course (structure
+  templates).</p>
+
+  <p>Each template must be contained in a separated directory, named with the template
+  name. Creating a new template can be done most easily by copying an existing template
+  directory and renaming it, then modifying the files in that new directory to produce a
+  new theme, layout, or structure template. It will automatically become available to
+  authors, reading the accompanying XML file to generate a listing in AContent.</p>
+
+  <p>Additional details about creating template follows.</p>
+
+  <h3 id="AContentTemplateSystem-HowtoaddaThemeTemplate">How to add a Theme Template</h3>
+
+  <p>In the "layouts" directory where theme template are kept (excuse the confusing
+  directory names), there must be a .css file with all the theme's layout and
+  presentational rules that will be applied to the content. Each class or identifier
+  should be a descendent of the #content identifier. The .css file name must be the same
+  of the directory name (and the name of the template). For example italy/italy.css.</p>
+
+  <div class="code panel pdl" style="border-style: solid;border-width: 1px;">
+    <div class="codeHeader panelHeader pdl" style=
+    "border-bottom-width: 1px;border-bottom-style: solid;">
+      <b>Example Theme CSS File italy.css</b>
+    </div>
+
+    <div class="codeContent panelContent pdl">
+      <div>
+        <div id="highlighter_247308" class="syntaxhighlighter nogutter css">
+          <div class="toolbar">
+            <span><a href="#" class="toolbar_item command_help help">?</a></span>
+          </div>
+
+          <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td class="code">
+                  <div class="container" title="Hint: double-click to select code">
+                    <div class="line number1 index0 alt2">
+                      <code class="css plain">#content{</code>
+                    </div>
+
+                    <div class="line number2 index1 alt1">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">color</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">#333</code><code class="css plain">;</code>
+                    </div>
+
+                    <div class="line number3 index2 alt2">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">line-height</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">1.5em</code><code class=
+                      "css plain">;</code>
+                    </div>
+
+                    <div class="line number4 index3 alt1">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">background-color</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">#FFF</code><code class="css plain">;</code>
+                    </div>
+
+                    <div class="line number5 index4 alt2">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">text-align</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">justify</code><code class=
+                      "css plain">;</code>
+                    </div>
+
+                    <div class="line number6 index5 alt1">
+                      <code class="css plain">}</code>
+                    </div>
+
+                    <div class="line number7 index6 alt2">
+                      &nbsp;
+                    </div>
+
+                    <div class="line number8 index7 alt1">
+                      <code class="css plain">#content h</code><code class=
+                      "css value">2</code><code class="css plain">{</code>
+                    </div>
+
+                    <div class="line number9 index8 alt2">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">background</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">#365778</code><code class=
+                      "css plain">;</code>
+                    </div>
+
+                    <div class="line number10 index9 alt1">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">margin-bottom</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">10px</code><code class="css plain">;</code>
+                    </div>
+
+                    <div class="line number11 index10 alt2">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">margin-top</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">20px</code><code class="css plain">;</code>
+                    </div>
+
+                    <div class="line number12 index11 alt1">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">color</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">#FFF</code><code class="css plain">;</code>
+                    </div>
+
+                    <div class="line number13 index12 alt2">
+                      <code class="css plain">}</code>
+                    </div>
+
+                    <div class="line number14 index13 alt1">
+                      &nbsp;
+                    </div>
+
+                    <div class="line number15 index14 alt2">
+                      <code class="css plain">#content h</code><code class=
+                      "css value">3</code><code class="css plain">{</code>
+                    </div>
+
+                    <div class="line number16 index15 alt1">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">background</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">#008d46</code><code class=
+                      "css plain">;</code>
+                    </div>
+
+                    <div class="line number17 index16 alt2">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">margin-bottom</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">15px</code><code class="css plain">;</code>
+                    </div>
+
+                    <div class="line number18 index17 alt1">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">margin-top</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">15px</code><code class="css plain">;</code>
+                    </div>
+
+                    <div class="line number19 index18 alt2">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">color</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">#FFF</code><code class="css plain">;</code>
+                    </div>
+
+                    <div class="line number20 index19 alt1">
+                      <code class="css plain">}</code>
+                    </div>
+
+                    <div class="line number21 index20 alt2">
+                      &nbsp;
+                    </div>
+
+                    <div class="line number22 index21 alt1">
+                      <code class="css plain">#content h</code><code class=
+                      "css value">4</code><code class="css plain">, #content
+                      h</code><code class="css value">5</code><code class="css plain">,
+                      #content h</code><code class="css value">6</code><code class=
+                      "css plain">, #content h</code><code class=
+                      "css value">7</code><code class="css plain">{</code>
+                    </div>
+
+                    <div class="line number23 index22 alt2">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">background</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">#d2232c</code><code class=
+                      "css plain">;</code>
+                    </div>
+
+                    <div class="line number24 index23 alt1">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">margin-bottom</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">10px</code><code class="css plain">;</code>
+                    </div>
+
+                    <div class="line number25 index24 alt2">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">margin-top</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">20px</code><code class="css plain">;</code>
+                    </div>
+
+                    <div class="line number26 index25 alt1">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">color</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">#FFF</code><code class="css plain">;</code>
+                    </div>
+
+                    <div class="line number27 index26 alt2">
+                      <code class="css plain">}</code>
+                    </div>
+
+                    <div class="line number28 index27 alt1">
+                      &nbsp;
+                    </div>
+
+                    <div class="line number29 index28 alt2">
+                      <code class="css plain">#content h</code><code class=
+                      "css value">2</code><code class="css plain">, #content
+                      h</code><code class="css value">3</code><code class="css plain">,
+                      #content h</code><code class="css value">4</code><code class=
+                      "css plain">,</code>
+                    </div>
+
+                    <div class="line number30 index29 alt1">
+                      <code class="css plain">#content h</code><code class=
+                      "css value">5</code><code class="css plain">, #content
+                      h</code><code class="css value">6</code><code class="css plain">,
+                      #content h</code><code class="css value">7</code><code class=
+                      "css plain">{</code>
+                    </div>
+
+                    <div class="line number31 index30 alt2">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">background-image</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">url</code><code class=
+                      "css plain">(italy/c_led</code><code class=
+                      "css value">2</code><code class="css plain">.png),</code>
+                      <code class="css value">url</code><code class=
+                      "css plain">(italy/c_archivio</code><code class=
+                      "css value">3</code><code class="css plain">.png);</code>
+                    </div>
+
+                    <div class="line number32 index31 alt1">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">background-repeat</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">no-repeat</code><code class=
+                      "css plain">;</code>
+                    </div>
+
+                    <div class="line number33 index32 alt2">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">background-position</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">left</code> <code class=
+                      "css value">center</code><code class="css plain">,</code>
+                      <code class="css value">right</code> <code class=
+                      "css value">center</code><code class="css plain">;</code>
+                    </div>
+
+                    <div class="line number34 index33 alt1">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">font-size</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">0.875em</code><code class=
+                      "css plain">;</code>
+                    </div>
+
+                    <div class="line number35 index34 alt2">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">height</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">32px</code><code class="css plain">;</code>
+                    </div>
+
+                    <div class="line number36 index35 alt1">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">line-height</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">32px</code><code class="css plain">;</code>
+                    </div>
+
+                    <div class="line number37 index36 alt2">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">padding</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">0px</code><code class="css plain">;</code>
+                    </div>
+
+                    <div class="line number38 index37 alt1">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">padding-left</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">20px</code><code class="css plain">;</code>
+                    </div>
+
+                    <div class="line number39 index38 alt2">
+                      <code class="css plain">}</code>
+                    </div>
+
+                    <div class="line number40 index39 alt1">
+                      &nbsp;
+                    </div>
+
+                    <div class="line number41 index40 alt2">
+                      <code class="css plain">#content ul{</code>
+                    </div>
+
+                    <div class="line number42 index41 alt1">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">margin-top</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">30px</code><code class="css plain">;</code>
+                    </div>
+
+                    <div class="line number43 index42 alt2">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">list-style-image</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">url</code><code class=
+                      "css plain">(italy/list.png);</code>
+                    </div>
+
+                    <div class="line number44 index43 alt1">
+                      <code class="css plain">}</code>
+                    </div>
+
+                    <div class="line number45 index44 alt2">
+                      <code class="css plain">#content ul li{</code>
+                    </div>
+
+                    <div class="line number46 index45 alt1">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">padding</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">3px</code><code class="css plain">;</code>
+                    </div>
+
+                    <div class="line number47 index46 alt2">
+                      <code class="css plain">}</code>
+                    </div>
+
+                    <div class="line number48 index47 alt1">
+                      &nbsp;
+                    </div>
+
+                    <div class="line number49 index48 alt2">
+                      <code class="css plain">#content a:link{</code>
+                    </div>
+
+                    <div class="line number50 index49 alt1">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">text-decoration</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">none</code><code class="css plain">;</code>
+                    </div>
+
+                    <div class="line number51 index50 alt2">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">color</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">#295376</code><code class=
+                      "css plain">;</code>
+                    </div>
+
+                    <div class="line number52 index51 alt1">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">background</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">transparent</code><code class=
+                      "css plain">;</code>
+                    </div>
+
+                    <div class="line number53 index52 alt2">
+                      <code class="css plain">}</code>
+                    </div>
+
+                    <div class="line number54 index53 alt1">
+                      <code class="css plain">#content a:visited{</code>
+                    </div>
+
+                    <div class="line number55 index54 alt2">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">color</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">#5a306b</code><code class=
+                      "css plain">;</code>
+                    </div>
+
+                    <div class="line number56 index55 alt1">
+                      <code class="css plain">}</code>
+                    </div>
+
+                    <div class="line number57 index56 alt2">
+                      <code class="css plain">#content a:hover, #content a:active{</code>
+                    </div>
+
+                    <div class="line number58 index57 alt1">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">text-decoration</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">underline</code><code class=
+                      "css plain">;</code>
+                    </div>
+
+                    <div class="line number59 index58 alt2">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">color</code><code class="css plain">:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+                      <code class="css value">#B00000</code><code class=
+                      "css plain">;&nbsp;&nbsp;&nbsp;</code>
+                    </div>
+
+                    <div class="line number60 index59 alt1">
+                      <code class="css plain">}</code>
+                    </div>
+
+                    <div class="line number61 index60 alt2">
+                      <code class="css plain">#content .img{</code>
+                    </div>
+
+                    <div class="line number62 index61 alt1">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css plain">-webkit-transform:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      rotate(</code><code class="css value">3</code><code class=
+                      "css plain">deg);</code>
+                    </div>
+
+                    <div class="line number63 index62 alt2">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css plain">-moz-transform:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      rotate(</code><code class="css value">3</code><code class=
+                      "css plain">deg);</code>
+                    </div>
+
+                    <div class="line number64 index63 alt1">
+                      <code class="css plain">}</code>
+                    </div>
+
+                    <div class="line number65 index64 alt2">
+                      <code class="css plain">#content .img:hover{</code>
+                    </div>
+
+                    <div class="line number66 index65 alt1">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css plain">-webkit-transform:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      rotate(</code><code class="css value">0</code><code class=
+                      "css plain">deg);</code>
+                    </div>
+
+                    <div class="line number67 index66 alt2">
+                      <code class=
+                      "css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css plain">-moz-transform:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      rotate(</code><code class="css value">0</code><code class=
+                      "css plain">deg);</code>
+                    </div>
+
+                    <div class="line number68 index67 alt1">
+                      <code class="css plain">}</code>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>If the administrator wants to add images or graphical elements to a theme, they are
+  added to a sub-directory (named with the template name) and referred to in content
+  using relative paths. For example italy/italy/[image.png]</p>
+
+  <p>A screenshot image (named screenshot-<a class="unresolved" href=
+  "#">themename</a>.png) should be added to the template directory to represent how the
+  theme appears. For the Italy theme for example a file called screenshot-italy.png would
+  be added, as shown in the example below. Note that the image will be resized to fit the
+  available area.</p>
+
+  <p><img class="confluence-embedded-image" src=
+  "/images/screenshot-italy.png" alt="" /></p>
+
+  <p>A .xml file called layout.xml must be added to the directory to specify metadata for
+  the template, such as: name, description, maintainer name and email address, template
+  version, etc.</p>
+
+  <p>The following is an example XML included with the Italy theme:</p>
+
+  <div class="code panel pdl" style="border-style: solid;border-width: 1px;">
+    <div class="codeHeader panelHeader pdl" style=
+    "border-bottom-width: 1px;border-bottom-style: solid;">
+      <b>Example Theme Template XML Description: layout.xml</b>
+    </div>
+
+    <div class="codeContent panelContent pdl">
+      <div>
+        <div id="highlighter_47254" class="syntaxhighlighter nogutter xml">
+          <div class="toolbar">
+            <span><a href="#" class="toolbar_item command_help help">?</a></span>
+          </div>
+
+          <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td class="code">
+                  <div class="container" title="Hint: double-click to select code">
+                    <div class="line number1 index0 alt2">
+                      <code class="xml plain">&lt;?</code><code class=
+                      "xml keyword">xml</code> <code class=
+                      "xml color1">version</code><code class=
+                      "xml plain">=</code><code class="xml string">"1.0"</code>
+                      <code class="xml plain">?&gt;</code>
+                    </div>
+
+                    <div class="line number2 index1 alt1">
+                      <code class="xml plain">&lt;</code><code class=
+                      "xml keyword">layout</code> <code class=
+                      "xml color1">version</code><code class=
+                      "xml plain">=</code><code class=
+                      "xml string">"0.1"</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number3 index2 alt2">
+                      <code class="xml spaces">&nbsp;&nbsp;</code><code class=
+                      "xml plain">&lt;</code><code class="xml keyword">name</code>
+                      <code class="xml color1">lang</code><code class=
+                      "xml plain">=</code><code class=
+                      "xml string">"en"</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number4 index3 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">Italy</code>
+                    </div>
+
+                    <div class="line number5 index4 alt2">
+                      <code class="xml spaces">&nbsp;&nbsp;</code><code class=
+                      "xml plain">&lt;/</code><code class=
+                      "xml keyword">name</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number6 index5 alt1">
+                      <code class="xml spaces">&nbsp;&nbsp;</code><code class=
+                      "xml plain">&lt;</code><code class="xml keyword">description</code>
+                      <code class="xml color1">lang</code><code class=
+                      "xml plain">=</code><code class=
+                      "xml string">"en"</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number7 index6 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">Italy
+                      colour scheme.</code>
+                    </div>
+
+                    <div class="line number8 index7 alt1">
+                      <code class="xml spaces">&nbsp;&nbsp;</code><code class=
+                      "xml plain">&lt;/</code><code class=
+                      "xml keyword">description</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number9 index8 alt2">
+                      <code class="xml spaces">&nbsp;&nbsp;</code><code class=
+                      "xml plain">&lt;</code><code class=
+                      "xml keyword">maintainers</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number10 index9 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">maintainer</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number11 index10 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">name</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number12 index11 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">Mauro</code>
+                    </div>
+
+                    <div class="line number13 index12 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">name</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number14 index13 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">email</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number15 index14 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">mauro@studio.unibo.it</code>
+                    </div>
+
+                    <div class="line number16 index15 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">email</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number17 index16 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">maintainer</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number18 index17 alt1">
+                      <code class="xml spaces">&nbsp;&nbsp;</code><code class=
+                      "xml plain">&lt;/</code><code class=
+                      "xml keyword">maintainers</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number19 index18 alt2">
+                      <code class="xml spaces">&nbsp;&nbsp;</code><code class=
+                      "xml plain">&lt;</code><code class=
+                      "xml keyword">url</code><code class="xml plain">/&gt;</code>
+                    </div>
+
+                    <div class="line number20 index19 alt1">
+                      <code class="xml spaces">&nbsp;&nbsp;</code><code class=
+                      "xml plain">&lt;</code><code class=
+                      "xml keyword">license</code><code class="xml plain">/&gt;</code>
+                    </div>
+
+                    <div class="line number21 index20 alt2">
+                      <code class="xml spaces">&nbsp;&nbsp;</code><code class=
+                      "xml plain">&lt;</code><code class=
+                      "xml keyword">release</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number22 index21 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">version</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number23 index22 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">1.x</code>
+                    </div>
+
+                    <div class="line number24 index23 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">version</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number25 index24 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">date</code><code class="xml plain">/&gt;</code>
+                    </div>
+
+                    <div class="line number26 index25 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">state</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number27 index26 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">stable</code>
+                    </div>
+
+                    <div class="line number28 index27 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">state</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number29 index28 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">notes</code><code class="xml plain">/&gt;</code>
+                    </div>
+
+                    <div class="line number30 index29 alt1">
+                      <code class="xml spaces">&nbsp;&nbsp;</code><code class=
+                      "xml plain">&lt;/</code><code class=
+                      "xml keyword">release</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number31 index30 alt2">
+                      <code class="xml plain">&lt;/</code><code class=
+                      "xml keyword">layout</code><code class="xml plain">&gt;</code>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 id="AContentTemplateSystem-HowtoaddaPageLayoutTemplate">How to add a Page Layout
+  Template</h3>
+
+  <p>The "page_template" directory is where content page layout templates are kept. Files
+  for each layout are kept in a directory with the same name as the layout, for example
+  "title_2_columns". There must be a .html file in that directory with all the html
+  elements that make up the template. The .html file name must be the same of the
+  directory (i.e. title_2_columns.html).</p>
+
+  <div class="code panel pdl" style="border-style: solid;border-width: 1px;">
+    <div class="codeHeader panelHeader pdl" style=
+    "border-bottom-width: 1px;border-bottom-style: solid;">
+      <b>Example HTML for Content Template with a Title and Two Columns:
+      title_2_columns.html</b>
+    </div>
+
+    <div class="codeContent panelContent pdl">
+      <div>
+        <div id="highlighter_572841" class="syntaxhighlighter nogutter xml">
+          <div class="toolbar">
+            <span><a href="#" class="toolbar_item command_help help">?</a></span>
+          </div>
+
+          <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td class="code">
+                  <div class="container" title="Hint: double-click to select code">
+                    <div class="line number1 index0 alt2">
+                      <code class="xml plain">&lt;</code><code class=
+                      "xml keyword">div</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number2 index1 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">h3</code><code class="xml plain">&gt;Title&lt;/</code><code class="xml keyword">h3</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number3 index2 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">table</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number4 index3 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">tr</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number5 index4 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">td</code>
+                      <code class="xml color1">style</code><code class=
+                      "xml plain">=</code><code class="xml string">"text-align:justify;
+                      vertical-align: top; border-right: 1px solid #EEE; padding:
+                      10px"</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number6 index5 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">Lorem
+                      ipsum dolor sit amet, consectetur...</code>
+                    </div>
+
+                    <div class="line number7 index6 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">td</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number8 index7 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">td</code>
+                      <code class="xml color1">style</code><code class=
+                      "xml plain">=</code><code class="xml string">"text-align:justify;
+                      vertical-align: top; padding: 10px"</code><code class=
+                      "xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number9 index8 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">Lorem
+                      ipsum dolor sit amet, consectetur adipiscing elit....</code>
+                    </div>
+
+                    <div class="line number10 index9 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">td</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number11 index10 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">tr</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number12 index11 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">table</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number13 index12 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">br</code>
+                      <code class="xml plain">/&gt;</code>
+                    </div>
+
+                    <div class="line number14 index13 alt1">
+                      <code class="xml plain">&lt;/</code><code class=
+                      "xml keyword">div</code><code class="xml plain">&gt;</code>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>A thumbnail image of the layout must be included in each page layout directory
+  (named screenshot.png) to show the appearance of the layout. The example below is the
+  thumbnail for the Title and Two Column template.</p>
+
+  <p><img class="confluence-embedded-image" src=
+  "/download/attachments/12058648/screenshot.png?version=1&amp;modificationDate=1358281403000&amp;api=v2"
+  data-image-src=
+  "/download/attachments/12058648/screenshot.png?version=1&amp;modificationDate=1358281403000&amp;api=v2" /><br />
+
+  Title and Two Columns Thumbnail</p>
+
+  <p>A .xml file called "page_template.xml must be included with each page template to
+  specify its metadata, such as: name, description, maintainer name and email address,
+  template version, etc..</p>
+
+  <p>The following is an example page layout template xml file for the title and two
+  columns template:</p>
+
+  <div class="code panel pdl" style="border-style: solid;border-width: 1px;">
+    <div class="codeHeader panelHeader pdl" style=
+    "border-bottom-width: 1px;border-bottom-style: solid;">
+      <b>Example Page Template XML File: page_template.xml</b>
+    </div>
+
+    <div class="codeContent panelContent pdl">
+      <div>
+        <div id="highlighter_286599" class="syntaxhighlighter nogutter xml">
+          <div class="toolbar">
+            <span><a href="#" class="toolbar_item command_help help">?</a></span>
+          </div>
+
+          <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td class="code">
+                  <div class="container" title="Hint: double-click to select code">
+                    <div class="line number1 index0 alt2">
+                      <code class="xml plain">&lt;?</code><code class=
+                      "xml keyword">xml</code> <code class=
+                      "xml color1">version</code><code class=
+                      "xml plain">=</code><code class="xml string">"1.0"</code>
+                      <code class="xml plain">?&gt;</code>
+                    </div>
+
+                    <div class="line number2 index1 alt1">
+                      <code class="xml plain">&lt;</code><code class=
+                      "xml keyword">page_template</code> <code class=
+                      "xml color1">version</code><code class=
+                      "xml plain">=</code><code class=
+                      "xml string">"0.1"</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number3 index2 alt2">
+                      <code class="xml spaces">&nbsp;&nbsp;</code><code class=
+                      "xml plain">&lt;</code><code class="xml keyword">name</code>
+                      <code class="xml color1">lang</code><code class=
+                      "xml plain">=</code><code class=
+                      "xml string">"en"</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number4 index3 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">Title
+                      and 2 columns</code>
+                    </div>
+
+                    <div class="line number5 index4 alt2">
+                      <code class="xml spaces">&nbsp;&nbsp;</code><code class=
+                      "xml plain">&lt;/</code><code class=
+                      "xml keyword">name</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number6 index5 alt1">
+                      <code class="xml spaces">&nbsp;&nbsp;</code><code class=
+                      "xml plain">&lt;</code><code class="xml keyword">description</code>
+                      <code class="xml color1">lang</code><code class=
+                      "xml plain">=</code><code class=
+                      "xml string">"en"</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number7 index6 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">Title
+                      and 2 columns</code>
+                    </div>
+
+                    <div class="line number8 index7 alt1">
+                      <code class="xml spaces">&nbsp;&nbsp;</code><code class=
+                      "xml plain">&lt;/</code><code class=
+                      "xml keyword">description</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number9 index8 alt2">
+                      <code class="xml spaces">&nbsp;&nbsp;</code><code class=
+                      "xml plain">&lt;</code><code class=
+                      "xml keyword">maintainers</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number10 index9 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">maintainer</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number11 index10 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">name</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number12 index11 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">Mauro</code>
+                    </div>
+
+                    <div class="line number13 index12 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">name</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number14 index13 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">email</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number15 index14 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">mauro@studio.unibo.it</code>
+                    </div>
+
+                    <div class="line number16 index15 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">email</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number17 index16 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">maintainer</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number18 index17 alt1">
+                      <code class="xml spaces">&nbsp;&nbsp;</code><code class=
+                      "xml plain">&lt;/</code><code class=
+                      "xml keyword">maintainers</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number19 index18 alt2">
+                      <code class="xml spaces">&nbsp;&nbsp;</code><code class=
+                      "xml plain">&lt;</code><code class=
+                      "xml keyword">url</code><code class="xml plain">/&gt;</code>
+                    </div>
+
+                    <div class="line number20 index19 alt1">
+                      <code class="xml spaces">&nbsp;&nbsp;</code><code class=
+                      "xml plain">&lt;</code><code class=
+                      "xml keyword">license</code><code class="xml plain">/&gt;</code>
+                    </div>
+
+                    <div class="line number21 index20 alt2">
+                      <code class="xml spaces">&nbsp;&nbsp;</code><code class=
+                      "xml plain">&lt;</code><code class=
+                      "xml keyword">release</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number22 index21 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">version</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number23 index22 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">1.x</code>
+                    </div>
+
+                    <div class="line number24 index23 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">version</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number25 index24 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">date</code><code class="xml plain">/&gt;</code>
+                    </div>
+
+                    <div class="line number26 index25 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">state</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number27 index26 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">stable</code>
+                    </div>
+
+                    <div class="line number28 index27 alt1">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;/</code><code class="xml keyword">state</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number29 index28 alt2">
+                      <code class=
+                      "xml spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="xml plain">&lt;</code><code class="xml keyword">notes</code><code class="xml plain">/&gt;</code>
+                    </div>
+
+                    <div class="line number30 index29 alt1">
+                      <code class="xml spaces">&nbsp;&nbsp;</code><code class=
+                      "xml plain">&lt;/</code><code class=
+                      "xml keyword">release</code><code class="xml plain">&gt;</code>
+                    </div>
+
+                    <div class="line number31 index30 alt2">
+                      <code class="xml plain">&lt;/</code><code class=
+                      "xml keyword">page_template</code><code class=
+                      "xml plain">&gt;</code>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 id="AContentTemplateSystem-HowtoaddaLessonStructureTemplate">How to add a Lesson
+  Structure Template</h3>
+
+  <p>The "structures" directory is where the course and lesson structure templates are
+  kept. Like other templates describe above each has its own directory with the directory
+  name the same as the template's name, for example "creativity." There must be a
+  "content.xml" file that defines the lesson structure, describing mandatory and optional
+  content and their allowed instances.</p>
+
+  <p>Since each structure template is composed by page templates, it is worth mentioning
+  that values of the attribute name, for the elements page_template must be the names of
+  already existing page templates.</p>
+
+  <p>The following is the content.xml file for the "creativity" lesson structure.</p>
+
+  <div class="code panel pdl" style="border-style: solid;border-width: 1px;">
+    <div class="codeHeader panelHeader pdl" style=
+    "border-bottom-width: 1px;border-bottom-style: solid;">
+      <b>Example Structure Template: content.xml</b>
+    </div>
+
+    <div class="codeContent panelContent pdl">
+      <div>
+        <div id="highlighter_392863" class="syntaxhighlighter nogutter java">
+          <div class="toolbar">
+            <span><a href="#" class="toolbar_item command_help help">?</a></span>
+          </div>
+
+          <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td class="code">
+                  <div class="container" title="Hint: double-click to select code">
+                    <div class="line number1 index0 alt2">
+                      <code class="java plain">&lt;?xml version=</code><code class=
+                      "java string">"1.0"</code> <code class="java plain">?&gt;</code>
+                    </div>
+
+                    <div class="line number2 index1 alt1">
+                      <code class="java plain">&lt;structure name=</code><code class=
+                      "java string">"creative"</code><code class="java plain">&gt;</code>
+                    </div>
+
+                    <div class="line number3 index2 alt2">
+                      <code class="java spaces">&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;page max=</code><code class=
+                      "java string">"1"</code> <code class=
+                      "java plain">min=</code><code class="java string">"1"</code>
+                      <code class="java plain">name=</code><code class=
+                      "java string">"overview"</code><code class="java plain">&gt;</code>
+                    </div>
+
+                    <div class="line number4 index3 alt1">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;page_templates&gt;</code>
+                    </div>
+
+                    <div class="line number5 index4 alt2">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;page_template
+                      name=</code><code class=
+                      "java string">"overview_creative"</code><code class=
+                      "java plain">/&gt;</code>
+                    </div>
+
+                    <div class="line number6 index5 alt1">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;/page_templates&gt;</code>
+                    </div>
+
+                    <div class="line number7 index6 alt2">
+                      <code class="java spaces">&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;/page&gt;</code>
+                    </div>
+
+                    <div class="line number8 index7 alt1">
+                      <code class="java spaces">&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;folder max=</code><code class=
+                      "java string">"x"</code> <code class=
+                      "java plain">min=</code><code class="java string">"1"</code>
+                      <code class="java plain">name=</code><code class=
+                      "java string">"eTivities"</code><code class=
+                      "java plain">&gt;</code>
+                    </div>
+
+                    <div class="line number9 index8 alt2">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;page max=</code><code class=
+                      "java string">"x"</code> <code class=
+                      "java plain">min=</code><code class="java string">"1"</code>
+                      <code class="java plain">name=</code><code class=
+                      "java string">"eTivity"</code><code class="java plain">&gt;</code>
+                    </div>
+
+                    <div class="line number10 index9 alt1">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;
+                    </div>
+
+                    <div class="line number11 index10 alt2">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;page_templates/&gt;</code>
+                    </div>
+
+                    <div class="line number12 index11 alt1">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;tests&gt;</code>
+                    </div>
+
+                    <div class="line number13 index12 alt2">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;test
+                      name=</code><code class=
+                      "java string">"true_or_false"</code><code class=
+                      "java plain">/&gt;</code>
+                    </div>
+
+                    <div class="line number14 index13 alt1">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;test
+                      name=</code><code class=
+                      "java string">"multiple_choice"</code><code class=
+                      "java plain">/&gt;</code>
+                    </div>
+
+                    <div class="line number15 index14 alt2">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;test
+                      name=</code><code class=
+                      "java string">"matching_graphical"</code><code class=
+                      "java plain">/&gt;</code>
+                    </div>
+
+                    <div class="line number16 index15 alt1">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;test
+                      name=</code><code class=
+                      "java string">"matching_simple"</code><code class=
+                      "java plain">/&gt;</code>
+                    </div>
+
+                    <div class="line number17 index16 alt2">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;/tests&gt;</code>
+                    </div>
+
+                    <div class="line number18 index17 alt1">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;/page&gt;</code>
+                    </div>
+
+                    <div class="line number19 index18 alt2">
+                      <code class="java spaces">&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;/folder&gt;</code>
+                    </div>
+
+                    <div class="line number20 index19 alt1">
+                      <code class="java spaces">&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;page max=</code><code class=
+                      "java string">"1"</code> <code class=
+                      "java plain">min=</code><code class="java string">"1"</code>
+                      <code class="java plain">name=</code><code class=
+                      "java string">"references"</code><code class=
+                      "java plain">&gt;</code>
+                    </div>
+
+                    <div class="line number21 index20 alt2">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;page_templates&gt;</code>
+                    </div>
+
+                    <div class="line number22 index21 alt1">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;page_template
+                      name=</code><code class=
+                      "java string">"unordered_list"</code><code class=
+                      "java plain">/&gt;</code>
+                    </div>
+
+                    <div class="line number23 index22 alt2">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;/page_templates&gt;</code>
+                    </div>
+
+                    <div class="line number24 index23 alt1">
+                      <code class="java spaces">&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;/page&gt;</code>
+                    </div>
+
+                    <div class="line number25 index24 alt2">
+                      <code class="java spaces">&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;page max=</code><code class=
+                      "java string">"1"</code> <code class=
+                      "java plain">min=</code><code class="java string">"1"</code>
+                      <code class="java plain">name=</code><code class=
+                      "java string">"goals"</code><code class="java plain">&gt;</code>
+                    </div>
+
+                    <div class="line number26 index25 alt1">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;page_templates&gt;</code>
+                    </div>
+
+                    <div class="line number27 index26 alt2">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;page_template
+                      name=</code><code class=
+                      "java string">"goals_creative"</code><code class=
+                      "java plain">/&gt;</code>
+                    </div>
+
+                    <div class="line number28 index27 alt1">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;/page_templates&gt;</code>
+                    </div>
+
+                    <div class="line number29 index28 alt2">
+                      <code class="java spaces">&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;/page&gt;</code>
+                    </div>
+
+                    <div class="line number30 index29 alt1">
+                      <code class="java spaces">&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;folder max=</code><code class=
+                      "java string">"x"</code> <code class=
+                      "java plain">min=</code><code class="java string">"1"</code>
+                      <code class="java plain">name=</code><code class=
+                      "java string">"activities"</code><code class=
+                      "java plain">&gt;</code>
+                    </div>
+
+                    <div class="line number31 index30 alt2">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;page max=</code><code class=
+                      "java string">"x"</code> <code class=
+                      "java plain">min=</code><code class="java string">"1"</code>
+                      <code class="java plain">name=</code><code class=
+                      "java string">"activity"</code><code class="java plain">&gt;</code>
+                    </div>
+
+                    <div class="line number32 index31 alt1">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;page_templates&gt;</code>
+                    </div>
+
+                    <div class="line number33 index32 alt2">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;page_template
+                      name=</code><code class=
+                      "java string">"plain_text"</code><code class=
+                      "java plain">/&gt;</code>
+                    </div>
+
+                    <div class="line number34 index33 alt1">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;page_template
+                      name=</code><code class=
+                      "java string">"title_image"</code><code class=
+                      "java plain">/&gt;</code>
+                    </div>
+
+                    <div class="line number35 index34 alt2">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;page_template
+                      name=</code><code class=
+                      "java string">"title_image_text"</code><code class=
+                      "java plain">/&gt;</code>
+                    </div>
+
+                    <div class="line number36 index35 alt1">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;/page_templates&gt;</code>
+                    </div>
+
+                    <div class="line number37 index36 alt2">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;/page&gt;</code>
+                    </div>
+
+                    <div class="line number38 index37 alt1">
+                      <code class="java spaces">&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;/folder&gt;</code>
+                    </div>
+
+                    <div class="line number39 index38 alt2">
+                      <code class="java plain">&lt;/structure&gt;</code>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>A second XML file called "structure.xml" must also be included with each structure
+  template to specify the metadata for the template, such as: name, description,
+  maintainer name and email address, template version, etc..</p>
+
+  <p>The following is an example of a structure.xml file for the "creative" lesson
+  structure:</p>
+
+  <div class="code panel pdl" style="border-style: solid;border-width: 1px;">
+    <div class="codeHeader panelHeader pdl" style=
+    "border-bottom-width: 1px;border-bottom-style: solid;">
+      <b>Example structure.xml file</b>
+    </div>
+
+    <div class="codeContent panelContent pdl">
+      <div>
+        <div id="highlighter_550755" class="syntaxhighlighter nogutter java">
+          <div class="toolbar">
+            <span><a href="#" class="toolbar_item command_help help">?</a></span>
+          </div>
+
+          <table cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td class="code">
+                  <div class="container" title="Hint: double-click to select code">
+                    <div class="line number1 index0 alt2">
+                      <code class="java plain">&lt;?xml version=</code><code class=
+                      "java string">"1.0"</code> <code class="java plain">?&gt;</code>
+                    </div>
+
+                    <div class="line number2 index1 alt1">
+                      <code class="java plain">&lt;structure version=</code><code class=
+                      "java string">"0.1"</code><code class="java plain">&gt;</code>
+                    </div>
+
+                    <div class="line number3 index2 alt2">
+                      <code class="java spaces">&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;name lang=</code><code class=
+                      "java string">"en"</code><code class="java plain">&gt;</code>
+                    </div>
+
+                    <div class="line number4 index3 alt1">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=
+                      "java plain">creative based</code>
+                    </div>
+
+                    <div class="line number5 index4 alt2">
+                      <code class="java spaces">&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;/name&gt;</code>
+                    </div>
+
+                    <div class="line number6 index5 alt1">
+                      <code class="java spaces">&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;description lang=</code><code class=
+                      "java string">"en"</code><code class="java plain">&gt;</code>
+                    </div>
+
+                    <div class="line number7 index6 alt2">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=
+                      "java plain">creative based</code>
+                    </div>
+
+                    <div class="line number8 index7 alt1">
+                      <code class="java spaces">&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;/description&gt;</code>
+                    </div>
+
+                    <div class="line number9 index8 alt2">
+                      <code class="java spaces">&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;maintainers&gt;</code>
+                    </div>
+
+                    <div class="line number10 index9 alt1">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;maintainer&gt;</code>
+                    </div>
+
+                    <div class="line number11 index10 alt2">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;name&gt;</code>
+                    </div>
+
+                    <div class="line number12 index11 alt1">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">Catia</code>
+                    </div>
+
+                    <div class="line number13 index12 alt2">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;/name&gt;</code>
+                    </div>
+
+                    <div class="line number14 index13 alt1">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;email&gt;</code>
+                    </div>
+
+                    <div class="line number15 index14 alt2">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">catia</code><code class="java color1">@unibo</code><code class="java plain">.it</code>
+                    </div>
+
+                    <div class="line number16 index15 alt1">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">&lt;/email&gt;</code>
+                    </div>
+
+                    <div class="line number17 index16 alt2">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;/maintainer&gt;</code>
+                    </div>
+
+                    <div class="line number18 index17 alt1">
+                      <code class="java spaces">&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;/maintainers&gt;</code>
+                    </div>
+
+                    <div class="line number19 index18 alt2">
+                      <code class="java spaces">&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;url/&gt;</code>
+                    </div>
+
+                    <div class="line number20 index19 alt1">
+                      <code class="java spaces">&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;license/&gt;</code>
+                    </div>
+
+                    <div class="line number21 index20 alt2">
+                      <code class="java spaces">&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;release&gt;</code>
+                    </div>
+
+                    <div class="line number22 index21 alt1">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;version&gt;</code>
+                    </div>
+
+                    <div class="line number23 index22 alt2">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java value">1.2</code>
+                    </div>
+
+                    <div class="line number24 index23 alt1">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;/version&gt;</code>
+                    </div>
+
+                    <div class="line number25 index24 alt2">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;date/&gt;</code>
+                    </div>
+
+                    <div class="line number26 index25 alt1">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;state&gt;</code>
+                    </div>
+
+                    <div class="line number27 index26 alt2">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">stable</code>
+                    </div>
+
+                    <div class="line number28 index27 alt1">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;/state&gt;</code>
+                    </div>
+
+                    <div class="line number29 index28 alt2">
+                      <code class=
+                      "java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;notes/&gt;</code>
+                    </div>
+
+                    <div class="line number30 index29 alt1">
+                      <code class="java spaces">&nbsp;&nbsp;</code><code class=
+                      "java plain">&lt;/release&gt;</code>
+                    </div>
+
+                    <div class="line number31 index30 alt2">
+                      <code class="java plain">&lt;/structure&gt;</code>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+                
+
+            
+    
+
+
+
+
+            
+</div>

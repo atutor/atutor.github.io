@@ -1,0 +1,50 @@
+---
+title: AContent LTI and Live Linking into ATutor
+layout: home
+breadcrumb: live linking
+---
+<div class="cd-container">
+<h2>ATutor QTI Support</h2>
+<h3 id="ATutorQuestionandTestInteroperabilitySupport-Introduction">Introduction</h3>
+<p>In ATutor 1.5.5 QTI 2.1 exporting was introduced as an experimental tool for developers to export tests from ATutor that could be used to develop import tools in other systems. To date however, QTI 2.1 has not been adopted by other systems, and the highly touted IMS Common Cartridge specification, which system's are adopting, uses QTI 1.2 as its standard for interoperable tests as part of a common cartridge package. So, we've  backtracked a little, and implemented QTI 1.2 in ATutor 1.6.2. The QTI 2.1 export tools remain as experimental.</p>
+
+<h3 id="ATutorQuestionandTestInteroperabilitySupport-ImportingCompleteTestPackages">Importing Complete Test Packages</h3>
+<p>IMS QTI 1.2 test packages can be imported into ATutor in a number of ways. A complete test, including questions, marks, and a test title, can be imported through the Tests &amp; Surveys Manager opening screen, using the Import Test tool, displayed in the screenshot below.</p>
+
+<p><img class="confluence-embedded-image" src="/images/import_test.jpg" alt="Import tests screenshot"/></p>
+
+<h3 id="ATutorQuestionandTestInteroperabilitySupport-ImportingQuestionPackages">Importing Question Packages</h3>
+<p>Questions that are not part of a defined test, can be imported through the Question Database opening screen using the Import Questions tools, displayed in the screenshot below.</p>
+
+<p><img class="confluence-embedded-image" src="/images/import_questions.jpg" alt=""></p>
+
+<h3 id="ATutorQuestionandTestInteroperabilitySupport-ImportingTestsasPartofanIMSContentPackage.">Importing Tests as Part of an IMS Content Package.</h3>
+<p>Tests that are part of an IMS Content Package can be imported into ATutor through the Import/Export Content utility included with ATutor's content authoring tools. When importing content using the Import Content tool, like that displayed in the screenshot below, it is possible to import tests included with the content if they exists by selecting the Import Available QTI Tests checkbox.</p>
+
+<p><img class="confluence-embedded-image" src="/images/import_cp_tests.jpg" alt=""></p>
+
+
+<h3 id="ATutorQuestionandTestInteroperabilitySupport-ExportingCompleteTestPackages">Exporting Complete Test Packages</h3>
+<p>To export a test from ATutor, select from the available tests listed on the Tests &amp; Surveys Manager opening screen, then press the Export button like that displayed in the screenshot below. This will create a complete QTI 1.2 conformant test package in a ZIP file that can be downloaded and imported back into ATutor, or into another QTI conformant system.</p>
+
+<p><img class="confluence-embedded-image" src="/images/export_tests.jpg" alt=""></p>
+
+<h3 id="ATutorQuestionandTestInteroperabilitySupport-ExportingQuestionPackages">Exporting Question Packages</h3>
+<p>To export questions that are not part of a defined test, select the questions to include in the package from those listed in the Question Database, select the format from the menu in the footer area of the question database table, then press Export. Unless you are experimenting with QTI 2.1, you will probably want to use QTI 1.2.1 as the export format. Currently there are no systems that will import QTI 2.1 test packages, including ATutor. </p>
+
+<p><img class="confluence-embedded-image" src="/images/export_questions.jpg" alt=""></p>
+
+
+<h3 id="ATutorQuestionandTestInteroperabilitySupport-ExportingCompleteTestsasPartofaContentPackage">Exporting Complete Tests as Part of a Content Package</h3>
+<p>To export a test as part of an ATutor Content Package, the test must first be associated with the content being exported. This is done in the ATutor Content Editor under the Tests &amp; Surveys tab of the editor, as shown in the screenshot below. Select the checkbox next to the test, or tests, you want to associate with the content page, then press Save. This creates a link to the test(s) in the footer area of the page, which students can follow to find the test, and it creates an association between the content and test for import/export purposes.</p>
+
+<p><img class="confluence-embedded-image" src="/images/associate_tests.jpg" alt=""></p>
+
+<p>Once a test has been associated with a content page it will automatically be exported with the page when exporting a content package from ATutor. From the Export Content tool, select the content you wish to export, then press Export. The content and its associated test(s) will be included in the exported content package.</p>
+
+<p>In courses where students are allowed to export content, you may wish to prevent them from exporting tests with their content packages by selecting the <strong>No</strong> radio button under the Tests &amp; Surveys tab of the content editor. If you choose Yes, tests will be included with content packages exported by students. NOTE: in the current version of ATutor, exported tests are not directly accessible through the content package viewer included with a content package, though resourceful students would be able to find the test questions in the package files without too much trouble. At some point in the future, we will consider making exported tests operable from with the content package viewer.</p>
+</div>	
+
+ <!-- // end of #centerbar-->
+
+
