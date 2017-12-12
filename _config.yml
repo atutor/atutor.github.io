@@ -1,4 +1,5 @@
 site.github.theme: jekyll-theme-cayman
+site.github.mydata: curl https://api.github.com/users/atutorlangs/starred
 site.github.github: [metadata]
 site.github.gems:
     - jekyll-sitemap
