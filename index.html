@@ -2,7 +2,6 @@
 title: ATutor Home
 layout: home
 ---
-{{ site.github }}
 		<div class="cd-container">
 		    <div class="home-splash">
 		    <ul>
@@ -57,5 +56,5 @@ layout: home
 
 <script>
   var repos = {{ site.github.public_repositories | jsonify }};
-document.write(JSON.stringify(repos));
+document.write(JSON.parse(repos));
 </script>
