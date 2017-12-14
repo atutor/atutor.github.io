@@ -494,7 +494,8 @@ pre.code {
 	<p></p>
 
 <a href="#top" class="top">top</a>
-<h2><a name="setup">3. Setup</a></h2>
+<a name="setup"></a>
+<h2>3. Setup</h2>
 	<p>Please review the <a href="http://atutor.ca/atutor/docs/requirements.php" title="ATutor.ca - requirements">ATutor requirements</a> and ensure that your development environment meets the minimum requirements.</p>
 
 	<ul>
@@ -505,15 +506,16 @@ pre.code {
 
 	<h3><a name="php-configuration"></a>3.1 PHP Configuration</h3>
 	<p>If you have a dedicated development environment that doesn't share a web server with other production code, then it is best to use the bundled <kbd>php.ini-dist</kbd> configuration file as the default--simply rename it to <kbd>php.ini</kbd>. Listed below are the essential configuration options and their recommended value:</p>
-<pre class="code">safe_mode            = Off
-error_reporting      = E_ALL
-display_errors       = On
-arg_separator.input  = ";&amp;"
-register_globals     = Off
-magic_quotes_gpc     = Off
-magic_quotes_runtime = Off
-allow_url_fopen      = On
-register_argc_argv   = Off</pre><p></p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">safe_mode</span>            <span class="o">=</span> <span class="no">Off</span>
+<span class="n">error_reporting</span>      <span class="o">=</span> <span class="no">E_ALL</span>
+<span class="n">display_errors</span>       <span class="o">=</span> <span class="no">On</span>
+<span class="n">arg_separator</span><span class="p">.</span><span class="nf">input</span>  <span class="o">=</span> <span class="s2">";&amp;amp;"</span>
+<span class="n">register_globals</span>     <span class="o">=</span> <span class="no">Off</span>
+<span class="n">magic_quotes_gpc</span>     <span class="o">=</span> <span class="no">Off</span>
+<span class="n">magic_quotes_runtime</span> <span class="o">=</span> <span class="no">Off</span>
+<span class="n">allow_url_fopen</span>      <span class="o">=</span> <span class="no">On</span>
+<span class="n">register_argc_argv</span>   <span class="o">=</span> <span class="no">Off</span></code></pre></figure>
+<p></p>
 
 <a href="#top" class="top">top</a>
 <h2><a name="subversion"></a>4. Subversion (SVN) [THIS SECTION DEPRECATED]</h2>
@@ -594,20 +596,20 @@ register_argc_argv   = Off</pre><p></p>
 <a href="#top" class="top">top</a>
 <h2><a name="writing-portable-code"></a>11. Writing Portable Code</h2>
 	<p>When writing your PHP code please try to use functions that exist since (the minimum requirement) PHP version 4.2.0. If you have to use a function that only exists in later versions of PHP, provide an alternative for older versions. To check if the function is available use either <kbd>version_compare(phpversion(), $min_version)</kbd> or <kbd>function_exists($function_name)</kbd>. For example, to make use of <kbd>file_get_contents()</kbd>, which is only available in PHP 4.3.0 and later, use the following:
-</p><pre class="code">if (version_compare(phpversion(), '4.3.0') &lt; 0) {
-    function file_get_contents($filename) {
-        $fd = @fopen($filename, 'rb');
-        if ($fd === false) {
-            $content = false;
-        } else {
-            $content = @fread($fd, filesize($filename));
-            @fclose($fd);
-        }
-        return $content;
-    }
-}
-</pre><p></p>
+</p>
 
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="p">(</span><span class="n">version_compare</span><span class="p">(</span><span class="n">phpversion</span><span class="p">(),</span> <span class="s1">'4.3.0'</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">function</span> <span class="n">file_get_contents</span><span class="p">(</span><span class="vg">$filename</span><span class="p">)</span> <span class="p">{</span>
+        <span class="vg">$fd</span> <span class="o">=</span> <span class="vi">@fopen</span><span class="p">(</span><span class="vg">$filename</span><span class="p">,</span> <span class="s1">'rb'</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="vg">$fd</span> <span class="o">===</span> <span class="kp">false</span><span class="p">)</span> <span class="p">{</span>
+            <span class="vg">$content</span> <span class="o">=</span> <span class="kp">false</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="vg">$content</span> <span class="o">=</span> <span class="vi">@fread</span><span class="p">(</span><span class="vg">$fd</span><span class="p">,</span> <span class="n">filesize</span><span class="p">(</span><span class="vg">$filename</span><span class="p">));</span>
+            <span class="vi">@fclose</span><span class="p">(</span><span class="vg">$fd</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="vg">$content</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 	<p>Code has to work on both Windows and UNIX. You should never use <kbd>exec()</kbd> or <kbd>system()</kbd>. In most cases we prefer to write code that works on both systems as is, without the need for if-statements that check for the operating system, since duplicating the functionality twice (once for each operating system) can be a source of bugs. Review the <a href="#php-configuration">PHP Configuration</a> section for details on how best to set-up your development environment.</p>
 
 <a href="#top" class="top">top</a>
@@ -626,50 +628,50 @@ register_argc_argv   = Off</pre><p></p>
 
 	<h3><a name="line-length"></a>12.2 Line Length</h3>
 		<p>Split the long lines into multiple lines: 
-</p><pre class="code">if (($month = 'jan') || ($month = 'feb') || ($month = 'mar') || ($month = 'apr')) {
-    return 1;
-}
-</pre><p></p>
-
+</p><p></p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="p">((</span><span class="vg">$month</span> <span class="o">=</span> <span class="s1">'jan'</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="vg">$month</span> <span class="o">=</span> <span class="s1">'feb'</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="vg">$month</span> <span class="o">=</span> <span class="s1">'mar'</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="vg">$month</span> <span class="o">=</span> <span class="s1">'apr'</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
     <p>You can indent the second line to signify the association with the upper. For particularly long lines, you can indent and align every condition:
-</p><pre class="code">if (($month = 'jan') || 
-    ($month = 'feb') || 
-    ($month = 'mar') || 
-    ($month = 'apr')) {
+</p>
 
-    return 1;
-}
-</pre><p></p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="p">((</span><span class="vg">$month</span> <span class="o">=</span> <span class="s1">'jan'</span><span class="p">)</span> <span class="o">||</span> 
+    <span class="p">(</span><span class="vg">$month</span> <span class="o">=</span> <span class="s1">'feb'</span><span class="p">)</span> <span class="o">||</span> 
+    <span class="p">(</span><span class="vg">$month</span> <span class="o">=</span> <span class="s1">'mar'</span><span class="p">)</span> <span class="o">||</span> 
+    <span class="p">(</span><span class="vg">$month</span> <span class="o">=</span> <span class="s1">'apr'</span><span class="p">))</span> <span class="p">{</span>
 
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
         <p>This methodology works equally well for function parameters:
-</p><pre class="code">echo format_content($content_row['text'], 
-                    $content_row['formatting'], 
-                    $glossary,
-                    $indent);
-</pre><p></p>
-
+</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">echo</span> <span class="n">format_content</span><span class="p">(</span><span class="vg">$content_row</span><span class="p">[</span><span class="s1">'text'</span><span class="p">],</span> 
+                    <span class="vg">$content_row</span><span class="p">[</span><span class="s1">'formatting'</span><span class="p">],</span> 
+                    <span class="vg">$glossary</span><span class="p">,</span>
+                    <span class="vg">$indent</span><span class="p">);</span></code></pre></figure>
 	<h3><a name="whitespace"></a>12.3 Using Whitespace</h3>
 		<p>Whitespace can be used to provide and reinforce logical structure in the code. For example, it can be effectively used to group assignments and show associations. The following example is poorly formatted and difficult to read:
 
-</p><pre class="code">$password = 'mypassword';
-$website_url = 'http://atutor.ca';
-$first_name = 'Joel';
-$last_name = 'Kronenberg';
-</pre><p></p>
+</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vg">$password</span> <span class="o">=</span> <span class="s1">'mypassword'</span><span class="p">;</span>
+<span class="vg">$website_url</span> <span class="o">=</span> <span class="s1">'http://atutor.ca'</span><span class="p">;</span>
+<span class="vg">$first_name</span> <span class="o">=</span> <span class="s1">'Joel'</span><span class="p">;</span>
+<span class="vg">$last_name</span> <span class="o">=</span> <span class="s1">'Kronenberg'</span><span class="p">;</span></code></pre></figure>
+<p></p>
 
         <p>But this code block can be improved by using whitespace to logically group related assignments together and align them on the equal sign (<kbd>=</kbd>):
-</p><pre class="code">$pet_type    = 'mypassword';
-$website_url = 'http://atutor.ca';
-$first_name  = 'Joel';
-$last_name   = 'Kronenberg';
-</pre><p></p>
+</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vg">$pet_type</span>    <span class="o">=</span> <span class="s1">'mypassword'</span><span class="p">;</span>
+<span class="vg">$website_url</span> <span class="o">=</span> <span class="s1">'http://atutor.ca'</span><span class="p">;</span>
+<span class="vg">$first_name</span>  <span class="o">=</span> <span class="s1">'Joel'</span><span class="p">;</span>
+<span class="vg">$last_name</span>   <span class="o">=</span> <span class="s1">'Kronenberg'</span><span class="p">;</span></code></pre></figure>
+<p></p>
 
 	<h3><a name="sql-guidelines"></a>12.4 SQL Guidelines</h3>
 		<p>Similar formatting and layout rules applied to PHP can be applied to SQL queries as well. SQL queries, especially in database systems that support complex subqueries, can become convoluted. As with PHP code, whitespace and line breaks should be used in SQL code as needed. Consider the following:
         
-</p><pre class="code">select employees.first_name, employees.last_name from 
-               employees where employees.vacation_time &gt; 0 order by employees.last_name";
-</pre>        
+</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">select</span> <span class="n">employees</span><span class="p">.</span><span class="nf">first_name</span><span class="p">,</span> <span class="n">employees</span><span class="p">.</span><span class="nf">last_name</span> <span class="n">from</span> 
+               <span class="n">employees</span> <span class="n">where</span> <span class="n">employees</span><span class="p">.</span><span class="nf">vacation_time</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="n">order</span> <span class="n">by</span> <span class="n">employees</span><span class="p">.</span><span class="nf">last_name</span><span class="s2">";</span></code></pre></figure>       
         <p></p>
 
 		<p>This is a simple query, but it is poorly organized. Its organization can be improved in a number of ways, including the following:
@@ -679,45 +681,46 @@ $last_name   = 'Kronenberg';
             <li>Use table aliases to keep code clean.</li>
         </ul>
         
-<pre class="code">SELECT   S.first_name, S.last_name 
-FROM     students S
-WHERE    S.email = '' 
-ORDER BY S.last_name";
-</pre><p></p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">SELECT</span>   <span class="no">S</span><span class="p">.</span><span class="nf">first_name</span><span class="p">,</span> <span class="no">S</span><span class="p">.</span><span class="nf">last_name</span> 
+<span class="no">FROM</span>     <span class="n">students</span> <span class="no">S</span>
+<span class="no">WHERE</span>    <span class="no">S</span><span class="p">.</span><span class="nf">email</span> <span class="o">=</span> <span class="s1">''</span> 
+<span class="no">ORDER</span> <span class="no">BY</span> <span class="no">S</span><span class="p">.</span><span class="nf">last_name</span><span class="s2">";</span></code></pre></figure>
+<p></p>
 
 		<h3><a name="sql-joins"></a>12.5 SQL/99 Joins</h3>
 	   <p>ANSI SQL/99 features ANSI compliant joins. There are several advantages in using this new syntax, one of which is the separation of the <kbd>JOIN</kbd> condition from the <kbd>WHERE</kbd> clause.
-</p><pre class="code">SELECT	M.email, M.login 
-FROM	members M, forums_subscriptions S 
-WHERE	S.member_id=M.member_id 
-AND     M.email &lt;&gt; ''
-</pre>
+</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">SELECT</span>	<span class="no">M</span><span class="p">.</span><span class="nf">email</span><span class="p">,</span> <span class="no">M</span><span class="p">.</span><span class="nf">login</span> 
+<span class="no">FROM</span>	<span class="n">members</span> <span class="no">M</span><span class="p">,</span> <span class="n">forums_subscriptions</span> <span class="no">S</span> 
+<span class="no">WHERE</span>	<span class="no">S</span><span class="p">.</span><span class="nf">member_id</span><span class="o">=</span><span class="no">M</span><span class="p">.</span><span class="nf">member_id</span> 
+<span class="no">AND</span>     <span class="no">M</span><span class="p">.</span><span class="nf">email</span> <span class="o">&lt;&gt;</span> <span class="s1">''</span></code></pre></figure>
+
 SQL/99 makes a clear distinction between the fields in the <kbd>JOIN</kbd> condition and the <kbd>WHERE</kbd> clause:
-<pre class="code">SELECT	M.email, M.login
-FROM	members M
-JOIN	forums_subscriptions S USING (member_id)
-WHERE	M.email &lt;&gt; ''
-</pre><p></p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">SELECT</span>	<span class="no">M</span><span class="p">.</span><span class="nf">email</span><span class="p">,</span> <span class="no">M</span><span class="p">.</span><span class="nf">login</span>
+<span class="no">FROM</span>	<span class="n">members</span> <span class="no">M</span>
+<span class="no">JOIN</span>	<span class="n">forums_subscriptions</span> <span class="no">S</span> <span class="no">USING</span> <span class="p">(</span><span class="n">member_id</span><span class="p">)</span>
+<span class="no">WHERE</span>	<span class="no">M</span><span class="p">.</span><span class="nf">email</span> <span class="o">&lt;&gt;</span> <span class="s1">''</span></code></pre></figure>
+<p></p>
 
 	<h3><a name="control-flow-constructs"></a>12.6 Control Flow Constructs</h3>
 		<p>
 			</p><ul>
-				<li><em>Always</em> use <kbd>&lt;?php ?&gt;</kbd> instead of the short form <kbd>&lt;? ?&gt;</kbd>. This implies that you must not use the <kbd>&lt;?=$var;?&gt;</kbd> short form either.</li>
-				<li>Always include the optional semicolon in single line PHP blocks: <kbd>&lt;?php echo $something<big>;</big> ?&gt;</kbd>
+				<li><em>Always</em> use <kbd><?php ?></kbd> instead of the short form <kbd><? ?></kbd>. This implies that you must not use the <kbd><?=$var;?></kbd> short form either.</li>
+				<li>Always include the optional semicolon in single line PHP blocks: <kbd><?php echo $something<big>;</big> ?></kbd>
 				</li><li>Use <kbd>'</kbd> instead of <kbd>"</kbd> if there are no variables or special characters.</li>
 				<li>Use spaces around string concatenating. <kbd>echo 'str' . $value . 'str2';</kbd></li>
 				<li>Parenthesis <kbd>`( )`</kbd> should come right after a function name. <kbd>function()</kbd> not <kbd>function ()</kbd></li>
 				<li>Parenthesis <kbd>`( )`</kbd> should have a space right after a language construct (<kbd>if</kbd>, <kbd>while</kbd>, <kbd>for</kbd>). Examples: <kbd>for (...)</kbd>, <kbd>while (condition)</kbd></li>
 				<li>Avoid using <kbd>continue</kbd> and <kbd>break</kbd> as it makes debugging more difficult.</li>
 	            <li>Braces formatting is illustrating below. We use K&amp;R style where the initial brace is placed on the same line as the keyword and the trailing brace inline on its own line with the keyword:
-<pre class="code">if (condition) {
-    ...
-} else if (condition) {
-    ...
-} else {
-    ...
-}
-</pre></li>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="p">(</span><span class="n">condition</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">.</span><span class="nf">.</span><span class="o">.</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">condition</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">.</span><span class="nf">.</span><span class="o">.</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="p">.</span><span class="nf">.</span><span class="o">.</span>
+<span class="p">}</span></code></pre></figure>
+</li>
 				<li>Arrays should be referenced with no spaces. <kbd>$arr['index']</kbd> not <kbd>$arr[ 'index' ]</kbd></li>
 				<li>Avoid using short if-statement construct (<kbd>$var = ($query ? $val1 : $val2)</kbd>) except in very rare cases. It is confusing and has a lot of bug potential.</li>
 			</ul>
@@ -725,15 +728,17 @@ WHERE	M.email &lt;&gt; ''
 
 	<h3><a name="commenting"></a>12.7 Commenting</h3>
 		<p>Avoid using Shell/Perl-style (<kbd>## this is a comment</kbd>) comments entirely. Use C-style comments (<kbd>/* ... */</kbd>) for large comment blocks and C++-style comments (<kbd>// ...</kbd>) for single-line comments only:
-</p><pre class="code">/* This is a comment block
+</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">/* This is a comment block
  * it is used for describing
  * the code below.
- */
-...
-// this is a single line comment
-</pre><p></p>
+ */</span>
+<span class="p">.</span><span class="nf">.</span><span class="p">.</span>
+<span class="nf">/</span><span class="o">/</span> <span class="n">this</span> <span class="n">is</span> <span class="n">a</span> <span class="n">single</span> <span class="n">line</span> <span class="n">comment</span></code></pre></figure>
+<p></p>
 	<p>Please, document while you code. See <a href="http://phpdocu.sourceforge.net/howto.php">phpdoc</a>, like <a href="http://java.sun.com/docs/books/jls/first_edition/html/18.doc.html">javadoc</a>, for how to document functions, classes, methods, and variables. Coding is often hurried, but it will save a lot of time in the end to do this type of documenting! It looks like this:
-   </p><pre class="code">   /**
+   </p>
+   <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">      <span class="sr">/**
    * what the function does in one line.
    * more detailed description on 0-n lines, if needed.
    * @access  [public|static|pseudostatic]
@@ -742,17 +747,17 @@ WHERE	M.email &lt;&gt; ''
    *  ...
    * @param   [string|int|double|bool|array|object|mixed] $paramNameN desc
    * @return  datatype  description
-   * @throws  <em>not until PHP 5</em>
-   * @see     some_function()
-   * @todo    description
-   * @since   ATutor version, PHP version   (comma separated list)
-   * @status  stable|experimental           (if not set then considered stable)
-   * @pattern singleton|factory|mvc|observer|facade|...
-   * @author  description                   (comma separated list)
-   */
+   * @throws  &lt;em&gt;not until PHP 5&lt;/em</span><span class="o">&gt;</span>
+   <span class="o">*</span> <span class="vi">@see</span>     <span class="n">some_function</span><span class="p">()</span>
+   <span class="o">*</span> <span class="vi">@todo</span>    <span class="n">description</span>
+   <span class="o">*</span> <span class="vi">@since</span>   <span class="no">ATutor</span> <span class="n">version</span><span class="p">,</span> <span class="no">PHP</span> <span class="n">version</span>   <span class="p">(</span><span class="n">comma</span> <span class="n">separated</span> <span class="n">list</span><span class="p">)</span>
+   <span class="o">*</span> <span class="vi">@status</span>  <span class="n">stable</span><span class="o">|</span><span class="n">experimental</span>           <span class="p">(</span><span class="k">if</span> <span class="n">not</span> <span class="n">set</span> <span class="k">then</span> <span class="n">considered</span> <span class="n">stable</span><span class="p">)</span>
+   <span class="o">*</span> <span class="vi">@pattern</span> <span class="n">singleton</span><span class="o">|</span><span class="n">factory</span><span class="o">|</span><span class="n">mvc</span><span class="o">|</span><span class="n">observer</span><span class="o">|</span><span class="n">facade</span><span class="o">|</span><span class="p">.</span><span class="nf">.</span><span class="p">.</span>
+   <span class="nf">*</span> <span class="vi">@author</span>  <span class="n">description</span>                   <span class="p">(</span><span class="n">comma</span> <span class="n">separated</span> <span class="n">list</span><span class="p">)</span>
+   <span class="o">*</span><span class="sr">/
    function something() {
    }
-   </pre>
+  </span></code></pre></figure>
    Note that the description should be given as plain text not HTML.  The <kbd>@pattern singleton</kbd> means that the constructor returns a reference to an already existing instance, if there is one.<p></p>
 
 	<h3><a name="naming-conventions"></a>12.8 Naming Conventions</h3>
@@ -994,7 +999,7 @@ WHERE	M.email &lt;&gt; ''
 	<p>Messages are automaticaaly purged from <kbd>$_SESSION</kbd> following an appropriate print command.</p>
 
 	<h3><a name="error-feedback-usage"></a>16.2 Adding Messages</h3>
-		<kbd>$msg-&gt;add{Error|Warning|Info|Feedback|Help}($code);</kbd><br><br>
+		<kbd>$msg->add{Error|Warning|Info|Feedback|Help}($code);</kbd><br><br>
 
 		<p><kbd>$code</kbd> is a <kbs>String of a language _msgs code or an array with element 0 being the language _msgs code followed by optional arguments. Refer to the language_text table in the database.</kbs></p>
 
@@ -1013,13 +1018,13 @@ WHERE	M.email &lt;&gt; ''
 
 		<p>
 			</p><dt>Adding single code</dt>
-			<dt><kbd>$msg-&gt;addHelp('FILE_EXPORTABLE');</kbd></dt>
+			<dt><kbd>$msg->addHelp('FILE_EXPORTABLE');</kbd></dt>
 		<br>
 		<dt><b>OR</b></dt>
 		<br>
 		<dt>Adding array with arguments</dt>
 		<dt><kbd>$f = array('FILE_EXPORTABLE', 'arg', 'arg2', ...);</kbd></dt>
-		<dt><kbd>$msg-&gt;addHelp($f);</kbd></dt>
+		<dt><kbd>$msg->addHelp($f);</kbd></dt>
 		<p></p>
 
 		<p>A nice feature implemented is that you do not have to provide all
@@ -1030,39 +1035,38 @@ WHERE	M.email &lt;&gt; ''
 
 		</p><p><b>Example 1:</b>
 		</p><dt><kbd>$feedback=array('FORUM_ADDED', 'ac_access_groups');</kbd></dt>
-		<dt><kbd>$msg-&gt;addFeedback($feedback);</kbd></dt><br>
+		<dt><kbd>$msg->addFeedback($feedback);</kbd></dt><br>
 
 		<dt><kbd>// Before we print lets another another one to the same code</kbd></dt>
 		<dt><kbd>$feedback2=array('FORUM_ADDED', 'about_atutor_help_text');</kbd></dt>
-		<dt><kbd>$msg-&gt;addFeedback($feedback2);</kbd></dt><br>
+		<dt><kbd>$msg->addFeedback($feedback2);</kbd></dt><br>
 
 		<dt><kbd>// No need to url_encode the code</kbd></dt>
 		<dt><kbd>$filename = 'archive.zip';</kbd></dt>
 		<dt><kbd>$f = array('FILE_UPLOADED_ZIP', $file_name);</kbd></dt>
-		<dt><kbd>$msg-&gt;addFeedback($f);</kbd></dt>
+		<dt><kbd>$msg->addFeedback($f);</kbd></dt>
 
 		<p></p>
 
 <p>Snapshot of a portion of <kbd>$_SESSION</kbd> as a result:</p>
-<pre class="code">	[feedback] =&gt; Array
-                (
-                    [AT_FEEDBACK_FORUM_ADDED] =&gt; Array
-                        (
-                            [0] =&gt; AT_FEEDBACK_FORUM_ADDED
-                            [1] =&gt; ac_access_groups
-                            [2] =&gt; about_atutor_help_text
-                        )
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">                	<span class="p">[</span><span class="n">feedback</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="no">Array</span>
+                <span class="p">(</span>
+                    <span class="p">[</span><span class="no">AT_FEEDBACK_FORUM_ADDED</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="no">Array</span>
+                        <span class="p">(</span>
+                            <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="no">AT_FEEDBACK_FORUM_ADDED</span>
+                            <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">ac_access_groups</span>
+                            <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">about_atutor_help_text</span>
+                        <span class="p">)</span>
                         
-                    [AT_FEEDBACK_FILE_UPLOADED_ZIP] =&gt; Array
-                        (
-                            [0] =&gt; AT_FEEDBACK_FILE_UPLOADED_ZIP
-                            [1] =&gt; archive.zip
-                        )
+                    <span class="p">[</span><span class="no">AT_FEEDBACK_FILE_UPLOADED_ZIP</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="no">Array</span>
+                        <span class="p">(</span>
+                            <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="no">AT_FEEDBACK_FILE_UPLOADED_ZIP</span>
+                            <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">archive</span><span class="p">.</span><span class="nf">zip</span>
+                        <span class="p">)</span>
 
 
-                )
-	...
-</pre>
+                <span class="p">)</span>
+	<span class="p">.</span><span class="nf">.</span><span class="o">.</span></code></pre></figure>
 
 <p>
 </p><dt><kbd>header('Location: file_manager.php');</kbd></dt>
@@ -1070,7 +1074,7 @@ WHERE	M.email &lt;&gt; ''
 <p></p>
 
 <h3><a name="error-feedback-printing"></a>16.3 Printing Messages</h3>
-<kbd>$msg-&gt;print{Errors|Warnings|Infos|Feedbacks|Helps|All}($optional);</kbd><br><br>
+<kbd>$msg->print{Errors|Warnings|Infos|Feedbacks|Helps|All}($optional);</kbd><br><br>
 
 <p>Each will dump all the corresponding tracked messages of that type onto
 the page at that given line with appropriate graphics defined by its templates file.</p><p>
@@ -1087,13 +1091,12 @@ suppose you want to add a Message and print it right away. Thus, you pass as an
 argument ANY argument that you would pass when adding a Message of that type. 
 Essentially, two lines of code are accomplished in one.</p>
 <dt>Example:</dt>
-<pre class="code">	$msg-&gt;addError('MAX_ATTEMPTS');
-	$msg-&gt;printErrors();
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">	<span class="vg">$msg</span><span class="o">-&gt;</span><span class="n">addError</span><span class="p">(</span><span class="s1">'MAX_ATTEMPTS'</span><span class="p">);</span>
+	<span class="vg">$msg</span><span class="o">-&gt;</span><span class="n">printErrors</span><span class="p">();</span>
 	
-	can also be accomplished as:
+	<span class="n">can</span> <span class="n">also</span> <span class="n">be</span> <span class="n">accomplished</span> <span class="n">as</span> <span class="p">:</span>
 	
-	$msg-&gt;printErrors('MAX_ATTEMPTS');
-</pre>
+	<span class="vg">$msg</span><span class="o">-&gt;</span><span class="n">printErrors</span><span class="p">(</span><span class="s1">'MAX_ATTEMPTS'</span><span class="p">);</span></code></pre></figure>
 
 <h4><a name="Boolean"></a>Printing String inside Feedback style box</h4>
 
@@ -1118,26 +1121,24 @@ when to print a Message or not. Otherwise returns false.</p>
 
 <p>Will delete anything related to <kbd>$code</kbd> from <kbd>$_SESSION</kbd></p>
 <dt>Example:</dt>
-<pre class="code">	$msg-&gt;deleteFeedback('CANCELLED');
-</pre>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vg">$msg</span><span class="o">-&gt;</span><span class="n">deleteFeedback</span><span class="p">(</span><span class="s1">'CANCELLED'</span><span class="p">);</span></code></pre></figure>
 
 <h4><a name="Example"></a>Example Code</h4>
 	
-<pre class="code">
-...
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">.</span><span class="nf">.</span><span class="p">.</span>
 
-require_once(AT_INCLUDE_PATH . '/classes/Message/Message.class.php');
+<span class="nf">require_once</span><span class="p">(</span><span class="no">AT_INCLUDE_PATH</span> <span class="o">.</span> <span class="s1">'/classes/Message/Message.class.php'</span><span class="p">);</span>
 
-global $savant;
+<span class="n">global</span> <span class="vg">$savant</span><span class="p">;</span>
 
-$msg =&amp; new Message($savant); 
+<span class="vg">$msg</span> <span class="o">=&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="kp">new</span> <span class="no">Message</span><span class="p">(</span><span class="vg">$savant</span><span class="p">);</span> 
 
-$msg-&gt;addError('FORUM_NOT_FOUND');
-$msg-&gt;addWarning('SAVE_YOUR_WORK');
-$msg-&gt;addInfo('NO_SEARCH_RESULTS');
-$msg-&gt;addFeedback('FORUM_ADDED');
+<span class="vg">$msg</span><span class="o">-&gt;</span><span class="n">addError</span><span class="p">(</span><span class="s1">'FORUM_NOT_FOUND'</span><span class="p">);</span>
+<span class="vg">$msg</span><span class="o">-&gt;</span><span class="n">addWarning</span><span class="p">(</span><span class="s1">'SAVE_YOUR_WORK'</span><span class="p">);</span>
+<span class="vg">$msg</span><span class="o">-&gt;</span><span class="n">addInfo</span><span class="p">(</span><span class="s1">'NO_SEARCH_RESULTS'</span><span class="p">);</span>
+<span class="vg">$msg</span><span class="o">-&gt;</span><span class="n">addFeedback</span><span class="p">(</span><span class="s1">'FORUM_ADDED'</span><span class="p">);</span>
 
-/* State of relevant section of $_SESSION at this point 
+<span class="sr">/* State of relevant section of $_SESSION at this point 
 [message] =&gt; Array
         (
             [error] =&gt; Array
@@ -1161,42 +1162,42 @@ $msg-&gt;addFeedback('FORUM_ADDED');
                 )
 
         )
-*/
+*/</span>
 
-// Now print them
-$msg-&gt;printErrors();
-$msg-&gt;printWarnings();
-$msg-&gt;printInfos();
-$msg-&gt;printFeedbacks();
+<span class="sr">//</span> <span class="no">Now</span> <span class="nb">print</span> <span class="n">them</span>
+<span class="vg">$msg</span><span class="o">-&gt;</span><span class="n">printErrors</span><span class="p">();</span>
+<span class="vg">$msg</span><span class="o">-&gt;</span><span class="n">printWarnings</span><span class="p">();</span>
+<span class="vg">$msg</span><span class="o">-&gt;</span><span class="n">printInfos</span><span class="p">();</span>
+<span class="vg">$msg</span><span class="o">-&gt;</span><span class="n">printFeedbacks</span><span class="p">();</span>
 
-/* State of relevant section of $_SESSION at this point
+<span class="sr">/* State of relevant section of $_SESSION at this point
  [message] =&gt; Array
         (
         )
- */
+ */</span>
 
-// Let's add an array of arguments
-$feedback=array('FORUM_ADDED', 'ac_access_groups');
-$msg-&gt;addFeedback($feedback);
+<span class="sr">//</span> <span class="no">Lets</span> <span class="n">add</span> <span class="n">an</span> <span class="n">array</span> <span class="n">of</span> <span class="n">arguments</span>
+<span class="vg">$feedback</span><span class="o">=</span><span class="n">array</span><span class="p">(</span><span class="s1">'FORUM_ADDED'</span><span class="p">,</span> <span class="s1">'ac_access_groups'</span><span class="p">);</span>
+<span class="vg">$msg</span><span class="o">-&gt;</span><span class="n">addFeedback</span><span class="p">(</span><span class="vg">$feedback</span><span class="p">);</span>
 
-// Before we print lets another another one to the same code
-$feedback2=array('FORUM_ADDED', 'about_atutor_help_text');
-$msg-&gt;addFeedback($feedback2);
+<span class="sr">//</span> <span class="no">Before</span> <span class="n">we</span> <span class="nb">print</span> <span class="n">lets</span> <span class="n">another</span> <span class="n">another</span> <span class="n">one</span> <span class="n">to</span> <span class="n">the</span> <span class="n">same</span> <span class="n">code</span>
+<span class="vg">$feedback2</span><span class="o">=</span><span class="n">array</span><span class="p">(</span><span class="s1">'FORUM_ADDED'</span><span class="p">,</span> <span class="s1">'about_atutor_help_text'</span><span class="p">);</span>
+<span class="vg">$msg</span><span class="o">-&gt;</span><span class="n">addFeedback</span><span class="p">(</span><span class="vg">$feedback2</span><span class="p">);</span>
 
-$msg-&gt;addHelp('DEMO_HELP2');
+<span class="vg">$msg</span><span class="o">-&gt;</span><span class="n">addHelp</span><span class="p">(</span><span class="s1">'DEMO_HELP2'</span><span class="p">);</span>
 
-$help=array('DEMO_HELP2', $_my_uri);
-$msg-&gt;addHelp($help);
+<span class="vg">$help</span><span class="o">=</span><span class="n">array</span><span class="p">(</span><span class="s1">'DEMO_HELP2'</span><span class="p">,</span> <span class="vg">$_my_uri</span><span class="p">);</span>
+<span class="vg">$msg</span><span class="o">-&gt;</span><span class="n">addHelp</span><span class="p">(</span><span class="vg">$help</span><span class="p">);</span>
 
-$help2=array('ADD_TEST', $_my_uri);
-$msg-&gt;addHelp($help2);
+<span class="vg">$help2</span><span class="o">=</span><span class="n">array</span><span class="p">(</span><span class="s1">'ADD_TEST'</span><span class="p">,</span> <span class="vg">$_my_uri</span><span class="p">);</span>
+<span class="vg">$msg</span><span class="o">-&gt;</span><span class="n">addHelp</span><span class="p">(</span><span class="vg">$help2</span><span class="p">);</span>
 
-// No need to url_encode the code
-$filename = 'archive.zip';
-$f = array('FILE_UPLOADED_ZIP', $file_name);
-$msg-&gt;addFeedback($f);
+<span class="sr">//</span> <span class="no">No</span> <span class="n">need</span> <span class="n">to</span> <span class="n">url_encode</span> <span class="n">the</span> <span class="n">code</span>
+<span class="vg">$filename</span> <span class="o">=</span> <span class="s1">'archive.zip'</span><span class="p">;</span>
+<span class="vg">$f</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">'FILE_UPLOADED_ZIP'</span><span class="p">,</span> <span class="vg">$file_name</span><span class="p">);</span>
+<span class="vg">$msg</span><span class="o">-&gt;</span><span class="n">addFeedback</span><span class="p">(</span><span class="vg">$f</span><span class="p">);</span>
 
-/* State of relevant section of $_SESSION at this point. Notice the second addFeddback call above
+<span class="sr">/* State of relevant section of $_SESSION at this point. Notice the second addFeddback call above
  * had its arguments appended
 
  [message] =&gt; Array
@@ -1223,30 +1224,29 @@ $msg-&gt;addFeedback($f);
                     [AT_HELP_DEMO_HELP2] =&gt; Array
                         (
                             [0] =&gt; AT_HELP_DEMO_HELP2
-                            [1] =&gt; /~Jay/docs/index.php?
-                        )
+                            [1] =&gt; /</span><span class="o">~</span><span class="no">Jay</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">index</span><span class="p">.</span><span class="nf">php?</span>
+                        <span class="p">)</span>
 
-                    [AT_HELP_ADD_TEST] =&gt; Array
-                        (
-                            [0] =&gt; AT_HELP_ADD_TEST
-                            [1] =&gt; /~Jay/docs/index.php?
-                        )
+                    <span class="p">[</span><span class="no">AT_HELP_ADD_TEST</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="no">Array</span>
+                        <span class="p">(</span>
+                            <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="no">AT_HELP_ADD_TEST</span>
+                            <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="sr">/~Jay/</span><span class="n">docs</span><span class="o">/</span><span class="n">index</span><span class="p">.</span><span class="nf">php?</span>
+                        <span class="p">)</span>
 
-                )
+                <span class="p">)</span>
 
-        }
-*/
+        <span class="p">}</span>
+<span class="o">*</span><span class="sr">/
 
 $msg-&gt;printAll();
 
-/* State of relevant section of $_SESSION at this point
- [message] =&gt; Array
-        (
-        )
- */
+/</span><span class="o">*</span> <span class="no">State</span> <span class="n">of</span> <span class="n">relevant</span> <span class="n">section</span> <span class="n">of</span> <span class="vg">$_SESSION</span> <span class="n">at</span> <span class="n">this</span> <span class="n">point</span>
+ <span class="p">[</span><span class="n">message</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="no">Array</span>
+        <span class="p">(</span>
+        <span class="p">)</span>
+ <span class="o">*</span><span class="sr">/
  
- ...
-</pre>
+ ...</span></code></pre></figure>
 
 
 <a href="#top" class="top">top</a>
@@ -1263,6 +1263,7 @@ $msg-&gt;printAll();
 			<p><kbd>`include/vitals.inc.php`</kbd></p>
 
 	<h3><a name="var-addslashes"></a>17.2 $addslashes</h3>
+	    <p><strong>Deprecated</strong></p>
 		<p>See <a href="#fn-addslashes"><kbd>$addslashes()</kbd></a>.</p>
 
 	<h3><a name="var-base_href"></a>17.3 $_base_href</h3>
@@ -1335,13 +1336,14 @@ $msg-&gt;printAll();
 
 		<h4>Example 1</h4>
 			<p>To assign the path to the site-map:
-</p><pre class="code">// the Site-Map is a sub-page of the Tools page, hence we define the path:
+</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">//</span> <span class="n">the</span> <span class="no">Site</span><span class="o">-</span><span class="no">Map</span> <span class="n">is</span> <span class="n">a</span> <span class="nb">sub</span><span class="o">-</span><span class="n">page</span> <span class="n">of</span> <span class="n">the</span> <span class="no">Tools</span> <span class="n">page</span><span class="p">,</span> <span class="n">hence</span> <span class="n">we</span> <span class="n">define</span> <span class="n">the</span> <span class="n">path</span> <span class="p">:</span>
 
-$_section[0][0] = _AT('tools');              // the Tools' page title
-$_section[0][1] = 'tools/';                  // the Tools' page URL
-$_section[1][0] = _AT('sitemap');            // the Site-Map's page title
-$_section[1][1] = 'tools/sitemap/index.php'; // the Site-Map's page URL
-</pre><p></p>
+<span class="vg">$_section</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">_AT</span><span class="p">(</span><span class="s1">'tools'</span><span class="p">);</span>              <span class="sr">//</span> <span class="n">the</span> <span class="no">Tools</span><span class="s1">' page title
+$_section[0][1] = '</span><span class="n">tools</span><span class="o">/</span><span class="s1">';                  // the Tools'</span> <span class="n">page</span> <span class="no">URL</span>
+<span class="vg">$_section</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">_AT</span><span class="p">(</span><span class="s1">'sitemap'</span><span class="p">);</span>            <span class="sr">//</span> <span class="n">the</span> <span class="no">Site</span><span class="o">-</span><span class="no">Map</span><span class="s1">'s page title
+$_section[1][1] = '</span><span class="n">tools</span><span class="o">/</span><span class="n">sitemap</span><span class="o">/</span><span class="n">index</span><span class="p">.</span><span class="nf">php</span><span class="s1">'; // the Site-Map'</span><span class="n">s</span> <span class="n">page</span> <span class="no">URL</span></code></pre></figure>
+<p></p>
 
 		<h4>Location</h4>
 			<p><em>Declared on every page that is directly accessible.</em></p>
@@ -1370,20 +1372,22 @@ $_section[1][1] = 'tools/sitemap/index.php'; // the Site-Map's page URL
 
 		<h4>Example 1</h4>
 			<p>To authenticate an entire page using the announcements management privilege:
-</p><pre class="code">define('AT_INCLUDE_PATH', '../include/');
-require (AT_INCLUDE_PATH . 'vitals.inc.php');
-/**
-/* exit if the user cannot be authenticated
- * otherwise continue loading the page.
- */
-authenticate(AT_PRIV_ANNOUNCEMENTS);
-</pre><p></p>
+</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">define</span><span class="p">(</span><span class="s1">'AT_INCLUDE_PATH'</span><span class="p">,</span> <span class="s1">'../include/'</span><span class="p">);</span>
+<span class="nb">require</span> <span class="p">(</span><span class="no">AT_INCLUDE_PATH</span> <span class="o">.</span> <span class="s1">'vitals.inc.php'</span><span class="p">);</span>
+<span class="sr">/**
+/</span><span class="o">*</span> <span class="nb">exit</span> <span class="k">if</span> <span class="n">the</span> <span class="n">user</span> <span class="n">cannot</span> <span class="n">be</span> <span class="n">authenticated</span>
+ <span class="o">*</span> <span class="n">otherwise</span> <span class="n">continue</span> <span class="n">loading</span> <span class="n">the</span> <span class="n">page</span><span class="p">.</span>
+ <span class="nf">*</span><span class="o">/</span>
+<span class="n">authenticate</span><span class="p">(</span><span class="no">AT_PRIV_ANNOUNCEMENTS</span><span class="p">);</span></code></pre></figure>
+<p></p>
 		<h4>Example 2</h4>
 			<p>To authenticate a block of code using the forums management privilege:
-</p><pre class="code">if (authenticate(AT_PRIV_FORUMS, AT_PRIV_RETURN)) {
-    // ... this user has been authenticated
-}
-</pre><p></p>
+</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">if</span> <span class="p">(</span><span class="n">authenticate</span><span class="p">(</span><span class="no">AT_PRIV_FORUMS</span><span class="p">,</span> <span class="no">AT_PRIV_RETURN</span><span class="p">))</span> <span class="p">{</span>
+    <span class="sr">//</span> <span class="p">.</span><span class="nf">.</span><span class="p">.</span> <span class="nf">this</span> <span class="n">user</span> <span class="n">has</span> <span class="n">been</span> <span class="n">authenticated</span>
+<span class="p">}</span></code></pre></figure>
+<p></p>
 
 	<h3><a name="fn-at"></a>18.2 _AT()</h3>
 		<p><kbd>_AT()</kbd> -- Returns translated terms.</p>
@@ -1400,28 +1404,28 @@ authenticate(AT_PRIV_ANNOUNCEMENTS);
 
 		<h4>Example 1</h4>
 			<p>Printing a single term:
-</p><pre class="code">/* echo a translated version of the 'tools' string.
+</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">/* echo a translated version of the 'tools' string.
  * i.e. 'Tools' in English, 'Outils' in French, etc..
- */
- $_SESSION['lang'] = 'en';
-echo '&lt;h2&gt;' . _AT('tools') . '&lt;/h2&gt;';
+ */</span>
+ <span class="vg">$_SESSION</span><span class="p">[</span><span class="s1">'lang'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'en'</span><span class="p">;</span>
+<span class="n">echo</span> <span class="s1">'&lt;h2&gt;'</span> <span class="p">.</span> <span class="nf">_AT</span><span class="p">(</span><span class="s1">'tools'</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'&lt;/h2&gt;'</span><span class="p">;</span>
 
- $_SESSION['lang'] = 'fr';
-echo '&lt;h2&gt;' . _AT('tools') . '&lt;/h2&gt;';
-</pre><p></p>
+ <span class="vg">$_SESSION</span><span class="p">[</span><span class="s1">'lang'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'fr'</span><span class="p">;</span>
+<span class="n">echo</span> <span class="s1">'&lt;h2&gt;'</span> <span class="p">.</span> <span class="nf">_AT</span><span class="p">(</span><span class="s1">'tools'</span><span class="p">)</span> <span class="o">.</span> <span class="s1">'&lt;/h2&gt;'</span><span class="p">;</span></code></pre></figure>
+<p></p>
 
 			<p>Result:
-</p><pre class="code">&lt;h2&gt;Tools&lt;/h2&gt;
-&lt;h2&gt;Outils&lt;/h2&gt;
-</pre><p></p>
+</p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="no">Tools</span><span class="o">&lt;</span><span class="sr">/h2&gt;
+&lt;h2&gt;Outils&lt;/</span><span class="n">h2</span><span class="o">&gt;</span></code></pre></figure><p></p>
 
 		<h4>Example 2</h4>
 			<p>Printing a phrase with arguments:
-</p><pre class="code">$username = 'Jon';
-echo _AT('welcome_message', $username);
-</pre><p></p>
+</p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vg">$username</span> <span class="o">=</span> <span class="s1">'Jon'</span><span class="p">;</span>
+<span class="n">echo</span> <span class="n">_AT</span><span class="p">(</span><span class="s1">'welcome_message'</span><span class="p">,</span> <span class="vg">$username</span><span class="p">);</span></code></pre></figure>
+<p></p>
 			<p>Result:
-</p><pre class="code">Hello, Jon. Welcome back.</pre><p></p>
+</p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Hello</span><span class="p">,</span> <span class="no">Jon</span><span class="o">.</span> <span class="no">Welcome</span> <span class="n">back</span><span class="o">.</span></code></pre></figure><p></p>
 
 
 	<h3><a name="fn-at_print"></a>18.3 AT_print()</h3>
@@ -1434,7 +1438,7 @@ echo _AT('welcome_message', $username);
 
 			<p><kbd>$field_name</kbd> is the unique name of the <kbd>$input</kbd> field in the form of <kbd><em>table_name</em>.<em>field_name</em></kbd>. The formatting options for the given field are defined in <kbd>`include/lib/constants.inc.php`</kbd>. If <kbd>$field_name</kbd> is not a valid option as defined in the constants file then the function will return <kbd>$input</kbd> unchanged.</p>
 
-			<p>The boolean <kbd>$runtime_html</kbd> is used by fields which have an optional HTML formatting field. <kbd>$runtime_html</kbd> should be the associated HTML formatting field for that data. If set to <kbd>FALSE</kbd> then HTML elements will be escaped from <kbd>$input</kbd> and new line characters converted to <kbd>&lt;br /&gt;</kbd>s.</p>
+			<p>The boolean <kbd>$runtime_html</kbd> is used by fields which have an optional HTML formatting field. <kbd>$runtime_html</kbd> should be the associated HTML formatting field for that data. If set to <kbd>FALSE</kbd> then HTML elements will be escaped from <kbd>$input</kbd> and new line characters converted to <kbd><br /></kbd>s.</p>
 
 			<p>No data from the database should be printed without passing it through this function first.</p>
 
@@ -1443,12 +1447,13 @@ echo _AT('welcome_message', $username);
 
 		<h4>Example 1</h4>
 		<p>Printing a field where HTML is not allowed:
-</p><pre class="code">$username = 'my_name&lt;b&gt;_is';
-$value    = AT_print($username, 'members.login'); // escape the '&lt;b&gt;' tag
-echo $value</pre><p></p>
+</p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vg">$username</span> <span class="o">=</span> <span class="s1">'my_name&lt;b&gt;_is'</span><span class="p">;</span>
+<span class="vg">$value</span>    <span class="o">=</span> <span class="no">AT_print</span><span class="p">(</span><span class="vg">$username</span><span class="p">,</span> <span class="s1">'members.login'</span><span class="p">);</span> <span class="sr">//</span> <span class="n">escape</span> <span class="n">the</span> <span class="s1">'&lt;b&gt;'</span> <span class="n">tag</span>
+<span class="n">echo</span> <span class="vg">$value</span></code></pre></figure><p></p>
 
 		<p>Result:
-</p><pre class="code">my_name&lt;b&gt;_is</pre><p></p>
+</p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">my_name</span><span class="o">&lt;</span><span class="n">b</span><span class="o">&gt;</span><span class="n">_is</span></code></pre></figure>
+<p></p>
 
 
 	<h3><a name="fn-at_date"></a>18.4 AT_date()</h3>
@@ -1509,38 +1514,43 @@ echo $value</pre><p></p>
 
 		<h4>Example 1</h4>
 			<p>Returning a specified date using a UNIX time stamp:
-</p><pre class="code">$time = mktime(0, 0, 0, 7, 14, 2004);
-echo AT_Date('%l %F %j, %Y', $time, AT_DATE_UNIX_TIMESTAMP);
-</pre><p></p>
+</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vg">$time</span> <span class="o">=</span> <span class="n">mktime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">2004</span><span class="p">);</span>
+<span class="n">echo</span> <span class="no">AT_Date</span><span class="p">(</span><span class="s1">'%l %F %j, %Y'</span><span class="p">,</span> <span class="vg">$time</span><span class="p">,</span> <span class="no">AT_DATE_UNIX_TIMESTAMP</span><span class="p">);</span></code></pre></figure>
+<p></p>
 
 			<p>Result:
-</p><pre class="code">Wednesday July 14, 2004</pre><p></p>
+</p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Wednesday</span> <span class="no">July</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">2004</span></code></pre></figure>
+<p></p>
 
 		<h4>Example 2</h4>
 			<p>Returning a specified date using a UNIX time stamp that is also language dependent:
-</p><pre class="code">$time = mktime(0, 0, 0, 7, 14, 2004);
+</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vg">$time</span> <span class="o">=</span> <span class="n">mktime</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">2004</span><span class="p">);</span>
 
-$_SESSION['lang'] = 'en';
-echo AT_Date(_AT('announcement_date_format'), $time, AT_DATE_UNIX_TIMESTAMP);
+<span class="vg">$_SESSION</span><span class="p">[</span><span class="s1">'lang'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'en'</span><span class="p">;</span>
+<span class="n">echo</span> <span class="no">AT_Date</span><span class="p">(</span><span class="n">_AT</span><span class="p">(</span><span class="s1">'announcement_date_format'</span><span class="p">),</span> <span class="vg">$time</span><span class="p">,</span> <span class="no">AT_DATE_UNIX_TIMESTAMP</span><span class="p">);</span>
 
-echo '&lt;br /&gt;';
-$_SESSION['lang'] = 'fr';
-echo AT_Date(_AT('announcement_date_format'), $time, AT_DATE_UNIX_TIMESTAMP);
-</pre><p></p>
+<span class="n">echo</span> <span class="s1">'&lt;br /&gt;'</span><span class="p">;</span>
+<span class="vg">$_SESSION</span><span class="p">[</span><span class="s1">'lang'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'fr'</span><span class="p">;</span>
+<span class="n">echo</span> <span class="no">AT_Date</span><span class="p">(</span><span class="n">_AT</span><span class="p">(</span><span class="s1">'announcement_date_format'</span><span class="p">),</span> <span class="vg">$time</span><span class="p">,</span> <span class="no">AT_DATE_UNIX_TIMESTAMP</span><span class="p">);</span></code></pre></figure>
+<p></p>
 
 			<p>Result:
-</p><pre class="code">Wednesday July 14, 2004
-mercredi, 14 juillet 2004</pre><p></p>
+</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Wednesday</span> <span class="no">July</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">2004</span>
+<span class="n">mercredi</span><span class="p">,</span> <span class="mi">14</span> <span class="n">juillet</span> <span class="mi">2004</span></code></pre></figure>
+<p></p>
 
 		<h4>Example 3</h4>
 		<p>Returning a single month name:
-</p><pre class="code">$_SESSION['lang'] = 'fr';
-The second month in French is: &lt;?php echo AT_date('%F', 2, AT_DATE_INDEX_VALUE) ?&gt;
-</pre><p></p>
+</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vg">$_SESSION</span><span class="p">[</span><span class="s1">'lang'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'fr'</span><span class="p">;</span>
+<span class="no">The</span> <span class="n">second</span> <span class="n">month</span> <span class="k">in</span> <span class="no">French</span> <span class="n">is</span> <span class="p">:</span> <span class="o">&lt;</span><span class="p">?</span><span class="n">php</span> <span class="n">echo</span> <span class="no">AT_date</span><span class="p">(</span><span class="s1">'%F'</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="no">AT_DATE_INDEX_VALUE</span><span class="p">)</span> <span class="sc">?&gt;</span></code></pre></figure>
+<p></p>
 
 		<p>Result:
-</p><pre class="code">The second month in French is: février
-</pre><p></p>
+</p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">The</span> <span class="n">second</span> <span class="n">month</span> <span class="k">in</span> <span class="no">French</span> <span class="n">is</span> <span class="p">:</span> <span class="n">f</span><span class="err">é</span><span class="n">vrier</span></code></pre></figure><p></p>
 
 	<h3><a name="fn-addslashes"></a>18.5 $addslashes()</h3>
 		<p><kbd>$addslashes()</kbd> -- Quotes a string with slashes.</p>
@@ -1555,31 +1565,30 @@ The second month in French is: &lt;?php echo AT_date('%F', 2, AT_DATE_INDEX_VALU
 
 		<h4>Example 1</h4>
 			<p>With <kbd>magic_quotes_gpc</kbd> enabled:
-</p><pre class="code">$str = "What's going on?";
+</p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vg">$str</span> <span class="o">=</span> <span class="s2">"What's going on?"</span><span class="p">;</span>
 
-// prints magic_quotes_gpc: 1
-echo 'magic_quotes_gpc: ' . get_magic_quotes_gpc();
+<span class="sr">//</span> <span class="n">prints</span> <span class="n">magic_quotes_gpc</span> <span class="p">:</span> <span class="mi">1</span>
+<span class="n">echo</span> <span class="s1">'magic_quotes_gpc : '</span> <span class="p">.</span> <span class="nf">get_magic_quotes_gpc</span><span class="p">();</span>
 
-// maps to my_add_null_slashes(). prints What\'s going on? [correct]
+<span class="sr">//</span> <span class="n">maps</span> <span class="n">to</span> <span class="n">my_add_null_slashes</span><span class="p">().</span> <span class="nf">prints</span> <span class="no">What</span><span class="p">\</span><span class="s1">'s going on? [correct]
 echo $addslashes($str);
 
-// prints What\\\'s going on? [wrong]
-echo addslashes($str);
-</pre><p></p>
+// prints What\\\'</span><span class="n">s</span> <span class="n">going</span> <span class="n">on?</span> <span class="p">[</span><span class="n">wrong</span><span class="p">]</span>
+<span class="n">echo</span> <span class="n">addslashes</span><span class="p">(</span><span class="vg">$str</span><span class="p">);</span></code></pre></figure>
+<p></p>
 
 		<h4>Example 2</h4>
 			<p>With <kbd>magic_quotes_gpc</kbd> disabled:
-</p><pre class="code">$str = "What's going on?";
+</p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vg">$str</span> <span class="o">=</span> <span class="s2">"What's going on?"</span><span class="p">;</span>
 
-// prints magic_quotes_gpc: 0
-echo 'magic_quotes_gpc: ' . get_magic_quotes_gpc();
+<span class="sr">//</span> <span class="n">prints</span> <span class="n">magic_quotes_gpc</span> <span class="p">:</span> <span class="mi">0</span>
+<span class="n">echo</span> <span class="s1">'magic_quotes_gpc : '</span> <span class="p">.</span> <span class="nf">get_magic_quotes_gpc</span><span class="p">();</span>
 
-// maps to addslashes(). prints What\'s going on? [correct]
+<span class="sr">//</span> <span class="n">maps</span> <span class="n">to</span> <span class="n">addslashes</span><span class="p">().</span> <span class="nf">prints</span> <span class="no">What</span><span class="p">\</span><span class="s1">'s going on? [correct]
 echo $addslashes($str);
 
-// prints What\'s going on? [correct]
-echo addslashes($str);
-</pre><p></p>
+// prints What\'</span><span class="n">s</span> <span class="n">going</span> <span class="n">on?</span> <span class="p">[</span><span class="n">correct</span><span class="p">]</span>
+<span class="n">echo</span> <span class="n">addslashes</span><span class="p">(</span><span class="vg">$str</span><span class="p">);</span></code></pre></figure><p></p>
 
 
 	<h3><a name="fn-debug"></a>18.6 debug()</h3>
@@ -1597,18 +1606,19 @@ echo addslashes($str);
 
 		<h4>Example 1</h4>
 		<p>Viewing the contents of an <kbd>array</kbd>:
-</p><pre class="code">$my_array = array('apple' =&gt; 'green', 4 =&gt; 'something');
-debug($my_array, 'my_array');
-</pre><p></p>
+</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vg">$my_array</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">'apple'</span> <span class="o">=&gt;</span> <span class="s1">'green'</span><span class="p">,</span> <span class="mi">4</span> <span class="o">=&gt;</span> <span class="s1">'something'</span><span class="p">);</span>
+<span class="n">debug</span><span class="p">(</span><span class="vg">$my_array</span><span class="p">,</span> <span class="s1">'my_array'</span><span class="p">);</span></code></pre></figure>
+<p></p>
 
 		<p>Result:
-</p><pre class="code">    <b>my_array</b>
+</p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="o">&lt;</span><span class="n">b</span><span class="o">&gt;</span><span class="n">my_array</span><span class="o">&lt;</span><span class="sr">/b&gt;
 Array
 (
     [apple] =&gt; green
     [4] =&gt; something
-)
-</pre><p></p>
+)</span></code></pre></figure>
+<p></p>
 
 	<h3><a name="fn-get_login"></a>18.7 get_login()</h3>
 		<p><kbd>get_login()</kbd> -- Returns the login name of a member.</p>
@@ -1637,11 +1647,11 @@ Array
 		
 		<h4>Example 1</h4>
 		<p>To encode a feedback array:
-</p><pre class="code">$f[] = array(AT_FEEDBACK_FILE_UPLOADED_ZIP, $file_name);
+</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vg">$f</span><span class="p">[]</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="no">AT_FEEDBACK_FILE_UPLOADED_ZIP</span><span class="p">,</span> <span class="vg">$file_name</span><span class="p">);</span>
 
-header('Location: file_manager.php?f='.urlencode_feedback($f));
-exit;
-</pre><p></p>
+<span class="n">header</span><span class="p">(</span><span class="s1">'Location: file_manager.php?f='</span><span class="p">.</span><span class="nf">urlencode_feedback</span><span class="p">(</span><span class="vg">$f</span><span class="p">));</span>
+<span class="nb">exit</span><span class="p">;</span></code></pre></figure><p></p>
 
 <a href="#top" class="top">top</a>
 <h2><a name="useful-constants"></a>19. Useful Constants</h2>
@@ -1653,8 +1663,8 @@ exit;
 
 		<h4>Example 1</h4>
 		<p>Requiring the vitals file from the tools page:
-				</p><pre class="code">define('AT_INCLUDE_PATH', '../include/');
-require (AT_INCLUDE_PATH . 'vitals.inc.php');</pre><p></p>
+				</p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">				<span class="n">define</span><span class="p">(</span><span class="s1">'AT_INCLUDE_PATH'</span><span class="p">,</span> <span class="s1">'../include/'</span><span class="p">);</span>
+<span class="nb">require</span> <span class="p">(</span><span class="no">AT_INCLUDE_PATH</span> <span class="o">.</span> <span class="s1">'vitals.inc.php'</span><span class="p">);</span></code></pre></figure><p></p>
 
 		<h4>Location</h4>
 			<p><em>Declared on every page that is directly accessible.</em></p>
@@ -1665,16 +1675,16 @@ require (AT_INCLUDE_PATH . 'vitals.inc.php');</pre><p></p>
 
 		<h4>Example 1</h4>
 		<p>Printing a dynamic link:
-</p><pre class="code">$arg1 = 'one';
-$arg2 = 'two';
+</p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vg">$arg1</span> <span class="o">=</span> <span class="s1">'one'</span><span class="p">;</span>
+<span class="vg">$arg2</span> <span class="o">=</span> <span class="s1">'two'</span><span class="p">;</span>
 
-echo "SEP is ".SEP."\n";
-echo '&lt;a href="index.php?arg1=' . $arg1 . SEP . 'arg2=' . $arg2 . '"&gt;link&lt;/a&gt;';</pre><p></p>
+<span class="n">echo</span> <span class="s2">"SEP is "</span><span class="o">.</span><span class="no">SEP</span><span class="o">.</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="n">echo</span> <span class="s1">'&lt;a href="index.php?arg1='</span> <span class="o">.</span> <span class="vg">$arg1</span> <span class="o">.</span> <span class="no">SEP</span> <span class="o">.</span> <span class="s1">'arg2='</span> <span class="o">.</span> <span class="vg">$arg2</span> <span class="o">.</span> <span class="s1">'"&gt;link&lt;/a&gt;'</span><span class="p">;</span></code></pre></figure><p></p>
 		
 		<p>Result:
-</p><pre class="code">SEP is ;
-&lt;a href="index.php?arg1=one;arg2=two"&gt;link&lt;/a&gt;
-</pre><p></p>
+</p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">SEP</span> <span class="n">is</span> <span class="p">;</span>
+<span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">"index.php?arg1=one;arg2=two"</span><span class="o">&gt;</span><span class="n">link</span><span class="o">&lt;</span><span class="sr">/a&gt;</span></code></pre></figure>
+<p></p>
 
 		<h4>Location</h4>
 			<p><kbd>`include/lib/constants.inc.php`</kbd></p>
@@ -1711,10 +1721,10 @@ echo '&lt;a href="index.php?arg1=' . $arg1 . SEP . 'arg2=' . $arg2 . '"&gt;link&
 
 	<p>The <kbd>`install/`</kbd> directory contains two other subdirectories that are used during the installation or upgrade process. The <kbd>`install/db/`</kbd> directory contains database schema files and are clearly labeled. The <kbd>`install/include/`</kbd> directory contains scripts that are common to both processes and labeled according to their order in either process.</p>
 
-	<h3><a name="install-script">20.1 Install Script</a></h3><a name="install-script">
+	<h3><a name="install-script">20.1 Install Script</a></h3><a name="install-script"></a>
 		<p>The <kbd>`install.php`</kbd> script requires each step as it's needed as the <kbd>$step</kbd> counter variable is incremented. To add or edit a step, edit the <kbd>`install.php`</kbd> file.</p>
 
-	</a><h3><a name="install-script"></a><a name="upgrade-script">20.2 Upgrade Script</a></h3><a name="upgrade-script">
+	</a><h3><a name="install-script"></a><a name="upgrade-script">20.2 Upgrade Script</a></h3><a name="upgrade-script"></a>
 		<p>The <kbd>`upgrade.php`</kbd> script works exactly the same as the install script does, but requires different files (step prefixed with a 'u'). To upgrade the database schema an SQL file named <kbd>`atutor_upgrade_<em>from</em>_to_<em>to</em>.sql`</kbd> must be created, where <kbd><em>from</em></kbd> is the exact version of the previous ATutor version, and <kbd><em>to</em></kbd> is the next stable version.</p>
 
 
@@ -1734,58 +1744,59 @@ echo '&lt;a href="index.php?arg1=' . $arg1 . SEP . 'arg2=' . $arg2 . '"&gt;link&
 <a href="#top" class="top">top</a>
 <h2><a name="example"></a>23. Sample Script</h2>
 <p>The following is sample code that shows the general flow of an ATutor script. The example shows how you may use some of the variables and functions available to you. Some scripts may not need all the variables and functions used below.
-</p><pre class="code" id="code">&lt;?php
-// 0. insert the SVN keywords
-// <a href="#svn-keywords">$Id</a>: guidelines.html 1275 2004-07-28 16:02:49Z joel $
+</p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="p">?</span><span class="n">php</span>
+<span class="sr">//</span> <span class="mi">0</span><span class="p">.</span> <span class="nf">insert</span> <span class="n">the</span> <span class="no">SVN</span> <span class="n">keywords</span>
+<span class="sr">//</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">"#svn-keywords"</span><span class="o">&gt;</span><span class="vg">$Id</span><span class="o">&lt;</span><span class="sr">/a&gt;: guidelines.html 1275 2004-07-28 16:02:49Z joel $
 
-// 1. define relative path to `include` directory:
-define('<a href="#const-include_path">AT_INCLUDE_PATH</a>', '../<a href="#directories-include">include/</a>');
+/</span><span class="o">/</span> <span class="mi">1</span><span class="p">.</span> <span class="nf">define</span> <span class="n">relative</span> <span class="n">path</span> <span class="n">to</span> <span class="sb">`include`</span> <span class="n">directory</span> <span class="p">:</span>
+<span class="n">define</span><span class="p">(</span><span class="s1">'&lt;a href="#const-include_path"&gt;AT_INCLUDE_PATH&lt;/a&gt;'</span><span class="p">,</span> <span class="s1">'../&lt;a href="#directories-include"&gt;include/&lt;/a&gt;'</span><span class="p">);</span>
 
-// 2. require the `vitals` file before any others:
-require (<a href="#const-include_path">AT_INCLUDE_PATH</a> . '<a href="#files-vitals">vitals.inc.php</a>');
+<span class="sr">//</span> <span class="mi">2</span><span class="p">.</span> <span class="nf">require</span> <span class="n">the</span> <span class="sb">`vitals`</span> <span class="n">file</span> <span class="n">before</span> <span class="n">any</span> <span class="n">others</span> <span class="p">:</span>
+<span class="nb">require</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">"#const-include_path"</span><span class="o">&gt;</span><span class="no">AT_INCLUDE_PATH</span><span class="o">&lt;</span><span class="sr">/a&gt; . '&lt;a href="#files-vitals"&gt;vitals.inc.php&lt;/</span><span class="n">a</span><span class="o">&gt;</span><span class="s1">');
 
-// 3. authenticate this user:
-<a href="#fn-authenticate">authenticate</a>(AT_PRIV_SPECIAL_PRIV);
+// 3. authenticate this user :
+&lt;a href="#fn-authenticate"&gt;authenticate&lt;/a&gt;(AT_PRIV_SPECIAL_PRIV);
 
 // 4. define the breadcrumbs path:
-<a href="#var-section">$_section[0][0]</a> =  <a href="#fn-at">_AT</a>('tools');
-<a href="#var-section">$_section[0][1]</a> = 'tools/';
-<a href="#var-section">$_section[1][0]</a> =  <a href="#fn-at">_AT</a>('my_page');
-<a href="#var-section">$_section[1][1]</a> =  'tools/page.php;
+&lt;a href="#var-section"&gt;$_section[0][0]&lt;/a&gt; =  &lt;a href="#fn-at"&gt;_AT&lt;/a&gt;('</span><span class="n">tools</span><span class="s1">');
+&lt;a href="#var-section"&gt;$_section[0][1]&lt;/a&gt; = '</span><span class="n">tools</span><span class="o">/</span><span class="s1">';
+&lt;a href="#var-section"&gt;$_section[1][0]&lt;/a&gt; =  &lt;a href="#fn-at"&gt;_AT&lt;/a&gt;('</span><span class="n">my_page</span><span class="s1">');
+&lt;a href="#var-section"&gt;$_section[1][1]&lt;/a&gt; =  '</span><span class="n">tools</span><span class="o">/</span><span class="n">page</span><span class="p">.</span><span class="nf">php</span><span class="s1">';
 
-// 5. handle any post request:
-if (isset($_POST['submit'])) {
-  // 5.1 check for errors:
-  if ($_POST['some_field'] == '') {
-      <a href="#error-feedback-messages">$msg-&gt;addError</a>('SOME_ERROR_CODE');
+// 5. handle any post request :
+if (isset($_POST['</span><span class="n">submit</span><span class="s1">'])) {
+  // 5.1 check for errors :
+  if ($_POST['</span><span class="n">some_field</span><span class="s1">'] == '') {
+      &lt;a href="#error-feedback-messages"&gt;$msg-&gt;addError&lt;/a&gt;('</span><span class="no">SOME_ERROR_CODE</span><span class="s1">');
   }
 
-  if (!<a href="#error-feedback-messages">$msg-&gt;containsErrors()</a>) {
-      //5.2 complete the desired action here. (example: insert into DB)
+  if (!&lt;a href="#error-feedback-messages"&gt;$msg-&gt;containsErrors()&lt;/a&gt;) {
+      //5.2 complete the desired action here. (example : insert into DB)
 
       //5.3 set the feedback message and add it to the URL:
-      <a href="#error-feedback-messages">$msg-&gt;addFeedback</a>('MESSAGE');
-      $url = <a href="#var-base_href">$_base_href</a> . 'tools/index.php?arg1=yes';
+      &lt;a href="#error-feedback-messages"&gt;$msg-&gt;addFeedback&lt;/a&gt;('</span><span class="no">MESSAGE</span><span class="s1">');
+      $url = &lt;a href="#var-base_href"&gt;$_base_href&lt;/a&gt; . '</span><span class="n">tools</span><span class="o">/</span><span class="n">index</span><span class="p">.</span><span class="nf">php?</span><span class="n">arg1</span><span class="o">=</span><span class="n">yes</span><span class="s1">';
 
-      //5.4 redirect after successful operation:
-      header('Location: ' . $url);
+      //5.4 redirect after successful operation :
+      header('</span><span class="no">Location</span><span class="p">:</span> <span class="s1">' . $url);
       exit;
   }
 }
 
 // 6. start the page display by calling the header
-require (<a href="#const-include_path">AT_INCLUDE_PATH</a> . '<a href="#files-header">header.inc.php</a>');
+require (&lt;a href="#const-include_path"&gt;AT_INCLUDE_PATH&lt;/a&gt; . '</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">"#files-header"</span><span class="o">&gt;</span><span class="n">header</span><span class="p">.</span><span class="nf">inc</span><span class="p">.</span><span class="nf">php</span><span class="o">&lt;</span><span class="sr">/a&gt;');
 
-// 7. display any feedback or error messages that my occur:
-require (<a href="#const-include_path">AT_INCLUDE_PATH</a> . 'html/<a href="#files-feedback">feedback.inc.php</a>');
+/</span><span class="o">/</span> <span class="mi">7</span><span class="p">.</span> <span class="nf">display</span> <span class="n">any</span> <span class="n">feedback</span> <span class="n">or</span> <span class="n">error</span> <span class="n">messages</span> <span class="n">that</span> <span class="n">my</span> <span class="n">occur</span> <span class="p">:</span>
+<span class="nb">require</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">"#const-include_path"</span><span class="o">&gt;</span><span class="no">AT_INCLUDE_PATH</span><span class="o">&lt;</span><span class="sr">/a&gt; . 'html/</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">"#files-feedback"</span><span class="o">&gt;</span><span class="n">feedback</span><span class="p">.</span><span class="nf">inc</span><span class="p">.</span><span class="nf">php</span><span class="o">&lt;</span><span class="sr">/a&gt;');
 
-/*
- * 8. display the page contents here.
- */
+/</span><span class="o">*</span>
+ <span class="o">*</span> <span class="mi">8</span><span class="p">.</span> <span class="nf">display</span> <span class="n">the</span> <span class="n">page</span> <span class="n">contents</span> <span class="n">here</span><span class="p">.</span>
+ <span class="nf">*</span><span class="o">/</span>
 
-// 9. finish the page by calling the footer
-require (<a href="#const-include_path">AT_INCLUDE_PATH</a> . '<a href="#files-footer">footer.inc.php</a>');
-?&gt;</pre><p></p>
+<span class="sr">//</span> <span class="mi">9</span><span class="p">.</span> <span class="nf">finish</span> <span class="n">the</span> <span class="n">page</span> <span class="n">by</span> <span class="n">calling</span> <span class="n">the</span> <span class="n">footer</span>
+<span class="nb">require</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">"#const-include_path"</span><span class="o">&gt;</span><span class="no">AT_INCLUDE_PATH</span><span class="o">&lt;</span><span class="sr">/a&gt; . '&lt;a href="#files-footer"&gt;footer.inc.php&lt;/</span><span class="n">a</span><span class="o">&gt;</span><span class="err">'</span><span class="p">);</span>
+<span class="sc">?&gt;</span></code></pre></figure>
+<p></p>
 
 <a href="#top" class="top">top</a>
 <h2><a name="credits-sources"></a>24. Credits &amp; Additional Sources</h2>
