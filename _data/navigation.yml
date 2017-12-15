@@ -16,7 +16,7 @@ toc:
     - title: Themes
       url: /atutor/themes.html
     - title: Translation
-      url: /atutor/languages.html
+      url: https://atutorlangs.github.io/index.html
 - title: AContent
   url: /acontent/
   sublinks:
@@ -26,7 +26,7 @@ toc:
       url: /acontent/downloads.html
     - title: Documentation
       url: /acontent/docs/index.html
-    - title: Languages
+    - title: Translation
       url: /acontent/languages.html
 - title: Developers
   url: /devel/
