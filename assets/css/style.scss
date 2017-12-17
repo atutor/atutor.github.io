@@ -801,7 +801,7 @@ margin-right:auto;
 	font-size: small;
 }
 div.lang_pack_outer{
-	width:47%;
+	width:100%;
 	margin-right:1em;
 	margin-bottom:1em;
 	float:left;
@@ -809,8 +809,8 @@ div.lang_pack_outer{
 	vertical-align:top;
 }
 div.lang_pack{
-	width:100%;
-	margin-right:3em;
+	width:45%;
+	margin-right:1em;
 	margin-bottom:1em;
 	vertical-align:top;
 }
@@ -1634,6 +1634,7 @@ main{
     font-size:3.5em; 
     text-align:center; 
     font-weight:700;
+    color: #ffffaa;
 }
 .tpbg h2{
     font-size:2.5em; 

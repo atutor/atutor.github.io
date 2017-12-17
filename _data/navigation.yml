@@ -1,6 +1,6 @@
 # Belongs at: /_data/navigation.yml
 toc:
-- title: ATutor
+- title: ATutor LMS
   url: /atutor/index.html
   sublinks:
     - title: ATutor Details
@@ -17,7 +17,7 @@ toc:
       url: /atutor/themes.html
     - title: Translation
       url: https://atutorlangs.github.io/index.html
-- title: AContent
+- title: AContent LCMS
   url: /acontent/
   sublinks:
     - title: AContent Details
