@@ -32,6 +32,7 @@ title: ATutor Home
 		</div>	    		    
 
         <div class="posts">
+        <h3>Blog Posts</h3>
         <ul>
           {% for post in site.posts %}
             <li>
@@ -40,19 +41,6 @@ title: ATutor Home
           {% endfor %}
         </ul>
         </div>
-        <div class="repos">
-            <h2>Repositories</h2>
-            <ul>
-            {% comment %}
-            {% assign public_repositories = site.github.public_repositories | sort: 'updated_at'| reverse %}
-            {% for repository in public_repositories %}
-                {% if repository.fork == false %}
-                <li> <a href="{{ repository.html_url }}"> {{ repository.name }} </a><br /> {{ repository.description }}<br />Last updated: {{ repository.updated_at}}</li>
-                {% endif %}
-            {% endfor %}
-            {% endcomment %}
-            </ul>
-            </div>
                 </div>  
           </div>    
     </div> 	

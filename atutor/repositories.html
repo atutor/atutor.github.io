@@ -1,0 +1,29 @@
+---
+title: ATutor Code Repositories
+---
+		<div class="cd-container">
+        <div class="repos">
+            <h2>Code Repositories</h2>
+            <ul>
+            {% comment %}
+            {% assign public_repositories = site.github.public_repositories | sort: 'updated_at'| reverse %}
+            {% for repository in public_repositories %}
+                {% if repository.fork == false %}
+                <li> <a href="{{ repository.html_url }}"> {{ repository.name }} </a><br /> {{ repository.description }}<br />Last updated: {{ repository.updated_at}}</li>
+                {% endif %}
+            {% endfor %}
+            {% endcomment %}
+            </ul>
+            </div>
+                </div>  
+          </div>    
+    </div> 	
+
+
+ <!-- // end of #centerbar-->
+
+
+
+<script>
+  var repos = {{ site.github.public_repositories | jsonify }};
+</script>

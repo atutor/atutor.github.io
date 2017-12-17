@@ -17,6 +17,8 @@ toc:
       url: /atutor/themes.html
     - title: Translation
       url: https://atutorlangs.github.io/index.html
+    - title: Code Repositories
+      url: /atutor/repositories.html
 - title: AContent LCMS
   url: /acontent/
   sublinks:
@@ -37,3 +39,5 @@ toc:
       url:  /developer/modules.html
     - title: Translation
       url: /developer/languages.html
+    - title: Report Issues
+      url: https://github.com/atutor/ATutor/issues
