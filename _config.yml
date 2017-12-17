@@ -6,7 +6,7 @@ site.github.gems:
     - jekyll-git_metadata
 
 site.github.highlighter: rouge
-site.github.defaults:
+defaults:
     -   
         scope:
             path: ""
