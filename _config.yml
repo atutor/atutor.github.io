@@ -4,3 +4,18 @@ site.github.gems:
     - jekyll-sitemap
     - jekyll-github-metadata
     - jekyll-git_metadata
+
+site.github.highlighter: rouge
+defaults:
+    -   
+        scope:
+            path: ""
+            type: "pages"
+        values:
+            layout: "home"
+    -        
+        scope:
+            path: ""
+            type: "posts"
+        values:
+            layout: "post"

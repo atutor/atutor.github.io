@@ -212,7 +212,8 @@ pre.code {
 	<p></p>
 
 <a href="#top" class="top">top</a>
-<h2><a name="setup">3. Setup</a></h2>
+<a name="setup"></a>
+<h2>3. Setup</h2>
 	<p>Please review the <a href="http://atutor.ca/atutor/docs/requirements.php" title="ATutor.ca - requirements">ATutor requirements</a> and ensure that your development environment meets the minimum requirements.</p>
 
 	<ul>
@@ -223,7 +224,8 @@ pre.code {
 
 	<h3><a name="php-configuration"></a>3.1 PHP Configuration</h3>
 	<p>If you have a dedicated development environment that doesn't share a web server with other production code, then it is best to use the bundled <kbd>php.ini-dist</kbd> configuration file as the default--simply rename it to <kbd>php.ini</kbd>. Listed below are the essential configuration options and their recommended value:</p>
-<pre class="code">safe_mode            = Off
+{% highlight  ruby %}
+safe_mode            = Off
 error_reporting      = E_ALL
 display_errors       = On
 arg_separator.input  = ";&amp;"
@@ -231,7 +233,9 @@ register_globals     = Off
 magic_quotes_gpc     = Off
 magic_quotes_runtime = Off
 allow_url_fopen      = On
-register_argc_argv   = Off</pre><p></p>
+register_argc_argv   = Off
+{% endhighlight %}
+<p></p>
 
 <a href="#top" class="top">top</a>
 <h2><a name="subversion"></a>4. Subversion (SVN) [THIS SECTION DEPRECATED]</h2>
@@ -312,7 +316,10 @@ register_argc_argv   = Off</pre><p></p>
 <a href="#top" class="top">top</a>
 <h2><a name="writing-portable-code"></a>11. Writing Portable Code</h2>
 	<p>When writing your PHP code please try to use functions that exist since (the minimum requirement) PHP version 4.2.0. If you have to use a function that only exists in later versions of PHP, provide an alternative for older versions. To check if the function is available use either <kbd>version_compare(phpversion(), $min_version)</kbd> or <kbd>function_exists($function_name)</kbd>. For example, to make use of <kbd>file_get_contents()</kbd>, which is only available in PHP 4.3.0 and later, use the following:
-</p><pre class="code">if (version_compare(phpversion(), '4.3.0') &lt; 0) {
+</p>
+
+{% highlight ruby  %}
+if (version_compare(phpversion(), '4.3.0') < 0) {
     function file_get_contents($filename) {
         $fd = @fopen($filename, 'rb');
         if ($fd === false) {
@@ -324,8 +331,7 @@ register_argc_argv   = Off</pre><p></p>
         return $content;
     }
 }
-</pre><p></p>
-
+{% endhighlight %}
 	<p>Code has to work on both Windows and UNIX. You should never use <kbd>exec()</kbd> or <kbd>system()</kbd>. In most cases we prefer to write code that works on both systems as is, without the need for if-statements that check for the operating system, since duplicating the functionality twice (once for each operating system) can be a source of bugs. Review the <a href="#php-configuration">PHP Configuration</a> section for details on how best to set-up your development environment.</p>
 
 <a href="#top" class="top">top</a>
@@ -344,50 +350,64 @@ register_argc_argv   = Off</pre><p></p>
 
 	<h3><a name="line-length"></a>12.2 Line Length</h3>
 		<p>Split the long lines into multiple lines: 
-</p><pre class="code">if (($month = 'jan') || ($month = 'feb') || ($month = 'mar') || ($month = 'apr')) {
+</p><p></p>
+{% highlight ruby %}
+if (($month = 'jan') || ($month = 'feb') || ($month = 'mar') || ($month = 'apr')) {
     return 1;
 }
-</pre><p></p>
 
+{% endhighlight %}
     <p>You can indent the second line to signify the association with the upper. For particularly long lines, you can indent and align every condition:
-</p><pre class="code">if (($month = 'jan') || 
+</p>
+
+{% highlight ruby  %}
+if (($month = 'jan') || 
     ($month = 'feb') || 
     ($month = 'mar') || 
     ($month = 'apr')) {
 
     return 1;
 }
-</pre><p></p>
-
+{% endhighlight %}
         <p>This methodology works equally well for function parameters:
-</p><pre class="code">echo format_content($content_row['text'], 
+</p>
+{% highlight   ruby %}
+
+echo format_content($content_row['text'], 
                     $content_row['formatting'], 
                     $glossary,
                     $indent);
-</pre><p></p>
-
+{% endhighlight %}
 	<h3><a name="whitespace"></a>12.3 Using Whitespace</h3>
 		<p>Whitespace can be used to provide and reinforce logical structure in the code. For example, it can be effectively used to group assignments and show associations. The following example is poorly formatted and difficult to read:
 
-</p><pre class="code">$password = 'mypassword';
+</p>
+{% highlight  ruby %}
+$password = 'mypassword';
 $website_url = 'http://atutor.ca';
 $first_name = 'Joel';
 $last_name = 'Kronenberg';
-</pre><p></p>
+{% endhighlight  %}
+<p></p>
 
         <p>But this code block can be improved by using whitespace to logically group related assignments together and align them on the equal sign (<kbd>=</kbd>):
-</p><pre class="code">$pet_type    = 'mypassword';
+</p>
+{% highlight  ruby %}
+$pet_type    = 'mypassword';
 $website_url = 'http://atutor.ca';
 $first_name  = 'Joel';
 $last_name   = 'Kronenberg';
-</pre><p></p>
+{% endhighlight  %}
+<p></p>
 
 	<h3><a name="sql-guidelines"></a>12.4 SQL Guidelines</h3>
 		<p>Similar formatting and layout rules applied to PHP can be applied to SQL queries as well. SQL queries, especially in database systems that support complex subqueries, can become convoluted. As with PHP code, whitespace and line breaks should be used in SQL code as needed. Consider the following:
         
-</p><pre class="code">select employees.first_name, employees.last_name from 
-               employees where employees.vacation_time &gt; 0 order by employees.last_name";
-</pre>        
+</p>
+{% highlight  ruby %}
+select employees.first_name, employees.last_name from 
+               employees where employees.vacation_time > 0 order by employees.last_name";
+{% endhighlight  %}       
         <p></p>
 
 		<p>This is a simple query, but it is poorly organized. Its organization can be improved in a number of ways, including the following:
@@ -397,45 +417,54 @@ $last_name   = 'Kronenberg';
             <li>Use table aliases to keep code clean.</li>
         </ul>
         
-<pre class="code">SELECT   S.first_name, S.last_name 
+{% highlight  ruby %}
+SELECT   S.first_name, S.last_name 
 FROM     students S
 WHERE    S.email = '' 
 ORDER BY S.last_name";
-</pre><p></p>
+{% endhighlight %}
+<p></p>
 
 		<h3><a name="sql-joins"></a>12.5 SQL/99 Joins</h3>
 	   <p>ANSI SQL/99 features ANSI compliant joins. There are several advantages in using this new syntax, one of which is the separation of the <kbd>JOIN</kbd> condition from the <kbd>WHERE</kbd> clause.
-</p><pre class="code">SELECT	M.email, M.login 
+</p>
+{% highlight  ruby %}
+SELECT	M.email, M.login 
 FROM	members M, forums_subscriptions S 
 WHERE	S.member_id=M.member_id 
-AND     M.email &lt;&gt; ''
-</pre>
+AND     M.email <> ''
+{% endhighlight  %}
+
 SQL/99 makes a clear distinction between the fields in the <kbd>JOIN</kbd> condition and the <kbd>WHERE</kbd> clause:
-<pre class="code">SELECT	M.email, M.login
+{% highlight  ruby %}
+SELECT	M.email, M.login
 FROM	members M
 JOIN	forums_subscriptions S USING (member_id)
-WHERE	M.email &lt;&gt; ''
-</pre><p></p>
+WHERE	M.email <> ''
+{% endhighlight  %}
+<p></p>
 
 	<h3><a name="control-flow-constructs"></a>12.6 Control Flow Constructs</h3>
 		<p>
 			</p><ul>
-				<li><em>Always</em> use <kbd>&lt;?php ?&gt;</kbd> instead of the short form <kbd>&lt;? ?&gt;</kbd>. This implies that you must not use the <kbd>&lt;?=$var;?&gt;</kbd> short form either.</li>
-				<li>Always include the optional semicolon in single line PHP blocks: <kbd>&lt;?php echo $something<big>;</big> ?&gt;</kbd>
+				<li><em>Always</em> use <kbd><?php ?></kbd> instead of the short form <kbd><? ?></kbd>. This implies that you must not use the <kbd><?=$var;?></kbd> short form either.</li>
+				<li>Always include the optional semicolon in single line PHP blocks: <kbd><?php echo $something<big>;</big> ?></kbd>
 				</li><li>Use <kbd>'</kbd> instead of <kbd>"</kbd> if there are no variables or special characters.</li>
 				<li>Use spaces around string concatenating. <kbd>echo 'str' . $value . 'str2';</kbd></li>
 				<li>Parenthesis <kbd>`( )`</kbd> should come right after a function name. <kbd>function()</kbd> not <kbd>function ()</kbd></li>
 				<li>Parenthesis <kbd>`( )`</kbd> should have a space right after a language construct (<kbd>if</kbd>, <kbd>while</kbd>, <kbd>for</kbd>). Examples: <kbd>for (...)</kbd>, <kbd>while (condition)</kbd></li>
 				<li>Avoid using <kbd>continue</kbd> and <kbd>break</kbd> as it makes debugging more difficult.</li>
 	            <li>Braces formatting is illustrating below. We use K&amp;R style where the initial brace is placed on the same line as the keyword and the trailing brace inline on its own line with the keyword:
-<pre class="code">if (condition) {
+{% highlight  ruby %}
+if (condition) {
     ...
 } else if (condition) {
     ...
 } else {
     ...
 }
-</pre></li>
+{% endhighlight%}
+</li>
 				<li>Arrays should be referenced with no spaces. <kbd>$arr['index']</kbd> not <kbd>$arr[ 'index' ]</kbd></li>
 				<li>Avoid using short if-statement construct (<kbd>$var = ($query ? $val1 : $val2)</kbd>) except in very rare cases. It is confusing and has a lot of bug potential.</li>
 			</ul>
@@ -443,15 +472,20 @@ WHERE	M.email &lt;&gt; ''
 
 	<h3><a name="commenting"></a>12.7 Commenting</h3>
 		<p>Avoid using Shell/Perl-style (<kbd>## this is a comment</kbd>) comments entirely. Use C-style comments (<kbd>/* ... */</kbd>) for large comment blocks and C++-style comments (<kbd>// ...</kbd>) for single-line comments only:
-</p><pre class="code">/* This is a comment block
+</p>
+{% highlight  ruby %}
+/* This is a comment block
  * it is used for describing
  * the code below.
  */
 ...
 // this is a single line comment
-</pre><p></p>
+{% endhighlight %}
+<p></p>
 	<p>Please, document while you code. See <a href="http://phpdocu.sourceforge.net/howto.php">phpdoc</a>, like <a href="http://java.sun.com/docs/books/jls/first_edition/html/18.doc.html">javadoc</a>, for how to document functions, classes, methods, and variables. Coding is often hurried, but it will save a lot of time in the end to do this type of documenting! It looks like this:
-   </p><pre class="code">   /**
+   </p>
+   {% highlight  ruby %}
+      /**
    * what the function does in one line.
    * more detailed description on 0-n lines, if needed.
    * @access  [public|static|pseudostatic]
@@ -470,7 +504,7 @@ WHERE	M.email &lt;&gt; ''
    */
    function something() {
    }
-   </pre>
+  {% endhighlight %}
    Note that the description should be given as plain text not HTML.  The <kbd>@pattern singleton</kbd> means that the constructor returns a reference to an already existing instance, if there is one.<p></p>
 
 	<h3><a name="naming-conventions"></a>12.8 Naming Conventions</h3>
@@ -712,7 +746,7 @@ WHERE	M.email &lt;&gt; ''
 	<p>Messages are automaticaaly purged from <kbd>$_SESSION</kbd> following an appropriate print command.</p>
 
 	<h3><a name="error-feedback-usage"></a>16.2 Adding Messages</h3>
-		<kbd>$msg-&gt;add{Error|Warning|Info|Feedback|Help}($code);</kbd><br><br>
+		<kbd>$msg->add{Error|Warning|Info|Feedback|Help}($code);</kbd><br><br>
 
 		<p><kbd>$code</kbd> is a <kbs>String of a language _msgs code or an array with element 0 being the language _msgs code followed by optional arguments. Refer to the language_text table in the database.</kbs></p>
 
@@ -731,13 +765,13 @@ WHERE	M.email &lt;&gt; ''
 
 		<p>
 			</p><dt>Adding single code</dt>
-			<dt><kbd>$msg-&gt;addHelp('FILE_EXPORTABLE');</kbd></dt>
+			<dt><kbd>$msg->addHelp('FILE_EXPORTABLE');</kbd></dt>
 		<br>
 		<dt><b>OR</b></dt>
 		<br>
 		<dt>Adding array with arguments</dt>
 		<dt><kbd>$f = array('FILE_EXPORTABLE', 'arg', 'arg2', ...);</kbd></dt>
-		<dt><kbd>$msg-&gt;addHelp($f);</kbd></dt>
+		<dt><kbd>$msg->addHelp($f);</kbd></dt>
 		<p></p>
 
 		<p>A nice feature implemented is that you do not have to provide all
@@ -748,39 +782,40 @@ WHERE	M.email &lt;&gt; ''
 
 		</p><p><b>Example 1:</b>
 		</p><dt><kbd>$feedback=array('FORUM_ADDED', 'ac_access_groups');</kbd></dt>
-		<dt><kbd>$msg-&gt;addFeedback($feedback);</kbd></dt><br>
+		<dt><kbd>$msg->addFeedback($feedback);</kbd></dt><br>
 
 		<dt><kbd>// Before we print lets another another one to the same code</kbd></dt>
 		<dt><kbd>$feedback2=array('FORUM_ADDED', 'about_atutor_help_text');</kbd></dt>
-		<dt><kbd>$msg-&gt;addFeedback($feedback2);</kbd></dt><br>
+		<dt><kbd>$msg->addFeedback($feedback2);</kbd></dt><br>
 
 		<dt><kbd>// No need to url_encode the code</kbd></dt>
 		<dt><kbd>$filename = 'archive.zip';</kbd></dt>
 		<dt><kbd>$f = array('FILE_UPLOADED_ZIP', $file_name);</kbd></dt>
-		<dt><kbd>$msg-&gt;addFeedback($f);</kbd></dt>
+		<dt><kbd>$msg->addFeedback($f);</kbd></dt>
 
 		<p></p>
 
 <p>Snapshot of a portion of <kbd>$_SESSION</kbd> as a result:</p>
-<pre class="code">	[feedback] =&gt; Array
+{% highlight  ruby %}
+                	[feedback] => Array
                 (
-                    [AT_FEEDBACK_FORUM_ADDED] =&gt; Array
+                    [AT_FEEDBACK_FORUM_ADDED] => Array
                         (
-                            [0] =&gt; AT_FEEDBACK_FORUM_ADDED
-                            [1] =&gt; ac_access_groups
-                            [2] =&gt; about_atutor_help_text
+                            [0] => AT_FEEDBACK_FORUM_ADDED
+                            [1] => ac_access_groups
+                            [2] => about_atutor_help_text
                         )
                         
-                    [AT_FEEDBACK_FILE_UPLOADED_ZIP] =&gt; Array
+                    [AT_FEEDBACK_FILE_UPLOADED_ZIP] => Array
                         (
-                            [0] =&gt; AT_FEEDBACK_FILE_UPLOADED_ZIP
-                            [1] =&gt; archive.zip
+                            [0] => AT_FEEDBACK_FILE_UPLOADED_ZIP
+                            [1] => archive.zip
                         )
 
 
                 )
 	...
-</pre>
+{% endhighlight  %}
 
 <p>
 </p><dt><kbd>header('Location: file_manager.php');</kbd></dt>
@@ -788,7 +823,7 @@ WHERE	M.email &lt;&gt; ''
 <p></p>
 
 <h3><a name="error-feedback-printing"></a>16.3 Printing Messages</h3>
-<kbd>$msg-&gt;print{Errors|Warnings|Infos|Feedbacks|Helps|All}($optional);</kbd><br><br>
+<kbd>$msg->print{Errors|Warnings|Infos|Feedbacks|Helps|All}($optional);</kbd><br><br>
 
 <p>Each will dump all the corresponding tracked messages of that type onto
 the page at that given line with appropriate graphics defined by its templates file.</p><p>
@@ -805,13 +840,14 @@ suppose you want to add a Message and print it right away. Thus, you pass as an
 argument ANY argument that you would pass when adding a Message of that type. 
 Essentially, two lines of code are accomplished in one.</p>
 <dt>Example:</dt>
-<pre class="code">	$msg-&gt;addError('MAX_ATTEMPTS');
-	$msg-&gt;printErrors();
+{% highlight  ruby %}
+	$msg->addError('MAX_ATTEMPTS');
+	$msg->printErrors();
 	
-	can also be accomplished as:
+	can also be accomplished as :
 	
-	$msg-&gt;printErrors('MAX_ATTEMPTS');
-</pre>
+	$msg->printErrors('MAX_ATTEMPTS');
+{% endhighlight %}
 
 <h4><a name="Boolean"></a>Printing String inside Feedback style box</h4>
 
@@ -836,12 +872,13 @@ when to print a Message or not. Otherwise returns false.</p>
 
 <p>Will delete anything related to <kbd>$code</kbd> from <kbd>$_SESSION</kbd></p>
 <dt>Example:</dt>
-<pre class="code">	$msg-&gt;deleteFeedback('CANCELLED');
-</pre>
+{% highlight  ruby %}
+$msg->deleteFeedback('CANCELLED');
+{% endhighlight %}
 
 <h4><a name="Example"></a>Example Code</h4>
 	
-<pre class="code">
+{% highlight  ruby %}
 ...
 
 require_once(AT_INCLUDE_PATH . '/classes/Message/Message.class.php');
@@ -850,104 +887,104 @@ global $savant;
 
 $msg =&amp; new Message($savant); 
 
-$msg-&gt;addError('FORUM_NOT_FOUND');
-$msg-&gt;addWarning('SAVE_YOUR_WORK');
-$msg-&gt;addInfo('NO_SEARCH_RESULTS');
-$msg-&gt;addFeedback('FORUM_ADDED');
+$msg->addError('FORUM_NOT_FOUND');
+$msg->addWarning('SAVE_YOUR_WORK');
+$msg->addInfo('NO_SEARCH_RESULTS');
+$msg->addFeedback('FORUM_ADDED');
 
 /* State of relevant section of $_SESSION at this point 
-[message] =&gt; Array
+[message] => Array
         (
-            [error] =&gt; Array
+            [error] => Array
                 (
-                    [AT_ERROR_FORUM_NOT_FOUND] =&gt; AT_ERROR_FORUM_NOT_FOUND
+                    [AT_ERROR_FORUM_NOT_FOUND] => AT_ERROR_FORUM_NOT_FOUND
                 )
 
-            [warning] =&gt; Array
+            [warning] => Array
                 (
-                    [AT_WARNING_SAVE_YOUR_WORK] =&gt; AT_WARNING_SAVE_YOUR_WORK
+                    [AT_WARNING_SAVE_YOUR_WORK] => AT_WARNING_SAVE_YOUR_WORK
                 )
 
-            [info] =&gt; Array
+            [info] => Array
                 (
-                    [AT_INFOS_NO_SEARCH_RESULTS] =&gt; AT_INFOS_NO_SEARCH_RESULTS
+                    [AT_INFOS_NO_SEARCH_RESULTS] => AT_INFOS_NO_SEARCH_RESULTS
                 )
 
-            [feedback] =&gt; Array
+            [feedback] => Array
                 (
-                    [AT_FEEDBACK_FORUM_ADDED] =&gt; AT_FEEDBACK_FORUM_ADDED
+                    [AT_FEEDBACK_FORUM_ADDED] => AT_FEEDBACK_FORUM_ADDED
                 )
 
         )
 */
 
 // Now print them
-$msg-&gt;printErrors();
-$msg-&gt;printWarnings();
-$msg-&gt;printInfos();
-$msg-&gt;printFeedbacks();
+$msg->printErrors();
+$msg->printWarnings();
+$msg->printInfos();
+$msg->printFeedbacks();
 
 /* State of relevant section of $_SESSION at this point
- [message] =&gt; Array
+ [message] => Array
         (
         )
  */
 
-// Let's add an array of arguments
+// Lets add an array of arguments
 $feedback=array('FORUM_ADDED', 'ac_access_groups');
-$msg-&gt;addFeedback($feedback);
+$msg->addFeedback($feedback);
 
 // Before we print lets another another one to the same code
 $feedback2=array('FORUM_ADDED', 'about_atutor_help_text');
-$msg-&gt;addFeedback($feedback2);
+$msg->addFeedback($feedback2);
 
-$msg-&gt;addHelp('DEMO_HELP2');
+$msg->addHelp('DEMO_HELP2');
 
 $help=array('DEMO_HELP2', $_my_uri);
-$msg-&gt;addHelp($help);
+$msg->addHelp($help);
 
 $help2=array('ADD_TEST', $_my_uri);
-$msg-&gt;addHelp($help2);
+$msg->addHelp($help2);
 
 // No need to url_encode the code
 $filename = 'archive.zip';
 $f = array('FILE_UPLOADED_ZIP', $file_name);
-$msg-&gt;addFeedback($f);
+$msg->addFeedback($f);
 
 /* State of relevant section of $_SESSION at this point. Notice the second addFeddback call above
  * had its arguments appended
 
- [message] =&gt; Array
+ [message] => Array
         (
-            [feedback] =&gt; Array
+            [feedback] => Array
                 (
-                    [AT_FEEDBACK_FORUM_ADDED] =&gt; Array
+                    [AT_FEEDBACK_FORUM_ADDED] => Array
                         (
-                            [0] =&gt; AT_FEEDBACK_FORUM_ADDED
-                            [1] =&gt; ac_access_groups
-                            [2] =&gt; about_atutor_help_text
+                            [0] => AT_FEEDBACK_FORUM_ADDED
+                            [1] => ac_access_groups
+                            [2] => about_atutor_help_text
                         )
                         
-                    [AT_FEEDBACK_FILE_UPLOADED_ZIP] =&gt; Array
+                    [AT_FEEDBACK_FILE_UPLOADED_ZIP] => Array
                         (
-                            [0] =&gt; AT_FEEDBACK_FILE_UPLOADED_ZIP
-                            [1] =&gt; archive.zip
+                            [0] => AT_FEEDBACK_FILE_UPLOADED_ZIP
+                            [1] => archive.zip
                         )
 
                 )
 
-            [help] =&gt; Array
+            [help] => Array
                 (
-                    [AT_HELP_DEMO_HELP2] =&gt; Array
+                    [AT_HELP_DEMO_HELP2] => Array
                         (
-                            [0] =&gt; AT_HELP_DEMO_HELP2
-                            [1] =&gt; /~Jay/docs/index.php?
+                            [0] => AT_HELP_DEMO_HELP2
+                            [1] => /~Jay/docs/index.php?
                         )
 
-                    [AT_HELP_ADD_TEST] =&gt; Array
+                    [AT_HELP_ADD_TEST] => Array
                         (
-                            [0] =&gt; AT_HELP_ADD_TEST
-                            [1] =&gt; /~Jay/docs/index.php?
+                            [0] => AT_HELP_ADD_TEST
+                            [1] => /~Jay/docs/index.php?
                         )
 
                 )
@@ -955,16 +992,16 @@ $msg-&gt;addFeedback($f);
         }
 */
 
-$msg-&gt;printAll();
+$msg->printAll();
 
 /* State of relevant section of $_SESSION at this point
- [message] =&gt; Array
+ [message] => Array
         (
         )
  */
  
  ...
-</pre>
+{% endhighlight  %}
 
 
 <a href="#top" class="top">top</a>
@@ -981,6 +1018,7 @@ $msg-&gt;printAll();
 			<p><kbd>`include/vitals.inc.php`</kbd></p>
 
 	<h3><a name="var-addslashes"></a>17.2 $addslashes</h3>
+	    <p><strong>Deprecated</strong></p>
 		<p>See <a href="#fn-addslashes"><kbd>$addslashes()</kbd></a>.</p>
 
 	<h3><a name="var-base_href"></a>17.3 $_base_href</h3>
@@ -1053,13 +1091,16 @@ $msg-&gt;printAll();
 
 		<h4>Example 1</h4>
 			<p>To assign the path to the site-map:
-</p><pre class="code">// the Site-Map is a sub-page of the Tools page, hence we define the path:
+</p>
+{% highlight  ruby %}
+// the Site-Map is a sub-page of the Tools page, hence we define the path :
 
 $_section[0][0] = _AT('tools');              // the Tools' page title
 $_section[0][1] = 'tools/';                  // the Tools' page URL
 $_section[1][0] = _AT('sitemap');            // the Site-Map's page title
 $_section[1][1] = 'tools/sitemap/index.php'; // the Site-Map's page URL
-</pre><p></p>
+{% endhighlight %}
+<p></p>
 
 		<h4>Location</h4>
 			<p><em>Declared on every page that is directly accessible.</em></p>
@@ -1088,20 +1129,26 @@ $_section[1][1] = 'tools/sitemap/index.php'; // the Site-Map's page URL
 
 		<h4>Example 1</h4>
 			<p>To authenticate an entire page using the announcements management privilege:
-</p><pre class="code">define('AT_INCLUDE_PATH', '../include/');
+</p>
+{% highlight  ruby %}
+define('AT_INCLUDE_PATH', '../include/');
 require (AT_INCLUDE_PATH . 'vitals.inc.php');
 /**
 /* exit if the user cannot be authenticated
  * otherwise continue loading the page.
  */
 authenticate(AT_PRIV_ANNOUNCEMENTS);
-</pre><p></p>
+{% endhighlight %}
+<p></p>
 		<h4>Example 2</h4>
 			<p>To authenticate a block of code using the forums management privilege:
-</p><pre class="code">if (authenticate(AT_PRIV_FORUMS, AT_PRIV_RETURN)) {
+</p>
+{% highlight  ruby %}
+if (authenticate(AT_PRIV_FORUMS, AT_PRIV_RETURN)) {
     // ... this user has been authenticated
 }
-</pre><p></p>
+{% endhighlight %}
+<p></p>
 
 	<h3><a name="fn-at"></a>18.2 _AT()</h3>
 		<p><kbd>_AT()</kbd> -- Returns translated terms.</p>
@@ -1118,28 +1165,34 @@ authenticate(AT_PRIV_ANNOUNCEMENTS);
 
 		<h4>Example 1</h4>
 			<p>Printing a single term:
-</p><pre class="code">/* echo a translated version of the 'tools' string.
+</p>
+{% highlight  ruby %}
+/* echo a translated version of the 'tools' string.
  * i.e. 'Tools' in English, 'Outils' in French, etc..
  */
  $_SESSION['lang'] = 'en';
-echo '&lt;h2&gt;' . _AT('tools') . '&lt;/h2&gt;';
+echo '<h2>' . _AT('tools') . '</h2>';
 
  $_SESSION['lang'] = 'fr';
-echo '&lt;h2&gt;' . _AT('tools') . '&lt;/h2&gt;';
-</pre><p></p>
+echo '<h2>' . _AT('tools') . '</h2>';
+{% endhighlight %}
+<p></p>
 
 			<p>Result:
-</p><pre class="code">&lt;h2&gt;Tools&lt;/h2&gt;
-&lt;h2&gt;Outils&lt;/h2&gt;
-</pre><p></p>
+</p>{% highlight  ruby %}
+<h2>Tools</h2>
+<h2>Outils</h2>
+{% endhighlight %}<p></p>
 
 		<h4>Example 2</h4>
 			<p>Printing a phrase with arguments:
-</p><pre class="code">$username = 'Jon';
+</p>{% highlight  ruby %}
+$username = 'Jon';
 echo _AT('welcome_message', $username);
-</pre><p></p>
+{% endhighlight  %}
+<p></p>
 			<p>Result:
-</p><pre class="code">Hello, Jon. Welcome back.</pre><p></p>
+</p>{% highlight  ruby %}Hello, Jon. Welcome back.{% endhighlight %}<p></p>
 
 
 	<h3><a name="fn-at_print"></a>18.3 AT_print()</h3>
@@ -1152,7 +1205,7 @@ echo _AT('welcome_message', $username);
 
 			<p><kbd>$field_name</kbd> is the unique name of the <kbd>$input</kbd> field in the form of <kbd><em>table_name</em>.<em>field_name</em></kbd>. The formatting options for the given field are defined in <kbd>`include/lib/constants.inc.php`</kbd>. If <kbd>$field_name</kbd> is not a valid option as defined in the constants file then the function will return <kbd>$input</kbd> unchanged.</p>
 
-			<p>The boolean <kbd>$runtime_html</kbd> is used by fields which have an optional HTML formatting field. <kbd>$runtime_html</kbd> should be the associated HTML formatting field for that data. If set to <kbd>FALSE</kbd> then HTML elements will be escaped from <kbd>$input</kbd> and new line characters converted to <kbd>&lt;br /&gt;</kbd>s.</p>
+			<p>The boolean <kbd>$runtime_html</kbd> is used by fields which have an optional HTML formatting field. <kbd>$runtime_html</kbd> should be the associated HTML formatting field for that data. If set to <kbd>FALSE</kbd> then HTML elements will be escaped from <kbd>$input</kbd> and new line characters converted to <kbd><br /></kbd>s.</p>
 
 			<p>No data from the database should be printed without passing it through this function first.</p>
 
@@ -1161,12 +1214,16 @@ echo _AT('welcome_message', $username);
 
 		<h4>Example 1</h4>
 		<p>Printing a field where HTML is not allowed:
-</p><pre class="code">$username = 'my_name&lt;b&gt;_is';
-$value    = AT_print($username, 'members.login'); // escape the '&lt;b&gt;' tag
-echo $value</pre><p></p>
+</p>{% highlight  ruby %}
+$username = 'my_name<b>_is';
+$value    = AT_print($username, 'members.login'); // escape the '<b>' tag
+echo $value{% endhighlight  %}<p></p>
 
 		<p>Result:
-</p><pre class="code">my_name&lt;b&gt;_is</pre><p></p>
+</p>{% highlight  ruby %}
+my_name<b>_is
+{% endhighlight %}
+<p></p>
 
 
 	<h3><a name="fn-at_date"></a>18.4 AT_date()</h3>
@@ -1227,38 +1284,54 @@ echo $value</pre><p></p>
 
 		<h4>Example 1</h4>
 			<p>Returning a specified date using a UNIX time stamp:
-</p><pre class="code">$time = mktime(0, 0, 0, 7, 14, 2004);
+</p>
+{% highlight  ruby %}
+$time = mktime(0, 0, 0, 7, 14, 2004);
 echo AT_Date('%l %F %j, %Y', $time, AT_DATE_UNIX_TIMESTAMP);
-</pre><p></p>
+{% endhighlight  %}
+<p></p>
 
 			<p>Result:
-</p><pre class="code">Wednesday July 14, 2004</pre><p></p>
+</p>{% highlight  ruby %}
+Wednesday July 14, 2004
+{% endhighlight   %}
+<p></p>
 
 		<h4>Example 2</h4>
 			<p>Returning a specified date using a UNIX time stamp that is also language dependent:
-</p><pre class="code">$time = mktime(0, 0, 0, 7, 14, 2004);
+</p>
+{% highlight  ruby %}
+$time = mktime(0, 0, 0, 7, 14, 2004);
 
 $_SESSION['lang'] = 'en';
 echo AT_Date(_AT('announcement_date_format'), $time, AT_DATE_UNIX_TIMESTAMP);
 
-echo '&lt;br /&gt;';
+echo '<br />';
 $_SESSION['lang'] = 'fr';
 echo AT_Date(_AT('announcement_date_format'), $time, AT_DATE_UNIX_TIMESTAMP);
-</pre><p></p>
+{% endhighlight  %}
+<p></p>
 
 			<p>Result:
-</p><pre class="code">Wednesday July 14, 2004
-mercredi, 14 juillet 2004</pre><p></p>
+</p>
+{% highlight  ruby %}
+Wednesday July 14, 2004
+mercredi, 14 juillet 2004
+{% endhighlight  %}
+<p></p>
 
 		<h4>Example 3</h4>
 		<p>Returning a single month name:
-</p><pre class="code">$_SESSION['lang'] = 'fr';
-The second month in French is: &lt;?php echo AT_date('%F', 2, AT_DATE_INDEX_VALUE) ?&gt;
-</pre><p></p>
+</p>
+{% highlight  ruby %}
+$_SESSION['lang'] = 'fr';
+The second month in French is : <?php echo AT_date('%F', 2, AT_DATE_INDEX_VALUE) ?>
+{% endhighlight  %}
+<p></p>
 
 		<p>Result:
-</p><pre class="code">The second month in French is: février
-</pre><p></p>
+</p>{% highlight  ruby %}The second month in French is : février
+{% endhighlight  %}<p></p>
 
 	<h3><a name="fn-addslashes"></a>18.5 $addslashes()</h3>
 		<p><kbd>$addslashes()</kbd> -- Quotes a string with slashes.</p>
@@ -1273,31 +1346,34 @@ The second month in French is: &lt;?php echo AT_date('%F', 2, AT_DATE_INDEX_VALU
 
 		<h4>Example 1</h4>
 			<p>With <kbd>magic_quotes_gpc</kbd> enabled:
-</p><pre class="code">$str = "What's going on?";
+</p>{% highlight  ruby %}
+$str = "What's going on?";
 
-// prints magic_quotes_gpc: 1
-echo 'magic_quotes_gpc: ' . get_magic_quotes_gpc();
+// prints magic_quotes_gpc : 1
+echo 'magic_quotes_gpc : ' . get_magic_quotes_gpc();
 
 // maps to my_add_null_slashes(). prints What\'s going on? [correct]
 echo $addslashes($str);
 
 // prints What\\\'s going on? [wrong]
 echo addslashes($str);
-</pre><p></p>
+{% endhighlight  %}
+<p></p>
 
 		<h4>Example 2</h4>
 			<p>With <kbd>magic_quotes_gpc</kbd> disabled:
-</p><pre class="code">$str = "What's going on?";
+</p>{% highlight  ruby %}
+$str = "What's going on?";
 
-// prints magic_quotes_gpc: 0
-echo 'magic_quotes_gpc: ' . get_magic_quotes_gpc();
+// prints magic_quotes_gpc : 0
+echo 'magic_quotes_gpc : ' . get_magic_quotes_gpc();
 
 // maps to addslashes(). prints What\'s going on? [correct]
 echo $addslashes($str);
 
 // prints What\'s going on? [correct]
 echo addslashes($str);
-</pre><p></p>
+{% endhighlight %}<p></p>
 
 
 	<h3><a name="fn-debug"></a>18.6 debug()</h3>
@@ -1315,18 +1391,23 @@ echo addslashes($str);
 
 		<h4>Example 1</h4>
 		<p>Viewing the contents of an <kbd>array</kbd>:
-</p><pre class="code">$my_array = array('apple' =&gt; 'green', 4 =&gt; 'something');
+</p>
+{% highlight  ruby %}
+$my_array = array('apple' => 'green', 4 => 'something');
 debug($my_array, 'my_array');
-</pre><p></p>
+{% endhighlight %}
+<p></p>
 
 		<p>Result:
-</p><pre class="code">    <b>my_array</b>
+</p>{% highlight  ruby %}
+    <b>my_array</b>
 Array
 (
-    [apple] =&gt; green
-    [4] =&gt; something
+    [apple] => green
+    [4] => something
 )
-</pre><p></p>
+{% endhighlight %}
+<p></p>
 
 	<h3><a name="fn-get_login"></a>18.7 get_login()</h3>
 		<p><kbd>get_login()</kbd> -- Returns the login name of a member.</p>
@@ -1355,11 +1436,13 @@ Array
 		
 		<h4>Example 1</h4>
 		<p>To encode a feedback array:
-</p><pre class="code">$f[] = array(AT_FEEDBACK_FILE_UPLOADED_ZIP, $file_name);
+</p>
+{% highlight  ruby %}
+$f[] = array(AT_FEEDBACK_FILE_UPLOADED_ZIP, $file_name);
 
 header('Location: file_manager.php?f='.urlencode_feedback($f));
 exit;
-</pre><p></p>
+{% endhighlight  %}<p></p>
 
 <a href="#top" class="top">top</a>
 <h2><a name="useful-constants"></a>19. Useful Constants</h2>
@@ -1371,8 +1454,9 @@ exit;
 
 		<h4>Example 1</h4>
 		<p>Requiring the vitals file from the tools page:
-				</p><pre class="code">define('AT_INCLUDE_PATH', '../include/');
-require (AT_INCLUDE_PATH . 'vitals.inc.php');</pre><p></p>
+				</p>{% highlight  ruby %}
+				define('AT_INCLUDE_PATH', '../include/');
+require (AT_INCLUDE_PATH . 'vitals.inc.php');{% endhighlight  %}<p></p>
 
 		<h4>Location</h4>
 			<p><em>Declared on every page that is directly accessible.</em></p>
@@ -1383,16 +1467,18 @@ require (AT_INCLUDE_PATH . 'vitals.inc.php');</pre><p></p>
 
 		<h4>Example 1</h4>
 		<p>Printing a dynamic link:
-</p><pre class="code">$arg1 = 'one';
+</p>{% highlight  ruby %}$arg1 = 'one';
 $arg2 = 'two';
 
 echo "SEP is ".SEP."\n";
-echo '&lt;a href="index.php?arg1=' . $arg1 . SEP . 'arg2=' . $arg2 . '"&gt;link&lt;/a&gt;';</pre><p></p>
+echo '<a href="index.php?arg1=' . $arg1 . SEP . 'arg2=' . $arg2 . '">link</a>';{% endhighlight %}<p></p>
 		
 		<p>Result:
-</p><pre class="code">SEP is ;
-&lt;a href="index.php?arg1=one;arg2=two"&gt;link&lt;/a&gt;
-</pre><p></p>
+</p>{% highlight  ruby %}
+SEP is ;
+<a href="index.php?arg1=one;arg2=two">link</a>
+{% endhighlight %}
+<p></p>
 
 		<h4>Location</h4>
 			<p><kbd>`include/lib/constants.inc.php`</kbd></p>
@@ -1429,10 +1515,10 @@ echo '&lt;a href="index.php?arg1=' . $arg1 . SEP . 'arg2=' . $arg2 . '"&gt;link&
 
 	<p>The <kbd>`install/`</kbd> directory contains two other subdirectories that are used during the installation or upgrade process. The <kbd>`install/db/`</kbd> directory contains database schema files and are clearly labeled. The <kbd>`install/include/`</kbd> directory contains scripts that are common to both processes and labeled according to their order in either process.</p>
 
-	<h3><a name="install-script">20.1 Install Script</a></h3><a name="install-script">
+	<h3><a name="install-script">20.1 Install Script</a></h3><a name="install-script"></a>
 		<p>The <kbd>`install.php`</kbd> script requires each step as it's needed as the <kbd>$step</kbd> counter variable is incremented. To add or edit a step, edit the <kbd>`install.php`</kbd> file.</p>
 
-	</a><h3><a name="install-script"></a><a name="upgrade-script">20.2 Upgrade Script</a></h3><a name="upgrade-script">
+	</a><h3><a name="install-script"></a><a name="upgrade-script">20.2 Upgrade Script</a></h3><a name="upgrade-script"></a>
 		<p>The <kbd>`upgrade.php`</kbd> script works exactly the same as the install script does, but requires different files (step prefixed with a 'u'). To upgrade the database schema an SQL file named <kbd>`atutor_upgrade_<em>from</em>_to_<em>to</em>.sql`</kbd> must be created, where <kbd><em>from</em></kbd> is the exact version of the previous ATutor version, and <kbd><em>to</em></kbd> is the next stable version.</p>
 
 
@@ -1452,40 +1538,41 @@ echo '&lt;a href="index.php?arg1=' . $arg1 . SEP . 'arg2=' . $arg2 . '"&gt;link&
 <a href="#top" class="top">top</a>
 <h2><a name="example"></a>23. Sample Script</h2>
 <p>The following is sample code that shows the general flow of an ATutor script. The example shows how you may use some of the variables and functions available to you. Some scripts may not need all the variables and functions used below.
-</p><pre class="code" id="code">&lt;?php
+</p>{% highlight  ruby %}
+<?php
 // 0. insert the SVN keywords
 // <a href="#svn-keywords">$Id</a>: guidelines.html 1275 2004-07-28 16:02:49Z joel $
 
-// 1. define relative path to `include` directory:
+// 1. define relative path to `include` directory :
 define('<a href="#const-include_path">AT_INCLUDE_PATH</a>', '../<a href="#directories-include">include/</a>');
 
-// 2. require the `vitals` file before any others:
+// 2. require the `vitals` file before any others :
 require (<a href="#const-include_path">AT_INCLUDE_PATH</a> . '<a href="#files-vitals">vitals.inc.php</a>');
 
-// 3. authenticate this user:
+// 3. authenticate this user :
 <a href="#fn-authenticate">authenticate</a>(AT_PRIV_SPECIAL_PRIV);
 
 // 4. define the breadcrumbs path:
 <a href="#var-section">$_section[0][0]</a> =  <a href="#fn-at">_AT</a>('tools');
 <a href="#var-section">$_section[0][1]</a> = 'tools/';
 <a href="#var-section">$_section[1][0]</a> =  <a href="#fn-at">_AT</a>('my_page');
-<a href="#var-section">$_section[1][1]</a> =  'tools/page.php;
+<a href="#var-section">$_section[1][1]</a> =  'tools/page.php';
 
-// 5. handle any post request:
+// 5. handle any post request :
 if (isset($_POST['submit'])) {
-  // 5.1 check for errors:
+  // 5.1 check for errors :
   if ($_POST['some_field'] == '') {
-      <a href="#error-feedback-messages">$msg-&gt;addError</a>('SOME_ERROR_CODE');
+      <a href="#error-feedback-messages">$msg->addError</a>('SOME_ERROR_CODE');
   }
 
-  if (!<a href="#error-feedback-messages">$msg-&gt;containsErrors()</a>) {
-      //5.2 complete the desired action here. (example: insert into DB)
+  if (!<a href="#error-feedback-messages">$msg->containsErrors()</a>) {
+      //5.2 complete the desired action here. (example : insert into DB)
 
       //5.3 set the feedback message and add it to the URL:
-      <a href="#error-feedback-messages">$msg-&gt;addFeedback</a>('MESSAGE');
+      <a href="#error-feedback-messages">$msg->addFeedback</a>('MESSAGE');
       $url = <a href="#var-base_href">$_base_href</a> . 'tools/index.php?arg1=yes';
 
-      //5.4 redirect after successful operation:
+      //5.4 redirect after successful operation :
       header('Location: ' . $url);
       exit;
   }
@@ -1494,7 +1581,7 @@ if (isset($_POST['submit'])) {
 // 6. start the page display by calling the header
 require (<a href="#const-include_path">AT_INCLUDE_PATH</a> . '<a href="#files-header">header.inc.php</a>');
 
-// 7. display any feedback or error messages that my occur:
+// 7. display any feedback or error messages that my occur :
 require (<a href="#const-include_path">AT_INCLUDE_PATH</a> . 'html/<a href="#files-feedback">feedback.inc.php</a>');
 
 /*
@@ -1503,7 +1590,9 @@ require (<a href="#const-include_path">AT_INCLUDE_PATH</a> . 'html/<a href="#fil
 
 // 9. finish the page by calling the footer
 require (<a href="#const-include_path">AT_INCLUDE_PATH</a> . '<a href="#files-footer">footer.inc.php</a>');
-?&gt;</pre><p></p>
+?>
+{% endhighlight  %}
+<p></p>
 
 <a href="#top" class="top">top</a>
 <h2><a name="credits-sources"></a>24. Credits &amp; Additional Sources</h2>

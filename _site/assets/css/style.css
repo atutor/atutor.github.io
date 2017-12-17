@@ -619,9 +619,9 @@ div.contents { float: right; clear: right; width: auto; height: auto; width: 22%
 
 .contents ol, ul { list-style: none; font-size: small; }
 
-div.lang_pack_outer { width: 47%; margin-right: 1em; margin-bottom: 1em; float: left; clear: left; vertical-align: top; }
+div.lang_pack_outer { width: 100%; margin-right: 1em; margin-bottom: 1em; float: left; clear: left; vertical-align: top; }
 
-div.lang_pack { width: 100%; margin-right: 3em; margin-bottom: 1em; vertical-align: top; }
+div.lang_pack { width: 45%; margin-right: 1em; margin-bottom: 1em; vertical-align: top; }
 
 div.lang_pack_head { color: #000000; font-weight: 600; background-color: #FAF6D7; padding-left: 2em; border-left: .05em solid #cccccc; border-right: .05em solid #cccccc; border-top: .05em solid #cccccc; -moz-border-radius: .5em .5em 0em 0em; border-radius: .5em .5em 0em 0em; }
 
@@ -893,7 +893,7 @@ main { margin-top: 1.8em; overflow: visible; }
 
 .tpbg { background-color: rgba(0, 0, 0, 0.5); background-position: center; height: 18.5vw; width: 92.2%; margin-left: auto; margin-right: auto; }
 
-.tpbg h1 { font-size: 3.5em; text-align: center; font-weight: 700; }
+.tpbg h1 { font-size: 3.5em; text-align: center; font-weight: 700; color: #ffffaa; }
 
 .tpbg h2 { font-size: 2.5em; text-align: center; font-weight: 700; color: white; }
 
