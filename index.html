@@ -5,7 +5,7 @@ layout: home
 		<div class="cd-container">
 		    <div class="home-splash">
 		    <ul>
-		      <li><h2><a href="atutor/" class="splash-link">ATutor</a> </h2> 
+		      <li><h2>ATutor </h2> 
 		      <hr class="home-line" /> 
 		      <p>ATutor is an Open Source LMS, used to develop and manage online courses, and create and distribute interoperable elearning content.  </p>
 		      <ul><li><a href="/atutor/downloads.html"><span style="color: #6cc644;font-weight:700;">Download ATutor 2.2.3-b1 for PHP7</span></a></li>
@@ -19,7 +19,7 @@ layout: home
 		</div>
 		<div class="home-splash">
 		    <ul>
-		      <li><h2><a href="acontent/" class="splash-link">AContent</a> </h2> 
+		      <li><h2>AContent </h2> 
                   <hr class="home-line" /> 
                   <p>AContent is an Open Source LCMS, used to develop and share elearning content. Integrates with ATutor and other LMSs as a central content repository.</p>
                   <ul><li><a href="/acontent/demo.php"><span style="color: #6cc644;font-weight:700;">TEST: AContent 1.4 Preview</span></a></li>
@@ -31,21 +31,22 @@ layout: home
                   </li>
 		      </ul>
 		</div>	    		    
-
-        <div class="posts">
-        <h3>Blog Posts</h3>
-        <ul>
-          {% for post in site.posts %}
-            <li>
-              <a href="{{ post.url }}">{{ post.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-        </div>
-                </div>  
-          </div>    
-    </div> 	
-
+        <div class="home-splash">
+		    <ul>
+		      <li><h2>Blog Posts </h2> 
+                  <hr class="home-line" /> 
+                  <p>Musings on elearning, accessibility, standards and interoperability, and other topics that have played a role in ATutor's development.</p>
+                <ul>
+                  {% for post in site.posts %}
+                    <li>
+                      <a href="{{ post.url }}">{{ post.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+                </li>
+                </ul>
+            </div>
+		</div>	 
 
  <!-- // end of #centerbar-->
 

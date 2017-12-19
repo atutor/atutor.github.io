@@ -1,11 +1,12 @@
-site.github.theme: jekyll-theme-cayman
-site.github.github: [metadata]
-site.github.gems:
+theme: jekyll-theme-cayman
+github: [metadata]
+gems:
     - jekyll-sitemap
     - jekyll-github-metadata
     - jekyll-git_metadata
-
-site.github.highlighter: rouge
+    - jekyll-feed
+highlighter: rouge
+markdown: kramdown
 defaults:
     -   
         scope:

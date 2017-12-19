@@ -71,20 +71,13 @@
                         {% endfor %}
                     {% endfor %}
         </ol>
-        <ul>
-        {% for post in site.posts %}
-            <li>
-              <a href="{{ post.url }}">{{ post.title }}</a>
-              {{ post.excerpt }}
-            </li>
-          {% endfor %}
-        </ul>
+        <div style="margin:2em;">
+        {{ content }}
+        </div>
              </div>
          </div>
      </div>
           <footer class="site-footer">
-              <div class="cd-color-4">
-		<div class="cd-container">
 		<p>Google ads disabled</p>
           <!--  <div id="google_ads">
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -98,8 +91,6 @@
                 (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div> -->
-		</div> 
-	</div>
       </footer>
     </section>
 

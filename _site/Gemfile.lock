@@ -205,6 +205,7 @@ PLATFORMS
 DEPENDENCIES
   compass (= 0.12.5)
   github-pages
+  jekyll-feed
   jekyll-github-metadata
   jekyll-sitemap
   minima
