@@ -7,7 +7,7 @@ site.github.gems:
     - jekyll-feed
 site.github.highlighter: rouge
 site.github.markdown: kramdown
-site.github.defaults:
+defaults:
     -   
         scope:
             path: ""
