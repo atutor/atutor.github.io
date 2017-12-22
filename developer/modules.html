@@ -84,8 +84,10 @@ acronym {
 }
 </style>
 <div class="cd-container">
+<article id="article_with_toc">
+<div id="toc"></div>
 <h2>Module Development Documentation ATutor 2.2+</h2>
-<ul>
+<!--<ul>
 <li><a href="#intro">Introduction</a></li>
 <li><a href="#differences">Difference from Pre ATutor 2.2 modules</a></li>
 <li><a href="#structure">Structure</a></li>
@@ -128,7 +130,7 @@ acronym {
 </ul>
 <li><a href="#cron">Running Cron/Scheduling</a></li>
 </ul>
-
+-->
 <a name="intro"></a>
 <h3>Introduction</h3>
 	<p>ATutor 1.5.2 introduced the concept of modules, providing developers with a framework to implement additional functionality in a coherent and loosely coupled way.</p>
@@ -203,7 +205,7 @@ foreach($rows_countries as $row)
 			<dd>This file is used to add tables and/or modify data in the ATutor database. Also used to insert language into the <kbd>language_text</kbd> table. <em>Optional</em>.</dd>
 		</dl>
 <a name="module.xml"></a>
-	<h3>The <kbd>module.xml</kbd> File</h3>
+	<h4>The <kbd>module.xml</kbd> File</h4>
 		<p>The <kbd>module.xml</kbd> file is used for displaying information about the module before it is installed and is useful when distributing the module.</p>
 <pre>&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt; 
 &lt;module version="0.1"&gt; 
@@ -238,7 +240,7 @@ subsites and the ATutor main site. In the above example, only subsites "mysubsit
 the admin "install module" page. Other subsites don't see this module.</p>
 
 <a name="module.php"></a>
-	<h3>The <kbd>module.php</kbd> File</h3>
+	<h4>The <kbd>module.php</kbd> File</h4>
 <p>The <kbd>module.php</kbd> file is typically used to set permissions, and to link module components into the ATutor navigation elements, as tool icons, navigation tabs, sub navigation menus, or side menu blocks, as administrator, course management, and student tools. It is also used to link tools to  My Start Page, or to various public pages that appear where a user is browsing the system without being logged in. The <kbd>module.php</kbd> file can also be used to run module specific functionality. It runs everytime a module screen is viewed, loading whatever settings it may contain, or running any scripts that may be required by the module.</p>
 <pre>&lt;?php
 /*******
@@ -343,7 +345,7 @@ $this-&gt;_tool['example_maker'] = array('title_var'=&gt;'example_maker','file'=
 ?&gt;
 </pre>
 <a name="module.sql"></a>
-	<h3>The <kbd>module.sql</kbd> File</h3>
+	<h4>The <kbd>module.sql</kbd> File</h4>
 <p>A very simple <kbd>module.sql</kbd> file such as the following, creates a table for the module, and inserts it's language into the ATutor <kbd>language_text</kbd> table. Module language can then be managed from the ATutor Language Manager. The <kbd>module.sql</kbd> file can contain any number of SQL statements used to add tables or insert data into the ATutor database. </p>
 
 <pre># sql file for example maker module
@@ -382,7 +384,7 @@ add the module to the system using the defined privileges
 </pre>
 
 <a name="module_install"></a>
-	<h3>The <kbd>module_install.php</kbd> File</h3>
+	<h4>The <kbd>module_install.php</kbd> File</h4>
 <p>The <kbd>module_install.php</kbd> file is typically used to run any installation related files, such as an sql file that sets up a database table, or installs the language for the module. The following is an example module_install.php file</p>
 <pre>&lt;?php
 /*******

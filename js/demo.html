@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>jQuery Toc.js Example</title>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="jquery.toc.js"></script>
+		<link rel="stylesheet" href="demo.css"></link>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				// add toc to article element
+				$("#article_with_toc").toc(
+					{
+						strip: true,
+						stripAfter: 15,
+						container: "#toc_container",
+						scrollSpeed: 300,
+						scrollOffset: 50
+					});
+
+				// toc toggle button click handler
+				$("#toggle_toc").click(function(e) {
+					// toggle toc view on button click
+					e.preventDefault();
+					$("#toc_container").fadeToggle('fast');
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<header>
+			<a id="toggle_toc" href="#">show TOC</a>
+			<div id="toc_container"></div>
+		</header>
+		<article id="article_with_toc">
+			<h1>jQuery Toc.js Example</h1>
+            <div class="jquery-script-ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+			<p>Lorem ipsum Sint in esse culpa dolor incididunt ut labore consequat pariatur Excepteur commodo nisi exercitation dolor reprehenderit Excepteur nulla tempor amet est anim tempor aute Duis.</p>
+
+			<p>Lorem ipsum Id laborum proident in enim esse cupidatat fugiat non proident ullamco quis culpa.</p>
+
+			<h2>Dolorem et augere mastat</h2>
+			<p>Lorem ipsum Nulla labore est qui aute magna aliqua in velit laborum sunt sunt exercitation commodo esse consequat cupidatat sint cupidatat ad quis Duis occaecat exercitation eu amet mollit elit Duis exercitation aliqua dolor in dolore adipisicing minim eiusmod mollit elit aliqua ut ad qui et pariatur non est commodo dolore pariatur irure anim dolore ex fugiat dolor velit tempor do occaecat occaecat deserunt fugiat nisi laboris dolor et et enim dolore tempor commodo elit aliquip in voluptate pariatur consequat Ut aliquip sed consequat Excepteur ex irure amet aliquip elit esse dolor cillum proident dolore amet dolore est in sed sit pariatur Lorem ipsum.
+			<h3>In adipisicing Duis exercitation</h3>
+			<p>Aute eiusmod. magna aliqua consectetur dolore mollit quis et dolor laboris nostrud proident sit cupidatat Excepteur adipisicing ut culpa non velit occaecat in pariatur anim in in amet nostrud voluptate Ut enim laboris dolor do est in elit laboris tempor deserunt irure dolore in exercitation minim commodo ut Duis eiusmod adipisicing <span class="footnote">Lorem ipsum Elit anim dolor irure eu reprehenderit ex ut ex officia consequat incididunt Excepteur cillum aliqua.</span> nulla Ut nulla non esse aute labore incididunt tempor velit pariatur aliqua tempor eu dolor sed labore</p>
+
+			<h3>Duis irure ea sed dolor</h3>
+			<h4>Lesqueste aragot ut ipot</h4>
+			<p>Proident magna reprehenderit dolor minim reprehenderit cupidatat ex sunt in do proident eu ut proident id laboris</p>
+
+			<h5>Necessitate uduldur emit</h5>
+			<p>Nostrud in quis commodo Duis sunt cupidatat Excepteur pariatur Excepteur eu dolor dolore in proident Ut proident pariatur sunt nostrud officia laborum ea in in dolor esse dolor sint reprehenderit nostrud.</p>
+
+			<h5>Decilitum offerat monstrasitae</h5>
+			<p>Lorem ipsum Incididunt velit magna ex consequat eu ut laboris ullamco dolore ex sit velit magna dolor voluptate minim consequat Ut ut Excepteur sed labore dolore sit Duis nostrud in nostrud qui in laborum elit ad sed anim ut enim.</p>
+		
+			<h1>Lequetntat ipsum deceleratus omintadore irigiste</h1>
+			<p>Lorem ipsum Nulla <span class="footnote">labore est qui aute magna aliqua in velit laborum</span> sunt sunt exercitation commodo esse consequat cupidatat sint cupidatat ad quis Duis occaecat exercitation eu amet mollit elit Duis exercitation aliqua dolor in dolore adipisicing minim eiusmod mollit elit aliqua ut ad qui et pariatur non est commodo dolore pariatur irure anim dolore ex fugiat dolor velit tempor do occaecat occaecat deserunt fugiat nisi laboris dolor et et enim dolore tempor commodo elit aliquip in voluptate pariatur consequat Ut aliquip sed consequat Excepteur ex irure amet aliquip elit esse dolor cillum proident dolore amet dolore est in sed sit pariatur<span class="footnote">Lorem ipsum In adipisicing Duis exercitation aute eiusmod.</span> magna aliqua consectetur dolore mollit quis et dolor laboris nostrud proident sit cupidatat Excepteur adipisicing ut culpa non velit occaecat in pariatur anim in in amet nostrud voluptate Ut enim laboris dolor do est in elit laboris tempor deserunt irure dolore in exercitation minim commodo ut Duis eiusmod adipisicing <span class="footnote">Lorem ipsum Elit anim dolor irure eu reprehenderit ex ut ex officia consequat incididunt Excepteur cillum aliqua.</span>.</p>
+
+			<p>Nulla Ut nulla non esse aute labore incididunt tempor <span class="footnote">velit pariatur aliqua tempor eu dolor sed labore Duis irure ea sed dolor proident magna reprehenderit dolor minim reprehenderit cupidatat ex sunt in do proident eu ut proident id laboris nostrud in quis commodo.</span> Duis sunt cupidatat Excepteur pariatur Excepteur eu dolor dolore in proident Ut proident pariatur sunt nostrud officia laborum ea in in dolor esse dolor sint reprehenderit nostrud.</p>
+		</article>
+        <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+	</body>
+</html>

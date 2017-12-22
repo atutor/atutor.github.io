@@ -12,6 +12,9 @@
 <link rel="canonical" href="https://atutor.github.io/" />
 <meta property="og:url" content="https://atutor.github.io/" />
 <meta property="og:site_name" content="atutor.github.io" />
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="/js/jquery.toc.js"></script>
+
 <script type="application/ld+json">
 {"name":"atutor.github.io","description":"ATutor is an Open Source Web-based Learning Management System (LMS) used to develop and deliver online courses. Administrators can install or update ATutor in minutes, develop custom themes to give ATutor a new look, and easily extend its functionality with feature modules. Educators can quickly assemble, package, and redistribute standardized Web-based instructional content, easily import prepackaged content, and conduct their courses online. Students learn in an accessible, adaptive, social learning environment.","author":null,"@type":"WebSite","url":"https://atutor.github.io/","image":null,"publisher":null,"headline":"atutor.github.io","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
@@ -19,6 +22,7 @@
     <meta name="theme-color" content="#157878">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/assets/css/style.css?v=d21f7591e4074c34581bb4e6987280a5a8e29a48">
+    <link rel="stylesheet" href="/js/demo.css">
     <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" />
   </head>
   <body>
@@ -131,6 +135,10 @@
                 
                 
                 
+                
+                    
+                
+                    
                 
                     
                 
@@ -319,14 +327,15 @@
                 
                     
                 
+                    
+                
+                    
+                
             
         </ol>
         <div class="cd-container">
 <h2>ATutor Features</h2>
-<p>The following is a relatively detailed list of the standard features in ATutor. Also see the <a href="http://www.atutor.ca/atutor/modules/index.php">Modules Section</a> for additional features and third party add-on software. </p>
-	<div class="download_box">
-		<h5>Have a feature you'd like added?</h5>
-	<b><span class="spacer"></span> <a href="/forum/2/1.html">Suggest New Features</a><i class="spacer">!</i></b></div>
+<p>The following is a relatively detailed list of the standard features in ATutor. Also see the <a href="/atutor/modules/index.php">Modules </a> for additional features and third party add-on software. </p>
 
 <ul style="border:1px solid #cccccc; width:50%; font-weight:700; padding:1em;-moz-border-radius:.5em .5em .5em .5em;color:#999999;">
 <li><a href="#learners">Learners</a></li>
@@ -336,7 +345,7 @@
 </ul>
 
 <a name="learners"></a>
-<h4>Learners</h4>
+<h3>Learners</h3>
 <div class="to_top"><a href="#top" class="up-arrow">Top</a></div>
 <ul>
 	<li><strong>Accessibility</strong>: ATutor was designed with accessibility as a priority. A wide range of features ensure assistive technology users can participate fully in learner, instructor, and administrative activities.  DIV based themes are available for added accessibility. ATutor conforms with international accessibility standards.  IMS/ISO AccessForAll support allows learners to configure the environment and content to their specific needs.</li>	
@@ -522,6 +531,7 @@
 
 
 
+<div class="toc_container"></div>
         </div>
          </div>
      </div>
@@ -545,7 +555,10 @@
 	</div>
       </footer>
     </section>
-
-    
+    <script type="text/javascript">
+    $( document ).ready(function() {
+        $("#article_with_toc").toc();
+    });
+</script>
   </body>
 </html>

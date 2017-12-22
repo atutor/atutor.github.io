@@ -150,8 +150,7 @@ nav h3{
     background-color:rgba(20, 89,45, 0.2);
     padding-left:.5em;
     font-size:1.6vw;
-    font-weight:700;
-    margin-bottom:.5em;
+    font-weight:700
 }
 nav h3>a{
     padding: 0 0 0   .5em;
@@ -168,7 +167,6 @@ nav h3>a{
 cd-container h2, h3,h4,h5,h6{
     text-align:left !important;
     padding:0 !important;
-    float:left;
 }
 h2,h3, h4, h5{
     width:100% !important;
@@ -188,6 +186,7 @@ h2,h3, h4, h5{
     list-style-type: circle;
     font-size: 1em !important;
     margin-left: 0 !important;
+    margin-top:1em !important;
 }
 .breadcrumbs{
     position:none;
@@ -217,7 +216,22 @@ h2,h3, h4, h5{
  } 
  
  
+ div.contents{
+	float:left !important;
+	clear:left;
+	width: auto;
+	height:auto;
+	width:98% !important;
+	overflow:hidden;
+	margin-top:.5em;
+	padding-bottom:1em;
+	border: 1px solid #cccccc;
+	-moz-border-radius: 1em 1em 1em 1em;
+	border-radius: 1em 1em 1em 1em;
+	padding:1em;
+	box-shadow: 2px 2px 2px #888888;
 
+}
  
  
  
@@ -802,7 +816,7 @@ margin-right:auto;
 	font-size: small;
 }
 div.lang_pack_outer{
-	width:100%;
+	width:47%;
 	margin-right:1em;
 	margin-bottom:1em;
 	float:left;
@@ -810,8 +824,8 @@ div.lang_pack_outer{
 	vertical-align:top;
 }
 div.lang_pack{
-	width:45%;
-	margin-right:1em;
+	width:100%;
+	margin-right:3em;
 	margin-bottom:1em;
 	vertical-align:top;
 }
@@ -1635,7 +1649,6 @@ main{
     font-size:3.5em; 
     text-align:center; 
     font-weight:700;
-    color: #ffffaa;
 }
 .tpbg h2{
     font-size:2.5em; 

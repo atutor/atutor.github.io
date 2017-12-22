@@ -12,6 +12,9 @@
 <link rel="canonical" href="https://atutor.github.io/" />
 <meta property="og:url" content="https://atutor.github.io/" />
 <meta property="og:site_name" content="atutor.github.io" />
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="/js/jquery.toc.js"></script>
+
 <script type="application/ld+json">
 {"name":"atutor.github.io","description":"ATutor is an Open Source Web-based Learning Management System (LMS) used to develop and deliver online courses. Administrators can install or update ATutor in minutes, develop custom themes to give ATutor a new look, and easily extend its functionality with feature modules. Educators can quickly assemble, package, and redistribute standardized Web-based instructional content, easily import prepackaged content, and conduct their courses online. Students learn in an accessible, adaptive, social learning environment.","author":null,"@type":"WebSite","url":"https://atutor.github.io/","image":null,"publisher":null,"headline":"atutor.github.io","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
@@ -19,6 +22,7 @@
     <meta name="theme-color" content="#157878">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/assets/css/style.css?v=d21f7591e4074c34581bb4e6987280a5a8e29a48">
+    <link rel="stylesheet" href="/js/demo.css">
     <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" />
   </head>
   <body>
@@ -173,6 +177,10 @@
                     
                 
                     
+                
+                    
+                
+                    
                     
                         <li >
                             
@@ -268,6 +276,16 @@
                     
                 
                     
+                    
+                        <li >
+                            
+                            <a href="/atutor/handbook/">ATutor Handbook</a>
+                        </li>
+                    
+                
+                    
+                
+                    
                 
                     
                 
@@ -323,6 +341,10 @@
                 
                 
                 
+                
+                    
+                
+                    
                 
                     
                 
@@ -415,7 +437,12 @@
             
         </ol>
         <div class="cd-container">
-<h2>Introduction</h2>
+
+
+
+<article id="article_with_toc">
+<div id="toc"></div>
+<h2>ATutor User Handbook</h2>
 <p>Welcome to the ATutor General User documentation. The information found here is applicable to both instructors and students. Also see the the <strong><u>Instructor Documentation</u></strong> for details of other tools that might be used to author content while in a group environment. </p>
 
 <h2>Login</h2>
@@ -619,7 +646,7 @@ To move between workspaces, select them from the dropdown menu and use the <code
 <dd>This is an ongoing report of what others in your network are doing. When one of your contacts posts a message, joins a group, adds a gadget, or updates their profile for instance, you will know about it (if they have not turn this off in privacy settings).</dd>
 
 <dt>My Contacts</dt>
-<dd>This is a list of people in your social network.  You can find others on the network by using the <strong>Search People</strong> tool, and you can request that you and they become contacts. When you find a person, click on the green plus sign (<img src="../../mods/_standard/social/images/plus_icon.gif" alt="plus">) to  make your request. To remove a person in your Contacts, click on the red X ( <img src="../../mods/_standard/social/images/b_drop.png" alt="ex">). View a contact's profile from My Contacts by clicking on their thumbnail photo or their name. </dd>
+<dd>This is a list of people in your social network.  You can find others on the network by using the <strong>Search People</strong> tool, and you can request that you and they become contacts. When you find a person, click on the green plus sign to  make your request. To remove a person in your Contacts, click on the red X . View a contact's profile from My Contacts by clicking on their thumbnail photo or their name. </dd>
 
 <dd>Once people have been added to your contacts, other suggested contacts will be listed under People you Might Know,” those being people in your Contacts' Networks.</dd>
 
@@ -634,7 +661,7 @@ To move between workspaces, select them from the dropdown menu and use the <code
 
 <dl>
 <dt>My Contacts</dt>
-<dd>This is a list of people in your social network.  You can find others on the network by using the <strong>Search People</strong> tool, and you can request that you and they become contacts. When you find a person, click on the green plus sign (<img src="../../mods/_standard/social/images/plus_icon.gif" alt="plus">) to  make your request. To remove a person in your Contacts, click on the red X ( <img src="../../mods/_standard/social/images/b_drop.png" alt="ex">). View a contact's profile from My Contacts by clicking on their thumbnail photo or their name. </dd>
+<dd>This is a list of people in your social network.  You can find others on the network by using the <strong>Search People</strong> tool, and you can request that you and they become contacts. When you find a person, click on the green plus sign  to  make your request. To remove a person in your Contacts, click on the red X. View a contact's profile from My Contacts by clicking on their thumbnail photo or their name. </dd>
 </dl>
 
 
@@ -644,7 +671,7 @@ To move between workspaces, select them from the dropdown menu and use the <code
 
 <h2>Network Profile</h2>
 
-<p>Your Network Profile contains information about you that others might like to know, such as your work experience, education, perhaps your personal interests, or maybe your personal Web site. Click on the edit icon (<img src="../../mods/_standard/social/images/edit_profile.gif" alt="ex">)  while viewing your <strong>Network Profile</strong> to add and make changes to your personal information. Also see <a href="my_settings.php?en"><strong>Settings</strong></a> for details about controlling what parts of your profile others can see. </p>
+<p>Your Network Profile contains information about you that others might like to know, such as your work experience, education, perhaps your personal interests, or maybe your personal Web site. Click on the edit icon  while viewing your <strong>Network Profile</strong> to add and make changes to your personal information. Also see <a href="#settings"><strong>Settings</strong></a> for details about controlling what parts of your profile others can see. </p>
 
 <p>Also view <strong>Activities</strong> for a list of things you have recently done in your social network. </p>
 
@@ -766,11 +793,12 @@ To move between workspaces, select them from the dropdown menu and use the <code
 	<p>   Once the Assignment Dropbox has been turned on in Course Tools by the instructor, a link "Assignment Dropbox" is displayed either on the course home page or as a main navigation tab. The dropbox lists all the assignments that are assigned to the student viewing, up to the submission "cut off date." Students can upload or delete assignment files up until the "due date", after which assignment submissions are locked and can no longer be modified by the student. The Delete button is greyed out when the due date is passed. The Upload button remains available to students until the cut off date.
 </p>
 </div>
-
+</article>
  <!-- // end of #centerbar-->
 
 
 
+<div class="toc_container"></div>
         </div>
          </div>
      </div>
@@ -794,7 +822,10 @@ To move between workspaces, select them from the dropdown menu and use the <code
 	</div>
       </footer>
     </section>
-
-    
+    <script type="text/javascript">
+    $( document ).ready(function() {
+        $("#article_with_toc").toc();
+    });
+</script>
   </body>
 </html>

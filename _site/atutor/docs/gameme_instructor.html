@@ -12,6 +12,9 @@
 <link rel="canonical" href="https://atutor.github.io/" />
 <meta property="og:url" content="https://atutor.github.io/" />
 <meta property="og:site_name" content="atutor.github.io" />
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="/js/jquery.toc.js"></script>
+
 <script type="application/ld+json">
 {"name":"atutor.github.io","description":"ATutor is an Open Source Web-based Learning Management System (LMS) used to develop and deliver online courses. Administrators can install or update ATutor in minutes, develop custom themes to give ATutor a new look, and easily extend its functionality with feature modules. Educators can quickly assemble, package, and redistribute standardized Web-based instructional content, easily import prepackaged content, and conduct their courses online. Students learn in an accessible, adaptive, social learning environment.","author":null,"@type":"WebSite","url":"https://atutor.github.io/","image":null,"publisher":null,"headline":"atutor.github.io","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
@@ -19,6 +22,7 @@
     <meta name="theme-color" content="#157878">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/assets/css/style.css?v=d21f7591e4074c34581bb4e6987280a5a8e29a48">
+    <link rel="stylesheet" href="/js/demo.css">
     <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" />
   </head>
   <body>
@@ -131,6 +135,10 @@
                 
                 
                 
+                
+                    
+                
+                    
                 
                     
                 
@@ -325,10 +333,18 @@
                 
                     
                 
+                    
+                
+                    
+                
             
                 
                 
                 
+                
+                    
+                
+                    
                 
                     
                 
@@ -421,6 +437,8 @@
             
         </ol>
         <div class="cd-container">
+<article id="article_with_toc">
+<div id="toc"></div>
 <h2>GameMe Instructor Documentation</h2>
 <h3 id="GameMe1.0InstructorDocumentation-UsingGameMe">Using GameMe</h3>
 
@@ -502,7 +520,7 @@
     send to a user when a reach event occurs</li>
   </ul>
 
-  <h3 id="GameMe1.0InstructorDocumentation-CustomizingEvents">Customizing Events</h3>
+  <h4 id="GameMe1.0InstructorDocumentation-CustomizingEvents">Customizing Events</h4>
 
   <p>When opened for the first time, the GameMe Events Editor will show an empty list of
   <strong>Course Events</strong> above, and all the available <strong>Default
@@ -571,7 +589,7 @@
     the recipient why they received the badge.</li>
   </ul>
 
-  <h3 id="GameMe1.0InstructorDocumentation-CustomizingBadges">Customizing Badges</h3>
+  <h4 id="GameMe1.0InstructorDocumentation-CustomizingBadges">Customizing Badges</h4>
 
   <p>Much like customizing events described above, instructors can copy <strong>Default
   Badges</strong> and customize them as <strong>Course Badges</strong> using the
@@ -616,7 +634,7 @@
     users when they reach this number of points</li>
   </ul>
 
-  <h3 id="GameMe1.0InstructorDocumentation-CustomizingLevels">Customizing Levels</h3>
+  <h4 id="GameMe1.0InstructorDocumentation-CustomizingLevels">Customizing Levels</h4>
 
   <p>Much like customizing events and badges, instructors can copy the <strong>Default
   Levels</strong> and customize them as <strong>Course Levels</strong> using the
@@ -700,10 +718,12 @@
   <p>Under the Progress tab in the instructor's GameMe editor, the points, badges, and
   levels for each student in the course can be viewed. Select a student from the drop
   down menu, and press the View button to see that person GameMe progress.</p>
+  </article>
 </div>
 
 
 
+<div class="toc_container"></div>
         </div>
          </div>
      </div>
@@ -727,7 +747,10 @@
 	</div>
       </footer>
     </section>
-
-    
+    <script type="text/javascript">
+    $( document ).ready(function() {
+        $("#article_with_toc").toc();
+    });
+</script>
   </body>
 </html>
