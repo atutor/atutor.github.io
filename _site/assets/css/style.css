@@ -915,6 +915,8 @@ main { margin-top: 1.8em; overflow: visible; }
 
 .clbg h2 { font-size: 2.5em; text-align: left; font-weight: 500; }
 
+.clbg h1, .clbg h2, .clbg h3, .clbg h4 { color: #159957 !important; }
+
 .cd-fixed-bg { font-size: 1.3vw; background-size: cover; background-attachment: fixed; background-repeat: no-repeat; background-position: center center; background-color: #eeeeee; /* min-height: 27vw;     	*/ }
 
 .cd-fixed-bg2 { width: 100%; font-size: 1.3vw; background-size: cover; background-attachment: fixed; background-repeat: no-repeat; background-position: center center; height: 100%; }
