@@ -169,11 +169,38 @@ cd-container h2, h3,h4,h5,h6{
     text-align:left !important;
     padding:0 !important;
 }
+.tpbg h1{
+    color:#ffffaa;
+}
 h2,h3, h4, h5{
     width:100% !important;
     margin-top:0 !important;
 }
-
+table.data {
+    clear: right;
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: left;
+}
+table.data tbody {
+    border-top: 1px solid #B8AE9C;
+    border-bottom: 1px solid #B8AE9C;
+}
+table.data tbody {
+    border-top: 1px solid #B8AE9C;
+    border-bottom: 1px solid #B8AE9C;
+}
+table.data tbody th {
+    text-align: left;
+    background-color: #F7F3ED;
+    cursor: auto;
+}
+table.data th {
+    background-color: #BBD9EE;
+    padding: 3px;
+    white-space: nowrap;
+}
 .home-splash > ul > li {
     background: rgba(255, 255, 255, 0.2) !important;
     padding:1em !important;

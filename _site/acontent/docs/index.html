@@ -12,6 +12,8 @@
 <link rel="canonical" href="https://atutor.github.io/" />
 <meta property="og:url" content="https://atutor.github.io/" />
 <meta property="og:site_name" content="atutor.github.io" />
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="/js/jquery.toc.js"></script>
 <script type="application/ld+json">
 {"name":"atutor.github.io","description":"ATutor is an Open Source Web-based Learning Management System (LMS) used to develop and deliver online courses. Administrators can install or update ATutor in minutes, develop custom themes to give ATutor a new look, and easily extend its functionality with feature modules. Educators can quickly assemble, package, and redistribute standardized Web-based instructional content, easily import prepackaged content, and conduct their courses online. Students learn in an accessible, adaptive, social learning environment.","author":null,"@type":"WebSite","url":"https://atutor.github.io/","image":null,"publisher":null,"headline":"atutor.github.io","dateModified":null,"datePublished":null,"sameAs":null,"mainEntityOfPage":null,"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
@@ -19,6 +21,7 @@
     <meta name="theme-color" content="#157878">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/assets/css/style.css?v=d21f7591e4074c34581bb4e6987280a5a8e29a48">
+<link rel="stylesheet" href="/js/demo.css">
   </head>
   <body>
     <section class="page-header1">
@@ -172,6 +175,12 @@
                     
                 
                     
+                
+                    
+                
+                    
+                
+                    
                     
                         <li >
                             
@@ -229,10 +238,20 @@
                 
                     
                 
+                    
+                
+                    
+                
+                    
+                
+                    
+                
             
                 
                 
                 
+                
+                    
                 
                     
                 
@@ -332,11 +351,23 @@
                 
                     
                 
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
             
         </ol>
         <div class="cd-container">
 <h2>AContent Documentation</h2>
-<p>Most of the AContent documentation is found within AContent itself in the <a href="/acontent/demo/documentation/index.php?p=home/index.php"><em>AContent Handbook</em></a>. Follow the link in the footer area of each AContent installation to find the handbook. Or, follow the context sensitive help for direct links to the handbook while using a tool in AContent.</p>
+<p>Most of the AContent documentation is found within AContent itself in the <em>AContent Handbook</em> included with each AContent installation. Follow the link in the footer area of each AContent installation to find the handbook. Or, follow the context sensitive help for direct links to the handbook while using a tool in AContent.</p>
 <h3>Documentation for AContent 1.4 </h3>
 <h4>AContent Video Documentation</h4>
 <ul>
@@ -347,11 +378,9 @@
 
 <p> Another larger HD version of this video is <a href="http://www.youtube.com/watch?v=ir3wNaCjSvY">available at YouTube</a></p>
 <h4>AContent Handbook (Printable Pages)</h4>
-	
 	<ul>
-	<li><a href="/acontent/docs/acontent_public.htm">General User Handbook</a></li>
-	<li><a href="/acontent/docs/acontent_author.htm">Author Handbook</a></li>
-	<li><a href="/acontent/docs/acontent_admin.htm">Administrator Handbook</a></li>
+	<li><a href="/acontent/docs/ac_handbook_author.html">Author Handbook</a></li>
+	<li><a href="/acontent/docs/ac_handbook_admin.html">Administrator Handbook</a></li>
 	</ul>
 
 <h4>AContent Lesson Cartridges</h4>
@@ -365,10 +394,10 @@
 </ul>
 <h4>Developer Documentation</h4>
 <ul>
-<li><a href="/acontent/demo/documentation/web_service_api.php">AContent Web Service API</a></li>
-<li><a href="/acontent/demo/documentation/oauth_server_api.php">AContent OAuth API</a></li>
-</ul>
-<p>Also see the <a href="http://help.atutor.ca/developer/guidelines.html">ATutor Developer Documentation</a> from more about setting up a development environment, and coding practices.</p>
+<li><a href="/acontent/docs/rest_api.html">AContent Web Service API</a></li>
+<li><a href="/acontent/docs/oauth_api.html">AContent OAuth API</a></li>
+</ul><br />
+<p>Also see the <a href="/developer/guidelines.html">ATutor Developer Documentation</a> from more about setting up a development environment, and coding practices.</p>
 
 <h4>AContent Related Research</h4>
 <ul>
@@ -402,6 +431,10 @@
       </footer>
     </section>
 
-    
+    <script type="text/javascript">
+    $( document ).ready(function() {
+        $("#article_with_toc").toc();
+    });
+</script>
   </body>
 </html>
