@@ -398,8 +398,6 @@ table.data { clear: right; width: 95%; margin-right: auto; margin-left: auto; te
 
 table.data tbody { border-top: 1px solid #B8AE9C; border-bottom: 1px solid #B8AE9C; }
 
-table.data tbody { border-top: 1px solid #B8AE9C; border-bottom: 1px solid #B8AE9C; }
-
 table.data tbody th { text-align: left; background-color: #F7F3ED; cursor: auto; }
 
 table.data th { background-color: #BBD9EE; padding: 3px; white-space: nowrap; }
@@ -659,7 +657,7 @@ div.download_box h5 { margin-right: 5px; }
 
 .payerrbox { border: 3px solid red; padding: 1em; width: 70%; background-color: #FBF4ED; }
 
-pre { margin-left: 2em; background-color: #eeeeee; border: 1px gray solid; padding: 1em; width: 95%; margin-left: auto; margin-right: auto; }
+pre { margin-left: 2em; background-color: #eeeeee; border: 1px gray solid; padding: 1em; width: 95%; margin-left: auto; margin-right: auto; overflow: scroll; }
 
 #clustrMapsImg { height: 6.63em; width: 10em; margin-left: auto; margin-right: auto; }
 
