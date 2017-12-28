@@ -20,7 +20,7 @@ toc:
     - title: Code Repositories
       url: /atutor/repositories.html
     - title: Support Forum Archive
-      url: /atutor/archive/exported_forum1.html
+      url: https://atutorlangs.github.io/atutor/archive/exported_forum1.html
 - title: AContent LCMS
   url: /acontent/
   sublinks:
