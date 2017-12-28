@@ -508,6 +508,29 @@ a:hover, a:focus {
     padding: 0.5em 0.6em;
     margin:.2em;
 }
+.cse .gsc-search-button input.gsc-search-button-v2, input.gsc-search-button-v2 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    background-color: rgba(255, 255, 255, 0.8);
+    border:none !important;
+    width:none !important;
+    float:right !important;
+}
+form.gsc-search-box{
+    background-color: rgba(255,255,255,0.5) !important;    
+}
+* {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
 
 .submit {
 	border: 1px solid #999999;
@@ -2066,6 +2089,46 @@ div.login2{
     overflow-x:scroll;
     font-size:1.1em;
 }
+
+/* Forum styles */
+#forum-thread li { clear:left; border:1px solid #eee; border-bottom: 1px solid #f0f0f0; float:left; width: 98%; list-style: none; }
+#forum-thread li.even { background: #fdfdfd; border-top: none; }
+#forum-thread li.odd { background: #fff; }
+.forum-thread li.odd { background: #fdfdfd; border-top: none; }
+div.forum-post-author { float:left; width:150px; padding:8px 10px; }
+div.forum-post-author a.title {	font-size: 1.1em; line-height: 1.2em; font-weight: bold; text-decoration:none; }	
+div.forum-post-author img.profile-picture { border: 2px solid #f0f0f0; }
+div.forum-post-content { margin-left: 150px; padding: 5px 0px 18px 18px; }
+div.forum-post-content h3 { font-weight: 500; }
+div.forum-post-ctrl { float: right; padding-right: 5px; color: #a1a1a1; }
+div.forum-post-ctrl a { text-decoration: none; }
+div.forum-post-ctrl span { color: black; background-color: #fefdc2; padding: 3px; }
+div.forum-post-content p.date { color: #a1a1a1; border-bottom: 1px solid #f0f0f0; }
+div.forum-post-content div.body p { margin-bottom:20px; }
+div.threadlist{
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+}
+td.subjectcol, th.subjectcol{
+    width:30%;
+}
+ul.forum-thread{list-style-type:none !important;}
+tr.odd{
+    background-color:#eeeeee;
+}
+.box {
+    margin-top: 2em;
+    text-align: left;
+    margin: 0;
+}
+.ellipsis {
+    width:200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 .color_box{
     height:1.5em;
     width:2em;
@@ -2088,7 +2151,19 @@ div.login2{
     max-width:66em;
     background-color:white;
 }
-
+.gsearch{
+    float:left; 
+    width:100%;
+    margin-left:1em;
+    background-color: #eeeeee;
+    box-sizing:initial !important;
+}
+.gsearch input[type=submit]{
+color: #606c71;
+}
+#gsc-i-id1{
+    width:100%;
+}
 @media screen and (max-width: 768px) {
     .home-splash {
         display:list-item;

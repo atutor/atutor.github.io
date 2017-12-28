@@ -1,0 +1,133 @@
+<div class="cd-container">
+<h2>ATutor Installation</h2>
+<p>The installation and upgrade processes are made up of seven steps each. Each step must be completed successfully without any errors to be able to advance to the next step.  Note that the terms <em>directory</em> on Unix, and <em>folder</em> on Windows, are used interchangeably.</p>
+
+<span style="display: block !important;" class="cleanslate"><style>/* Should only contain css for the actual widget */
+div.unisubs-widget {
+    position: relative !important;
+}
+.unisubs-videoDiv {
+    text-align: center !important;
+}
+
+</style>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SmWEz68ytuI" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+
+
+<p>**A larger HD version of the video is also <a href="http://www.youtube.com/watch?v=SmWEz68ytuI">available on Youtube</a>.</p>
+<hr>
+<ul>
+	<li><a href="#begin">Before You Begin</a></li>
+	<li><a href="#check">System Check</a></li>
+	<li><a href="#'fresh">Fresh Installation</a></li>
+	<li><a href="#upgrade">Upgrading an Existing  Standalone Installation</a></li>
+	<li><a href="#upgrademulti">Installing and Upgrading a Multisite Installation</a></li>
+</ul>
+<br>
+<br>
+<a name="begin"></a><h3>Before You Begin</h3>
+
+<p>First review the <a href="/atutor/docs/requirements.html">System Requirements</a> <em>before</em> attempting to install ATutor. </p><br>
+
+<p>Installing on a Unix machine requires some knowledge of file and directory permissions. You will be asked to create a content directory and set permissions for the directory and for the include/config.inc.php file, so the web server can write to them. If the these are not writable the install process will produce error messages with instructions on making them writable. At this point set the permissions on the listed files/directories as described below, then resubmit the step until the error messages go away. </p>
+
+<ul>
+	<li>Changing Unix file permissions from shell prompt: <code>chmod a+rwx filename</code> or <code>chmod a+rwx directoryname</code> and <code>chmod g+s directoryname</code>. Administrator may alternately use octal numbers to set permissions (i.e. <code>chmod -R 2777 directoryname</code>). Note that in both cases, the directory has been set with a sticky bit that allows both the webserver and the shell user that created the directory, to write and/or delete that directory. </li>
+	<li>Changing Unix file permissions from an FTP client: Many FTP clients allow you to change a file's permissions. The option may be labled as "Unix Permissions", "CHMOD", or simply as "Properties" or "Attributes" and will display a window with Read, Write, and Execute checkboxes for Owner, Group, and World; checking the appropriate boxes will change that file's permissions.</li>
+	<li>Changing Windows file permissions: Right click on a file or folder, select Properties, then check or uncheck the Read-only box.</li>
+
+</ul>
+<br>
+<p class="errbox" style="padding:.5em;"><strong style="color:red;">WARNING: Do not unpack the ATutor distribution on your local computer then upload the files to the server one-by-one. This will very likely cause corruptions in the files that randomly break functionality. Instead upload the entire ATutor distribution as a single file, then unpack the distribution on the server. </strong></p><br><br>
+
+<a name="check"></a><h3>System Check</h3>
+<p>On the introduction screen  the installer checks that your system has all the     requirements needed to run ATutor. Review the feedback, and make adjustments to your system if necessary, and when all requirements are met, start the Install or Upgrade process. Don't be concerned if the MySQL version is listed as Unknown.</p>
+
+<a name="fresh"></a><h3>Fresh Installation</h3>
+<p>Download the latest version of ATutor and extract it into a web-enabled directory. On Windows you may use WinZip or WinRar, while on Unix you will have to use the command <code>tar -zxvf ATutor-version_number.tar.gz</code>. Once extracted, an <code>ATutor</code> directory will be created. Open a web browser and enter the address to your installation, <code>http://your_server.com/path_to_atutor/ATutor/</code>, then follow the step-by-step instructions.</p>
+
+<p>The following eight steps describe the installation process as they are presented by the ATutor installer:</p>
+<p></p><ol>
+<br>
+	<li><strong>Terms of Use</strong><br>
+		The usage of ATutor is regulated by the GNU General Public License (GPL). Your agreement with the GPL is required if you wish to modify or distribute ATutor. See  <a href="/licensing.html">Licensing</a> for more details.</li>
+
+	<li><strong>Database</strong><br>
+		ATutor requires a MySQL database to function. Enter the required details needed to connect to your database in Step 2 of the installation process. The optional Table Prefix (e.g. "AT_") option allows ATutor to share an existing database with other applications and tables. The ATutor installation script will attempt to create the database that is defined in Step 2, if it does not already exist. This requires that your MySQL user account has <strong>permission to create databases</strong>, and <strong>permission to create tables</strong>. If this step fails, contact your system administrator to have your MySQL account upgraded to allow creation of new databases, or ask your administrator to create the database for you. Return to the installation after the database has been created, or your MySQL account upgraded, enter the database name into the approriate field in Step 2, then the installation script will insert the ATutor tables.</li>
+
+	<li><strong>Administrator Account &amp; System Preferences</strong><br>
+		The Administrator account is used for managing ATutor user accounts and courses. The System preferences affect hosted courses and the general operation of ATutor.</li>
+
+	<li><strong>Personal Account &amp; Defaults</strong><br>
+		The personal account can be used to enroll into or create courses, it does not have any special privileges. At this step you may also choose to create a personal instructor account along with the basic Welcome course.</li>
+
+	<li><strong>Directories</strong><br>
+		Create a content directory, preferably outside your web server's document directory for added security, and set  permissions as described above. On a Unix machine you will need  to manually change the permissions on the listed files and directories in this step.  No action is usually required on a Windows server, though in some circumstances Windows users may need to adjust the properties of the specified files and directories to make them writable. Copy the path of the directory into the text box provided. Ensure there are no shortcuts (Windows), or symbolic links (Unix) contained in the path. </li>
+
+<li><strong>Save configuration</strong><br>
+Before reaching the final step the include/config.inc.php file needs to be writable, otherwise an error will appear.  Follow the instructions on the screen if the  file permissions need to be changed</li>
+
+<li><strong>Submit Usage Information</strong><br>
+To assist the development team in serving the ATutor community, submit some basic information about the system you are running. All information is private. Though you are encouraged to list the location of your ATutor installation, you may remain anonymous by choosing not to submit the URL to your ATutor server during this step.</li>
+
+	<li><strong>Done!</strong><br>
+		ATutor installation has been successful and you may now log-in with your personal account created in Step 4, or the administrator account created in Step 3.</li>
+</ol>
+<p></p>
+<br>
+<a name="upgrade"></a><h3>Upgrading an Existing Installation</h3>
+<p class="errbox"><strong style="color:red;">Do not attempt to upgrade a production system with Alpha, Beta, or  Release Candidate (RC) versions of ATutor. The upgrade scripts are generally completed last, and may not be available, or may not be stable in versions other than a final, stable release. </strong></p>
+
+<h4>Important considerations before upgrading</h4>
+<p>Be sure that <strong><a href="/atutor/languages.html">Language Packs</a></strong> you have installed on your old version of ATutor are available for the new version, or be prepared to translate the missing language. The old language will be removed during upgrade. You may wish to export customized language before upgrading using the Language Manager, then after installing the new language pack in the upgraded ATutor, import your exported language back into the new version to restore your changes.  If the updated language pack is not available, you might volunteer to help finish any remaining language that needs to be translated (often completed in a short time). See the <a href="/atutor/docs/translate.html">Translator Documentation</a> for more details. </p>
+<br>
+<p>If you have <strong><a href="/atutor/themes/index.html">Custom Themes</a></strong> created, export those before upgrading, then import them back into the new version of ATutor after the upgrade is complete. You may need to make a few adjustment after reimporting the custom themes if there have been changes in the ATutor. </p>
+<br>
+<p>If you have <strong><a href="/atutor/modules.html">Extra Modules</a></strong> installed, be sure the modules are either compatible, or are available for the new version. Modules must be reinstalled after an upgrade.<br></p>
+<br>
+<p>Also be sure the <strong><a href="/atutor/docs/requirements.html">System Requirements</a></strong> are still met.<br></p>
+<br>
+<p>It is highly recommended that you <strong>backup your old ATutor database</strong>. Although it is unlikely anything will go wrong, there is always a chance. <br></p>
+<br>
+<p>Before starting the upgrade, rename or <strong>move your old ATutor directory</strong>. This creates a backup of the current ATutor installation, which you can revert  to if something goes wrong during the upgrade. Download the latest version of ATutor and <strong>extract the new version into the same directory that the old one was in</strong>. Example: If the old ATutor installation was in  /htdocs/ATutor and moved to /htdocs/ATutor_old, then the new ATutor installation should be in /htdocs/ATutor, such that both the old and new installations are at the same directory level. On Windows you may use WinZip or WinRar, while on Unix use the command <code>tar -zxvf ATutor-version_number.tar.gz</code>. Once extracted, an <code>ATutor</code> directory will be created alongside your old ATutor directory. Open a web browser and enter the address to your new installation, <code>http://your_server.com/path_to_atutor/ATutor/</code>, then follow the step-by-step instructions after pressing the <kbd>Upgrade</kbd> button. If system requirements are not met, the Upgrade button will not appear. Adjust your system as indicated, and try again.</p><br>
+<h4>UTF-8 Conversion</h4>
+<p>In ATutor 1.6 the system was upgraded to use the UTF-8 character set for displaying language characters for all languages, greatly improving support for multilingual systems. </p>
+<h4>Upgrade Steps</h4>
+<p>The following eight steps describe the upgrade process as they are presented by the ATutor installer:</p>
+<ol>
+	<li><strong>Locate Old Version</strong><br>
+		Specify the directory name of the old ATutor installation you wish to upgrade (e.g. ATutor_old). The new and old ATutor directories must be at the same directory level.
+	</li>
+	<li><strong>UTF-8 Conversion (1.6+)</strong><br>
+		<strong>If you have not already, you are strongly advised to backup your database before completing the following steps.</strong><br>
+		If ATutor is being upgraded from a previous version  that was not using UTF-8 language packs, options will be provided to convert the database to UTF-8 all-at-once, used for single language ATutor installations, or to convert on a course-by-course basis, used if courses in different languages are present on the system. If the system is already setup with UTF-8, you'll  skip this step. <strong style="color:red;">NOTE: This step can take a very long time for installations with many courses</strong></li>
+	<li><strong>Database</strong><br>
+		The upgrade will use the old version's settings to connect to the database and then update the old database tables with any changes to bring them up to date with the new version.</li>
+
+	<li><strong>Preferences</strong><br>
+		In some cases, the newer version will introduce new configuration options and preferences that have to be set or confirmed. Review the Preferences and modify them if necessary.</li>
+
+	<li><strong>Directories</strong><br>
+		Create a content directory , preferably outside your web server's document directory for added security, and set permissions as described above. On a Unix machine you will need  to manually change the permissions on the listed files and directories in this step, if you are using a directory other than the one used in the version of ATutor being upgraded.  No action is usually required on a Windows server, though in some circumstances Windows users may need to adjust the properties of the specified files and directories to make them writable. Copy the path of the directory into the text box provided. Ensure there are no shortcuts (Windows), or symbolic links (Unix) contained in the path. The path can be the same as that to the content directory use in the version being upgraded from if the directory is outside the old ATutor installation.</li>
+	<li><strong>Save configuration</strong><br>
+Before reaching the final step the include/config.inc.php file needs to be writable, otherwise an error will appear.  Follow the instructions on the screen if the  file permissions need to be changed</li>
+	<li><strong>Content Files</strong><br>
+
+		All the old course content files and chat messages will be copied over to the new installation. Depending on the size of your old installation, this process may take a few seconds to several minutes or more to complete.</li>
+<li><strong>Submit Usage Information</strong><br>
+To assist the development team in serving the ATutor community, submit some basic information about the system you are running. All information is private. Though you are encouraged to list the location of your ATutor installation, you may remain anonymous by choosing not to submit the URL to your ATutor server during this step.</li>
+	<li><strong>Done!</strong><br>
+		ATutor upgrade has been successful and you may now log-in with your personal account or your administrator account.</li>
+</ol>
+
+
+<br>
+<a name="upgrademulti"></a><h3>Installing and Upgrading a Multisite Installation</h3>
+<p> In ATutor 2.1 multisite installations of ATutor were made possible, and in ATutor 2.1.1, upgrading a multisite installation was added. Administrators of an ATutor Multisite installation should refer to the latest README file found with the ATutor Manage Multisites module.</p>
+
+<ul>
+<li><a href="/atutor/modules.php">Download Manage Subsites module</a></li>
+<li><a href="https://github.com/atutor/manage_multi">ATutor Manage Subsites README</a></li>
+</ul>
+</div>

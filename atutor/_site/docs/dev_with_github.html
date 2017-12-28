@@ -1,0 +1,225 @@
+<div class="cd-container">
+
+<h2 id="UsingGitHubtoDevelopATutor-UsingGitHub">Using GitHub</h2>
+
+  <p>The ATutor source code is maintained in a GitHub repository, a public version
+  control system that provides "Social Coding" capabilities, making it relatively easy
+  for ATutor developers to have work added to ATutor's public source code. Developers
+  will need to become familiar with Git and GitHub if they wish to participate in ATutor
+  development. There is plenty of documentation on using Git and GitHub. You might read
+  through the book at Git Pro, or review the GitHub Help documentation.</p>
+
+  <h3 id="UsingGitHubtoDevelopATutor-4.1SettingupaGitDevelopmentEnvironment">4.1 Setting
+  up a Git Development Environment</h3>
+
+  <p>Though there are a variety of Git client applications available, working from a
+  command prompt issuing Git commands is relatively easy to learn. Knowing a small set of
+  Git commands is all you required to get up and running, and contributing code through
+  GitHub.</p>
+
+  <p>For Mac users there is <a href="http://mac.github.com/" class="external-link" rel=
+  "nofollow">GitHub for Mac</a>, which can be installed to setup Git on your Mac. It
+  provides a graphical client through which GitHub can be accessed.</p>
+
+  <p>Windows users have a variety of GitHub clients available. A quick search will turn
+  up many. One popular client for Windows is <a href=
+  "http://www.syntevo.com/smartgit/index.html" class="external-link" rel=
+  "nofollow">SmartGit</a>. Another is <a href="http://www.cygwin.com/" class=
+  "external-link" rel="nofollow">Cygwin</a></p>
+
+  <p>Linux users also have a variety of Github clients available, such as <a href=
+  "http://cola.tuxfamily.org/" class="external-link" rel="nofollow">Git Cola</a> or
+  <a href="http://live.gnome.org/giggle" class="external-link" rel="nofollow">Giggle</a>,
+  among others. And, of course, if you prefer to just work from the command prompt, just
+  install git itself. Most, probably all, Linux systems have a Git package available that
+  can be installed through their package management system. On Ubuntu or Debian for
+  instance, as the root user issue the command apt-get install git at the command
+  prompt.</p>
+
+  <h3 id="UsingGitHubtoDevelopATutor-4.2CreatingandMaintainingaGitFork">4.2 Creating and
+  Maintaining a Git Fork</h3>
+
+  <p>All developers outside the core development team will work in their own fork of the
+  ATutor source code located on GitHub. Creating a fork is pretty straight forward. Once
+  your <a href="https://github.com/plans" class="external-link" rel="nofollow">Github
+  account</a> is setup, and you have logged in, search for the <a href=
+  "https://github.com/atutor/ATutor" class="external-link" rel=
+  "nofollow">atutor/ATutor</a> repository. At the top of the screen while viewing the
+  repository, click on the "Fork" button to create a fork of the master source code. You
+  will now have a copy of the source code linked to your account, something like
+  <a class="unresolved" href="#">username</a>/ATutor, where <a class="unresolved" href=
+  "#">username</a> is your GitHub login.</p>
+
+  <p>Now you will want to clone the fork you created into your local development
+  environment. Using your Git client you can then find its "clone" features to generate a
+  local copy, or at the command prompt issue the following commands:</p>
+
+  <h4 id="UsingGitHubtoDevelopATutor-Createaclone">Create a clone</h4>
+
+  <div class="preformatted panel" style="border-width: 1px;">
+    <div class="preformattedContent panelContent">
+      <pre>
+git clone git@github.com/username/ATutor.git                    // create a local copy, or clone, of the fork you created on GitHub
+cd ATutor                                                       // move into the cloned repository
+git remote add upstream git://github.com/atutor/ATutor.git      // for later fetching upstream changes from the main ATutor repository to keep your code current
+</pre>
+    </div>
+  </div>
+
+  <h4 id="UsingGitHubtoDevelopATutor-Createabranchtoworkin">Create a branch to work
+  in</h4>
+
+  <div class="preformatted panel" style="border-width: 1px;">
+    <div class="preformattedContent panelContent">
+      <pre>
+git checkout -b new_feature                                     // to create a working branch and switch to that branch. give the branch a descriptive name.
+git branch                                                      // to list the branches
+</pre>
+    </div>
+  </div>
+
+  <h4 id=
+  "UsingGitHubtoDevelopATutor-Edit,create,addcopiesoffileasyouwouldduringdevelopment">
+  Edit, create, add copies of file as you would during development</h4>
+
+  <div class="preformatted panel" style="border-width: 1px;">
+    <div class="preformattedContent panelContent">
+      <pre>
+git status                                                      // to list modified files
+
+git diff [filename]                                             // to compare and list the differences on the given script between the working branch and the main ATutor repository
+git add [filename]                                              // to stage modified file, or "git add *" to stage all modified files
+Repeat the above 2 steps on all the modified scripts to ensure all the modifications are what you desire and add them into the future commit.
+
+git status                                                      // to list staged files)
+git commit -m "describe the changes in a log message"           // to save the staged file to the new_feature branch you created above
+git log (to list changes that were committed)
+</pre>
+    </div>
+  </div>
+
+  <h4 id="UsingGitHubtoDevelopATutor-Keepyourbranchup-to-date">Keep your branch
+  up-to-date</h4>
+
+  <p>Perform these operations often</p>
+
+  <div class="preformatted panel" style="border-width: 1px;">
+    <div class="preformattedContent panelContent">
+      <pre>
+git checkout master                                             // switch to the local master branch
+git pull upstream master                                        // update your local master branch with code from the main ATutor repository
+git checkout new_feature                                        // switch to the local new_feature branch
+git merge master                                                // merge updates in the local master to your working branch, then resolve any conflicts
+</pre>
+    </div>
+  </div>
+
+  <p>After pulling from the ATutor master repository, review the latest SQL upgrade file
+  to ensure your database structure is up-to-date (in the install/db/ directory ). The
+  file will contain schema changes of the current pre-released source. Example: If the
+  current working source will be version 1.9, then the upgrade file to keep track of will
+  be named atutor_upgrade_x.y.z_to_1.9.sql, where x.y.z is the version of the currently
+  available stable release.</p>
+
+  <h3 id="UsingGitHubtoDevelopATutor-4.3SubmittingcodeforreviewandadditiontoATutor">4.3
+  Submitting code for review and addition to ATutor</h3>
+
+  <div class="preformatted panel" style="border-width: 1px;">
+    <div class="preformattedContent panelContent">
+      <pre>
+git push origin new_feature                                      // push your new_feature branch to your own GitHub repository
+</pre>
+    </div>
+  </div>
+
+  <p>*Go to <a href="https://github.com" class="external-link" rel=
+  "nofollow">https://github.com</a>, login, then under "switch branches" select the
+  new_feature branch you just pushed.<br />
+  *Click on the Pull Request button, to send your code for review.<br />
+  *Read through the pull request to ensure it is correct, for example "You're asking
+  atutor to pull <a class="unresolved" href="#">1</a> commit into atutor:master from
+  username:new_feature"<br />
+  *Press Send pull request to finish your code submission.</p>
+
+  <h4 id="UsingGitHubtoDevelopATutor-Cleanupwhenyou'redone">Clean up when you're
+  done</h4>
+
+  <h3 id=
+  "UsingGitHubtoDevelopATutor-4.4ReviewingandmergingpullrequestsintoATutormasterbranch">
+  4.4 Reviewing and merging pull requests into ATutor master branch</h3>
+
+  <p>This section is only for ATutor committers who have commit access to ATutor project
+  repository.&nbsp;</p>
+
+  <ol>
+    <li>
+      <p>Make sure the local master branch is up to date and clean.</p>
+
+      <div class="preformatted panel" style="border-width: 1px;">
+        <div class="preformattedContent panelContent">
+          <pre>
+git checkout master                                        // move to the local master branch
+git status                                                 // check the status of the master branch and make sure no new changes
+git pull upstream master                                   // bring the local master branch up to date with ATutor center repository
+</pre>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <p>Add the developer's ATutor project repository as a remote. This only needs to be
+      performed once.</p>
+
+      <div class="preformatted panel" style="border-width: 1px;">
+        <div class="preformattedContent panelContent">
+          <pre>
+git remote add developerA git@github.com:developerA/ATutor.git        // replace "developerA" with an actual name
+</pre>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <p>Base off the master branch and create a test branch for this pull request.</p>
+
+      <div class="preformatted panel" style="border-width: 1px;">
+        <div class="preformattedContent panelContent">
+          <pre>
+git checkout master                            // move to the local master branch
+git checkout -b ATutor-test-developerA         // create and move to a test branch. 
+                                               // Replace "ATutor-test-developerA" with a name that's more sensible to you
+git merge developerA/branch-to-be-reviewed     // Merge in the pull request. 
+                                               // Replace "developerA" with proper remote repo name added in step 2. 
+                                               // Replace "branch-to-be-reviewed" with the developer's branch.
+</pre>
+        </div>
+      </div>
+    </li>
+
+    <li>
+      <p>Test and review the branch.</p>
+    </li>
+
+    <li>
+      <p>Now, the pull request can be merged into the master.</p>
+
+      <div class="preformatted panel" style="border-width: 1px;">
+        <div class="preformattedContent panelContent">
+          <pre>
+git checkout master                                         // make sure there is no accidental commits in the master branch
+git log master ^upstream/master 
+git merge --no-ff --log developerA/branch-to-be-reviewed    // merge into the local master branch with proper options
+git push origin master                                      // push up to your own github &ldquo;origin&rdquo; first
+                                                            // make sure everything looks good
+git push upstream master                                    // push up to upstream github repository
+                                                            // make sure everything looks good
+</pre>
+        </div>
+      </div>
+    </li>
+  </ol>
+</div>	
+
+ <!-- // end of #centerbar-->
+
+

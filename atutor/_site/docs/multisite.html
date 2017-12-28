@@ -1,0 +1,157 @@
+<div class="cd-container">
+<h2>ATutor Multisite Setup</h2>
+<pre>
+######
+## ATutor multisite README 1.1:
+######
+
+This module is available at:
+https://atutor.ca/atutor/modules/index.php
+
+Installation instruction are found at:
+http://help.atutor.ca/admin/modules.php
+
+
+***See further below for instructions on upgrading this module***
+
+***See further below for instructions on upgrading subsites***
+
+#####
+# Install and configure Manage Multsite module
+#####
+
+After installing the Manage Subsites module, follow the directions below to setup your server to allow subsites. In most
+ cases a root users will need to do this, modifying the Web server's configuration to define a location for the ATutor main
+  site, and to define a ServerAlias.
+
+
+
+1. Ensure your webserver has a virtual host setup to point to the main ATutor codebase. Something like the following with
+ Apache. This is typically done by creating a new virtual host file within the Apache sites-available directory, linking the
+  file into the sites-enabled directory, then restarting the Web server
+  
+
+<VirtualHost *:80>
+        ServerName  multi.mysite.com
+        ServerAlias *.mysite.com
+
+        # Indexes + Directory Root.
+        DirectoryIndex index.php index.html
+        DocumentRoot /var/www/sites/multi.mysite.com
+
+        # Logfiles
+        ErrorLog  /var/www/sites/logs/multi.mysite.com/errlog.log
+        CustomLog /var/www/sites/logs/multi.mysite.com/acclog.log   Combined
+</VirtualHost>
+
+
+2. Once the Manage Subsites module is installed and enabled, change the ownership or permission of the shell script:
+ [ATutor_root]mods/manage_multi/exec/make_multi.sh
+to ensure it has write permission to the parent directory of [ATutor_root]. This user is typically the same user that owns 
+ATutor itself. If you installed the module using the ATutor Module Manager from the public module repository, the system's
+ root user will need to make this permission change. If you uploaded the module manually and unpacked it on the server, then
+  it is probably already owned by the same users that owns ATutor.
+
+
+3. To accommodate custom themes for subsites, create a symbolic link from the root sites/ directory in which all subsites and
+ the main site are located, to a directory within the main ATutor site. From within the main site's directory, use something
+  like:
+
+'ln -s /var/www/sites sites'
+
+4. Go to the main site administrator's "Manage Subsites" page, then choose "Initial Configuration" and follow the
+ instructions on the page to configure the database and mysql account that is used to create and manage subsites.
+
+5. To create subsites, use "Manage Subsites" page -> "Create Subsite" page. The details displayed after creating a subsite
+ will also be sent to the owner of the email address used during the creation.
+
+6. To manage subsites, use "Manage Subsites" page -> "Manage Subsite" page
+
+###############
+
+######
+# Upgrading from V1.0 to v1.1 of the Manage Subsites module
+######
+
+The structure for the ATutor_manage_multisite table has changed in this version, and will need to be manually update to add
+ these changes. Below are the Alter statements that will need to be run to update the table. Note that the TABLE PREFIX is
+  not included in these statements, so be sure to add them in if your table uses them.
+  
+
+# Alter in v1.1
+ALTER TABLE `subsites` ADD `version` DOUBLE NOT NULL AFTER `site_url` 
+ALTER TABLE `subsites` ADD `created_date` DATETIME NOT NULL AFTER `version` 
+ALTER TABLE `subsites` ADD `updated_date` DATETIME NOT NULL AFTER `created_date` 
+ALTER TABLE `subsites` CHANGE `version` `version` VARCHAR( 25 ) NOT NULL 
+
+# Example with table_prefix
+
+ALTER TABLE `AT_subsites` ADD `version` DOUBLE NOT NULL AFTER `site_url` 
+
+Also note that table privileges for subsite user created with v1.0 of the module will have their privileges automatically
+ changed to ALL PRIVILEGES for the database associated with their subsite. If you have concerns about giving your subsite
+  administrators this much power, privileges can be set to something less encompassing, so they are not able to accidentally
+   drop tables for instance, and potentially damage their subsite's database.
+   
+
+In manage_multi/classes/Subsite.class.php, you can comment out the "ALL PRIVILEGES" statement, and uncomment the one above.
+ See the line at about #296 and line #686
+
+# For example:
+
+$privileges = "SELECT , INSERT , UPDATE , DELETE , CREATE , ALTER ";
+//$privileges = "ALL PRIVILEGES";
+
+##############
+
+######
+# Upgrading Subsites
+######
+
+Before upgrading subsites you must first upgrade the main ATutor site. This is done the same way you would upgrade any
+ standalone ATutor site. See the ATutor Installation and Upgrade instructions for those details:
+
+ATutor Installation and Upgrade
+https://atutor.ca/atutor/docs/installation.php#upgrade
+
+After the main site has been upgrades the Manage Subsite module will need to be upgraded as well. Find a copy of the v.1.1
+ version of the module at:
+
+ATutor Modules
+https://atutor.ca/atutor/modules/index.php
+
+1. When you have downloaded the module, upload it into the ATutor main site's mods/ directory.
+2. Move the old module out of the way by renaming it, something like "manage_multi_old"
+3. Unzip the new module to create a new manage_multi directory with the new module code
+4. Follow the instructions above for upgrading the Manage Subsites module
+
+Once the main ATutor installation has been upgraded, and the Manage Subsites module has been upgraded, the database changes
+ needed for the subsite upgrades will need to be done under the Manage Subsites module's "Upgrade Subsites" tab. You may
+  choose to upgrade all sites at once, or upgrade them one-by-one or in batches of sites.
+   
+
+Though there's unlikely to be any problems updating the databases for subsites, it is always a good idea to create backups o
+f the subsite databases before proceeding with the upgrades. Details of the database changes can be found in the
+ include/install/db/ directory of the main ATutor installation, reviewing the atutor_upgrade_x.x_to_x.x.sql files for each of 
+ the incremental versions being upgraded.
+ 
+
+##############
+
+For additional installation details see:
+http://www.atutor.ca/atutor/docs/installation.php
+
+Or, the official ATutor Handbook:
+http://help.atutor.ca
+
+
+Enjoy!
+
+
+The ATutor Development Team
+http://www.atutor.ca
+</pre>
+</div>
+ <!-- // end of #centerbar-->
+
+
