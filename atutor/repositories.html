@@ -6,14 +6,14 @@ layout: home
         <div class="repos">                     
             <h2>Code Repositories</h2>
             <ul>
-            {% comment %}
+            
             {% assign public_repositories = site.github.public_repositories | sort: 'updated_at'| reverse %}
             {% for repository in public_repositories %}
                 {% if repository.fork == false %}
                 <li> <a href="{{ repository.html_url }}"> {{ repository.name }} </a><br /> {{ repository.description }}<br /><div style="float:right; width:6em;"><a href="https://github.com/atutor/{{ repository.name }}/archive/master.zip"><img src="/images/download.png" alt="download {{ repository.name }}" title="download {{ repository.name }}" style="width: 1.5em; height:1.5em;"/></a> | <a href="https://github.com/atutor/{{ repository.name }}"><img src="/images/edit.png" alt="ATutor {{ repository.name }} on github" title="ATutor {{ repository.name }} on github" style="width: 1.5em; height:1.5em;" /></a></div><br />Last updated: {{ repository.updated_at}}</li>
                 {% endif %}
             {% endfor %}
-            {% endcomment %}
+           
             </ul>
             </div>
                 </div>  
