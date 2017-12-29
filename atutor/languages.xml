@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+		<!-- These are ATutor language packs - http://www.atutor.ca-->
+
+		<!DOCTYPE languages [
+		   <!ELEMENT language (atutor-version, code, charset, direction, reg-exp, native-name, english-name )>
+		   <!ELEMENT atutor-version (#PCDATA)>
+		   <!ELEMENT code (#PCDATA)>
+		   <!ELEMENT charset (#PCDATA)>
+		   <!ELEMENT direction (#PCDATA)>
+		   <!ELEMENT reg-exp (#PCDATA)>
+		   <!ELEMENT native-name (#PCDATA)>
+		   <!ELEMENT english-name (#PCDATA)>
+		   <!ELEMENT status (#PCDATA)>
+		   <!ATTLIST language code ID #REQUIRED>
+		]>
+
+		<languages><language code="zh">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>zh[-_]tw|chinese traditional</reg-exp>
+			<native-name>&#32321;&#39636;&#20013;&#25991; Chinese</native-name>
+			<english-name>Chinese Traditional</english-name>
+			<status>1</status>
+		</language><language code="af">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>af|afrikaans</reg-exp>
+			<native-name>Afrikaans</native-name>
+			<english-name>Afrikaans</english-name>
+			<status>1</status>
+		</language><language code="sq">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>sq|albanian</reg-exp>
+			<native-name>Albanian</native-name>
+			<english-name>Albanian</english-name>
+			<status>1</status>
+		</language><language code="am">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>am(h*)|amharic</reg-exp>
+			<native-name>Amharic</native-name>
+			<english-name>Amharic</english-name>
+			<status>1</status>
+		</language><language code="ar">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>rtl</direction>
+			<reg-exp></reg-exp>
+			<native-name>Arabic</native-name>
+			<english-name>Arabic</english-name>
+			<status>3</status>
+		</language><language code="ay">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>ay|aymara</reg-exp>
+			<native-name>Aymara</native-name>
+			<english-name>Aymara</english-name>
+			<status>1</status>
+		</language><language code="az">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>az|azerbaijani</reg-exp>
+			<native-name>Azerbaijani</native-name>
+			<english-name>Azerbaijani</english-name>
+			<status>1</status>
+		</language><language code="eu">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>eu|basque</reg-exp>
+			<native-name>Basque</native-name>
+			<english-name>Basque</english-name>
+			<status>1</status>
+		</language><language code="bn">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>bn|bengali</reg-exp>
+			<native-name>Bengali</native-name>
+			<english-name>Bengali</english-name>
+			<status>1</status>
+		</language><language code="bs">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>bs|bosnian</reg-exp>
+			<native-name>Bosnian</native-name>
+			<english-name>Bosnian</english-name>
+			<status>1</status>
+		</language><language code="bg">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>bg|bulgarian</reg-exp>
+			<native-name>Bulgarian</native-name>
+			<english-name>Bulgarian</english-name>
+			<status>1</status>
+		</language><language code="ca">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>ca|catalan</reg-exp>
+			<native-name>Català</native-name>
+			<english-name>Catalan</english-name>
+			<status>1</status>
+		</language><language code="zh-cn">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>zh|chinese simplified</reg-exp>
+			<native-name>Chinese Simplified</native-name>
+			<english-name>Chinese Simplified</english-name>
+			<status>1</status>
+		</language><language code="hr">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>hr|croatian</reg-exp>
+			<native-name>Croatian</native-name>
+			<english-name>Croatian</english-name>
+			<status>1</status>
+		</language><language code="cy">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>cy|cymraeg</reg-exp>
+			<native-name>Cymraeg (Welsh)</native-name>
+			<english-name>Cymraeg (Welsh)</english-name>
+			<status>1</status>
+		</language><language code="da">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>da|danish</reg-exp>
+			<native-name>Dansk</native-name>
+			<english-name>Danish</english-name>
+			<status>1</status>
+		</language><language code="de">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>de([-_][[:alpha:]]{2})?|german</reg-exp>
+			<native-name>Deutsch</native-name>
+			<english-name>German</english-name>
+			<status>1</status>
+		</language><language code="dc">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>dc([-_][[:alpha:]]{2})?|german</reg-exp>
+			<native-name>Deutsch (CH)</native-name>
+			<english-name>German (CH)</english-name>
+			<status>1</status>
+		</language><language code="et">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>et|estonian</reg-exp>
+			<native-name>Eesti</native-name>
+			<english-name>Estonian</english-name>
+			<status>1</status>
+		</language><language code="en">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>en([-_][[:alpha:]]{2})?|english</reg-exp>
+			<native-name>English</native-name>
+			<english-name>English</english-name>
+			<status>3</status>
+		</language><language code="es-es">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>es([-_][[:alpha:]]{2})?|spanish</reg-exp>
+			<native-name>Español ES</native-name>
+			<english-name>Spanish ES</english-name>
+			<status>3</status>
+		</language><language code="es-mx">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>es([-_][[:alpha:]]{2})?|spanish</reg-exp>
+			<native-name>Español MX</native-name>
+			<english-name>Spanish MX</english-name>
+			<status>1</status>
+		</language><language code="fl">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>fl|filopino</reg-exp>
+			<native-name>Filopino</native-name>
+			<english-name>Filopino</english-name>
+			<status>1</status>
+		</language><language code="fi">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>fi|finnish</reg-exp>
+			<native-name>Finnish</native-name>
+			<english-name>Finnish</english-name>
+			<status>1</status>
+		</language><language code="fr">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>fr([-_][[:alpha:]]{2})?|french</reg-exp>
+			<native-name>Français</native-name>
+			<english-name>French</english-name>
+			<status>1</status>
+		</language><language code="fr-ca">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>fr([-_][[:alpha:]]{2})?|french</reg-exp>
+			<native-name>French Canadian</native-name>
+			<english-name>French (Canadian)</english-name>
+			<status>1</status>
+		</language><language code="gl">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>gl|galician</reg-exp>
+			<native-name>Galego</native-name>
+			<english-name>Galician</english-name>
+			<status>1</status>
+		</language><language code="ka">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>ka|georgian</reg-exp>
+			<native-name>Georgian</native-name>
+			<english-name>Georgian</english-name>
+			<status>1</status>
+		</language><language code="el">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>el|greek</reg-exp>
+			<native-name>Greek</native-name>
+			<english-name>Greek</english-name>
+			<status>1</status>
+		</language><language code="he">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>rtl</direction>
+			<reg-exp>he|hebrew</reg-exp>
+			<native-name>Hebrew</native-name>
+			<english-name>Hebrew</english-name>
+			<status>1</status>
+		</language><language code="hi">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>rtl</direction>
+			<reg-exp>hi|hindi</reg-exp>
+			<native-name>Hindi</native-name>
+			<english-name>Hindi</english-name>
+			<status>1</status>
+		</language><language code="hu">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>hu|hungarian</reg-exp>
+			<native-name>Hungarian</native-name>
+			<english-name>Hungarian</english-name>
+			<status>1</status>
+		</language><language code="is">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>is|icelandic</reg-exp>
+			<native-name>Icelandic</native-name>
+			<english-name>Icelandic</english-name>
+			<status>1</status>
+		</language><language code="in">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>in|indo</reg-exp>
+			<native-name>Indonesia</native-name>
+			<english-name>Indonesia</english-name>
+			<status>1</status>
+		</language><language code="id">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>id|indonesian</reg-exp>
+			<native-name>Indonesian</native-name>
+			<english-name>Indonesian</english-name>
+			<status>1</status>
+		</language><language code="it">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>it|italian</reg-exp>
+			<native-name>Italiano</native-name>
+			<english-name>Italian</english-name>
+			<status>1</status>
+		</language><language code="kk">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>UTF-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>kk|Kazakh</reg-exp>
+			<native-name>Kazakh</native-name>
+			<english-name>Kazakh</english-name>
+			<status>1</status>
+		</language><language code="km">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>km([-_][[:alpha:]]{2})?|khmer</reg-exp>
+			<native-name>Khmer</native-name>
+			<english-name>Khmer</english-name>
+			<status>1</status>
+		</language><language code="ko">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>ko|korean</reg-exp>
+			<native-name>Korean</native-name>
+			<english-name>Korean</english-name>
+			<status>1</status>
+		</language><language code="lv">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>lv|latvian</reg-exp>
+			<native-name>Latvian</native-name>
+			<english-name>Latvian</english-name>
+			<status>1</status>
+		</language><language code="lt">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>lt|lithuanian</reg-exp>
+			<native-name>Lithuanian</native-name>
+			<english-name>Lithuanian</english-name>
+			<status>1</status>
+		</language><language code="mk">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>mk|Macedonian</reg-exp>
+			<native-name>Macedonian</native-name>
+			<english-name>Macedonian</english-name>
+			<status>1</status>
+		</language><language code="ms">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>ms|malay</reg-exp>
+			<native-name>Malay</native-name>
+			<english-name>Malay</english-name>
+			<status>1</status>
+		</language><language code="mn">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>mn|mongolian</reg-exp>
+			<native-name>Mongolian</native-name>
+			<english-name>Mongolian</english-name>
+			<status>1</status>
+		</language><language code="nl">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>nl|dutch</reg-exp>
+			<native-name>Nederlands</native-name>
+			<english-name>Dutch</english-name>
+			<status>1</status>
+		</language><language code="ne">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>ne|nepali</reg-exp>
+			<native-name>Nepali</native-name>
+			<english-name>Nepali</english-name>
+			<status>1</status>
+		</language><language code="no-nb">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>no|norsk</reg-exp>
+			<native-name>Norsk</native-name>
+			<english-name>Norwegian Bokm</english-name>
+			<status>1</status>
+		</language><language code="no-nn">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>Norwegian Nynorsk</reg-exp>
+			<native-name>Norwegian Nynorsk</native-name>
+			<english-name>Norwegian Nynorsk</english-name>
+			<status>1</status>
+		</language><language code="pl">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>pl|polish</reg-exp>
+			<native-name>Polish</native-name>
+			<english-name>Polish</english-name>
+			<status>1</status>
+		</language><language code="pt">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>pt|portuguese</reg-exp>
+			<native-name>Portugues</native-name>
+			<english-name>Portuguese</english-name>
+			<status>1</status>
+		</language><language code="pt-br">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>pt([-_][[:alpha:]]{2})?|portuguese brazil</reg-exp>
+			<native-name>Português (Brasil)</native-name>
+			<english-name>Portuguese (Brazil)</english-name>
+			<status>3</status>
+		</language><language code="qu">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>qu|quechua</reg-exp>
+			<native-name>Quechua</native-name>
+			<english-name>Quechua</english-name>
+			<status>1</status>
+		</language><language code="ro">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>ro|romanian</reg-exp>
+			<native-name>Romanian</native-name>
+			<english-name>Romanian</english-name>
+			<status>1</status>
+		</language><language code="sr">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>sr|serbian</reg-exp>
+			<native-name>Serbian</native-name>
+			<english-name>Serbian</english-name>
+			<status>1</status>
+		</language><language code="si">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>si|sinhala</reg-exp>
+			<native-name>Sinhala</native-name>
+			<english-name>Sinhala</english-name>
+			<status>1</status>
+		</language><language code="sk">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>sk|slovak</reg-exp>
+			<native-name>Slovak</native-name>
+			<english-name>Slovak</english-name>
+			<status>1</status>
+		</language><language code="sl">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>sl|slovenian</reg-exp>
+			<native-name>Slovenian</native-name>
+			<english-name>Slovenian</english-name>
+			<status>1</status>
+		</language><language code="sw">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>sw|swahili</reg-exp>
+			<native-name>Swahili</native-name>
+			<english-name>Swahili</english-name>
+			<status>1</status>
+		</language><language code="sv">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>sv|swedish</reg-exp>
+			<native-name>Swedish</native-name>
+			<english-name>Swedish</english-name>
+			<status>1</status>
+		</language><language code="te">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>te|telugu</reg-exp>
+			<native-name>Telugu</native-name>
+			<english-name>Telugu</english-name>
+			<status>1</status>
+		</language><language code="th">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>th|thai</reg-exp>
+			<native-name>Thai</native-name>
+			<english-name>Thai</english-name>
+			<status>1</status>
+		</language><language code="ti">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>tigrigna</reg-exp>
+			<native-name>Tigrigna</native-name>
+			<english-name>Tigrigna</english-name>
+			<status>1</status>
+		</language><language code="tr">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>UTF-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>tr|turkish</reg-exp>
+			<native-name>Türkçe</native-name>
+			<english-name>Turkish</english-name>
+			<status>1</status>
+		</language><language code="ur">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>rtl</direction>
+			<reg-exp>ur|urdu</reg-exp>
+			<native-name>Urdu</native-name>
+			<english-name>Urdu</english-name>
+			<status>1</status>
+		</language><language code="uz">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>uz|Uzbek</reg-exp>
+			<native-name>Uzbek</native-name>
+			<english-name>Uzbek</english-name>
+			<status>1</status>
+		</language><language code="vi">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>vi([-_][[:alpha:]]{2})?|vietnam</reg-exp>
+			<native-name>Vi&#7879;t Nam</native-name>
+			<english-name>Vietnamese</english-name>
+			<status>1</status>
+		</language><language code="cs">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>cs|czech</reg-exp>
+			<native-name>Česky</native-name>
+			<english-name>Czech</english-name>
+			<status>1</status>
+		</language><language code="ru">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>ru|russian</reg-exp>
+			<native-name>Русский</native-name>
+			<english-name>Russian</english-name>
+			<status>3</status>
+		</language><language code="tg">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>tg([-_][[:alpha:]]{2})?|tajik</reg-exp>
+			<native-name>Тоҷикӣ</native-name>
+			<english-name>Tajik</english-name>
+			<status>1</status>
+		</language><language code="uk">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>uk|ukrainian</reg-exp>
+			<native-name>Українська</native-name>
+			<english-name>Ukrainian</english-name>
+			<status>3</status>
+		</language><language code="fa">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>rtl</direction>
+			<reg-exp>fa|farsi</reg-exp>
+			<native-name>فارسي</native-name>
+			<english-name>Farsi</english-name>
+			<status>1</status>
+		</language><language code="ja">
+			<atutor-version>2.2.1</atutor-version>
+			<charset>utf-8</charset>
+			<direction>ltr</direction>
+			<reg-exp>ja|japanese</reg-exp>
+			<native-name>日本語</native-name>
+			<english-name>Japanese</english-name>
+			<status>1</status>
+		</language>
+</languages>
