@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 		<!-- These are ATutor language packs - http://www.atutor.ca-->
-
 		<!DOCTYPE languages [
 		   <!ELEMENT language (atutor-version, code, charset, direction, reg-exp, native-name, english-name )>
 		   <!ELEMENT atutor-version (#PCDATA)>
@@ -13,7 +12,6 @@
 		   <!ELEMENT status (#PCDATA)>
 		   <!ATTLIST language code ID #REQUIRED>
 		]>
-
 		<languages><language code="zh">
 			<atutor-version>2.2.3</atutor-version>
 			<charset>utf-8</charset>
@@ -180,7 +178,7 @@
 			<direction>ltr</direction>
 			<reg-exp>es([-_][[:alpha:]]{2})?|spanish</reg-exp>
 			<native-name>Español ES</native-name>
-			<english-name>Spanish ES</english-name>
+			<english-name>Spanish ESS</english-name>
 			<status>3</status>
 		</language><language code="es-mx">
 			<atutor-version>2.2.3</atutor-version>
