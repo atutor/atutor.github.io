@@ -178,7 +178,7 @@
 			<direction>ltr</direction>
 			<reg-exp>es([-_][[:alpha:]]{2})?|spanish</reg-exp>
 			<native-name>Español ES</native-name>
-			<english-name>Spanish ESS</english-name>
+			<english-name>Spanish ES</english-name>
 			<status>3</status>
 		</language><language code="es-mx">
 			<atutor-version>2.2.3</atutor-version>

@@ -1307,6 +1307,7 @@ ul.horizontal-list li{
 #forum-thread li { clear:left; border:1px solid #eee; border-bottom: 1px solid #f0f0f0; float:left; width: 98%; list-style: none; }
 #forum-thread li.even { background: #fdfdfd; border-top: none; }
 #forum-thread li.odd { background: #fff; }
+.forum-thread li.odd { background: #fdfdfd; border-top: none; }
 div.forum-post-author { float:left; width:150px; padding:8px 10px; }
 div.forum-post-author a.title {	font-size: 1.1em; line-height: 1.2em; font-weight: bold; text-decoration:none; }	
 div.forum-post-author img.profile-picture { border: 2px solid #f0f0f0; }
@@ -1317,7 +1318,69 @@ div.forum-post-ctrl a { text-decoration: none; }
 div.forum-post-ctrl span { color: black; background-color: #fefdc2; padding: 3px; }
 div.forum-post-content p.date { color: #a1a1a1; border-bottom: 1px solid #f0f0f0; }
 div.forum-post-content div.body p { margin-bottom:20px; }
+.main-content table td{
+    padding:0 !important;
+    padding-bottom:1.5em;
+}
+div.threadlist{
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+}
+td.subjectcol, th.subjectcol{
+    width:30%;
+}
+ul.forum-thread{list-style-type:none !important;}
+tr.odd{
+    background-color:#eeeeee;
+}
+.box {
+    margin-top: 2em;
+    text-align: left;
+    margin: 0;
+}
+.ellipsis {
+    width:200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 
+.color_box{
+    height:1.5em;
+    width:2em;
+}
+.smilie {
+    height:1.2em;
+    width:1.2em;
+}
+.gmatched_out{
+    height:auto; 
+    width:100%; 
+    background-color:transparent;
+    margin-top:0;
+}
+.gmatched_in{
+    height:auto; 
+    width:100%; 
+    margin-left:auto; 
+    margin-right:auto;
+    max-width:66em;
+    background-color:white;
+}
+.gsearch{
+    float:left; 
+    width:100%;
+    margin-left:1em;
+    background-color: #eeeeee;
+    box-sizing:initial !important;
+}
+.gsearch input[type=submit]{
+color: #606c71;
+}
+#gsc-i-id1{
+    width:100%;
+}
 code{
       background-color:#eeeeee;
       padding-left:.2em;
@@ -2105,6 +2168,10 @@ div.forum-post-ctrl a { text-decoration: none; }
 div.forum-post-ctrl span { color: black; background-color: #fefdc2; padding: 3px; }
 div.forum-post-content p.date { color: #a1a1a1; border-bottom: 1px solid #f0f0f0; }
 div.forum-post-content div.body p { margin-bottom:20px; }
+.main-content table td{
+padding:0 !important;
+padding-bottom:1.5em;
+}
 div.threadlist{
     width:90%;
     margin-left:auto;
