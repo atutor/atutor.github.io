@@ -1,0 +1,61 @@
+BODY {
+font: background-color: #FFFFFF;
+	  font-family: arial;
+      color: #00008b;
+	 }
+:link {
+	color: blue;
+	text-decoration:none;
+    font-family: arial;
+	 }
+:visited {
+	color: #dc143c;
+	text-decoration:none;
+    font-family: arial;
+	 }
+:active /* visited links */ {
+	text-decoration: none;
+    font-family: "Arial";
+	color: lime }
+strong.point {
+	font-family: arial;
+	font-weight: 700;
+	color: #dc143c; }
+div.top {
+	margin-left: 10px;
+	margin-right: 200px;
+	width: 680;
+	position: relative;	}
+H1.access {
+	font-family: arial black;
+	font-size: 24pt;
+	font-weight: 700;
+    color:#339999; }
+H2.access {
+	font-family: arial;
+	font-size: 24pt;
+	font-weight: 700;
+    position: relative;
+	left: 20;
+	color:#339999; }
+H3.access {
+	font-family: arial;
+	font-size: 22pt;
+	font-weight: 700;
+    position: relative;
+	left: 40;
+	color:#339999; }
+ol{
+	font-family: arial;
+	font-size: 20pt;
+	font-weight: 700;
+    position: relative;
+	left: 40;
+	color: #0000CC;  }
+ul{
+	font-family: arial;
+	font-size: 20pt;
+	font-weight: 700;
+    position: relative;
+	left: 40;
+	color: #0000CC;  }

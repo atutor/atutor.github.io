@@ -1,0 +1,398 @@
+<?php require('../../include/session.html'); ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+<title> SNOW Initiatives: Inclusion in an Electronic Classroom - 2000 (Design Overview Report)</title>
+<meta name="DESCRIPTION"
+ content="SNOW (Special Needs Opportunity Windows) is a project aimed at supporting educators of students with special needs. Our web site serves as a clearinghouse of practical resources and curriculum materials, as a place for educators to meet and share  ideas, and as a place for educators to develop their professional skills. ">
+
+<meta name="keywords"
+ content="snow special needs opportunity window distance education learning disability blind deaf vision impairment motor graduate preservice inservice aq additional qualification courses curriculum best practices demonstration schools oise university of toronto school vision handicap handicapped">
+
+<link rel="stylesheet" href="../../styles/general.css">
+</head>
+<body bgcolor="#FFFFFF">
+     <!--<div class="header">-->
+		 			<?php require('../../include/header.html'); ?>
+		 <!--</div>-->
+		 <div class="sidemenu">
+		 			<?php require('../../include/getmenu.html'); ?>
+		 </div>
+
+<div class="main">
+<?php require('../../include/colour-code.html'); ?>
+<div class="strip" style="background-color:<?php if ($colour_code == '') echo '#FFFFFF'; else echo $colour_code; ?>">
+		 </div><br>
+  <!-- place your content between this line and the "End content" line below --> 
+  <!--<div class="content">--> <a name="top"></a> 
+  <h1>Inclusion in an Electronic Classroom - 2000:<br>
+    <b><span lang=EN-CA>Access<i>Ability</i>--Enabling Technology for Life Long 
+    Learning</span></b></h1>
+
+  <p><b><a href="mailto:robert.luke@utoronto.ca">Robert Luke</a><br>
+    <span lang=EN-CA> </span><span lang=EN-CA>Special Needs Opportunity Windows 
+    (SNOW) Project</span> <br>
+    Adaptive Technology Resource Centre, University of Toronto</b></p>
+
+<hr>
+  <p>&nbsp;</p>
+  <p align=center></p>
+  <ul>
+    <li><a href="#abstract">Abstract</a></li>
+    <li><a href="#intro">Introduction</a></li>
+    <li><a href="#design">Recommendations for Inclusive Design</a></li>
+    <li><a href="#enabling">Enabling Learning Through Technology</a></li>
+    <li><a href="#conclusion">Conclusion: Context</a><br clear=all style='page-break-before:auto;
+'>
+    </li>
+  </ul>
+  <h2><b><a name="abstract"></a><br>
+    Abstract</b></h2>
+  <p><i>Providing educational opportunities within online environments, while 
+    beneficial, also has the potential to exclude a significant portion of the 
+    population.  Those that are learning and/or physically disabled may be prevented 
+    from accessing online learning environments due to problems in the design 
+    of the technology itself, as well as with the pedagogy directing the use of 
+    this technology.  By taking into account both technical and pedagogical accessibility 
+    considerations, people with physical and/or learning disabilities are encouraged 
+    to become producers of information, and not just passive consumers.  Operating 
+    an accessible, inclusive electronic classroom ensures students with disabilities 
+    can participate with parity in global educational exchange.  </i></p>
+  <p><a href="#top">[ top ]</a> <a name="intro"></a></p>
+  <h2>Introduction</h2>
+  <p>The role of technology in lifelong learning and Continuing Education (CE) 
+    is expanding exponentially. Lifelong learning is now accepted as a basic tenet 
+    of living in the (post)modern world, where education as a product of schooling 
+    has given way to education as process: continual, over time. Learning is no 
+    longer seen as an activity undertaken in youth, as preparation for adult life; 
+    rather, it is seen as integral to living. Continuing Education--the idea of 
+    lifelong learning--has permeated the larger fabric of culture, especially 
+    given the &quot;any time, any place&quot; capabilities of networked learning 
+    environments utilizing Information and Communication Technologies (ICT). However, 
+    providing educational opportunities within online environments, while beneficial, 
+    also has the potential to exclude a significant portion of the population. 
+    Those that are learning and/or physically disabled may be prevented from accessing 
+    online learning environments due to problems in the design of the technology 
+    itself, as well as with the pedagogy directing the use of this technology.</p>
+  <p>The widespread use of ICT in education has resulted in &quot;new learning 
+    technologies and the internet . . . providing educational possibilities that 
+    did not exist before. What makes these developments troubling . . . is the 
+    absence, in many cases, of planning for access by students with disabilities. 
+    The implications of this omission are obvious. New technological barriers 
+    are slowly being erected where others have fallen&quot; [1]. The World Wide 
+    Web Consortium's (W3C) Website Accessibility Initiative (WAI) provides guidelines 
+    for developing and designing accessible online media to prevent such &quot;digital 
+    divides&quot; from growing disproportionately to the continued use of educational 
+    ICT. However, &quot;The digital divide will continue to expand if this issue 
+    [accessibility] is not addressed in our research, education and outreach. 
+    As the rapid development of new web applications continues, it is necessary 
+    to ensure that new barriers are not erected to effective communication and 
+    commerce&quot; [2].&quot;Several studies on attrition in distance education, 
+    particularly web-based courses have noted that difficulty with accessing web-based 
+    materials is a major obstacle in distance education&quot; [3], and with the 
+    growing reliance on networked technologies and online learning components 
+    in all facets of education--not just distance learning--it is increasingly 
+    important to ensure that accessibility standards are built into the products 
+    used to serve learning material on the web.</p>
+  <p>The Canadian government has recently implemented policy to ensure that legislation 
+    providing access to persons with disabilities is applied to digital media, 
+    following the WAI guidelines [4]. Recent legislation in the United States 
+    has also ensured that all online information is accessible to persons with 
+    disabilities or who rely on adaptive and assistive technologies [5]. It is 
+    expected that voluntary compliance on the part of all online education providers 
+    will happen as a matter of course and in keeping with the evolving standards 
+    of the WWW; &quot;However, even though web accessibility guidelines exist, 
+    some administrators consider campus-wide initiatives to standardize the creation 
+    of web materials a costly time-consuming task that is difficult to enforce&quot; 
+    [3]. Since &quot;post-secondary institutions are reluctant to allocate funding 
+    for the training and resources needed to assist educators in modifying and 
+    creating acceptable web materials&quot; [3], it is imperative to seek ways 
+    to encourage the accessible design of web materials from their first iteration.</p>
+  <p>From the point of view of students taking a web course, it is necessary for 
+    online course designers to consider accessibility from both technical and 
+    pedagogical standpoints. With respect to technical issues, these are concerned 
+    with the accessibility of various online elements when adaptive technology 
+    is being used in this access. The pedagogical issues are closely related, 
+    in that good pedagogy takes the technical access considerations into account 
+    when creating online curricula. In addition, it is also imperative to provide 
+    adequate and comprehensive instructions for the use of the actual courseware 
+    itself, as well as dedicated institutional support for faculty using ICT. 
+    Accessibility should be considered from both points of view, and that these 
+    divergent issues--the technical and the pedagogical--are inherently linked. 
+  </p>
+  <p><a href="#top">[ top ]</a> <b><a name="design"></a></b></p>
+  <h2><b>Recommendations for Inclusive Design</b></h2>
+  <p>Complexities in page layouts, inconsistencies in item labelling, a lack of 
+    instructions for task completion and the absence of consistent and clear functions 
+    related to items within courseware platforms are the most major technical 
+    obstacles to accessibility. Courseware developers need to ensure their platforms 
+    conform to the current WAI guidelines in order to ensure full accessibility 
+    of information. In addition, there needs to be consideration of the provision 
+    of redundant information display to aid those who are learning disabled. Additionally, 
+    problems with courseware platforms and adaptive or assistive technology--OS/default 
+    settings (e.g. mail program)--need to be addressed and tested or at least 
+    acknowledged in order to lessen the deleterious effects of any incompatibilities 
+    that may arise.</p>
+  <p>Online learning &quot;content needs to become more informative (what we communicate, 
+    not how we communicate it), more independent of the delivery medium (an information 
+    medium--not a visual medium), richer and more multi-modal (address different 
+    learning styles and needs). Once these challenges are met we will have a technology 
+    that is more usable by all&quot; [6]. Separating the media used to access 
+    educational material from the content puts the emphasis on the content as 
+    flexible and malleable to fit a variety of presentation media (text, audio, 
+    etc.).New mark-up languages (XML, XSL, CSS, DOM, XUL, Java) &quot;separate 
+    content and structure from presentation&quot; and &quot;separate function 
+    from input [and output] method&quot; [6]. This separation allows people who 
+    need alternative or redundant output devices to access media that otherwise 
+    may be inaccessible to them, and future courseware applications should strive 
+    to include the option of coding in these modalities. &quot;The transformative 
+    power of computers makes most of this information available for the first 
+    time to many people with disabilities&quot; because digital media can be adapted 
+    to multiple outputs: &quot;Innovative display and control alternatives can 
+    be offered that afford access to users with a wide range of skills and needs. 
+    The interactive mechanisms [of digital media] allow learners to customize 
+    the presentation of the learning materials (the pacing, the order, the modality, 
+    etc.) while retaining a rich, engaging learning experience&quot; [6] see also<b> 
+    </b>[7]. Technical considerations aside, the most important obstacle to accessibility 
+    is effective pedagogical deployment of the technology use in educational contexts.</p>
+  <p>Internet experience (or lack thereof) and experience with assistive technology 
+    can vastly affect the success or failure of any online learning venture. Both 
+    pedagogical and technical considerations can make or break the successful 
+    use of online learning technologies. Pedagogically, course instructors using 
+    any courseware platform or considering using online learning networks must 
+    be aware of accessibility issues and how the platform being used might fail 
+    to meet these standards. Instructors must ensure that information is appropriately 
+    displayed (insofar as this relates to the ability of the instructor to manipulate 
+    the courseware display of information) and that any learning disabilities 
+    that may require special consideration (with respect to information display, 
+    redundancy, etc.) are taken into consideration in the design phase of the 
+    online course creation.</p>
+  <p>Technical faults can be worked around, although this can be costly, time 
+    consuming, and frustrating for all concerned. Given these considerations, 
+    the most important issue is the role effective pedagogy must play in shaping 
+    the use of the technology.&nbsp;With respect to technical and pedagogical 
+    considerations and accessible online media, it is imperative that inclusive 
+    pedagogical practices take a more active role in directing the development 
+    of technology, rather than reacting to it successive innovations. The need 
+    for built-in accessibility in the tools being used to facilitate online learning 
+    must be prioritized. The pedagogy needs to direct the development of technology, 
+    particularly as this relates to the need to ensure accessibility.</p>
+  <p>At issue here is the role of timely information, adequate support and training 
+    for people just learning digital literacy skills. The concept of digital literacy 
+    includes not only the skill to use information technologies (broadly defined 
+    as any technology that mediates the use of information), but also the requisite 
+    skills to decode, contextualize, and critically evaluate this information 
+    (see [8]; [9]; [10]; [11]; [12]). An important addition to this aspect of 
+    literacy has been the concept of universal design, or accessibility, with 
+    respect to physically and/or learning disabled persons. With 20% of the population--54 
+    million people in the US alone [2]--suffering from some sort of physical or 
+    learning disability, and with this percentage increasing as the population 
+    ages, it is essential&nbsp;to factor in accessibility guidelines from the 
+    first iteration of online learning development. This applies equally to any 
+    cause of inaccessibility--technical or pedagogical--and means being aware 
+    of concepts such as universal design and the potential limitations of any 
+    use of ICT in education.</p>
+  <p><a href="#top">[ top ]</a> <b><a name="enabling"></a></b></p>
+  <h2><b>Enabling Learning Through Technology</b></h2>
+  <p>Just as buildings are built with accessibility factored into their architecture 
+    from the ground up, so too must WWW and Internet architecture factor in accessibility 
+    initiatives from the outset to ensure equitable access to online resources. 
+    By taking into account both technical and pedagogical accessibility considerations, 
+    people with physical and/or learning disabilities are encouraged to become 
+    producers of information, and not just passive consumers. By operating an 
+    accessible, inclusive electronic classroom, students with disabilities can 
+    participate with parity in global educational exchange, and &quot;positive 
+    feedback from their peers can encourage students with learning [and physical] 
+    disabilities to become even more active&quot; in the educational process [13]. 
+    What is clear from the study is that the development of the incidental skills 
+    that accrue with using technologically mediated learning environments result 
+    in &quot;improved self-confidence and self-esteem, enhanced social skills 
+    and computer proficiency, as well as greater motivation for continued skill 
+    development&quot; [13].Ensuring accessibility in course designs that utilize 
+    online technologies will ensure that the wider population benefits from these 
+    programs:&nbsp;&quot;For people without disabilities, technology makes things 
+    convenient; for people with disabilities, it makes things possible&quot; [6].The 
+    very design of accessible online programs offers disabled persons an avenue 
+    to pursue CE programs where none might have existed before.</p>
+  <p>While it is true that&nbsp;&quot;The extent to which the educational process 
+    will be altered by technology undoubtedly will reflect the impact of the technology 
+    on society as a whole&quot; [14], this is only true to the extent that this 
+    technology is accessible to all. Inclusive electronic learning environments&nbsp;directly 
+    benefit online learning by providing access to lifelong learning programs 
+    to those at risk of being left out of these programs in the first place. In 
+    order for these programs to be successful and truly inclusive, it is &quot;important 
+    that post-secondary institutions provide the necessary training, resources, 
+    and tools to develop accessible web materials&quot; [3]. This applies equally 
+    to those developing online learning structures and those who learn with and 
+    through them. Adequate training in digital literacy skills (including online 
+    learning technologies and adaptive and assistive technologies) is essential 
+    if inclusive electronic classrooms are to become an effective part of educational 
+    reality. The cross-hatching of pedagogy- and technology-based considerations 
+    reflects the fact that&nbsp;&quot;Information is so broadly based and the 
+    acquisition of knowledge so complex that new ways of teaching and learning 
+    are essential if students of such great diversity are to be truly engaged 
+    in the learning process&quot; [15]. This learning diversity can be reflected 
+    in the multi-modal display of information that makes it more accessible. By 
+    making information more accessible for all, everyone benefits [7].</p>
+  <p>Making information available outside the physical constraints of the traditional 
+    classroom, and opening this classroom up to a fluid negotiation of identity, 
+    results in a more open, flexible learning environment that is responsive to 
+    multiple users who may be restricted (either temporarily or permanently) by 
+    mobility impairment. &quot;The primary reason for insisting on interactive 
+    communication outside the physical classroom itself--at least as a possibility--is 
+    because of the capacity of electronic technology to create an open information 
+    system and a more open, flexible model of student-teacher interaction&quot; 
+    [16], provided accessibility is built into the electronic classroom. This 
+    pedagogical flexibility is reflected in the fact that &quot;what is of most 
+    significance to the future of education, especially for students with disabilities, 
+    is the unequalled flexibility and transformability of digital media&quot; 
+    [7]. Digital media &quot;remain malleable, transformable from one thing to 
+    another, more like raw clay than fired pottery&quot; [7].</p>
+  <p>Developing digital literacies means engaging with the larger technologically 
+    mediated world and taking responsibility for learning from this vast and inchoate 
+    matrix of information that comprises the WWW [9]. The ability to use online 
+    media in order to access educational programs ensures a technological &quot;self-efficacy&quot; 
+    [11]; (see also&nbsp;[17] ; [10]). This technological self-efficacy renders 
+    the technology transparent enough to enable learning through network technologies.</p>
+  <p><a href="#top">[ top ]</a> <b><a name="conclusion"></a></b></p>
+  <h2><b>Conclusion: Context</b></h2>
+  <p>Recontextualizing and reconceptualizing teaching and learning within networked 
+    paradigms creates new pedagogies, or &quot;digital pedagogies&quot; that acknowledge 
+    the realities of living and working in a digitally networked world (Privateer 
+    1999). These &quot;’digital pedagogies,’ [are] new ways of educating more 
+    consistent with the nature of contemporary technologies than with prior management 
+    models&quot; (Privateer 1999, p.61), and will result in an emphasis on shifting 
+    the goals of education from &quot;the mastery of content (content will be 
+    available everywhere, anytime, electronically) [to] the mastery of learning. 
+    At commencement, we will graduate students who are ‘expert learners’&quot; 
+    [7]. The evolution towards learning as process is replacing the old product-centered 
+    model, and will result in changing conceptions of the role of learning itself. 
+    In order to be effective and accessible, these new digital pedagogies must 
+    take issues of access and digital literacy into account when designing programs 
+    that use any sophisticated digital media. These programs must also acknowledge 
+    other barriers to pursuing education, including &quot;cultural, social, familial, 
+    personal, or financial barriers&quot; [18]. Taking into account the larger 
+    social fabric in which education participates means recognizing that&nbsp;&quot;it 
+    is environmental factors and accessibility features of computer and information 
+    technologies that form either facilitators or barriers to students with disabilities&quot; 
+    [1]. These environmental factors include the extent to which users of online 
+    learning networks have significant training or experience in the use of all 
+    technologies of information access, and the extent to which these networks 
+    offer inclusive, accessible educational space.</p>
+  <p>Fichten et al (1999) show that it is necessary to develop a cultural or environmental 
+    approach to providing accessible learning environments: &quot;Many policies 
+    reflect the view that problems originate from within the individual rather 
+    than arising from the environment. The approach taken, therefore, is to try 
+    to remediate or to provide accommodation for individual impairments rather 
+    than to locate the problem in the environment and the prevailing social structure. 
+    . . . Unless there is a shift away from the current person-centered ideology 
+    toward a broader, more systemic view that students with disabilities will 
+    continue to be denied full access to postsecondary education because computer 
+    and information technologies will continue to be designed and built with inaccessible 
+    features. Substantial effort must be undertaken to educate manufacturers of 
+    computer technologies as well as to formulate and implement strong federal 
+    legislation, similar to that now in effect in the United States regarding 
+    technology, to render technologies accessible&quot; [1]. This reflects the 
+    view that building accessible online media will benefit all (see [7].&nbsp;By 
+    building in &quot;electronic curbcuts&quot; from the ground up, online education 
+    programs ensure they meet the principles of universal design and so are not 
+    exclusionary.</p>
+  <p>This environmental shift towards a digital pedagogy will open up the educational 
+    process for all, provided this shift includes an emphasis on accessibility. 
+    Changing conceptions of education (towards lifelong learning) and in learning 
+    styles (with the inclusion of multiple modalities enabled through digital 
+    technology and pedagogy) will result in a more positive and inclusive social 
+    structure as a whole. &quot;In addition, the more differentiated use of media 
+    for instruction reveals that individuals who are defined as ‘learning disabled’ 
+    within print-based learning environments are not the same individuals who 
+    are defined as ‘learning disabled’ within video- or audio-based learning environments. 
+    Such revelations splinter the old categorical divisions between ‘disability’ 
+    and ‘ability’ and create new descriptors that explicitly recognize the interaction 
+    between student and environment in the definition of strengths&quot; [7]. 
+    Within a reconceptualization of education as process enabled through accessible 
+    media and by digital pedagogies, all types of learners can participate equally, 
+    and are acknowledged as equal partners in education.</p>
+  <p>Access<i>Ability</i> means providing an inclusive, accessible environment 
+    for learning that might otherwise be closed to people with physical and/ or 
+    learning disabilities. Enabling technology thus has two distinct meanings. 
+    he first is that technology is enabling to those with disabilities (accessible 
+    technology).The second is the fact that technology enables different conceptions 
+    of teaching and learning: it mobilizes or is mobilized to construct digital 
+    pedagogies. Information and communication technologies can allow access to 
+    educational opportunities for a wider audience, especially with asynchronous 
+    online delivery of curricular materials. But rather than just using online 
+    media to deliver course materials and to perhaps facilitate communication 
+    between students and instructors, these media have the potential to radically 
+    alter the very pedagogy that underlies the provision of distance education. 
+    &quot;’Accessibility is the challenge that will finally push the Web to become 
+    the ubiquitous tool for interactive knowledge sharing it was meant to be. 
+    Creating an environment which is welcoming to billions of users with widely 
+    varying motivations, capabilities and needs is not a fringe goal but <u>the</u> 
+    critical goal’&quot; [6].The effect of using technology in lifelong learning 
+    programs is an enhanced understanding of the ground of these media themselves; 
+    that is, an understanding of how these media operate with and in the larger 
+    context of a learning culture. Technical considerations notwithstanding, the 
+    most important element of ensuring and designing accessible media is a sound 
+    pedagogy driving the technology itself.</p>
+  <p><a href="#top">[ top ]</a> </p>
+  <hr width="44%" align="left" noshade>
+  <p align=left><b>References</b></p>
+  <p>1. Fichten, C., Berile, M., &amp; Asuncion, J. (1999). Learning Technologies: 
+    Students with Disabilities in Postsecondary Education. Available: http://olt-bta.hrdc-drhc.gc.ca/download/79160final_e.pdf 
+    (Accessed 3 December 2000).</p>
+  <p>2. Waddell, C. (1999). The Growing Digital Divide In Access For People With 
+    Disabilities: Overcoming Barriers To Participation In The Digital Economy. 
+    Available: http://www.icdri.org/the_digital_divide.htm (Accessed 20 October 
+    2000).</p>
+  <p>3. Hricko, M. (2000). Designing Accessible Web-Based Courses. <i>Indian Journal 
+    of Open Learning, 9</i>(3), 393-402.</p>
+  <p>4. Canada. Accessibility: Overview. Available: http://www.cio-dpi.gc.ca/clf-upe/1/1_e.asp.</p>
+  <p>5. United States. Federal IT Accessibility Initiative. Available:  http://www.section508.gov/index.html.</p>
+  <p>6. Treviranus, J. (2000, 11 March). <i>Expanding the Digital Media in More 
+    Human Directions.</i> Presented at the Towards the Digital Media Institute. 
+    University of Toronto: Knowledge Media Design Institute Lecture Series.</p>
+  <p>7. Rose, D., &amp; Meyer, A. (2000). The Future is in the Margins: The Role 
+    of Technology and Disability in Educational Reform. Available: http://www.air.org/forum/pdf/rose.pdf.</p>
+  <p>8. Fanning, J. (2000). Expanding the Definition of Technological Literacy 
+    in Schools. <i>Mid-Continent Research for Education and Learning</i> [Online]. 
+    Available: http://www.mcrel.org/products/noteworthy/noteworthy/jimf.asp.</p>
+  <p>9. Kellner, D. (2000). Multiple Literacies and Critical Pedagogies: New Paradigms. 
+    In P. P. Trifonas (Ed.), <i>Revolutionary Pedagogies: Cultural Politics, Instituting 
+    Education, and the Discourse of Theory</i> (pp. 196-2). New York and London: 
+    Routledge.</p>
+  <p>10. Langford, L. (1998). Information Literacy: A Clarification. <i>From Now 
+    On: The Educational Technology Journal</i> [Online] October. Available: http://emifyes.iserver.net/fromnow/oct98/clarify.html 
+    (Accessed 19 October 2000).</p>
+  <p>11. Dusick, D. (1998). The Learning Effectiveness of Educational Technology: 
+    What Does That Really Mean? <i>Educational Technology Review, Autumn/ Winter,</i> 
+    10-12.</p>
+  <p>12. Beynon, J., &amp; Mackay, H., eds. (1992). <i>Technological Literacy 
+    And The Curriculum.</i> London and New York: Falmer Press.</p>
+  <p>13.Harrison, J., &amp; Vekar, J. (2000). New Learning Technologies: Applications, 
+    challenges, and success stories from the front lines. Available: http://www.telelearn.ca.</p>
+  <p>14. Dierker, R. A. (1995). The Future of Electronic Education. In  Erwin 
+    Boschmann (Ed.), <i>The Electronic Classroom: A Handbook for Education in 
+    the Electronic Environment</i> (pp. 228-235). Medford, NJ: Learned Information, 
+    Inc.</p>
+  <p>15. Connick, G., &amp; Russo, J. (1995). Technology and the Inevitability 
+    of Educational Transformation. In  Erwin Boschmann (Ed.), <i>The Electronic 
+    Classroom: A Handbook for Education in the Electronic Environment</i> (pp. 
+    14-20). Medford, NJ: Learned Information, Inc.</p>
+  <p>16. Plater, W. M. (1995). In Search of the Electronic Classroom. In  Erwin 
+    Boschmann (Ed.), <i>The Electronic Classroom: A Handbook for Education in 
+    the Electronic Environment</i> (pp. 3-13). Medford, NJ: Learned Information, 
+    Inc.</p>
+  <p>17. Rose, D., &amp; Meyer, A. (1996). Expanding the Literacy Toolbox. In 
+    Literacy Research Paper 11 [Online]. Available: http://www.cast.org/udl/scholastic_literacy_11.pdf.</p>
+  <p>18. Fusch, G. (2000). Breaking Down Perceived Barriers to Lifelong Learning. 
+    <i>Educational Technology &amp; Society</i> [Online] 3(1). Available: http://ifets.ieee.org/periodical/vol_1_2000/fusch.html 
+    (Accessed 1 December 2000).</p>
+  <p><a href="#top">[ top ]</a> </p>
+<hr>
+  <div class="footer">
+<?php require('../../include/footer.html'); ?>		
+</div> 
+<!--</div><br>-->
+</div>
+</body>
+</html>

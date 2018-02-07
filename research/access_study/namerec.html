@@ -1,0 +1,48 @@
+<?php require('../../include/session.html'); ?>
+<HTML>
+
+  <HEAD>
+    <TITLE>Adapted Version of the Distance Education Survey: Registration</TITLE>
+  <LINK REL="StyleSheet" HREF="CWstudy_styles.css" TYPE="text/css">
+<SCRIPT LANGUAGE=JavaScript SRC="check_firstname.js"></script>
+  </HEAD>
+
+  <BODY>
+ <div class="top">
+ <img src="img/access_logo.jpg" height="143" width="153" ALT="Globe Access Logo" align="left">
+  <h1 class="access">The Courseware Accessibility Study</h1>
+<HR>
+
+    <P ALIGN="CENTER"><B>Distance Education Survey</B></P>
+
+    <P ALIGN="CENTER">(CCE and EvNet)</P>
+
+    <div class="top"><table width="650" BGCOLOR="#FDF9B0" border="1">
+	<TR><TD><P ALIGN="LEFT"><b> In the form below, please enter your name, and enter phone numbers where you can be reached if necessary. This information will be kept confidential. Please remember the Particpant ID you have been assigned. You will be asked for it at the beginning of each of the forms that follow. After completing each form and submitting it, use the HOME link near the top of the page to return to the entry page, then continue with the next form in the series. Including this registration form, there are seven forms in the series.</B></P>
+</TD></TR></TABLE>
+</div>[<a href="appendix.html">Return to Appendix</A>]<br>NOTE: This is a copy of the original form and is non-functional. You will not be able to submit the form.
+ <FORM NAME="f0" ACTION="#"  METHOD="POST">
+	<input type="hidden" name="form"  value="Name_rec">
+	<input type=hidden name=elementList value="">
+	<P> <B>Enter your Participant ID </B><input type="text" size="6" name="part_id"  value=""></P>
+	<table width="650" border="0">
+	<TR><TD width="340">Please enter your first name</TD>
+	<TD><input type="text" name="firstname" size="40" value=""></TD>
+		  </TR>
+		<TR><TD width="340">Please enter your last name</TD>
+	<TD><input type="text" name="lastname" size="40"  value=""></TD>
+		  </TR>
+		<TR><TD width="340">Enter your area code and day phone number</TD>
+		 	<TD><input type="text" name="dayphone" size="12"  value=""></TD>
+		</TR>
+		<TR><TD width="340">Enter your area code and evening phone number</TD>
+		 	<TD align="bottom"><input type="text" name="evephone" size="12"  value=""></TD>
+		</TR>
+	</TABLE>
+
+	<br><b>This form is now ready to send</b>
+		<input type="radio" name="ready1"> Yes
+		<br><input type="button" ONCLICK="alert('This is just an example')" value="Submit Intake Questionnaire"><input type="reset">
+	</FORM>
+  </BODY>
+</HTML>

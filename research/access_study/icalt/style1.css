@@ -1,0 +1,7 @@
+body {font-family: verdana, arial, helvetica, sans-serif; background-color: #ffffff; margin-left: 10%; margin-right: 10%}
+h1 {font-size: 18px; font-weight: bold; color: #330033}
+h2 {font-size: 14px; font-weight: bold; color: #330033}
+
+a {text-decoration: none; color:#660000}
+a:hover {font-weight:bold}
+body.normal {  font-family: Verdana, Arial, Helvetica, sans-serif}

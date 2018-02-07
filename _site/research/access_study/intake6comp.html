@@ -1,0 +1,986 @@
+<?php require('../../include/session.html'); ?>
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 5.0::19980907::extensions to HTML 4.0//EN" "hmpro5.dtd">
+
+
+
+<HTML>
+
+
+
+<HEAD>
+
+<TITLE>Adapted Version of the Distance Education Survey: Personal Information
+
+</TITLE>
+
+<LINK REL="StyleSheet" HREF="CWstudy_styles.css" TYPE="text/css">
+
+
+
+</HEAD>
+
+
+
+<BODY>
+
+<DIV CLASS="top">
+
+<IMG SRC="img/access_logo.jpg" HEIGHT="143" WIDTH="153" ALT="Globe Access Logo"
+
+ ALIGN="left"> <H1 CLASS="access">The Courseware Accessibility Study</H1>
+
+<HR>
+
+<P ALIGN="CENTER"><B>Distance Education Survey Results</B></P>
+
+<P ALIGN="left">The participants were predominantly male middle aged adults.&nbsp;
+
+All were English speakers and just under half of them were single.&nbsp; Only
+
+one had a young child to care for at home.&nbsp; All had at least High School
+
+education and most had an University undergraduate degree.&nbsp; Occupations of
+
+the participants ranged from direct service worker to systems engineer and
+
+workplaces ranged from summer camp to hospital with office workplaces
+
+predominating.&nbsp; Most of the important job duties involved high levels of
+
+social skills.&nbsp; On average they worked for income about 30 hours a week,
+
+spent about 8 hours on household chores, and spent about 7 hours a week on
+
+volunteer activities.&nbsp; The participants were comfortable in front of a
+
+computer for an average of almost an hour and a half.&nbsp; The survey responses are indicated below enclosed in brackets [
+
+] along with the mean response where appropriate.</P>
+
+<P ALIGN="CENTER">(CCE and EvNet)</P>
+
+</DIV>
+
+<FORM ACTION="cgi/accesscgi/intake.cgi" ONSUBMIT="return checkRequiredFields(this)" METHOD="POST">
+
+<input type=hidden name=elementList value="">
+
+<!--Personal Information Section -->
+
+  <P> [<A HREF="inclusion.html">HOME</A>] [<a href="appendix.html">Back to Appendix</a>] 
+  </P>
+
+<P ALIGN="LEFT"><B>Part F: Personal Information</B></P>
+
+<INPUT TYPE="hidden" NAME="form" VALUE="Part-F">
+
+<TABLE WIDTH="650" BGCOLOR="#FDF9B0" BORDER="1">
+
+<TR>
+
+<TD> <P><B>Please answer the following questions about
+
+yourself. Indicate your response by either
+
+choosing of the appropriate selection, or by filling in the blank space
+
+provided.</B>
+
+</P>
+
+</TD>
+
+</TR>
+
+</TABLE>
+
+<P><B>Enter your Participant ID </B><INPUT TYPE="text" SIZE="6" NAME="part_id" VALUE=""></P>
+
+<TABLE WIDTH="650">
+
+<TR>
+
+<TD colspan="2"> 1. What is your sex?</TD>
+
+</TR>
+
+<TR>
+
+<TD width="10"></TD>
+
+<TD>[2]<INPUT TYPE="RADIO" NAME="Sex" VALUE="1">I am a Female [5]<INPUT TYPE="RADIO" NAME="Sex" VALUE="2">I am a Male </TD>
+
+</TR>
+
+</TABLE><P></P>
+
+<TABLE WIDTH="650">
+
+<TR>
+
+<TD COLSPAN="2"><P>2. What is your age group? </P>
+
+</TD>
+
+</TR>
+
+<TR>
+
+<TD width="22"></TD>
+
+<TD> <INPUT TYPE="RADIO" NAME="Agegrp" VALUE="1">16 - 18 years </TD>
+
+<TD> <INPUT TYPE="RADIO" NAME="Agegrp" VALUE="2">19 - 20 years</TD>
+
+<TD> [1]<INPUT TYPE="RADIO" NAME="Agegrp" VALUE="3">21 - 22 years</TD></TR>
+
+<TR><TD width="22"></TD>
+
+<TD> <INPUT TYPE="RADIO" NAME="Agegrp" VALUE="4">23 - 24 years</TD>
+
+<TD> [1]<INPUT TYPE="RADIO" NAME="Agegrp" VALUE="5">25 - 34 years</TD>
+
+<TD> [1]<INPUT TYPE="RADIO" NAME="Agegrp" VALUE="6">35 - 44 years</TD>
+
+<TD> [3]<INPUT TYPE="RADIO" NAME="Agegrp" VALUE="7">45 years and over </TD>
+
+</TR>
+
+</TABLE><P></P>
+
+<TABLE WIDTH="650">
+
+<TR>
+
+<TD COLSPAN="5">3. What is the language you first learned as a child?</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH="50"></TD>
+
+<TD WIDTH="150"> <P>[7]<INPUT TYPE="RADIO" NAME="language" VALUE="1">English </TD>
+
+<TD WIDTH="150"> <P><INPUT TYPE="RADIO" NAME="language" VALUE="2"> French</TD>
+
+<TD WIDTH="450"> <P><INPUT TYPE="RADIO" NAME="language" VALUE="3"> Other
+
+(Specify) <INPUT TYPE="TEXT" NAME="language" SIZE="15" MAXLENGTH="15">
+
+</TD>
+
+</TR>
+
+</TABLE><P></P>
+
+<TABLE WIDTH="650">
+
+<TR>
+
+<TD COLSPAN="4" WIDTH="650">4. What is the language you are most comfortable
+
+with today?</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH="50"></TD>
+
+<TD WIDTH="150"> <P>[7]<INPUT TYPE="RADIO" NAME="preflang" VALUE="1">English</P>
+
+</TD>
+
+<TD WIDTH="150"> <P><INPUT TYPE="RADIO" NAME="preflang" VALUE="2">French</P>
+
+</TD>
+
+<TD WIDTH="450"> <P><INPUT TYPE="RADIO" NAME="preflang" VALUE="3">Other
+
+(Specify) <INPUT TYPE="TEXT" NAME="preflngx" SIZE="15" MAXLENGTH="15"> </P>
+
+</TD>
+
+</TR>
+
+</TABLE><P></P>
+
+<TABLE WIDTH="650">
+
+<TR>
+
+<TD COLSPAN="3" WIDTH="800">5. What is your marital status?</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH="50"></TD>
+
+<TD WIDTH="300"> <P>[3]<INPUT TYPE="RADIO" NAME="marital" VALUE="1">Single </P>
+
+</TD>
+
+<TD WIDTH="450"> <P>[4]<INPUT TYPE="RADIO" NAME="marital" VALUE="2">Married or
+
+Common-Law</P>
+
+</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH="50"></TD>
+
+<TD WIDTH="300"> <P><INPUT TYPE="RADIO" NAME="marital" VALUE="3">Divorced/Separated</P>
+
+</TD>
+
+<TD WIDTH="450"> <P><INPUT TYPE="RADIO" NAME="marital" VALUE="4"> Other
+
+(Specify) <INPUT TYPE="TEXT" NAME="maritalx" SIZE="15" MAXLENGTH="15"></P>
+
+</TD>
+
+</TR>
+
+</TABLE><P></P>
+
+<TABLE WIDTH="650" BORDER="0">
+
+<TR>
+
+<TD COLSPAN="6" WIDTH="650">6. Are there children living at home?</TD>
+
+</TR>
+
+<TR>
+
+<TD width="25"></td>
+
+<TD COLSPAN="5"> <INPUT TYPE="RADIO" NAME="childhom" VALUE="0">No, I have no
+
+children at home </TD>
+
+
+
+</TR>
+
+<TR>
+
+<TD width="25"></td>
+
+<TD COLSPAN="5">[1]<INPUT TYPE="RADIO" NAME="childhom" VALUE="1">Yes I have
+
+children at home --If Yes, how many? [1] <P></P></TD>
+
+
+
+</TR>
+
+<TR>
+
+<TD WIDTH="100"></TD>
+
+<TD COLSPAN="5"> Please list their ages [3.5 years] </TD>
+
+</TR>
+
+<TR>
+
+<!--<TD WIDTH="50"></TD>
+
+		  <TD WIDTH="150"></TD>
+
+		  <TD WIDTH="150"></TD>
+
+		  <TD COLSPAN="3" WIDTH="450">
+
+ -->
+
+<TD></TD>
+
+</TR>
+
+<TR><TD WIDTH="100"></TD>
+
+<TD COLSPAN="5"> <P>How many hours per week do you estimate you personally
+
+spend caring for children for which you do not receive any pay? [40]</P>
+
+</TD>
+
+</TR>
+
+<TR>
+
+<TD></TD>
+
+</TR>
+
+<TR>
+
+<TD> </TD>
+
+<!--<TD WIDTH="50"></TD>
+
+		  <TD WIDTH="150"></TD>
+
+		  <TD WIDTH="105">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="hours" VALUE="Value15">None</P> </TD>
+
+		  <TD WIDTH="125">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="hours" VALUE="Value16">1-5 hrs </P> </TD>
+
+		  <TD WIDTH="125">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="hours" VALUE="Value17">6-10 hrs </P>
+
+		  </TD>
+
+		  <TD WIDTH="245">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="hours" VALUE="Value18">11-15 hrs </P>
+
+		  </TD>
+
+		</TR>
+
+		<TR>
+
+		  <TD WIDTH="50"></TD>
+
+		  <TD WIDTH="150"></TD>
+
+		  <TD WIDTH="105">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="hours" VALUE="Value19">16-20 hrs </P>
+
+		  </TD>
+
+		  <TD WIDTH="125">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="hours" VALUE="Value20">21-25 hrs </P>
+
+		  </TD>
+
+		  <TD WIDTH="125">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="hours" VALUE="Value21">26-30 hrs </P>
+
+		  </TD>
+
+		  <TD WIDTH="245">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="hours" VALUE="Value22">more than 30 hrs</P>
+
+		  </TD>
+
+-->
+
+</TR>
+
+</TABLE><P></P>
+
+<TABLE WIDTH="650">
+
+<TR>
+
+<TD COLSPAN="3" WIDTH="825">7. What is the highest level of education you have
+
+already completed?</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH="50"></TD>
+
+<TD WIDTH="425"> <P><INPUT TYPE="RADIO" NAME="edlevel" VALUE="1">Less Than High
+
+School</P>
+
+</TD>
+
+<TD WIDTH="350"> <P>[1]<INPUT TYPE="RADIO" NAME="edlevel" VALUE="2">High School
+
+</P>
+
+</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH="50"></TD>
+
+<TD WIDTH="425"> <P>[2]<INPUT TYPE="RADIO" NAME="edlevel" VALUE="3">Community
+
+College</P>
+
+</TD>
+
+<TD WIDTH="350"> <P><INPUT TYPE="RADIO" NAME="edlevel" VALUE="4">University
+
+(Certificate/Diploma)</P>
+
+</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH="50"></TD>
+
+<TD WIDTH="425"> <P>[3]<INPUT TYPE="RADIO" NAME="edlevel" VALUE="5">University
+
+(Undergraduate Degree)</P>
+
+</TD>
+
+<TD WIDTH="350"> <P><INPUT TYPE="RADIO" NAME="edlevel" VALUE="6">University
+
+(Graduate Degree)</P>
+
+</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH="50"></TD>
+
+<TD WIDTH="650" COLSPAN="2"> <P>[1]<INPUT TYPE="RADIO" NAME="edlevel"
+
+VALUE="7">Other Post-Secondary (Please specify) [post graduate] </P>
+
+</TD>
+
+</TR>
+
+</TABLE><P></P>
+
+<TABLE WIDTH="650">
+
+<TR>
+
+<TD COLSPAN="3" WIDTH="825">
+
+		  <!--added most recent to handle those currently not employed -->
+
+<P>8. What is your most recent Job Title ? (Please be specific) [Child &amp; Youth Worker,
+
+Peer Support Worker, Manager: Braille and E-text Print, microfiche camera operator,
+
+Camp counselor, systems engineer, Coordinator: CUP Program CNIB]</P>
+
+</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH="50"></TD>
+
+<TD COLSPAN="2" WIDTH="775"> <P>What is the type of workplace? (ie., hospital,
+
+bank, police dept.) [Hospital, social club, office, office, summer camp, home,
+
+  office]</P>
+
+</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH="50"></TD>
+
+<TD COLSPAN="2" WIDTH="775"> <P>Approximately how many employees work there?
+
+  [mean 307, range 1 to 2000]</P>
+
+</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH="50"></TD>
+
+<TD COLSPAN="2" WIDTH="775">
+
+		  <!--edited to past tense -->
+
+<P>What were your THREE most important job duties at work?</P>
+
+</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH="50"></TD>
+
+<TD WIDTH="150"></TD>
+
+<TD WIDTH="625"> <P>1.) [Working with the students (clients), listening to
+
+  people, Streamlining production operations, been at university for the last 6
+
+  years, team leader, system support, plan and implement program]</P>
+
+</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH="50"></TD>
+
+<TD WIDTH="150"></TD>
+
+<TD WIDTH="625"> <P><BR>2.) [report writing, playing games with members, laise
+
+  with staff and volunteers, , peer tutor, needs analysis, supervise two
+
+  instructors and one volunteer]</P>
+
+</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH="50"></TD>
+
+<TD WIDTH="150"></TD>
+
+<TD WIDTH="625"><P><BR> 3.) [organizing the parent and kids group, running
+
+  workshops, provide information and training, , , web site evaluation, conflict
+
+  resolution between instructors</P> 
+
+</TD>
+
+</TR>
+
+</TABLE><P></P>
+
+<TABLE WIDTH="650">
+
+<TR>
+
+<TD COLSPAN="5" WIDTH="800">9. How many total hours per week do you estimate
+
+you work for a wage, salary, or other form of income?</TD>
+
+</TR>
+
+<TR>
+
+<TD>The average number of paid hours I work in a week is [mean 30, mode 40 with
+
+  2 missing]
+
+</TD>
+
+</TR>
+
+<!--<TR>
+
+		  <TD WIDTH="50"></TD>
+
+		  <TD WIDTH="150">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="paywork" VALUE="Value30">None</P> </TD>
+
+		  <TD WIDTH="150">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="paywork" VALUE="Value31">1-10 hrs </P>
+
+		  </TD>
+
+		  <TD WIDTH="150">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="paywork" VALUE="Value32">11-20 hrs</P>
+
+		  </TD>
+
+		  <TD WIDTH="300">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="paywork" VALUE="Value33">21-30 hrs</P>
+
+		  </TD>
+
+		</TR>
+
+		<TR>
+
+		  <TD WIDTH="50"></TD>
+
+		  <TD WIDTH="150">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="paywork" VALUE="Value34">31-35 hrs</P>
+
+		  </TD>
+
+		  <TD WIDTH="150">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="paywork" VALUE="Value35">36-40 hrs</P>
+
+		  </TD>
+
+		  <TD WIDTH="150">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="paywork" VALUE="Value36">41-44 hrs</P>
+
+		  </TD>
+
+		  <TD WIDTH="300">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="paywork" VALUE="Value37">more than 44
+
+			 hours</P> </TD>
+
+		</TR>
+
+-->
+
+</TABLE><P></P>
+
+<TABLE WIDTH="650">
+
+<TR>
+
+<TD COLSPAN="5" WIDTH="800">10. How many hours per week do you estimate you
+
+personally spend doing household chores (e.g. washing the dishes; cleaning;
+
+fixing things in the house; laundry; etc?</TD>
+
+</TR>
+
+<TR>
+
+<TD>The average number of hours per week I spend doing household chores is [mean
+
+  8.1]
+
+</TD>
+
+</TR>
+
+<!--<TR>
+
+		  <TD WIDTH="50"></TD>
+
+		  <TD WIDTH="150">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="chores" VALUE="Value43">None</P> </TD>
+
+		  <TD WIDTH="150">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="chores" VALUE="Value44">1-5 hours </P>
+
+		  </TD>
+
+		  <TD WIDTH="150">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="chores" VALUE="Value45">6-10 hours</P>
+
+		  </TD>
+
+		  <TD WIDTH="300">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="chores" VALUE="Value46">11-15 hours</P>
+
+		  </TD>
+
+		</TR>
+
+		<TR>
+
+		  <TD WIDTH="50"></TD>
+
+		  <TD WIDTH="150">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="chores" VALUE="Value47">16-20 hours</P>
+
+		  </TD>
+
+		  <TD WIDTH="150">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="chores" VALUE="Value48">21-25 hours</P>
+
+		  </TD>
+
+		  <TD WIDTH="150">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="chores" VALUE="Value49">26-30 hours</P>
+
+		  </TD>
+
+		  <TD WIDTH="300">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="chores" VALUE="Value50">more than 30
+
+			 hours</P> </TD>
+
+		</TR>
+
+-->
+
+</TABLE><P></P>
+
+<TABLE WIDTH="650">
+
+<TR>
+
+<TD COLSPAN="5" WIDTH="800">11. How many hours per week do you estimate you
+
+personally spend in extra-curricular or volunteer activities for which you do
+
+not receive any pay?</TD>
+
+</TR>
+
+<TR>
+
+<TD> <P> The average number of hours per week I spend in extra-curricular activities is
+
+  [mean 7.0]</P>
+
+</TD>
+
+</TR>
+
+<!--<TR>
+
+		  <TD WIDTH="50"></TD>
+
+		  <TD WIDTH="150">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="extra" VALUE="Value43">None</P> </TD>
+
+		  <TD WIDTH="150">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="extra" VALUE="Value44">1-5 hours </P>
+
+		  </TD>
+
+		  <TD WIDTH="150">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="extra" VALUE="Value45">6-10 hours </P>
+
+		  </TD>
+
+		  <TD WIDTH="300">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="extra" VALUE="Value46">11-15 hours </P>
+
+		  </TD>
+
+		</TR>
+
+		<TR>
+
+		  <TD WIDTH="50"></TD>
+
+		  <TD WIDTH="150">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="extra" VALUE="Value47">16-20 hours</P>
+
+		  </TD>
+
+		  <TD WIDTH="150">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="extra" VALUE="Value48">21-25 hours</P>
+
+		  </TD>
+
+		  <TD WIDTH="150">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="extra" VALUE="Value49">26-30 hours </P>
+
+		  </TD>
+
+		  <TD></TD>
+
+		</TR>
+
+-->
+
+</TABLE><P></P>
+
+<TABLE WIDTH="650">
+
+<TR>
+
+<TD WIDTH="650">13. How long can you comfortably work in front of a computer
+
+without needing to take a break (ie., due to eye strain, back pain, fatigue,
+
+etc.)?</TD>
+
+</TR>
+
+<TR>
+
+<TD WIDTH="650" ALIGN="left">
+
+	 <!--new field as a fillin to not cue appropriate time frame by options -->
+
+<!--perhaps relocate to near the end of the intake form to ground the estimate -->
+
+ The number of minutes I can work in front of a computer without taking a break is
+
+     [mean 84]
+
+</TD>
+
+</TR>
+
+<!--<P><INPUT TYPE="RADIO" NAME="break" VALUE="Value241">Less than 15
+
+			 minutes</P> </TD>
+
+		  <TD WIDTH="300">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="break" VALUE="Value242">15 to 30 minutes</P>
+
+		  </TD>
+
+		  <TD WIDTH="350">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="break" VALUE="Value243">30 to 45 minutes</P>
+
+		  </TD>
+
+		</TR>
+
+		<TR>
+
+		  <TD WIDTH="50"></TD>
+
+		  <TD WIDTH="300">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="break" VALUE="Value244">45 to 60 minutes</P>
+
+		  </TD>
+
+		  <TD WIDTH="300">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="break" VALUE="Value245">60 to 90 minutes</P>
+
+		  </TD>
+
+		  <TD WIDTH="350">
+
+
+
+		  <P><INPUT TYPE="RADIO" NAME="break" VALUE="Value246">More than 90
+
+			 minutes</P> </TD></TR>
+
+	 -->
+
+</TABLE><P></P>
+
+<!-- leaving the last item in place for now 
+
+	<br><b>This form is now ready to send</b>
+
+		<input type="radio" name="ready1"> Yes
+
+		<br>
+
+
+
+<INPUT TYPE="submit" VALUE="Submit Intake Questionnaire"><INPUT TYPE="reset">
+
+-->
+
+</FORM>
+
+</BODY>
+
+</HTML>
+
+
+

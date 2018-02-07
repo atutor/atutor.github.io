@@ -1,0 +1,68 @@
+Specific Access Issues
+Courseinfo
+Low vision
+2002
+blackboard not keyboard operable
+browser buttons not read by JAWS (submit a file) 
+confusion over different layout of Calendar screen
+no validity checking for quiz. accidental submit possible
+poorly labeled quiz form fields difficult to interpret
+
+
+Blind
+
+LD
+
+Mobility
+
+
+WebCT
+Low vision
+2002 no problems
+
+Blind
+
+LD
+
+Mobility
+
+WCB
+Low vision
+
+Blind
+
+LD
+
+Mobility
+
+Topclass
+Low vision
+2002
+browser buttons not read by JAWS (attach a file) 
+
+Blind
+
+LD
+
+Mobility
+
+Virtual-U
+Low vision
+
+Blind
+
+LD
+
+Mobility
+
+Mallard
+Low vision
+
+Blind
+
+LD
+
+Mobility
+
+Additional Issues
+JAWS does not always behave the way it should
