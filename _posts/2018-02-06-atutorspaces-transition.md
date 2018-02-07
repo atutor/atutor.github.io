@@ -17,7 +17,6 @@ There are three primary ways to transition from your ATutorSpaces site:
 If you are moving from ATutorSpaces into another ATutor site, a preferred way to transition is to generate course backups on ATutorSpaces, then upload those backups and restore them in the new ATutor host site.
 
 **Backups contain:**
-
 *   Announcements
 *   Assignments
 *   Content
@@ -45,7 +44,6 @@ The size of backups can be reduced by removing any multimedia files you may have
 The steps described here for administrators, instructors may also complete for their own courses.
 
 **To create backups, follow these steps:**
-
 1.  Login as the ATutor administrator
 2.  Open the Courses Tab
 3.  Select a course, and press the Backups button
@@ -56,7 +54,6 @@ The steps described here for administrators, instructors may also complete for t
 8.  Repeat step 7 for each course.
 
 **To restore backups, follow these steps:**
-
 1.  Login to the new ATutor site as the administrator
 2.  Open the Courses tab
 3.  Click on Create Course to create a new empty course shell for each of the courses you downloaded backups for in the steps above.
@@ -77,7 +74,6 @@ As is the case with Backups, you will likely want to move any multimedia you hav
 Systems may vary in their support for Common Cartridge 1.0\. Some may import content, but not tests. If you choose the common cartridge route, you should test ATutor generated cartridges with the system you’re planning to migrate to.
 
 **To create Common Cartridges:**
-
 1.  Login as the ATutor administrator
 2.  Open the Courses tab
 3.  Select the radio button next to a course, then select View. This will log you into the course as its instructor
@@ -92,7 +88,6 @@ If you have properly associated tests with the content in your course, ATutor co
 Not all systems that support common cartridge will also import the tests that are part of a cartridge. In such cases it may be necessary to export the tests out separately as QTI test packages, or as a QTI question bank. You will want to check whether the system you are importing into supports the IMS QTI 1.2.1 standard.
 
 **To create QTI Test or Question Packages:**
-
 1.  Login as the ATutor administrator
 2.  Open the Courses tab
 3.  Select the radio button next to a course, then select View. This will log you into the course as its instructor.
