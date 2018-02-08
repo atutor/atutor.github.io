@@ -6,7 +6,7 @@ layout: home
         <div class="repos">                     
             <h2>Code Repositories</h2>
             <ul>
-          {% comment %}  
+
             {% assign public_repositories = site.github.public_repositories | sort: 'updated_at'| reverse %}
             {% for repository in public_repositories %}
                 {% if repository.fork == false %}
@@ -14,7 +14,7 @@ layout: home
                 {% endif %}
             {% endfor %}
            
- {% endcomment %}          
+       
             </ul>
             </div>
                 </div>  
