@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-08T18:02:57-05:00</updated><id>http://localhost:4000//</id><entry><title type="html">Transitioning from ATutorSpaces</title><link href="http://localhost:4000/2018/02/06/atutorspaces-transition.html" rel="alternate" type="text/html" title="Transitioning from ATutorSpaces" /><published>2018-02-06T00:00:00-05:00</published><updated>2018-02-06T00:00:00-05:00</updated><id>http://localhost:4000/2018/02/06/atutorspaces-transition</id><content type="html" xml:base="http://localhost:4000/2018/02/06/atutorspaces-transition.html">&lt;h2 id=&quot;transitioningfromatutorspaces&quot;&gt;Transitioning from ATutorSpaces&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-08T18:14:41-05:00</updated><id>http://localhost:4000//</id><entry><title type="html">Transitioning from ATutorSpaces</title><link href="http://localhost:4000/2018/02/06/atutorspaces-transition.html" rel="alternate" type="text/html" title="Transitioning from ATutorSpaces" /><published>2018-02-06T00:00:00-05:00</published><updated>2018-02-06T00:00:00-05:00</updated><id>http://localhost:4000/2018/02/06/atutorspaces-transition</id><content type="html" xml:base="http://localhost:4000/2018/02/06/atutorspaces-transition.html">&lt;h2 id=&quot;transitioningfromatutorspaces&quot;&gt;Transitioning from ATutorSpaces&lt;/h2&gt;
 
 &lt;p&gt;This post covers what ATutorSpaces users need to know about moving their courses from ATutorSpaces, into another ATutor site, or into another Learning Management System (LMS). These details will be relevant for anyone planning on moving or distributing their ATutor courses.&lt;/p&gt;
 
@@ -162,12 +162,12 @@
 
 &lt;p&gt;&lt;strong&gt;Purchase a Ticket at:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.google.com/url?q=https://www.atutorspaces.com/services/index.php&amp;amp;sa=D&amp;amp;ust=1517961642699000&amp;amp;usg=AFQjCNETyRrlD_veIvbNL9G0TzD7ToFszQ&quot;&gt;https://www.atutorspaces.com/services/index.php&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.atutorspaces.com/services/index.php&quot;&gt;https://www.atutorspaces.com/services/index.php&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Once you have the bundles, your system administrator can follow these steps for restore them:&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;Install ATutor as it would normally be installed, following the installation instructions: &lt;a href=&quot;https://www.google.com/url?q=https://atutor.github.io/atutor/docs/installation&amp;amp;sa=D&amp;amp;ust=1517961642700000&amp;amp;usg=AFQjCNEe9DiMlcFwNN1w4o2YWTk_gZeKFA&quot;&gt;https://atutor.github.io/atutor/docs/installation&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;Install ATutor as it would normally be installed, following the installation instructions: &lt;a href=&quot;/atutor/docs/installation.html&quot;&gt;https://atutor.github.io/atutor/docs/installation.html&lt;/a&gt; &lt;/li&gt;
 
 &lt;li&gt;Move or rename the content directory in the new ATutor installation, and copy the content.zip file from the bundle into the base ATutor directory (inside ATutor/).&lt;/li&gt;
 
