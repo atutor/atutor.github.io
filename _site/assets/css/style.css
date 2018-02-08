@@ -352,6 +352,8 @@ div.repos ul li > a { font-size: 2em; }
 
 div.google_ads { margin-left: auto; margin-right: auto; max-width: 66em; margin-bottom: 1em; }
 
+div.google_adstop { padding: 1em; }
+
 .repos h2 { color: black; text-align: left !important; }
 
 .site-footer { padding-top: 0; margin-top: 0; }
