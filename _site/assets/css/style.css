@@ -689,7 +689,7 @@ div.login2 { float: left; width: 22em; margin-left: 5%; }
 
 dl.login { margin: 0; }
 
-.login_header { background-image: url("/images/tl.gif"); background-repeat: no-repeat; background-position: top left; background-color: #CCE1E8; height: 2em; color: black; padding-left: 1em; font-weight: 600; }
+.login_header { background-repeat: no-repeat; background-position: top left; background-color: rgba(20, 89, 45, 0.2); color: #159957 !important; padding-left: 1em; font-weight: 600; }
 
 .login_body { border-bottom: 1px #CCE1E8 solid; border-left: 1px #CCE1E8 solid; border-right: 1px #CCE1E8 solid; padding: .5em; min-height: 13em; }
 
@@ -752,7 +752,7 @@ table.my_box2 h2 { color: black; font-weight: normal; padding-left: 5px; border-
 
 .errbox { padding: .5em; border: 1px solid red; border-left: thick solid red; background-color: #F7E6E8; width: 75%; margin-left: auto; margin-right: auto; font-weight: bold; clear: both; }
 
-.info { border: 2px solid #cce1e8; border-radius: .0 .5em .5em 0; padding: 1em; border-left: 6px solid #cce1e8; }
+.info { border: 2px solid rgba(20, 89, 45, 0.2); border-radius: .0 .5em .5em 0; padding: 1em; border-left: 6px solid rgba(20, 89, 45, 0.2); }
 
 /* //////////////////////////////////////////////////////////////////// */
 .sizer { margin: 0; padding: 0; width: 100%; /* min-width: 700px; */ /* Critical Safari fix */ /*max-width: 290px; */ /* version for IE is at the bottom of this style block */ }

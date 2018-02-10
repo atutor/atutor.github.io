@@ -5,6 +5,8 @@ toc:
   sublinks:
     - title: ATutor Details
       url: /atutor/index.html
+    - title: ATutor Demo
+      url: /atutor/demo.html
     - title: Downloads
       url: /atutor/downloads.html
     - title: Features
@@ -26,6 +28,8 @@ toc:
   sublinks:
     - title: AContent Details
       url: /acontent/index.html
+    - title: AContent Demo
+      url: /acontent/demo.html
     - title: Downloads
       url: /acontent/downloads.html
     - title: Documentation
