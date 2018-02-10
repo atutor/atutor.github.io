@@ -1043,12 +1043,10 @@ dl.login{
 
 
 .login_header{
-	background-image:url('/images/tl.gif');
 	background-repeat:no-repeat;
 	background-position: top left;
-	background-color:#CCE1E8;
-	height:2em;
-	color:black;
+	background-color: rgba(20, 89, 45, 0.2);
+	color: #159957 !important;
 	padding-left:1em;
 	font-weight:600;
 }
@@ -1272,10 +1270,10 @@ table.my_box2 h2 {
 }
 
 .info{
-    border:2px solid #cce1e8; 
+    border:2px solid rgba(20, 89, 45, 0.2); 
     border-radius:.0 .5em .5em 0; 
     padding:1em; 
-    border-left:6px solid #cce1e8;
+    border-left:6px solid  rgba(20, 89, 45, 0.2);
 }
 
 /* //////////////////////////////////////////////////////////////////// */
