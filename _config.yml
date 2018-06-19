@@ -1,6 +1,6 @@
-theme: jekyll-theme-cayman
-github: [metadata]
-gems:
+site.theme: jekyll-theme-cayman
+site.github: [metadata]
+site.gems:
     - jekyll-sitemap
     - jekyll-github-metadata
     - jekyll-git_metadata
